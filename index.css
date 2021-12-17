@@ -1,0 +1,933 @@
+@font-face {
+    font-family: poppins-bold;
+    src: url('Poppins/Poppins-Bold.ttf');
+}
+@font-face {
+    font-family: poppins-normal;
+    src: url('Poppins/Poppins-Regular.ttf');
+}
+
+
+
+html{
+    scroll-behavior: smooth;
+}
+*{
+    font-family: poppins-normal;
+}
+
+.header{
+    background-color:rgb(0, 38, 113);
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    z-index: 1;
+  
+    
+}
+
+
+.page-title{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    
+                                                
+}
+
+
+.skillDiv{
+    justify-content: center;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(8,120px);
+    row-gap: 10px;
+    
+
+}
+
+.hireme{
+    rotate: -6deg;
+    margin-top: 20px;
+} 
+#navbar{
+    
+  /* top: -80px; */
+  /* width: 100%;
+  display: flex;
+  transition: top 0.3s; */
+}
+.body{
+    background-image: url('23.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.main{
+    height: 90vh;
+    background-image: url('43.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.img-bar{
+    background-image: url('3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 5vh;
+
+}
+
+
+.mainImg{
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.mainImga{
+    display: none;
+}
+
+.part2:hover .mainImg{
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+    
+}
+.part2:hover .mainHead{
+    color: gold;
+    transition: 1s ease;
+    
+}
+.part2:hover .msgTwo{
+    opacity: 0;
+    transition: .5s ease;
+    
+}
+
+
+
+.homeData{
+    z-index: 1;
+}
+
+
+
+
+.part2{
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%
+}
+
+
+.homeData:hover .part2{
+    background-image: url('images/bg5.jpg');
+}
+
+
+.first,.second{
+    font-size: 15px;
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.portfolioHead{
+    text-align: center;
+    margin: 10px;
+    
+    opacity: 70%;
+}
+
+.part3{
+    height: max-content;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.skill-img{
+    width: 80%;
+    padding: 10px;
+    margin: auto;
+}
+
+
+.part5{
+    background-color: rgb(255, 255, 255);
+    height: max-content;
+    
+   
+    background-size: cover;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+
+}
+
+.social{
+    display: grid;
+    justify-content: center;
+    padding: 10px;
+    grid-template-columns: repeat(7,50px)
+}
+
+
+.overlay{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 30vw;
+    
+
+}
+
+.webBox{
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap:20px;
+    column-gap: 20px;
+}
+
+.services{
+    
+    display: grid;
+    grid-template-columns: auto auto ;
+    row-gap: 10px ;
+    column-gap: 10px;
+    width: 80%;
+    padding: 20px;
+    margin: auto;
+    color: rgb(0, 0, 0);
+    border-radius: 20px;
+    
+    
+    
+    
+}
+
+
+#projects{
+    background-color: rgb(0, 38, 113);
+}
+
+/* 
+.project{
+    position: relative;
+  text-align: center;
+  color: white;
+  
+}
+
+
+.projectImage{
+    border-radius: 10px;
+}
+
+.project:hover .projectOver{
+    opacity: 1;
+    transition:0.5s ease;
+}
+
+.projectOver{
+    transition: 0.5s ease;
+    opacity: 0;
+    background-color: black;
+    padding: 10px;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    justify-content: center;
+}
+
+
+.projectName{
+    font-size: x-large;
+    top: 100px;
+    background-color:black;
+    
+    
+}
+.projectDesc{
+    font-size: small;
+}
+
+.projectBtn{
+    background-color: crimson;
+    color:white;
+    padding: 10px;
+    border: none;
+    width: max-content;
+} */
+
+
+
+
+
+
+
+
+
+
+.contribImage{
+    width: 50%;
+}
+
+
+
+
+.service{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    rotate: -4deg;
+    border:5px solid black;
+    box-shadow: 1px 1px 10px;
+
+    
+}
+
+.text{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.serv-head{
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: auto
+}
+.serv-para{
+    font-size: small;
+    margin: auto;
+    width: 80%;
+}
+.serv-icon{
+    justify-self: center;
+    text-align: center;
+    width: 20%;
+    border-radius: 100px;
+    
+    
+
+}
+
+
+.msgOne{
+    position: absolute;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+    background:rgba(46, 143, 255, 0.366);
+    
+    padding: 10px;
+    border-radius: 10px;
+    top: 215%;
+    left: 70%;
+    rotate: -4deg;
+    
+}
+.msgTwo{
+    position: absolute;
+    color: white;
+    font-size: 10px;
+    z-index: 1;
+    transition: 1s ease;
+    opacity: 1;
+    padding: 10px;
+    border-radius: 10px;
+    top: 40%;
+    left: 50%;
+    rotate: -8deg;
+    
+    
+}
+.servBtn{
+    width: max-content;
+    border-radius: 400px;
+    border: none;
+    font-size: 10px;
+    background: #000;
+    color: white;
+   
+}
+
+
+.eduCont{
+    background-color: black;
+    justify-content: center;
+}
+
+.eduList{
+    
+    padding: 5px;
+    border-radius: 10px;
+    justify-items: center;
+    max-width: max-content;
+    margin: auto;
+    color: white;
+    display: flex;
+    
+}
+
+.aboutHead{
+    font-size: 40px;
+}
+
+.eduP{
+   height: max-content;
+   padding: 20px;
+   font-size: small;
+   text-align: center;
+   width: 80vw;
+   background: rgb(21, 24, 26);
+   margin: 10px;
+   border-top: 5px solid white;
+   border-radius:10px;
+   rotate: 5deg;
+   z-index: 0;
+}
+
+.eduIcon{
+    width: fit-content;
+    background: rgb(6, 53, 240);
+    text-align: center;
+    padding: 20px;
+    border-radius: 100px;
+    margin: 10px;
+}
+
+
+.part6{
+    background-image: url('5.jpg');
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-size: cover;
+    padding: 30px;
+    text-align: left;
+}
+
+.text6{
+    color: white;
+    font-size: 10px;
+}
+
+.talk-btn{
+    width: 100%;
+    margin: auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: poppins-bold;
+}
+
+
+.clicks{
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto auto auto auto;
+
+}
+
+
+.part7{
+    background-color: rgb(26, 26, 26) ;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cateogry{
+    background-color: rgb(26, 26, 26) ;
+    letter-spacing: 2px;
+    border-top: 2px solid orange;
+    width: 30%;
+}
+.part{
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    color: white;
+    z-index: 0;
+    border-right: 2px dashed rgb(192, 61, 61) ;
+}
+
+.para7{
+    color: gray;
+    font-size: 13px ;
+    text-align: center;
+}
+
+.head7{
+    text-align: center;
+    font-size: 17px;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+}
+
+.icon7{
+    text-align: center;
+}
+
+
+.part8{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 2px;
+    margin-bottom: 0px;
+}
+
+
+
+.port{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#portfolio{
+    
+    
+    padding-bottom: 20px;
+}
+.mid{
+    background-color: black;
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    height: 100%;
+
+}
+
+.head8,.para8{
+    font-size: 15px;
+    color: white;
+    
+
+}
+
+.data{
+    margin: auto;
+}
+
+.portline{
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    color:rgb(255, 253, 253)
+}
+.portline2{
+    padding: 20px;
+    margin: 0;
+    padding-top: 10px;
+    color:rgb(255, 253, 253)
+}
+
+
+.portsemi{
+    padding: 0;
+    margin: 0;
+    font-size: 12px;
+    color: gray;
+    padding-top: 2px;
+}
+
+.part8-2{
+    display: grid;
+    align-items: flex-end;
+    grid-template-columns: auto auto auto auto auto;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 2px;
+
+   
+}
+
+
+.certify{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 2px;
+    margin: auto;
+}
+
+.part9{
+    background-image: url('images/7.jpg');
+    background-size: cover;
+    padding-top: 60px;
+    margin: 0;
+    padding-bottom: 20px;
+    width: 30%;
+
+}
+
+
+.skillAbout{
+    background-color: rgb(0, 58, 55);
+}
+
+.wft{
+    width: fit-content;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-img{
+    margin: auto;
+    width: 80%;
+    border-radius: 100%;
+    border: 10px solid white;
+}
+
+.cardpara{
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    font-size: medium;
+}
+
+.card-name{
+    font-size: xx-large;
+}
+
+
+.inputs{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+
+}
+
+.form-input{
+    background-color: orange;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    padding-left: 10px;
+
+}
+
+.form-btn{
+    background-color: orange;
+    color: black;
+    border: none;
+    padding: 10px;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+.contact{
+    background-color: black; 
+    padding: 40px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.contact-form{
+    width: 40%;
+ 
+    margin: auto;
+}
+
+.title-link{
+    font-family: 'Moonlight', sans-serif;
+                                                
+}
+
+
+
+
+    
+.projectCardRG{
+    background-color: #0d1117;
+    border-radius: 5px;
+    padding:2px;
+    margin: 20px;
+    flex-direction: column;
+}
+
+
+.projectContainer{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.ProjectLinks{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    
+}
+
+.aboutPara{
+    width:100%;
+    margin-left: 20px;
+    
+}
+
+.aboutPara li{
+    margin: 15px;
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width:768px){
+    .title-link{
+        display: none;
+    }
+    .navigate{
+        display: flex;
+        font-size: 10px;
+    }
+    .first,.second{
+        font-size: 8px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .img-bar{
+        justify-content: space-between;
+        text-align: center;
+        justify-items: center;
+    }
+    .skill-img{
+        width: 100%;
+        margin: auto;
+    }
+    .services{
+        grid-template-columns: auto ;
+        width: 100%;
+    }
+
+    .eduList{
+        width: fit-content;
+    }
+
+    .part8{
+        grid-template-columns: auto auto;
+    }
+    .card-img{
+        width: 30vw;
+    }
+    .part9{
+        padding-top: 0px;
+        
+    }
+    .cardpara{
+        font-size: small;
+        margin-top: 20px;
+    }
+    .contact-form{
+        width: 70%;
+    }
+    .talk-btn{
+        font-size: 10px;
+        width: 100%;
+        padding: 5px
+    }
+
+    .para7{
+        font-size: 10px;
+    }
+    .head7{
+        font-size: 12px;
+    }
+    .cateogry{
+        width: 90%;
+    }
+    .title-link{
+        width: 100%;
+        text-align: center;
+    }
+
+    .part5{
+        padding: 30px;
+    }
+
+    
+    .social{
+        grid-template-columns: auto auto auto auto;
+    }
+    .eduList{
+        flex-direction: column;
+        align-items: center;
+    }
+    .certify{
+        grid-template-columns: auto;
+    }
+    .certifys{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .aboutHead{
+        font-size: 40px;
+    }
+    .clicks{
+        grid-template-columns: auto auto;
+    }
+
+    .skillDiv{
+        grid-template-columns: repeat(7,80px);
+        padding: 10px;
+    }
+
+    .mainImga{
+        position: absolute;
+        opacity: 0;
+        transition: .5s ease;
+        display: block;
+    }
+
+    .part2:hover .mainImga{
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+        
+    }
+
+   
+    
+    .mainImg{
+        display: none;
+    }
+    .msgTwo{
+        top: 60%;
+    }
+    .msgOne{
+        top: 207%;
+        left: 12%;
+        font-size: 10px;
+    }
+
+    .projectContainer{
+        grid-template-columns: auto auto;   
+     }
+
+    .ProjectLinks{
+        flex-direction: row;
+    }
+    .projectCardRG{
+        flex-direction: column;
+    }
+
+    .part3{
+        flex-direction: column;
+    }
+    .part9{
+        width: auto;
+    }
+    .aboutPara,.aboutData{
+        width: auto;
+    }
+    .skillList{
+        display: grid;
+        grid-template-columns: auto ;
+    }
+    .webBox{
+        grid-template-columns: auto;
+    }
+    .clicks{
+        grid-template-columns: auto;
+    }
+    .webDesignBox{
+        padding: 10px;
+    }
+
+    .aboutPara{
+        margin: 0;
+        font-size:13px;
+    }
+
+    .contribImage{
+        width: 90%;
+    }
+    
+    .projectMore{
+        font-size: 13px;
+        width:70%;
+        margin:auto;
+    }
+
+
+}
+
+
+
+@media screen and (max-width:500px){
+    .part7{
+        grid-template-columns: auto auto;
+    }
+    .skillDiv{
+        grid-template-columns: repeat(4,80px);
+    }
+   
+    .abutData{
+        width:100%;
+        margin:0
+    }
+    .projectContainer{
+        grid-template-columns: auto;
+    }
+    .projectCardRG{
+        justify-content:space-between
+    }
+    
+}
+
+@media screen and (max-width:430px){
+    .projectCardRG{
+        flex-direction: column;
+    }
+    .ProjectLinks{
+        flex-direction: row;
+    }
+}
+
+
