@@ -12,8 +12,10 @@
 html{
     scroll-behavior: smooth;
 }
-*{
-    font-family: poppins-normal;
+
+
+body{
+    font-family:verdana;
 }
 
 .header{
