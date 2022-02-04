@@ -12,15 +12,11 @@
 
 
 .rgp{
-  color: white;
-
-  font-family: "verdana";
-  font-size: 30px;
-  margin: 10px 0 0 10px;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 30em;
-  animation: type 4s steps(60, end); 
+    color: white;
+    font-family: arial;
+    font-size: 30px;
+    margin: 10px 0 0 10px;
+    animation: type 4s steps(60, end); 
 }
 
 .rgp:nth-child(2){
