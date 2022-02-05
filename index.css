@@ -62,6 +62,7 @@ html{
 
 body{
     font-family:verdana;
+    background-color: black;
 }
 
 .header{
@@ -96,13 +97,7 @@ body{
     rotate: -6deg;
     margin-top: 20px;
 } 
-#navbar{
-    
-  /* top: -80px; */
-  /* width: 100%;
-  display: flex;
-  transition: top 0.3s; */
-}
+
 .body{
     background-image: url('23.jpg');
     background-repeat: no-repeat;
@@ -132,25 +127,9 @@ body{
     transition: 0.5s ease;
 }
 
-.mainImga{
-    display: none;
-}
 
-.part2:hover .mainImg{
-    opacity: 1;
-    transition: 0.5s ease-in-out;
-    
-}
-.part2:hover .mainHead{
-    color: gold;
-    transition: 1s ease;
-    
-}
-.part2:hover .msgTwo{
-    opacity: 0;
-    transition: .5s ease;
-    
-}
+
+
 
 
 
@@ -159,17 +138,47 @@ body{
 }
 
 
+.part2 img{
+    width: 70%;
+}
+
+
 
 
 .part2{
     text-align: center;
     display:flex;
-    flex-direction: column;
+    width: 70%;
+    gap:10px;
+    margin: auto;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     position: relative;
     height: 100%;
-    backgound:black;
+    background:black;
+    padding-top: 20%;
+    padding-bottom: 20%;
+}
+
+
+.part2 img{
+    animation: move 4s infinite;
+}
+@keyframes move {
+    0%{
+        border: 20px solid white;
+        rotate: 30deg;
+        margin-top: 40px;
+    }50%{
+        border: none;
+        rotate: -10deg;
+        margin-top: 0px;
+    }100%{
+        border: 20px solid white;
+        rotate: 30deg;
+        margin-top: 40px;
+    }
 }
 
 
@@ -186,6 +195,7 @@ body{
 }
 
 
+
 .portfolioHead{
     text-align: center;
     margin: 10px;
@@ -197,6 +207,7 @@ body{
     height: max-content;
     text-align: center;
     display: flex;
+    max-width: 95%;
     justify-content: space-between;
 }
 
@@ -768,9 +779,18 @@ body{
 
 
 
+.part2 div{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 
 @media screen and (max-width:768px){
+
+    .part2{
+        flex-direction: column;
+        padding-top: 100px;
+    }
     .title-link{
         display: none;
     }
@@ -951,6 +971,7 @@ body{
 
 
 @media screen and (max-width:500px){
+    
     .part7{
         grid-template-columns: auto auto;
     }
@@ -969,6 +990,12 @@ body{
         justify-content:space-between
     }
     
+}
+
+
+
+.part2 img{
+    border-color: white;
 }
 
 @media screen and (max-width:430px){
