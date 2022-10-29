@@ -1,15 +1,13 @@
-@font-face {
-    font-family: poppins-bold;
-    src: url('Poppins/Poppins-Bold.ttf');
-}
-@font-face {
-    font-family: poppins-normal;
-    src: url('Poppins/Poppins-Regular.ttf');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+*:not(i){
+    font-family: Poppins !important;
 }
 
-
-
-
+body{
+    overflow-x: hidden;
+}
 
 .rgp{
     color: white;
@@ -66,7 +64,7 @@ body{
 }
 
 .header{
-    background-color:rgb(0, 38, 113);
+    background-color:rgb(2, 7, 19);
     position: fixed;
     width: 100%;
     margin: 0;
@@ -274,7 +272,7 @@ body{
 
 
 #projects{
-    background-color: rgb(0, 38, 113);
+    /* background-color: rgb(0, 38, 113); */
 }
 
 /* 
