@@ -28,9 +28,12 @@ html{
 #project1,
 #project2,
 #project3,
+#project4,
+#project5,
+#project6,
 #mini-projects,
 #jobMain {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,7 +115,7 @@ b{
 .btn-grad {
     background-image: linear-gradient(235deg, #36393D 0%, #5E5E5E 100%);
     margin: 20px auto;
-    padding: 20px 40px;
+    padding: 15px 40px;
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
@@ -122,7 +125,7 @@ b{
     display: block;
     border: 0px;
     letter-spacing: 7px;
-    line-height: 25px
+    line-height: 20px
 
 }
 
@@ -191,6 +194,20 @@ b{
     }
     .calender{
         display: none;
+    }
+    #about{
+        flex-direction: column-reverse;
+        height: auto;
+        justify-content: center;
+    }
+    #github-graph{
+        display: none;
+    }
+    .projectCard{
+        flex-direction: column;
+    }
+    .projectCard div{
+        width: 100%;
     }
 }
 
@@ -261,4 +278,35 @@ a{
 
 .leftPortify p{
     font-size: 13px !important;
+}
+
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    background-color: #121212;
+    top:-10;
+    padding: 10px;
+    position: fixed;
+    height: 100vh;
+    margin: 0px;
+}
+
+.side-link{
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    font-family: Poppins;
+    text-align: center;
+    
+}
+.side-link:hover{
+    opacity: 0.5;
+    transition: 0.5s;
 }
