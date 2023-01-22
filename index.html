@@ -14,20 +14,76 @@
 
 <body>
 
+    <!-- 
+- Single file SVG animation
+- * can be used as CSS backgroud
+- * total size is less than 3kb!
+-->
+
+<svg xmlns="http://www.w3.org/2000/svg" id="animation" preserveAspectRatio="xMidYMin slice" viewBox="24 105 156 95"  >
+    <defs>
+        <style type="text/css">
+				@keyframes rotate {
+					 100% {
+						  transform: rotate(360deg)
+					 }
+				}
+
+				.top-outer {
+					 transform-origin: 73px 69px;
+					 animation: rotate 30s linear infinite;
+				}
+
+				.top-inner {
+					 transform-origin: 73px 69px;
+					 animation: rotate 20s linear infinite;
+				}
+
+				.bottom-outer {
+					 transform-origin: 134px 222px;
+					 animation: rotate 30s linear infinite;
+				}
+
+				.bottom-inner {
+								transform-origin: 134px  222px;
+								animation: rotate 20s linear infinite;
+				}
+        </style>
+    </defs>
+    <rect x="0" y="0" width="300" height="300" fill="#E22227"/>
+    <path class="top-outer" fill="#EF8716" stroke="#371300" stroke-width="1" d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z"/>
+    <path class="top-inner" fill="#537571" stroke="#DCB467" stroke-width="1" d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z"/>
+    <path class="bottom-outer" fill="#DCB467" stroke="#371300" stroke-width="1" d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z"/>
+    <path class="bottom-inner" fill="#263D56" stroke="#537571" stroke-width="1" d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z"/>
+</svg>
+
     <div id="home">
         <div class="centeredDiv">
+           
 
-            <h1 class="centeredHeading">Hi, I'm Ram</h1>
-            <p class="centeredPara">I'm <b>Designer</b> by Interest, <b> Freelance Developer</b> by Profession, <b>Engineer</b> by Education and <b>Content Creator</b> by Hobby. Connect with me on <a style="color: lightblue; font-family:Poppins" href="mailto:rgoel766@gmail.com?subject=I%20Need%20a%20Service&body=Hi%20Ram,">rgoel766@gmail.com</a>  <a style="color: lightblue; font-family:Poppins" href="https://drive.google.com/file/d/1wSB6KxxofJZSjGNkjZnWz02Im3eeUTRG/view?usp=share_link">[Download Resume]</a></p>
+            <div class="hero-container ">
+                <div class="environment"></div>
+                <h1 class="hero glitch layers" data-text="近設計"><span>Hi, I'm Ram</span></h1>
+                
+              </div>
+            <p class="centeredPara">I'm <b>Designer</b> by Interest, <b> Freelance Developer</b> by Profession, <b>Engineer</b> by Education and <b>Content Creator</b> by Hobby. Connect with me on Social Media Platforms.</p>
             <div class="linkContainer">
 
+                <a href="https://www.quora.com/profile/Ram-Goel-27" class="socialIcon"><i class=" fab fa-quora"></i></a>
                 <a href="https://www.linkedin.com/in/ramgoel/" class="socialIcon"><i class=" fab fa-linkedin"></i></a>
                 <a href="https://www.github.com/RamGoel/" class="socialIcon"><i class=" fab fa-github"></i></a>
                 <a href="#about"><button class="btn-grad">WHY HIRE ME</button></a>
                 <a href="https://twitter.com/theRamGoel/" class="socialIcon"><i class=" fab fa-twitter"></i></a>
                 <a href="https://www.youtube.com/@ramgoel317/" class="socialIcon"><i class=" fab fa-youtube"></i></a>
+                <a href="https://www.behance.net/theramgoel" class="socialIcon"><i class=" fab fa-behance"></i></a>
             </div>
         </div>
+    </div>
+
+    <div style="width:90vw; padding:25px; margin:auto; border-radius:20px">
+        <h1 style="text-align: center; color: white; font-size: 100px">I'm also in UI/UX...</h1>
+        <img src="./images/hisaab.png" width="100%"/>
+        <img src="./images/hisaab copy.png"  width="100%" />
     </div>
 
     <div id="about">
@@ -45,17 +101,30 @@
                 <a href="https://abesec-gdsc.netlify.app/" class="socialIcon"><img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/contentbuilder/GDG-Bevy-ChapterThumbnail.png" width="60" /></a>
               
             </div>
-            <a href="#about"><button class="btn-grad">HIRE ME</button></a>
+            <a href="mailto:rgoel766@gmail.com?subject=I%20Need%20a%20Service&body=Hi%20Ram,"><button class="btn-grad">HIRE ME</button></a>
         </div>
         <image src="./images/ab11.jpg" width="80%" style="margin: 0px auto; border-radius:20px" />
     </div>
 
+  
+
+
+
+
     <div id="jobMain">
         <div class="centeredDiv">
 
-            <h1 class="centeredHeading">Give me Job</h1>
-            <p class="centeredPara">I've worked with 2 startups as Software Developer Intern and have about 3+ Years of Experience in building scalable, and beautiful softwares using React and React Native. Actively Looking for New Opportunities. </p>
-
+            <h1 class="centeredHeading">Hire Full Time</h1>
+            <p class="centeredPara">I've worked with 2 startups as Software Developer Intern and have about 2+ Years of Experience in building beautiful softwares using React and React Native. Actively Looking for New Opportunities. </p>
+            <a href="https://leetcode.com/rgoel766/" class="centeredPara"><b>LeetCode <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <span class="centeredPara"> | </span>
+            <a href="https://www.codechef.com/users/ramgoel" class="centeredPara"><b>CodeChef <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <span class="centeredPara"> | </span>
+            <a href="https://github.com/RamGoel" class="centeredPara"><b>Github <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <span class="centeredPara"> | </span>
+            <a href="https://auth.geeksforgeeks.org/user/rgoel766/practice" class="centeredPara"><b>GeeksForGeeks <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <span class="centeredPara"> | </span>
+            <a href="https://www.hackerrank.com/Rgoel766" class="centeredPara"><b>Hackerrank <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
             <a href="projects.html"><button class="btn-grad">See What I've Built <i class="fa fa-external-link"></i></button></a>
             <div class="calendar" id="github-graph">
                 Loading the data just for you.
@@ -63,7 +132,6 @@
 
         </div>
     </div>
-
 
 
     <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
