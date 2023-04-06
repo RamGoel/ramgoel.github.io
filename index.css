@@ -47,6 +47,11 @@ html {
   align-items: center;
 }
 
+.calenderFrame{
+  height: 56vh;
+  width: 100%;
+}
+
 #home {
   position: absolute;
   top: 0;
@@ -109,9 +114,6 @@ b {
   background-color: white !important;
 }
 
-.js-calender-graph-svg {
-  max-width: 600 !important;
-}
 
 .js-calender-graph {
   border: 0px !important;
@@ -237,7 +239,7 @@ b {
 
 
   #animation {
-    height: 100vh;
+    height: fit-content;
   }
 
   #about {
@@ -257,6 +259,10 @@ b {
   .projectCard div {
     width: 100%;
   }
+
+  .js-calender-graph-svg{
+    width: 100% !important;
+  }
 }
 
 @media screen and (max-width:658px) {
@@ -265,8 +271,17 @@ b {
     margin: 0px auto;
   }
 
+  .js-calender-graph-svg{
+    width: 100% !important;
+  }
 
   #animation {
+    height: 100vh;
+  }
+  #design{
+    top:100vh
+  }
+  #home{
     height: 100vh;
   }
 
@@ -846,3 +861,4 @@ body {
   opacity: 0.5;
   filter: blur(5px);
 }
+
