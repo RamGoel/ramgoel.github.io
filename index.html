@@ -7,84 +7,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hi, I'm Ram</title>
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon"  type="image/x-icon" href="https://avatars.githubusercontent.com/u/108487049?s=400&u=6150fef79d8bba62a534b88c85dab3e47ac3981f&v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon"
+        href="https://avatars.githubusercontent.com/u/108487049?s=400&u=6150fef79d8bba62a534b88c85dab3e47ac3981f&v=4">
     <link rel="stylesheet" href="./calender.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 
-<body>
-
-    <!-- 
-- Single file SVG animation
-- * can be used as CSS backgroud
-- * total size is less than 3kb!
--->
-
-<svg xmlns="http://www.w3.org/2000/svg" id="animation" preserveAspectRatio="xMidYMin slice" viewBox="24 105 156 95"  >
-    <defs>
-        <style type="text/css">
-				@keyframes rotate {
-					 100% {
-						  transform: rotate(360deg)
-					 }
-				}
-
-				.top-outer {
-					 transform-origin: 73px 69px;
-					 animation: rotate 30s linear infinite;
-				}
-
-				.top-inner {
-					 transform-origin: 73px 69px;
-					 animation: rotate 20s linear infinite;
-				}
-
-				.bottom-outer {
-					 transform-origin: 134px 222px;
-					 animation: rotate 30s linear infinite;
-				}
-
-				.bottom-inner {
-								transform-origin: 134px  222px;
-								animation: rotate 20s linear infinite;
-				}
-        </style>
-    </defs>
-    <rect x="0" y="0" width="300" height="300" fill="#E22227"/>
-    <path class="top-outer" fill="#EF8716" stroke="#371300" stroke-width="1" d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z"/>
-    <path class="top-inner" fill="#537571" stroke="#DCB467" stroke-width="1" d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z"/>
-    <path class="bottom-outer" fill="#DCB467" stroke="#371300" stroke-width="1" d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z"/>
-    <path class="bottom-inner" fill="#263D56" stroke="#537571" stroke-width="1" d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z"/>
-</svg>
-
-    <div id="home">
-        <div class="centeredDiv">
-           
-
-            <div class="hero-container ">
-                <div class="environment"></div>
-                <h1 class="hero glitch layers" data-text="近設計"><span>Hi, I'm Ram</span></h1>
-                
-              </div>
-            <p class="centeredPara">I'm <b>Designer</b> by Interest, <b> Freelance Developer</b> by Profession, <b>Engineer</b> by Education and <b>Content Creator</b> by Hobby. Connect with me on Social Media Platforms.</p>
-            <div class="linkContainer">
-
-                <a href="https://www.quora.com/profile/Ram-Goel-27" class="socialIcon"><i class=" fab fa-quora"></i></a>
-                <a href="https://www.linkedin.com/in/ramgoel/" class="socialIcon"><i class=" fab fa-linkedin"></i></a>
-                <a href="https://www.github.com/RamGoel/" class="socialIcon"><i class=" fab fa-github"></i></a>
-                <a href="#about"><button class="btn-grad">WHY HIRE ME</button></a>
-                <a href="https://twitter.com/theRamGoel/" class="socialIcon"><i class=" fab fa-twitter"></i></a>
-                <a href="https://www.youtube.com/@ramgoel317/" class="socialIcon"><i class=" fab fa-youtube"></i></a>
-                <a href="https://www.behance.net/theramgoel" class="socialIcon"><i class=" fab fa-behance"></i></a>
+<body class="bg-black">
+    <div>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" id="animation" class="height100 width100" preserveAspectRatio="xMidYMin slice" viewBox="24 105 156 95">
+            <defs>
+                <style type="text/css">
+                    @keyframes rotate {
+                        100% {
+                            transform: rotate(360deg)
+                        }
+                    }
+    
+                    .top-outer {
+                        transform-origin: 73px 69px;
+                        animation: rotate 30s linear infinite;
+                    }
+    
+                    .top-inner {
+                        transform-origin: 73px 69px;
+                        animation: rotate 20s linear infinite;
+                    }
+    
+                    .bottom-outer {
+                        transform-origin: 134px 222px;
+                        animation: rotate 30s linear infinite;
+                    }
+    
+                    .bottom-inner {
+                        transform-origin: 134px 222px;
+                        animation: rotate 20s linear infinite;
+                    }
+                </style>
+            </defs>
+            <rect x="0" y="0" width="300" height="300" fill="#E22227" />
+            <path class="top-outer" fill="#EF8716" stroke="#371300" stroke-width="1"
+                d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z" />
+            <path class="top-inner" fill="#537571" stroke="#DCB467" stroke-width="1"
+                d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z" />
+            <path class="bottom-outer" fill="#DCB467" stroke="#371300" stroke-width="1"
+                d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z" />
+            <path class="bottom-inner" fill="#263D56" stroke="#537571" stroke-width="1"
+                d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z" />
+        </svg>
+    
+        <div id="home">
+            <div class="mx-auto text-center">
+    
+    
+                <div class="hero-container ">
+                    <div class="environment"></div>
+                    <h1 class="hero glitch layers" data-text="近設計"><span>Hi, I'm Ram</span></h1>
+    
+                </div>
+                <p class="centeredPara">I'm <b>Designer</b> by Interest, <b> Freelancer</b> by Profession,
+                    <b>Engineer</b> by Education and <b>Content Creator</b> by Hobby. Connect with me on Social Media
+                    Platforms.</p>
+                <div class="linkContainer">
+    
+                    <a href="https://www.quora.com/profile/Ram-Goel-27" class="socialIcon"><i class=" fab fa-quora"></i></a>
+                    <a href="https://www.linkedin.com/in/ramgoel/" class="socialIcon"><i class=" fab fa-linkedin"></i></a>
+                    <a href="https://www.github.com/RamGoel/" class="socialIcon"><i class=" fab fa-github"></i></a>
+                    <a href="#about"><button class="btn-grad">WHY HIRE ME</button></a>
+                    <a href="https://twitter.com/theRamGoel/" class="socialIcon"><i class=" fab fa-twitter"></i></a>
+                    <a href="https://www.youtube.com/@ramgoel317/" class="socialIcon"><i class=" fab fa-youtube"></i></a>
+                    <a href="https://www.behance.net/theramgoel" class="socialIcon"><i class=" fab fa-behance"></i></a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div style="width:90vw; padding:25px; margin:auto; border-radius:20px">
-        <h1 style="text-align: center; color: white; font-size: 100px">I'm also in UI/UX...</h1>
-        <img src="./images/hisaab.png" width="100%"/>
-        <img src="./images/hisaab copy.png"  width="100%" />
+    <div id="designPage" class="d-flex align-items-center">
+
+        <div id="design" class="d-flex align-items-center justify-content-center">
+            <div class="mx-auto text-center">
+                <h1 style="text-align: center; color: white; font-size: 100px">I'm also in UI/UX...</h1>
+            </div>
+        </div>
     </div>
+
 
     <div id="about">
 
@@ -92,45 +103,64 @@
             <p class="centeredPara">I've worked with several clients from all over the world, provided them top notch
                 services which scaled their businesses and made them profitable.</p>
             <div class="linkContainer gigLinks">
-                
-                <a href="https://www.fiverr.com/ramgoel?up_rollout=true" class="socialIcon"><img src="https://cdn.worldvectorlogo.com/logos/fiverr-1.svg" width="60" /></a>
-                <a href="https://www.tedxabesec.in/" class="socialIcon"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLnKBx-plJPMTt7Pnl5A4R-O2HOfOGvXLuw&usqp=CAU" width="60" /></a>
-                <a href="https://www.freelancer.in/u/rgoel766" class="socialIcon"><img src="https://www.freelancer.com/ppic/86385007/logo/24295157/pMekU%2Fprofile_logo_.png" width="60" /></a>
-                <a href="https://ramgoel.github.io/HackThisNovember/" class="socialIcon"><img src="https://cdn.dribbble.com/users/59522/screenshots/6557135/hackathon.png?compress=1&resize=400x400" width="60" /></a>
-                <a href="https://www.upwork.com/freelancers/~016b2f741e963486a2" class="socialIcon"><img src="https://assets-global.website-files.com/603fea6471d9d8559d077603/6092b7514135708162a4be92_Favicon%20256.png" width="60" /></a>
-                <a href="https://abesec-gdsc.netlify.app/" class="socialIcon"><img src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/contentbuilder/GDG-Bevy-ChapterThumbnail.png" width="60" /></a>
-              
+
+                <a href="https://www.fiverr.com/ramgoel?up_rollout=true" class="socialIcon"><img
+                        src="https://cdn.worldvectorlogo.com/logos/fiverr-1.svg" width="60" /></a>
+                <a href="https://www.tedxabesec.in/" class="socialIcon"><img
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxLnKBx-plJPMTt7Pnl5A4R-O2HOfOGvXLuw&usqp=CAU"
+                        width="60" /></a>
+                <a href="https://www.freelancer.in/u/rgoel766" class="socialIcon"><img
+                        src="https://www.freelancer.com/ppic/86385007/logo/24295157/pMekU%2Fprofile_logo_.png"
+                        width="60" /></a>
+                <a href="https://ramgoel.github.io/HackThisNovember/" class="socialIcon"><img
+                        src="https://cdn.dribbble.com/users/59522/screenshots/6557135/hackathon.png?compress=1&resize=400x400"
+                        width="60" /></a>
+                <a href="https://www.upwork.com/freelancers/~016b2f741e963486a2" class="socialIcon"><img
+                        src="https://assets-global.website-files.com/603fea6471d9d8559d077603/6092b7514135708162a4be92_Favicon%20256.png"
+                        width="60" /></a>
+                <a href="https://abesec-gdsc.netlify.app/" class="socialIcon"><img
+                        src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/contentbuilder/GDG-Bevy-ChapterThumbnail.png"
+                        width="60" /></a>
+
             </div>
-            <a href="https://wa.me/6396331046?text=Hey%20Ram%2C%20I%20need%20a%20Landing%20Page%20for%20my%20Brand."><button class="btn-grad">HIRE ME</button></a>
+            <a href="https://wa.me/6396331046?text=Hey%20Ram%2C%20I%20need%20a%20Landing%20Page%20for%20my%20Brand."><button
+                    class="btn-grad">HIRE ME</button></a>
         </div>
         <image src="./images/ab11.jpg" width="80%" style="margin: 0px auto; border-radius:20px" />
     </div>
-
-  
-
-
-
 
     <div id="jobMain">
         <div class="centeredDiv">
 
             <h1 class="centeredHeading">Hire Full Time</h1>
-            <p class="centeredPara">I've worked with 2 startups as Software Developer Intern and have about 2+ Years of Experience in building beautiful softwares using React and React Native. Actively Looking for New Opportunities. </p>
-            <a href="https://leetcode.com/rgoel766/" class="centeredPara"><b>LeetCode <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <p class="centeredPara">I've worked with 2 startups as Software Developer Intern and have about 2+ Years of
+                Experience in building beautiful softwares using React and React Native. Actively Looking for New
+                Opportunities. </p>
+            <a href="https://leetcode.com/rgoel766/" class="centeredPara"><b>LeetCode <i class="fa fa-external-link"
+                        style="font-size: 15px; margin-right:10px"></i></b></a>
             <span class="centeredPara"> | </span>
-            <a href="https://www.codechef.com/users/ramgoel" class="centeredPara"><b>CodeChef <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <a href="https://www.codechef.com/users/ramgoel" class="centeredPara"><b>CodeChef <i
+                        class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
             <span class="centeredPara"> | </span>
-            <a href="https://github.com/RamGoel" class="centeredPara"><b>Github <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <a href="https://github.com/RamGoel" class="centeredPara"><b>Github <i class="fa fa-external-link"
+                        style="font-size: 15px; margin-right:10px"></i></b></a>
             <span class="centeredPara"> | </span>
-            <a href="https://auth.geeksforgeeks.org/user/rgoel766/practice" class="centeredPara"><b>GeeksForGeeks <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <a href="https://auth.geeksforgeeks.org/user/rgoel766/practice" class="centeredPara"><b>GeeksForGeeks <i
+                        class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
             <span class="centeredPara"> | </span>
-            <a href="https://www.hackerrank.com/Rgoel766" class="centeredPara"><b>Hackerrank <i class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
-            <a href="projects.html"><button class="btn-grad">See What I've Built <i class="fa fa-external-link"></i></button></a>
+            <a href="https://www.hackerrank.com/Rgoel766" class="centeredPara"><b>Hackerrank <i
+                        class="fa fa-external-link" style="font-size: 15px; margin-right:10px"></i></b></a>
+            <a href="projects.html"><button class="btn-grad">See What I've Built <i
+                        class="fa fa-external-link"></i></button></a>
             <div class="calendar" id="github-graph">
                 Loading the data just for you.
             </div>
 
         </div>
+    </div>
+
+    <div class="text-center py-3">
+        <h6 class="text-prim"> <span class="text-white">&copy; RG</span> 2023</h6>
     </div>
 
 

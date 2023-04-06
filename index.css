@@ -1,31 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
-h1 {
-    font-family: 'Kanit';
-    /* font-weight: 700 !important; */
-
+*:not(i) {
+  font-family: 'Kanit' !important;
+  word-break: break-word;
 }
 
+.height100{
+  height: 100vh;
 
-
-
-
-*{
-    word-break: break-word;
+}
+.width100{
+  width: 100vw;
 }
 
+a{
+  text-decoration: none !important;
+}
 body {
-    /* background: linear-gradient(-90deg, rgb(0, 0, 0) 5.8%, rgb(7 182 242) 360.6%); */
-    background-repeat: no-repeat;
-    background-color: #000;
-    background-size: contain;
-    width: '100%';
-    overflow-x: hidden;
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-size: contain;
+  width: '100%';
+  overflow-x: hidden;
 }
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
 #home,
@@ -37,350 +38,384 @@ html{
 #project4,
 #project5,
 #project6,
+#designPage,
 #mini-projects,
 #jobMain {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#home{
-    position: absolute;
-    top:0;
-    background-color: rgba(0, 0, 0, 0.75);
-    width: 100%;
-    height: 110%;
+#home {
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  width: 100%;
+  height: 100%;
+}
+
+#design {
+  position: absolute;
+  top: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  height: 100%;
+}
+
+#designPage{
+  background: url('./images/hisaab1.png');
 }
 
 .centeredHeading {
-    font-size: 140px;
-    margin-bottom: 0px;
-    letter-spacing: 10px;
-    background: linear-gradient(to right, yellow, rgb(99, 205, 99));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 140px;
+  margin-bottom: 0px;
+  letter-spacing: 10px;
+  background: linear-gradient(to right, yellow, rgb(99, 205, 99));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
 }
 
-b{
-    color: rgb(251, 255, 25);
+b {
+  color: rgb(251, 255, 25);
 }
+
 .centeredPara {
-    font-size: 18px;
-    font-family: 'Poppins';
-    width: 70%;
-    margin: auto;
-    margin-top: 0px;
-    color: white;
-    line-height: 40px;
+  font-size: 18px;
+  font-family: 'Poppins';
+  width: 70%;
+  margin: auto;
+  margin-top: 0px;
+  color: white;
+  line-height: 30px;
 }
 
 .centeredDiv {
-    text-align: center;
+  text-align: center;
 }
 
 .centerBlue {
-    background: -webkit-linear-gradient(white, rgb(97, 188, 219)) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+  background: -webkit-linear-gradient(white, rgb(97, 188, 219)) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 
 
 }
 
-.calender{
-    color: white;
-    width: 600px !important;
-    background-color: white !important;
+.calender {
+  color: white;
+  width: 600px !important;
+  background-color: white !important;
 }
 
-.js-calender-graph-svg{
-    max-width: 600 !important;
+.js-calender-graph-svg {
+  max-width: 600 !important;
 }
 
-.js-calender-graph{
-    border: 0px !important;
+.js-calender-graph {
+  border: 0px !important;
 }
 
-.socialIcon{
-    color: white;
-    font-size: 40px;
+.socialIcon {
+  color: white;
+  font-size: 40px;
 }
 
-.socialIcon:hover{
-    scale: 1.2;
-    transition: 0.3s linear;
+.socialIcon:hover {
+  scale: 1.2;
+  transition: 0.3s linear;
 }
 
-.linkContainer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 10px auto;
-    width: 50%;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.linkContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px auto;
+  width: 50%;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-#about .linkContainer{
-    width: 80%;
+#about .linkContainer {
+  width: 80%;
 }
 
+.text-prim{
+   color:#4440ED
+}
 .btn-grad {
-    background-color: #4440ED;
-    margin: 20px auto;
-    padding: 15px 40px;
-    text-align: center;
-    text-transform: uppercase;
-    transition: 0.5s;
-    background-size: 200% auto;
-    color: white;
-    border-radius: 200px;
-    display: block;
-    border: 0px;
-    letter-spacing: 7px;
-    line-height: 20px
-
+  background-color: #4440ED;
+  margin: 20px auto;
+  padding: 15px 40px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 200px;
+  display: block;
+  border: 0px;
+  letter-spacing: 7px;
+  line-height: 20px
 }
 
 .btn-grad:hover {
-    background-position: right center;
-    /* change the direction of the change here */
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.8;
-    cursor: pointer;
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 
 .gridHead {
-    letter-spacing: 7px;
-    font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background: -webkit-linear-gradient(white, #FFE8AD) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
+  letter-spacing: 7px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: -webkit-linear-gradient(white, #FFE8AD) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 
 .gridDiv {
-    display: flex;
-    flex-direction: row;
-    color: white;
-    font-family: poppins;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  font-family: poppins;
+  margin-top: 50px;
 
 }
 
 .gridCol {
-    width: 33%;
-    text-align: center;
+  width: 33%;
+  text-align: center;
 }
 
 .gridPara {
-    width: 60%;
-    margin: 10px auto;
-    line-height: 40px;
+  width: 60%;
+  margin: 10px auto;
+  line-height: 40px;
 }
 
 @media screen and (max-width:990px) {
-    .gridDiv {
-        flex-direction: column;
-        margin: 0px auto;
-    }
-    .centeredHeading{
-        font-size: 80px;
-        width: 90%;
-        margin: 0px auto
-    }
-    .centeredPara{
-        font-size: 14px;
-        width: 95%;
-    }
-    .gridPara{
-        font-size: 14px;
-        width: 95%;
-    }
-    .gridCol{
-        width: 80%;
-        margin:20px auto
-    }
-    .gridPara{
-        width: 100%;
-    }
-    .calender{
-        display: none;
-    }
+  .gridDiv {
+    flex-direction: column;
+    margin: 0px auto;
+  }
+
+  .centeredHeading {
+    font-size: 80px;
+    width: 90%;
+    margin: 0px auto
+  }
+
+  .centeredPara {
+    font-size: 14px;
+    width: 95%;
+  }
+
+  .gridPara {
+    font-size: 14px;
+    width: 95%;
+  }
+
+  .gridCol {
+    width: 80%;
+    margin: 20px auto
+  }
+
+  .gridPara {
+    width: 100%;
+  }
+
+  .calender {
+    display: none;
+  }
 
 
-    #animation{
+  #animation {
     height: 100vh;
-    }
+  }
 
-    #about{
-        flex-direction: column-reverse;
-        height: auto;
-        justify-content: center;
-    }
-    #github-graph{
-        display: none;
-    }
-    .projectCard{
-        flex-direction: column;
-    }
-    .projectCard div{
-        width: 100%;
-    }
+  #about {
+    flex-direction: column-reverse;
+    height: auto;
+    justify-content: center;
+  }
+
+  #github-graph {
+    display: none;
+  }
+
+  .projectCard {
+    flex-direction: column;
+  }
+
+  .projectCard div {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width:658px) {
-    .gridDiv {
-        flex-direction: column;
-        margin: 0px auto;
-    }
-
-
-    #animation{
-    height: 100vh;
-    }
-
-    .centeredHeading{
-        font-size: 50px;
-
-    }
-    .centeredPara{
-        font-size: 12px;
-        width: 85%;
-    }
-    .gridCol{
-        width: 80%;
-        margin:20px auto
-    }
-    .gridPara{
-        width: 100%;
-    }
-    .btn-grad{
-        padding: 20px 20px !important;
-        width: 80%;
-    }
-    .mini-projects div{
-        width: 100%;
-    }
-    .linkChipContainer{
-        flex-direction: row;
-    }
-    .linkChipContainer a{
-        display: block;
-    }
-    .calender{
-        display: none;
-    }
-}
-
-.gigLinks a img{
-    border-radius: 200px;
-    margin: 10px;
-}
-a{
-    text-decoration: none;
-    font-family: bold;
-}
-
-
-.no-height{
-    height: fit-content !important;
-}
-
-.linkChip{
-    background: linear-gradient(235deg, #2966b7 0%, #003250 100%);
-    text-decoration: none;
-    color: white;
-    font-family: poppins;
-    margin: 10px 10px;
-    padding: 10px 10px;
-    border-radius: 10px;
-}
-
-
-
-
-.leftPortify p{
-    font-size: 13px !important;
-}
-
-body{
-    padding: 0px;
-    margin: 0px;
-}
-
-
-.sidebar{
-    display: flex;
+  .gridDiv {
     flex-direction: column;
-    width: fit-content;
-    background-color: #121212;
-    top:-10;
-    padding: 10px;
-    position: fixed;
+    margin: 0px auto;
+  }
+
+
+  #animation {
     height: 100vh;
-    margin: 0px;
+  }
+
+  .centeredHeading {
+    font-size: 50px;
+
+  }
+
+  .centeredPara {
+    font-size: 12px;
+    width: 85%;
+  }
+
+  .gridCol {
+    width: 80%;
+    margin: 20px auto
+  }
+
+  .gridPara {
+    width: 100%;
+  }
+
+  .btn-grad {
+    padding: 20px 20px !important;
+    width: 80%;
+  }
+
+  .mini-projects div {
+    width: 100%;
+  }
+
+  .linkChipContainer {
+    flex-direction: row;
+  }
+
+  .linkChipContainer a {
+    display: block;
+  }
+
+  .calender {
+    display: none;
+  }
 }
 
-.side-link{
-    padding: 10px;
-    color: white;
-    font-size: 20px;
-    font-family: Poppins;
-    text-align: center;
-    
+.gigLinks a img {
+  border-radius: 200px;
+  margin: 10px;
 }
-.side-link:hover{
-    opacity: 0.5;
-    transition: 0.5s;
+
+a {
+  text-decoration: none;
+  font-family: bold;
 }
 
 
+.no-height {
+  height: fit-content !important;
+}
+
+.linkChip {
+  background: linear-gradient(235deg, #2966b7 0%, #003250 100%);
+  text-decoration: none;
+  color: white;
+  font-family: poppins;
+  margin: 10px 10px;
+  padding: 10px 10px;
+  border-radius: 10px;
+}
 
 
-  
-  .hero {
-    font-size: clamp(100px, 10vw, 140px);
-    margin: 20px !important;
-    line-height: 1;
-    color: #fff;
-    z-index: 2;
-    /* letter-spacing: 10px; */
-    filter: drop-shadow(0 1px 3px, black);
-  }
 
-  
-  .layers {
-    position: relative;
-  }
-  
-  .layers::before,
-  .layers::after {
-    content: attr(data-text);
-    position: absolute;
-    width: 110%;
-    z-index: -1;
-  }
-  
-  .layers::before {
-    top: 10px;
-    left: 15px;
-    color: #e0287d;
-  }
-  
-  .layers::after {
-    top: 5px;
-    left: -10px;
-    color: #1bc7fb;
-  }
-  
-  .single-path {
-    clip-path: polygon(
-      0% 12%,
+
+.leftPortify p {
+  font-size: 13px !important;
+}
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  background-color: #121212;
+  top: -10;
+  padding: 10px;
+  position: fixed;
+  height: 100vh;
+  margin: 0px;
+}
+
+.side-link {
+  padding: 10px;
+  color: white;
+  font-size: 20px;
+  font-family: Poppins;
+  text-align: center;
+
+}
+
+.side-link:hover {
+  opacity: 0.5;
+  transition: 0.5s;
+}
+
+
+
+
+
+.hero {
+  font-size: clamp(100px, 10vw, 140px);
+  margin: 20px !important;
+  line-height: 1;
+  color: #fff;
+  z-index: 2;
+  /* letter-spacing: 10px; */
+  filter: drop-shadow(0 1px 3px, black);
+}
+
+
+.layers {
+  position: relative;
+}
+
+.layers::before,
+.layers::after {
+  content: attr(data-text);
+  position: absolute;
+  width: 110%;
+  z-index: -1;
+}
+
+.layers::before {
+  top: 10px;
+  left: 15px;
+  color: #e0287d;
+}
+
+.layers::after {
+  top: 5px;
+  left: -10px;
+  color: #1bc7fb;
+}
+
+.single-path {
+  clip-path: polygon(0% 12%,
       53% 12%,
       53% 26%,
       25% 26%,
@@ -427,18 +462,16 @@ body{
       91% 84%,
       8% 84%,
       8% 83%,
-      4% 83%
-    );
-  }
-  
-  .paths {
-    animation: paths 5s step-end infinite;
-  }
-  
-  @keyframes paths {
-    0% {
-      clip-path: polygon(
-        0% 43%,
+      4% 83%);
+}
+
+.paths {
+  animation: paths 5s step-end infinite;
+}
+
+@keyframes paths {
+  0% {
+    clip-path: polygon(0% 43%,
         83% 43%,
         83% 22%,
         23% 22%,
@@ -472,13 +505,11 @@ body{
         1% 16%,
         1% 56%,
         50% 56%,
-        50% 8%
-      );
-    }
-  
-    5% {
-      clip-path: polygon(
-        0% 29%,
+        50% 8%);
+  }
+
+  5% {
+    clip-path: polygon(0% 29%,
         44% 29%,
         44% 83%,
         94% 83%,
@@ -505,13 +536,11 @@ body{
         25% 39%,
         15% 39%,
         15% 88%,
-        52% 88%
-      );
-    }
-  
-    30% {
-      clip-path: polygon(
-        0% 53%,
+        52% 88%);
+  }
+
+  30% {
+    clip-path: polygon(0% 53%,
         93% 53%,
         93% 62%,
         68% 62%,
@@ -540,13 +569,11 @@ body{
         0% 92%,
         63% 92%,
         63% 4%,
-        65% 4%
-      );
-    }
-  
-    45% {
-      clip-path: polygon(
-        0% 33%,
+        65% 4%);
+  }
+
+  45% {
+    clip-path: polygon(0% 33%,
         2% 33%,
         2% 69%,
         58% 69%,
@@ -601,13 +628,11 @@ body{
         58% 11%,
         52% 11%,
         52% 83%,
-        68% 83%
-      );
-    }
-  
-    76% {
-      clip-path: polygon(
-        0% 26%,
+        68% 83%);
+  }
+
+  76% {
+    clip-path: polygon(0% 26%,
         15% 26%,
         15% 73%,
         72% 73%,
@@ -637,13 +662,11 @@ body{
         49% 78%,
         49% 25%,
         63% 25%,
-        63% 14%
-      );
-    }
-  
-    90% {
-      clip-path: polygon(
-        0% 41%,
+        63% 14%);
+  }
+
+  90% {
+    clip-path: polygon(0% 41%,
         13% 41%,
         13% 6%,
         87% 6%,
@@ -673,155 +696,153 @@ body{
         80% 19%,
         80% 85%,
         38% 85%,
-        38% 62%
-      );
-    }
-  
-    1%,
-    7%,
-    33%,
-    47%,
-    78%,
-    93% {
-      clip-path: none;
-    }
+        38% 62%);
   }
-  
-  .movement {
-    /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
-    position: relative;
-    animation: movement 8s step-end infinite;
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    clip-path: none;
   }
-  
-  @keyframes movement {
-    0% {
-      top: 0px;
-      left: -20px;
-    }
-  
-    15% {
-      top: 10px;
-      left: 10px;
-    }
-  
-    60% {
-      top: 5px;
-      left: -10px;
-    }
-  
-    75% {
-      top: -5px;
-      left: 20px;
-    }
-  
-    100% {
-      top: 10px;
-      left: 5px;
-    }
+}
+
+.movement {
+  /* Normally this position would be absolute & on the layers, set to relative here so we can see it on the div */
+  position: relative;
+  animation: movement 8s step-end infinite;
+}
+
+@keyframes movement {
+  0% {
+    top: 0px;
+    left: -20px;
   }
-  
-  .opacity {
-    animation: opacity 5s step-end infinite;
+
+  15% {
+    top: 10px;
+    left: 10px;
   }
-  
-  @keyframes opacity {
-    0% {
-      opacity: 0.1;
-    }
-  
-    5% {
-      opacity: 0.7;
-    }
-  
-    30% {
-      opacity: 0.4;
-    }
-  
-    45% {
-      opacity: 0.6;
-    }
-  
-    76% {
-      opacity: 0.4;
-    }
-  
-    90% {
-      opacity: 0.8;
-    }
-  
-    1%,
-    7%,
-    33%,
-    47%,
-    78%,
-    93% {
-      opacity: 0;
-    }
+
+  60% {
+    top: 5px;
+    left: -10px;
   }
-  
-  .font {
-    animation: font 7s step-end infinite;
+
+  75% {
+    top: -5px;
+    left: 20px;
   }
-  
-  @keyframes font {
-    0% {
-      font-weight: 100;
-      color: #e0287d;
-      filter: blur(3px);
-    }
-  
-    20% {
-      font-weight: 500;
-      color: #fff;
-      filter: blur(0);
-    }
-  
-    50% {
-      font-weight: 300;
-      color: #1bc7fb;
-      filter: blur(2px);
-    }
-  
-    60% {
-      font-weight: 700;
-      color: #fff;
-      filter: blur(0);
-    }
-  
-    90% {
-      font-weight: 500;
-      color: #e0287d;
-      filter: blur(6px);
-    }
+
+  100% {
+    top: 10px;
+    left: 5px;
   }
-  
-  .glitch span {
-    animation: paths 5s step-end infinite;
+}
+
+.opacity {
+  animation: opacity 5s step-end infinite;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.1;
   }
-  
-  .glitch::before {
-    animation: paths 5s step-end infinite, opacity 5s step-end infinite,
-      font 8s step-end infinite, movement 10s step-end infinite;
+
+  5% {
+    opacity: 0.7;
   }
-  
-  .glitch::after {
-    animation: paths 5s step-end infinite, opacity 5s step-end infinite,
-      font 7s step-end infinite, movement 8s step-end infinite;
+
+  30% {
+    opacity: 0.4;
   }
-  
-  .hero-container {
-    position: relative;
-    /* padding: 200px 0; */
-    text-align: center;
+
+  45% {
+    opacity: 0.6;
   }
-  
-  .environment {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    opacity: 0.5;
-    filter: blur(5px);
+
+  76% {
+    opacity: 0.4;
   }
-  
+
+  90% {
+    opacity: 0.8;
+  }
+
+  1%,
+  7%,
+  33%,
+  47%,
+  78%,
+  93% {
+    opacity: 0;
+  }
+}
+
+.font {
+  animation: font 7s step-end infinite;
+}
+
+@keyframes font {
+  0% {
+    font-weight: 100;
+    color: #e0287d;
+    filter: blur(3px);
+  }
+
+  20% {
+    font-weight: 500;
+    color: #fff;
+    filter: blur(0);
+  }
+
+  50% {
+    font-weight: 300;
+    color: #1bc7fb;
+    filter: blur(2px);
+  }
+
+  60% {
+    font-weight: 700;
+    color: #fff;
+    filter: blur(0);
+  }
+
+  90% {
+    font-weight: 500;
+    color: #e0287d;
+    filter: blur(6px);
+  }
+}
+
+.glitch span {
+  animation: paths 5s step-end infinite;
+}
+
+.glitch::before {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 8s step-end infinite, movement 10s step-end infinite;
+}
+
+.glitch::after {
+  animation: paths 5s step-end infinite, opacity 5s step-end infinite,
+    font 7s step-end infinite, movement 8s step-end infinite;
+}
+
+.hero-container {
+  position: relative;
+  /* padding: 200px 0; */
+  text-align: center;
+}
+
+.environment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  filter: blur(5px);
+}
