@@ -5,6 +5,13 @@
   font-family: 'Kanit' !important;
   word-break: break-word;
 }
+#work {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+#work::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
 
 .height100{
   height: 100vh;
@@ -861,4 +868,50 @@ body {
   opacity: 0.5;
   filter: blur(5px);
 }
+
+#work{
+  display: flex;
+  height: 50vh;
+  background-color: #1212123c;
+  margin: 20px 0px;
+  overflow-x: scroll;
+  align-items: center;
+}
+
+.cards{
+  display: flex;
+}
+
+.project-card {
+  align-items: center;
+  width: 300px !important;
+  background-color: transparent;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  margin: 0.5rem 20px;
+  position: relative;
+  border: none !important;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+
+.card__image {
+  height: 200px !important;
+  overflow: hidden;
+  width: 100%;
+}
+
+.card__image img {
+  object-fit: cover;
+  overflow: hidden;
+  transition: transform 1s ease-in-out;
+  width: 100%;
+}
+
+.card__image:hover img {
+  transform: translateY(calc(-100% + 200px));
+  transition: transform 5s ease-in-out;
+}
+
 
