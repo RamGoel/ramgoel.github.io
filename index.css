@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 *:not(i) {
-  font-family: 'Kanit' !important;
+  font-family: 'Poppins' !important;
   word-break: break-word;
 }
 #work {
@@ -11,6 +11,40 @@
 }
 #work::-webkit-scrollbar { 
   display: none;  /* Safari and Chrome */
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  width: 28%;
+  margin: 10px auto;
+  padding: 5px;
+  border-radius: 100px;
+  position: fixed;
+  top: 10px;
+  
+}
+
+.header-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+}
+
+.header a{
+  background-color: rgb(0, 0, 0);
+  border-radius: 100px;
+  padding: 3px 10px;
+  color: white;
+}
+
+.header a:hover{
+  opacity: 0.7;
+  transition: .5s;
 }
 
 .height100{
@@ -37,7 +71,7 @@ html {
 }
 
 #home,
-#about,
+#freelance,
 #projectMain,
 #project1,
 #project2,
@@ -48,15 +82,20 @@ html {
 #designPage,
 #mini-projects,
 #jobMain {
-  min-height: 100vh;
+  min-height: fit-content;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+#jobMain{
+  padding-top: 20px;
+}
+
 .calenderFrame{
-  height: 56vh;
+  height: 53vh;
   width: 100%;
+  overflow: hidden !important;
 }
 
 #home {
@@ -128,7 +167,7 @@ b {
 
 .socialIcon {
   color: white;
-  font-size: 40px;
+  font-size: 20px;
 }
 
 .socialIcon:hover {
@@ -146,7 +185,7 @@ b {
   flex-wrap: wrap;
 }
 
-#about .linkContainer {
+#freelance .linkContainer {
   width: 80%;
 }
 
@@ -249,7 +288,7 @@ b {
     height: fit-content;
   }
 
-  #about {
+  #freelance {
     flex-direction: column-reverse;
     height: auto;
     justify-content: center;
@@ -865,7 +904,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: 0.5;
+  opacity: 0.8;
   filter: blur(5px);
 }
 
@@ -915,3 +954,40 @@ body {
 }
 
 
+
+#fullTime{
+  height: 90vh;
+  margin-top: 30px;
+}
+
+
+
+.pj-card{
+  width: 40%;
+  color: white;
+  background-color: rgb(16, 16, 16);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.pj-card h3{
+  margin: 0px 0px;
+}
+
+.pj-card p{
+  margin: 10px 0px;
+}
+
+.pj-card button{
+  width: 100%;
+  padding: 5px;
+  background-color: transparent;
+  border: .5px solid white;
+  border-radius: 5px;
+  color: white;
+}
+
+.pj-card button:hover{
+  background-color: blueviolet;
+  transition: .3s;
+}

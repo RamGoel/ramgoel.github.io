@@ -1,0 +1,193 @@
+/* Website */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+* {
+    font-family: 'Poppins';
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+    scrollbar-color: black;
+}
+body{
+    /* background:url('../images/bg.png'); */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: rgb(15, 15, 15);
+    width: 100%;
+
+}
+.body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 98vw;
+    height: 90vh;
+    background-color: transparent;
+    
+}
+
+.img-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 95vh;
+}
+.tut-img{
+    width: 90%;
+    margin: auto;
+}
+
+.site-h1 {
+    font-size: 100px;
+    line-height: 90px;
+    color: white;
+
+}
+
+div{
+    text-align: center;
+}
+
+button{
+    background-color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1.5px solid white;
+    display: flex;
+    align-items: center;
+    width: 54%;
+    text-align: center;
+    margin: auto;
+    letter-spacing: 3px;
+    
+}
+
+.button-inner{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    width: 20%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 100px;
+    position: fixed;
+    top: 10px;
+    
+}
+
+.header-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header a{
+    background-color: rgb(0, 0, 0);
+    border-radius: 100px;
+    padding: 3px 10px;
+}
+
+.header a:hover{
+    opacity: 0.7;
+    transition: .5s;
+}
+
+button:hover{
+    transition: .3s; 
+    transition-timing-function: ease-in-out;
+    letter-spacing: 5px;
+}
+
+span{
+
+    background: linear-gradient(60deg, #6200ff 0%, rgb(15, 15, 15) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+
+p{
+    color: white;
+    margin: 20px 0px;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    font-weight: 100;
+}
+
+.watermark{
+    margin: 10px 0px;
+    letter-spacing: 3px;
+    font-size: 12px;
+    text-transform: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+
+#dev{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.dev-inner{
+    height: 70vh;
+}
+#dev img{
+    border-radius: 300px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+#dev div h1{
+    font-size: 60px;
+}
+#dev div h4{
+    margin-bottom: 20px;
+}
+#dev div a{
+    color: #6200ff;
+    margin-top: 20px;
+}
+@media screen and (max-width:768px) {
+    .body{
+        width: 90%;
+        margin: auto;
+    }
+    .site-h1{
+        line-height: 100px;
+    }
+    
+    button{
+        width: 80%;
+    }
+
+    .header{
+        width: fit-content;
+    }
+
+    #dev, #home, #tutorial{
+        height: 70vh
+    }
+}
