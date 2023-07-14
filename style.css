@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap');
+
+/* Global CSS */
+body, .calendar-frame {
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body::-webkit-scrollbar, .calendar-frame::-webkit-scrollbar {
+    display: none;
+    /* Safari and Chrome */
+}
+
+:root {
+    --primary: #fff;
+    --brand: #00ffb7;
+    --background: #000;
+    --card: rgb(9, 9, 9)
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--brand);
+}
+
+* {
+    color: var(--primary);
+    font-family: 'Raleway', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.colorit {
+    color: var(--brand);
+}
+
+
+/* Header CSS */
+
+
+
+.fixedbox {
+    position: fixed;
+    top: 0px;
+    width: 100vw;
+}
+
+#scroller {
+    background-color: var(--brand);
+    height: 5px;
+    min-width: 5px;
+    left: 0px;
+    position: fixed;
+    z-index: 1;
+}
+
+.header {
+    z-index: 10;
+    background-color: var(--background);
+    height: 10vh;
+    margin: 0px;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
+}
+
+.header-left>div {
+    width: 15px;
+    height: 15px;
+    background-color: var(--brand);
+    rotate: 10deg;
+}
+
+.header-menu-box {
+    border: .5px solid var(--primary);
+    align-self: center;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.header-menu-box p {
+    font-size: 8px;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-links>a {
+    text-decoration: none;
+    font-size: 13px;
+    margin: 0px 10px;
+    color: var(--primary);
+}
+
+/* Home Section CSS */
+
+
+.home {
+    height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.title-bg{
+    background-color: var(--brand);
+    color: var(--background);
+    padding: 0px 10px;
+}
+
+.home-content {
+    text-align: left !important;
+}
+
+.home-content h1 {
+    text-align: center !important;
+}
+
+.home div {
+    width: 50%;
+    text-align: center;
+}
+
+.home-image {
+    height: 100vh;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+
+.home>div>img {
+    width: 70%;
+    margin-top: auto;
+    align-self: last baseline;
+}
+
+.home>div>h1 {
+    font-size: 80px;
+    margin: 10px auto;
+    letter-spacing: 2px;
+}
+
+.home>div>p {
+    /* text-align: left; */
+    width: 56%;
+    margin: 10px auto;
+}
+
+.home>div>p>span {
+    font-weight: 600;
+    color: var(--brand);
+    letter-spacing: 2px;
+}
+
+#home-about{
+    line-height: 25px;
+}
+
+.scroll-msg-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 5px auto;
+}
+
+.scroll-msg-div hr {
+    width: 20%;
+    opacity: 0.4;
+}
+
+.scroll-msg-div p {
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 56% !important;
+    margin: auto;
+}
+
+.social-links i {
+    font-size: 20px;
+    margin-right: 40px;
+}
+
+
+/* Project Section CSS */
+
+
+.project {
+    height: 100vh;
+    background-color: var(--background);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project>.container {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    margin: 20px auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 20px;
+}
+
+.project-card {
+    width: 30vw;
+    background-color: var(--card);
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.project-card h2 {
+    font-size: 20px;
+    margin: 5px 0px;
+}
+
+.project-card>p {
+    font-size: 15px;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.project-card>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.project-card>div>p {
+    font-size: 12px;
+    color: var(--primary);
+}
+
+.project-card>div>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--brand);
+    width: fit-content;
+    border-radius: 200px;
+    padding: 5px 10px;
+    color: var(--background);
+}
+
+.project-card>div>div>a {
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--background);
+}
+
+.project-card>div>div>span {
+    font-size: 12px;
+    cursor: pointer;
+    color: var(--background);
+}
+
+.project-card>div>div>a>i {
+    margin-right: 5px;
+    color: var(--background);
+}
+
+.project-card>div>div>span {
+    margin: 0px 5px;
+}
+
+#unrevealed{
+    font-size: 80px;
+    margin: 35px 0px;
+}
+
+
+/* Experience Section CSS */
+
+.experience {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.experience>div {
+    width: 100%;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.experience>div>p {
+    font-size: 13px;
+}
+
+.experience-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+    margin: 30px auto;
+}
+
+.experience-card-content {
+    text-align: left;
+    border-left: 2px solid var(--brand);
+    padding-left: 15px;
+}
+
+.experience-card-image {
+    border-radius: 10px;
+    text-align: left;
+}
+
+
+/* Freelance Section Css */
+
+.freelance {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+.freelance>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.freelance>div>div {
+    width: 40%;
+}
+
+.freelance>div>div>ul {
+    border-bottom: 2px solid var(--brand);
+    padding: 0px 10px;
+    padding-bottom: 10px;
+}
+
+.freelance>div>div>ul>li {
+    margin: 10px 0px;
+}
+
+
+/* Products Section CSS */
+
+#products {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+}
+
+#products>div {
+    text-align: center;
+}
+
+#products>div>p {
+    font-size: 25px;
+}
+
+#products>div>div>ol>li {
+    margin: 10px 0px;
+    text-align: left;
+}
+
+.calendar-frame{
+    width: 80vw;
+    height: 400px;
+    margin: auto;
+    border: none;
+    
+}
+
+.calendar-box{
+    left:0px;
+    top: 0px;
+    position: absolute;
+    width: 100vw;
+}
+
+
+
+/* Communities CSS */
+
+#communities{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background);
+}
+
+#communities>div{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#communities>div>div{
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#communities>div>div>div>h1{
+    margin: 0px;
+    padding: 0px;
+}
+#communities>div>div>div>p{
+    margin: 0px;
+    padding: 0px;
+}
+#communities>div>div>div>.cm-li{
+    margin: 5px 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+
+#communities>div>div>img{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--brand);
+}
+
+
+
+
+
+
+/* Footer section CSS */
+
+
+
+.footer {
+    position: absolute;
+    bottom: 0px;
+}
