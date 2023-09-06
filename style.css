@@ -474,3 +474,103 @@ html {
     position: absolute;
     bottom: 0px;
 }
+
+
+@media screen and (max-width:768px) {
+    body{
+        background-color: black;
+    }
+    /* Header Responsive */
+    .header-links{
+        position: absolute;
+        flex-direction: column;
+        background-color: red;
+        right: 0;
+        top: 90px;
+        display: none;
+    }
+    .header-links>a{
+        margin:5px 0px;
+    }
+    .header-left{
+        width: 75%;
+    }
+
+    /* Home Responsive */
+    .home{
+        flex-direction: column;
+        height: fit-content;
+        margin-top: 90px;
+        padding-top: 30px;
+    }
+    .home>div{
+        width: 100%;
+    }
+    .home>div>p{
+        width: 90%;
+        margin: 5px auto;
+    }
+    .home>div>img{
+        width: 100%;
+        margin-top: 0px;
+        align-self: center;
+    }
+    .home-image{
+        height: fit-content;
+    }
+
+
+
+    /* Projects Responsuve */
+
+    .project{
+        height: fit-content;
+    }
+    .project>.container{
+        flex-direction: column;
+    }
+
+    .project-card{
+        width:  90%;
+    }
+
+    /* Experience Responsive */
+
+    .experience{
+        height: fit-content;
+    } 
+    .experience-container{
+        flex-direction: column;
+    }
+    .experience-card-image{
+        height: 100px;
+        width: 100px;
+    }
+    .experience-card{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .experience-card-content{
+        border: none;
+    }
+
+
+    /* Freelance Responsive */
+    .freelance{
+        height: fit-content;
+    }
+    .freelance>div{
+        flex-direction: column;
+    }
+    .freelance>div>img{
+        width: 90%;
+    }
+    .freelance>div>div{
+        width: 90%;
+    }
+}
