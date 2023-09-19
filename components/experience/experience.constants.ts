@@ -17,7 +17,7 @@ export const experiences:Array<ExperienceProps> = [
         start: "Nov 2022",
         end: "Feb 2023",
         skills: ['React Native', 'ReactJs'],
-        url: 'https://simplifii.in',
+        url: 'https://simplifii.com',
         description: "Implemented automatic OTP detection & app-tour, reduced APK bundle size by 10% by compressing the images, and optimized , performance by 30% using Flat List for large lists of data.",
         role:"SDE Intern"
     },
@@ -28,7 +28,7 @@ export const experiences:Array<ExperienceProps> = [
         start: "Jun 2022",
         end: "Aug 2022",
         skills: ['ReactJs', 'HTML', 'CSS', 'Figma'],
-        url: 'https://surplusapp.in',
+        url: 'https://neyx.in/',
         description: "Integrated chat feature using SocketIO in an existing chatbot UI, built the Website of the startup in ReactJS, with the help of Figma UI Design.",
         role:"Intern (React)"
     },

@@ -15,7 +15,7 @@ const Card = ({ data }: { data: ExperienceProps }) => {
   return (
     <div className=' rounded-xl md:flex my-3 p-3 '>
       <div className='md:w-1/3'>
-        <p>{start} - {end}</p>
+        <p className='text-sm mt-1 font-semibold'>{start.toLocaleUpperCase()} - {end.toLocaleUpperCase()}</p>
       </div>
       <div className='md:w-3/4'>
 

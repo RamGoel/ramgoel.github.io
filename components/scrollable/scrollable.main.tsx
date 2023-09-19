@@ -1,6 +1,6 @@
 import React from 'react'
 import Experience from '../experience/experience.main'
-import Acheivements from '../acheivements/main'
+import Acheivements from '../acheivements/achivements.main'
 import Projects from '../projects/main'
 
 const Scrollable = () => {
