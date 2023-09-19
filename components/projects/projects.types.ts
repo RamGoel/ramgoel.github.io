@@ -5,5 +5,7 @@ export type ProjectProps = {
     preview: string,
     description: string,
     skills: Array<string>,
-    extras:string,
+    extras: string,
+    madeat: string,
+    year:number
 }

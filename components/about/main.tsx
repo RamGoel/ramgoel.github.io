@@ -6,9 +6,8 @@ import Socials from './socials'
 
 const About = () => {
   return (
-      <div className='flex h-screen  md:w-1/3 flex-row items-center justify-center'>
+      <div className='flex md:h-screen md:w-1/3 flex-row items-center justify-center'>
           <div>
-              
           <PImage src={LINKEDIN_PROFILE_URL} />
           <Text />
           <Socials />

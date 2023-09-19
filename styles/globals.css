@@ -32,3 +32,8 @@ img {
     scrollbar-width: none;  /* Firefox */
 }
 
+
+.project-link:hover .project-arrow{
+    transition:0.5s;
+    transform: translateY(-5px) rotate(-45deg);
+}
