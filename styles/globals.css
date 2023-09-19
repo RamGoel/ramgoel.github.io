@@ -30,3 +30,14 @@ img {
   max-width: 100%;
   display: block;
 }
+
+.scroll-d-none::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scroll-d-none {
+    -ms-overflow-style: none;  /* Internet Explorer and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+

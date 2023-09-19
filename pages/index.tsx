@@ -1,13 +1,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import Main from '@/components/about/main'
+import About from '@/components/about/main'
+import Scrollable from '@/components/scrollable/scrollable.main'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div>
-      <Main />
+    <div className='md:flex items-center justify-around'>
+      <About />
+      <Scrollable />
     </div>
   )
 }

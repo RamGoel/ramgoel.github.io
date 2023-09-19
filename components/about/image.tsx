@@ -3,12 +3,12 @@ import React from 'react'
 
 const PImage = ({src}:{src:string}) => {
   return (
-      <div className=" p-2 m-3">
+      <div className="pl-3">
       <Image
         src={src}
-        width={200}
+        width={180}
         className='rounded-full'
-        height={200}
+        height={180}
       alt='profile-image'/>
     </div>
   )
