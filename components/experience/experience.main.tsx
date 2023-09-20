@@ -3,12 +3,14 @@ import { experiences } from './experience.constants'
 import { ExperienceProps } from './experience.types'
 import Card from './experience.card'
 
-const Experience = () => {
+const Experience = ({ type }:{type:string}) => {
   return (
     <div>
-      <h1 className='text-slate-200 text-2xl font-semibold'>Experience</h1>
+      <h1 className='text-slate-200 text-2xl font-semibold'>{
+        type==='profession'?"Experience":'Extracurricular'
+      }</h1>
       {
-        experiences.map((item:ExperienceProps) => {
+        experiences.filter(item=>item.type===type).map((item:ExperienceProps) => {
           return <Card data={item} key={item.key} />
         })
       }

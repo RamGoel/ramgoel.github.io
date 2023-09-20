@@ -6,5 +6,6 @@ export type ExperienceProps = {
     end: string,
     description: string,
     url: string,
-    skills:Array<string>
+    skills: Array<string>,
+    type:string
 }
