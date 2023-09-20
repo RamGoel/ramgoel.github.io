@@ -6,17 +6,17 @@ import React, { useEffect, useState } from 'react'
 
 const Projects = () => {
   const router = useRouter()
-  const [categories, setCategories] = useState(null)
-  const [projectsData, setProjectsData]=useState([])
+  const [categories, setCategories] = useState < Array<string> | null>(null)
+  const [projectsData, setProjectsData]=useState<Array<ProjectProps>>([])
   useEffect(() => {
     setProjectsData(
         projects.filter((item) => {
           return item.filter==='full-stack'
         })
       )
-    const catSet = new Set();
-    projects.forEach(item => item.filter!=='blog' && catSet.add(item.filter))
-    setCategories(Array.from(catSet))
+    const catSet:Array<string>= [];
+    projects.forEach(item => item.filter!=='blog' && catSet.push(item.filter))
+    setCategories(Array.from(new Set([...catSet])))
     console.log(catSet)
   }, [])
   
