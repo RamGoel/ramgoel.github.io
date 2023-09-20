@@ -9,8 +9,10 @@ export const projects: Array<ProjectProps> = [
         preview: require("@/public/projects/codechat.png"),
         skills: ['nextjs', 'expressjs', 'socketio', 'tailwindcss'],
         extras: "",
+        type:"tech",
         madeat: "Personal",
-        year:2023
+        year: 2023,
+        filter:"full-stack"
     },
     {
         key:2,
@@ -20,8 +22,10 @@ export const projects: Array<ProjectProps> = [
         preview: require("@/public/projects/ricket.png"),
         skills: ['nextjs', 'expressjs', 'mongodb', 'css'],
         extras: "",
+        type:"tech",
         madeat: "Personal",
-        year:2022
+        year: 2023,
+        filter:'full-stack'
     },
     {
         key:3,
@@ -31,8 +35,10 @@ export const projects: Array<ProjectProps> = [
         preview: require("@/public/projects/ricket.png"),
         skills: ['html', 'bootstrap', 'animation', 'css'],
         extras: "",
+        type:"tech",
         madeat: "TEDxABESEC",
-        year:2022
+        year: 2022,
+        filter:'static'
     },
     {
         key:4,
@@ -42,18 +48,126 @@ export const projects: Array<ProjectProps> = [
         preview: require("@/public/projects/ricket.png"),
         skills: ['reactjs', 'bootstrap', 'animation', 'css'],
         extras: "",
+        type:"tech",
         madeat: "ABESEC",
-        year:2022
+        year: 2022,
+        filter:'static'
     },
     {
-        key:4,
+        key:5,
         name: "Portfolio Generator",
         url: 'https://github.com/RamGoel/portify',
         description: "Website built for TED event in college",
         preview: require("@/public/projects/ricket.png"),
         skills: ['ejs', 'bootstrap', 'nodejs', 'css'],
         extras: "",
+        type:"tech",
         madeat: "ABESEC",
-        year:2022
+        year: 2022,
+        filter:'full-stack'
+    },
+    {
+        key:6,
+        name: "Importange of OG tags for link previews",
+        url: 'https://medium.com/@rgoel766/importance-of-og-title-and-twitter-title-tags-for-link-previews-9c303a667b9e',
+        description: "2023",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*UOOR83PW27Wb5-ly23VrGg.jpeg",
+        skills: [],
+        extras: "",
+        type:"blog",
+        madeat: "ABESEC",
+        year: 2022,
+        filter:'blog'
+    },
+    {
+        key:7,
+        name: "useEffect in React : Complete Guide",
+        url: 'https://medium.com/@rgoel766/useeffect-hook-in-react-a-comprehensive-guide-2ea0312a5c8',
+        description: "2023",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: [],
+        extras: "",
+        type:"blog",
+        madeat: "ABESEC",
+        year: 2022,
+        filter:'blog'
+    },
+    {
+        key:7,
+        name: "node-postgres-api",
+        url: 'https://github.com/RamGoel/node-postgres-api',
+        description: "2023",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["postgresql", "expressjs"],
+        extras: "",
+        type:"tech",
+        madeat: "Learning",
+        year: 2023,
+        filter:'apis'
+    },
+    {
+        key:7,
+        name: "Link Manager Extension",
+        url: 'https://addons.mozilla.org/en-US/firefox/addon/linkify/',
+        description: "2023",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["html", "service-worker"],
+        extras: "",
+        type:"tech",
+        madeat: "Mozilla",
+        year: 2023,
+        filter:'browser-extension'
+    },
+    {
+        key:7,
+        name: "CDN Links Extension",
+        url: 'https://addons.mozilla.org/en-US/firefox/addon/cdnextension/',
+        description: "2022",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["html", "css", 'api'],
+        extras: "",
+        type:"tech",
+        madeat: "Mozilla",
+        year: 2022,
+        filter:'browser-extension'
+    },
+    {
+        key:7,
+        name: "Hackathon Website",
+        url: 'https://hackhaven.tech/',
+        description: "",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["html", "css", 'api'],
+        extras: "",
+        type:"tech",
+        madeat: "GDSC",
+        year: 2023,
+        filter:'static'
+    },
+    {
+        key:7,
+        name: "Bakery Checkout",
+        url: 'https://gan-assesment.netlify.app/',
+        description: "",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["nextjs", 'redux'],
+        extras: "",
+        type:"tech",
+        madeat: "Gan.ai",
+        year: 2023,
+        filter:'assignment'
+    },
+    {
+        key:7,
+        name: "Social Media Feed",
+        url: 'https://groww-next.vercel.app/',
+        description: "",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["nextjs", "unsplash-api", 'redux'],
+        extras: "",
+        type:"tech",
+        madeat: "Groww",
+        year: 2023,
+        filter:'assignment'
     },
 ]

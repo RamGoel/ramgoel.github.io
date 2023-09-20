@@ -11,9 +11,10 @@ const Scrollable = () => {
       <div className='w-11/12 mx-auto'>
           <Story />
           <Experience type='profession' />
-          <Experience type='position' />
+          {/* <Experience type='position' /> */}
           {/* <Acheivements /> */}
-        <Projects />
+        <Projects type='tech' />
+        <Projects type='blog' />
         <Footer />
       </div>
     </div>

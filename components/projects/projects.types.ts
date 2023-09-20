@@ -7,5 +7,7 @@ export type ProjectProps = {
     skills: Array<string>,
     extras: string,
     madeat: string,
-    year:number
+    year: number,
+    type: string,
+    filter:string
 }

@@ -3,7 +3,7 @@ import { ProjectProps } from './projects.types'
 import Image from 'next/image'
 import ChipBox from '../common/chipBox/chipBox.main'
 
-const ProjectCard = ({ data }: { data: ProjectProps }) => {
+const ProjectCard = ({ data, type }: { data: ProjectProps, type:string }) => {
     const {
         key,
         name,
@@ -25,8 +25,9 @@ const ProjectCard = ({ data }: { data: ProjectProps }) => {
               />
           </div>
           <div className='md:w-3/4'>
+              {type==='blog' &&  <p className='leading-relaxed font-semibold text-lg my-0'>{description}</p>}
           <a href={url} style={{textDecoration:'none'}} className=' hover:text-teal-300 font-medium text-xl text-slate-200 leading-tight'>{name}</a>
-              <p className='text-sm leading-relaxed mb-2'>{description}</p>
+              {type !== 'blog' && <p className='text-sm leading-relaxed mb-2'>{description}</p>}
         <ChipBox data={skills} key={key} />
           </div>
     </div>
