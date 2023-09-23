@@ -225,7 +225,7 @@ export const projects: Array<ProjectProps> = [
     {
         key:19,
         name: "Todo App",
-        url: 'https://github.com/RamGoel/surplus-assignment',
+        url: 'https://github.com/RamGoel/todo-react-native',
         description: "",
         preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
         skills: ["react-native"],
@@ -257,7 +257,7 @@ export const projects: Array<ProjectProps> = [
         skills: ["reactjs"],
         extras: "",
         type:"tech",
-        madeat: "Learning",
+        madeat: "Rajasthan Hackathon",
         year: 2023,
         filter:'reactjs'
     },
@@ -286,5 +286,18 @@ export const projects: Array<ProjectProps> = [
         madeat: "Simplifii",
         year: 2023,
         filter:'assignment'
+    },
+    {
+        key:23,
+        name: "String Reverse",
+        url: 'https://www.npmjs.com/package/fnpm-package',
+        description: "",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["nodejs","javascript"],
+        extras: "(300+ downloads)",
+        type:"tech",
+        madeat: "npm",
+        year: 2023,
+        filter:'packages'
     },
 ]

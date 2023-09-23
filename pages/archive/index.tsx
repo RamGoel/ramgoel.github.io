@@ -24,6 +24,11 @@ const Projects = () => {
   useEffect(() => {
     console.log("newValue", projectsData)
   }, [projectsData])
+
+  if (!categories) {
+    return null;
+  }
+
   async function filterFn(index: number) {
     console.log("oldValue", projectsData)
     const newProjects = projects.filter((item) => {
@@ -33,9 +38,7 @@ const Projects = () => {
 
   }
 
-  if (!categories) {
-    return null;
-  }
+
   return (
     <div className='w-11/12 mx-auto mt-20 '>
       <p className='font-semibold text-lg text-teal-300 cursor-pointer hover:text-teal-200' onClick={() => router.push('/')}><i className='fa fa-arrow-left' /> Ram Goel</p>
@@ -61,7 +64,7 @@ const Projects = () => {
             [...projectsData].filter(item => item.type !== 'blog').sort((a, b) => b.year - a.year).map((item: ProjectProps) => {
               return <tr key={item.key} className='border-b border-slate-300/10 last:border-none'>
                 <td className='py-4 pr-4 align-top text-sm'>{item.year}</td>
-                <td className='hidden md:block py-4 pr-4 align-top font-semibold leading-snug text-slate-200'>{item.name}</td>
+                <td className='hidden md:block py-4 pr-4 align-top font-semibold leading-snug text-slate-200'>{item.name} {item.extras || null}</td>
                 <td className='md:hidden py-4 pr-4 align-top font-semibold leading-snug text-slate-200'>
                   <a href={item.url} className='hover:text-teal-300'>
                     {item.name} <i className='project-arrow fa fa-arrow-right -rotate-45 ml-2'></i>
