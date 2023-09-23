@@ -68,7 +68,7 @@ export const projects: Array<ProjectProps> = [
     },
     {
         key:6,
-        name: "Importange of OG tags for link previews",
+        name: "Importance of OG tags for link previews",
         url: 'https://medium.com/@rgoel766/importance-of-og-title-and-twitter-title-tags-for-link-previews-9c303a667b9e',
         description: "2023",
         preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*UOOR83PW27Wb5-ly23VrGg.jpeg",

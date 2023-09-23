@@ -21,7 +21,7 @@ const ProjectCard = ({ data, type }: { data: ProjectProps, type:string }) => {
                   width={150}
                   height={130}
                   alt='project image'
-                  className='hidden md:block rounded-lg border-2 border-gray-700'
+                  className=' rounded-lg my-2 md:my-0 border-2 border-gray-700'
               />
           </div>
           <div className='md:w-3/4'>

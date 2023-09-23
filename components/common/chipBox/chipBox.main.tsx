@@ -6,7 +6,6 @@ const ChipBox = ({ data, key1, onChangeHandler }: { data: Array<string>, key1?: 
     <div className='flex items-center justify-start flex-wrap'>
       {
         data.map((item: string, index: number) => {
-          console.log(selected === index, item, key1 === 110001)
           return <div onClick={() => {
             key1 === 110001 && setSelected(index)
             if (onChangeHandler && key1 === 110001) {
