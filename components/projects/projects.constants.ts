@@ -1,6 +1,7 @@
 import { ProjectProps } from "./projects.types";
 
 export const projects: Array<ProjectProps> = [
+   
     {
         key:1,
         name: "Peer Coding Platform",
@@ -27,6 +28,19 @@ export const projects: Array<ProjectProps> = [
         year: 2023,
         filter:'full-stack'
     },
+    //  {
+    //     key:0,
+    //     name: "String Reverse",
+    //     url: 'https://www.npmjs.com/package/fnpm-package',
+    //     description: "",
+    //     preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+    //     skills: ["nodejs","javascript"],
+    //     extras: "(300+ downloads)",
+    //     type:"tech",
+    //     madeat: "npm",
+    //     year: 2023,
+    //     filter:'packages'
+    // },
     {
         key:3,
         name: "TEDx Website",
@@ -94,7 +108,7 @@ export const projects: Array<ProjectProps> = [
     },
     {
         key:8,
-        name: "node-postgres-api",
+        name: "user-api",
         url: 'https://github.com/RamGoel/node-postgres-api',
         description: "2023",
         preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
@@ -116,7 +130,7 @@ export const projects: Array<ProjectProps> = [
         type:"tech",
         madeat: "Mozilla",
         year: 2023,
-        filter:'browser-extension'
+        filter:'utilities'
     },
     {
         key:10,
@@ -129,7 +143,33 @@ export const projects: Array<ProjectProps> = [
         type:"tech",
         madeat: "Mozilla",
         year: 2022,
-        filter:'browser-extension'
+        filter:'utilities'
+    },
+    {
+        key:10,
+        name: "Ticket reselling bot",
+        url: 'https://addons.mozilla.org/en-US/firefox/addon/cdnextension/',
+        description: "A Telegram bot that allows to resell tickets for events which you can't attend. ",
+        preview: "https://twitter.com/theramgoel/status/1709262222072180879",
+        skills: ["expressjs", "mongodb", 'telegram-api'],
+        extras: "",
+        type:"tech",
+        madeat: "Telegram",
+        year: 2022,
+        filter:'utilities'
+    },
+    {
+        key:10,
+        name: "Web-tools",
+        url: 'https://github.com/RamGoel/gpt-tools',
+        description: "A Telegram bot that allows to resell tickets for events which you can't attend. ",
+        preview: "https://twitter.com/theramgoel/status/1709262222072180879",
+        skills: ["prompt-engineering", "github"],
+        extras: "",
+        type:"tech",
+        madeat: "Github",
+        year: 2022,
+        filter:'utilities'
     },
     {
         key:11,
@@ -298,6 +338,6 @@ export const projects: Array<ProjectProps> = [
         type:"tech",
         madeat: "npm",
         year: 2023,
-        filter:'packages'
+        filter:'utilities'
     },
 ]

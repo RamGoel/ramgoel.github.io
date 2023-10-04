@@ -8,7 +8,7 @@ export const experiences:Array<ExperienceProps> = [
         end: "Present",
         skills: ['React Native', 'ReactJs', 'Tailwind', 'SCSS'],
         url: 'https://surplusapp.in',
-        description: "Single-handedly managed entire frontend architecture using ReactNative & TypeScript, actively participated in product ideation and weekly production releases.",
+        description: "Single-handedly managing entire frontend architecture using ReactNative & TypeScript, actively participated in product ideation and weekly production releases.",
         role: "Intern (Frontend)",
         type:"profession"
     },
