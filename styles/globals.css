@@ -6,7 +6,7 @@
 html,
 body {
   padding: 0;
-
+  scroll-behavior: smooth;
   line-height: 1.6;
   font-size: 18px;
 }
@@ -36,4 +36,8 @@ img {
 .project-link:hover .project-arrow{
     transition:0.5s;
     transform: translateY(-5px) rotate(-45deg);
+}
+
+#scrollable{
+  scroll-behavior: smooth !important;
 }

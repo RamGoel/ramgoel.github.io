@@ -4,6 +4,7 @@ import Acheivements from '../acheivements/achivements.main'
 import Projects from '../projects/projects.main'
 import Story from '../story/story.main'
 import Footer from '../common/footer/footer.main'
+import Freelance from '../freelance/freelance.main'
 
 const Scrollable = () => {
   return (
@@ -15,7 +16,9 @@ const Scrollable = () => {
           {/* <Acheivements /> */}
         <Projects type='tech' />
         <Projects type='blog' />
+        <Freelance />
         <Footer />
+
       </div>
     </div>
   )

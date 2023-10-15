@@ -3,6 +3,7 @@ import PImage from './image'
 import { LINKEDIN_PROFILE_URL } from '@/utils/strings'
 import Text from './text'
 import Socials from './socials'
+import ContactLine from './contact'
 
 const About = () => {
   return (
@@ -11,6 +12,7 @@ const About = () => {
         <PImage src={LINKEDIN_PROFILE_URL} />
         <Text />
         <Socials />
+        <ContactLine />
       </div>
     </div>
   )
