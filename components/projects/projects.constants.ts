@@ -199,6 +199,19 @@ export const projects: Array<ProjectProps> = [
     },
     {
         key:13,
+        name: "Paperform UI Clone",
+        url: 'https://playmo-task.vercel.app/',
+        description: "",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
+        skills: ["nextjs", "tailwindcss", 'typescript'],
+        extras: "",
+        type:"tech",
+        madeat: "Playmo",
+        year: 2023,
+        filter:'assignment'
+    },
+    {
+        key:13,
         name: "Social Media Feed",
         url: 'https://groww-next.vercel.app/',
         description: "",
