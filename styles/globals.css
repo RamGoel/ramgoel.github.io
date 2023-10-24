@@ -41,3 +41,13 @@ img {
 #scrollable{
   scroll-behavior: smooth !important;
 }
+
+.section{
+  height: 60vh;
+}
+
+@media screen and (max-width: 768px) {
+  .section{
+    height: auto;
+  }
+}

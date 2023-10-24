@@ -1,6 +1,6 @@
-import ChipBox from '@/components/common/chipBox/chipBox.main'
-import { projects } from '@/components/projects/projects.constants'
-import { ProjectProps } from '@/components/projects/projects.types'
+import ChipBox from '@/components/portfolio/common/chipBox/chipBox.main'
+import { projects } from '@/components/portfolio/projects/projects.constants'
+import { ProjectProps } from '@/components/portfolio/projects/projects.types'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
