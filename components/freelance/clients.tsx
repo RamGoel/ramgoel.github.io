@@ -12,7 +12,7 @@ const Clients = () => {
   return (
       <div  className=' section h-auto flex items-end justify-center'>
           <div>
-          <h1 className='text-center text-2xl text-white'>I've Work'd with</h1>
+          <h1 className='text-center text-2xl text-white'>{`I've Work'd with`}</h1>
 
               <div className='flex flex-col md:flex-row justify-around items-center flex-wrap my-5 w-3/4 mx-auto'>
                   {
