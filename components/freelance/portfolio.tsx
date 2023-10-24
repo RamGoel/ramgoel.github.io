@@ -6,9 +6,9 @@ const clients = [
 ]
 const Portfolio = () => {
     return (
-        <div className=' section h-auto flex items-end justify-center'>
+        <div className='section h-auto flex items-end justify-center'>
             <div>
-                <h1 className='text-center text-2xl text-white'>I've made & contributed to</h1>
+                <h1 className='text-center text-2xl text-white'>{`I've made & contributed to`}</h1>
 
                 <div className='flex flex-col  my-5  mx-auto'>
                     {
