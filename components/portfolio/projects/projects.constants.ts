@@ -353,4 +353,17 @@ export const projects: Array<ProjectProps> = [
         year: 2023,
         filter:'utilities'
     },
+    {
+        key:24,
+        name: "Stocks Listing App",
+        url: 'https://groww-task-delta.vercel.app/',
+        description: "",
+        preview: "https://groww-task-delta.vercel.app/",
+        skills: ["nextjs", "stocks-api", 'redux', 'typescript],
+        extras: "",
+        type:"tech",
+        madeat: "Groww",
+        year: 2023,
+        filter:'assignment'
+    },
 ]
