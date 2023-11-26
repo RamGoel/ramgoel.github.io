@@ -359,7 +359,7 @@ export const projects: Array<ProjectProps> = [
         url: 'https://groww-task-delta.vercel.app/',
         description: "",
         preview: "https://groww-task-delta.vercel.app/",
-        skills: ["nextjs", "stocks-api", 'redux', 'typescript],
+        skills: ["nextjs", 'stocks-api', 'redux', 'typescript'],
         extras: "",
         type:"tech",
         madeat: "Groww",
