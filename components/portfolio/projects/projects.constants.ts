@@ -80,6 +80,19 @@ export const projects: Array<ProjectProps> = [
         year: 2022,
         filter:'full-stack'
     },
+     {
+        key:7,
+        name: "Zomato Interview Experience (Intern+FTE)",
+        url: 'https://medium.com/@rgoel766/zomato-interview-experience-intern-fte-6d2704ec90aa',
+        description: "2023",
+        preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*UMz7Mq142riGvYLaNQxg9Q.png",
+        skills: [],
+        extras: "",
+        type:"blog",
+        madeat: "Medium",
+        year: 2023,
+        filter:'blog'
+    },
     {
         key:6,
         name: "Importance of OG tags for link previews",
@@ -106,6 +119,7 @@ export const projects: Array<ProjectProps> = [
         year: 2022,
         filter:'blog'
     },
+    
     {
         key:8,
         name: "user-api",

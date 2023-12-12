@@ -20,6 +20,10 @@ const ProjectCard = ({ data, type }: { data: ProjectProps, type:string }) => {
                   src={preview}
                   width={150}
                   height={130}
+                  style={{
+                      height: 90,
+                      objectFit:'cover'
+                  }}
                   alt='project image'
                   className=' rounded-lg my-2 md:my-0 border-2 border-gray-700'
               />

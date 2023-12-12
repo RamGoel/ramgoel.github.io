@@ -4,8 +4,8 @@ import React from 'react'
 const ContactLine = () => {
   return (
       <div>
-          <Link href='/freelance' className='hover:text-white group transition-all flex items-center justify-start p-4'>
-              <p>Freelance Website</p>
+          <Link href='mailto:rgoel766@gmail.com' className='hover:text-white group transition-all flex items-center justify-start p-4'>
+              <p>Hire me as freelancer</p>
               <i className='fa fa-arrow-right ml-2 group-hover:ml-3 transition-all'></i>
           </Link>
     </div>

@@ -1,19 +1,31 @@
 import { ExperienceProps } from "./experience.types";
 
-export const experiences:Array<ExperienceProps> = [
+export const experiences: Array<ExperienceProps> = [
     {
         key:1,
-        company: "Surplus",
-        start: "Jun 2023",
+        company: "Animall",
+        start: "Dec 2023",
         end: "Present",
-        skills: ['React Native', 'ReactJs', 'Tailwind', 'SCSS'],
-        url: 'https://surplusapp.in',
-        description: "Single-handedly managing entire frontend architecture using ReactNative & TypeScript, actively participated in product ideation and weekly production releases.",
+        skills: ['NextJS', 'Linux', 'Tailwind', 'EJS'],
+        
+        url: 'https://animall.in',
+        description: "Part of the frontend engineering team working at a scale of 100K daily active users, did bug fixes and pushed them to daily releases, participated in code reviews and meetings. ",
         role: "Intern (Frontend)",
         type:"profession"
     },
     {
         key:2,
+        company: "Surplus",
+        start: "Jun 2023",
+        end: "Nov 2023",
+        skills: ['React Native', 'ReactJs', 'Tailwind', 'SCSS'],
+        url: 'https://surplusapp.in',
+        description: "Single-handedly managing entire frontend architecture using ReactNative & TypeScript, actively participated in product ideation and weekly production releases.",
+        role: "Intern (React Native)",
+        type:"profession"
+    },
+    {
+        key:3,
         company: "Simplifii Labs",
         start: "Nov 2022",
         end: "Feb 2023",
@@ -25,7 +37,7 @@ export const experiences:Array<ExperienceProps> = [
     },
     
     {
-        key:3,
+        key:4,
         company: "NeyX",
         start: "Jun 2022",
         end: "Aug 2022",
@@ -36,7 +48,7 @@ export const experiences:Array<ExperienceProps> = [
         type:"profession"
     },
     {
-        key:4,
+        key:5,
         company: "GDSC ABESEC",
         start: "Feb 2022",
         end: "Aug 2023",
@@ -47,7 +59,7 @@ export const experiences:Array<ExperienceProps> = [
         type:"position"
     },
     {
-        key:5,
+        key:6,
         company: "TEDxABESEC",
         start: "Aug 2022",
         end: "Nov 2022",
@@ -58,7 +70,7 @@ export const experiences:Array<ExperienceProps> = [
         type:"position"
     },
     {
-        key:6,
+        key:7,
         company: "Google Cloud",
         start: "Jan 2023",
         end: "March 2023",
