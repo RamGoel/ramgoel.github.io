@@ -16,7 +16,7 @@ const Story = () => {
 
                 <br />
                 <br />
-                Interviewed at @Zomato and @Groww, cleared some rounds but couldn't crack final rounds for both. No problem, cracked 6/10 given interview.
+                Interviewed at @Zomato and @Groww, cleared some rounds but {`couldn't`} crack final rounds for both. No problem, cracked 6/10 given interview.
             </p>
         </div>
     )
