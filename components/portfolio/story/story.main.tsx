@@ -2,7 +2,7 @@ import React from 'react'
 
 const Story = () => {
     return (
-        <div className='md:h-screen flex items-center justify-center -mb-10 md:-mt-20'>
+        <div className='md:h-screen flex items-center justify-center mb-10 md:-mt-20'>
             <p className='my-2 leading-relaxed'>
                 Back in 2021, got best advice of my life to learn react.js, got into it, build websites, and slowly got good at it.
                 <br />
