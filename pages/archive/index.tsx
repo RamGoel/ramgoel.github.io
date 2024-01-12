@@ -29,13 +29,12 @@ const Projects = () => {
     return null;
   }
 
-  async function filterFn(index: number) {
-    console.log("oldValue", projectsData)
+  function filterFn(index: number) {
+    setProjectsData([])
     const newProjects = projects.filter((item) => {
       return item.filter === categories?.[index]
     })
     setProjectsData(newProjects)
-
   }
 
 

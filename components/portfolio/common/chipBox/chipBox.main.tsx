@@ -11,7 +11,9 @@ const ChipBox = ({ data, key1, onChangeHandler }: { data: Array<string>, key1?: 
             if (onChangeHandler && key1 === 110001) {
               onChangeHandler(index)
             }
-          }} key={key1 + item} className={`${(key1 === 110001 && selected === index) ? 'bg-teal-400/10 border-teal-400/10 border-2' : 'bg-transparent border-teal-400/10 border-2'} px-3 py-1 mr-2 cursor-pointer my-1 md:my-0 rounded-full`}>
+
+            console.log(index)
+          }} key={Math.random()} className={`${(key1 === 110001 && selected === index) ? 'bg-teal-400/10 border-teal-400/10 border-2' : 'bg-transparent border-teal-400/10 border-2'} px-3 py-1 mr-2 cursor-pointer my-1 md:my-0 rounded-full`}>
             <p className='text-xs font-bold font-regular text-teal-300 '>{item}</p>
           </div>
         })

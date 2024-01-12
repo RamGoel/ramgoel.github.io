@@ -119,19 +119,18 @@ export const projects: Array<ProjectProps> = [
         year: 2022,
         filter:'blog'
     },
-    
     {
         key:8,
-        name: "user-api",
-        url: 'https://github.com/RamGoel/node-postgres-api',
-        description: "2023",
+        name: "Sales Dashboard",
+        url: 'https://dukaan-2024.netlify.app/',
+        description: "2024",
         preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
-        skills: ["postgresql", "expressjs"],
+        skills: ["reactjs","tailwind",],
         extras: "",
         type:"tech",
-        madeat: "Learning",
+        madeat: "Dukaan",
         year: 2023,
-        filter:'apis'
+        filter:'assignment'
     },
     {
         key:9,
@@ -160,7 +159,7 @@ export const projects: Array<ProjectProps> = [
         filter:'utilities'
     },
     {
-        key:10,
+        key:11,
         name: "Ticket reselling bot",
         url: 'https://addons.mozilla.org/en-US/firefox/addon/cdnextension/',
         description: "A Telegram bot that allows to resell tickets for events which you can't attend. ",
@@ -173,7 +172,7 @@ export const projects: Array<ProjectProps> = [
         filter:'utilities'
     },
     {
-        key:10,
+        key:12,
         name: "Web-tools",
         url: 'https://github.com/RamGoel/gpt-tools',
         description: "A Telegram bot that allows to resell tickets for events which you can't attend. ",
@@ -186,7 +185,7 @@ export const projects: Array<ProjectProps> = [
         filter:'utilities'
     },
     {
-        key:11,
+        key:13,
         name: "Hackathon Website",
         url: 'https://hackhaven.tech/',
         description: "",
@@ -199,7 +198,7 @@ export const projects: Array<ProjectProps> = [
         filter:'static'
     },
     {
-        key:12,
+        key:14,
         name: "Bakery Checkout",
         url: 'https://gan-assesment.netlify.app/',
         description: "",
@@ -212,7 +211,7 @@ export const projects: Array<ProjectProps> = [
         filter:'assignment'
     },
     {
-        key:13,
+        key:15,
         name: "Paperform UI Clone",
         url: 'https://playmo-task.vercel.app/',
         description: "",
@@ -225,7 +224,7 @@ export const projects: Array<ProjectProps> = [
         filter:'assignment'
     },
     {
-        key:13,
+        key:16,
         name: "Social Media Feed",
         url: 'https://groww-next.vercel.app/',
         description: "",
@@ -238,7 +237,7 @@ export const projects: Array<ProjectProps> = [
         filter:'assignment'
     },
     {
-        key:14,
+        key:17,
         name: "Internship Finding App",
         url: 'https://fintern.netlify.app/',
         description: "",
@@ -251,7 +250,7 @@ export const projects: Array<ProjectProps> = [
         filter:'reactjs'
     },
     {
-        key:15,
+        key:18,
         name: "Google Docs Editor Clone",
         url: 'https://docsclone1.netlify.app/',
         description: "",
@@ -264,7 +263,7 @@ export const projects: Array<ProjectProps> = [
         filter:'reactjs'
     },
     {
-        key:17,
+        key:19,
         name: "Loan Company Website",
         url: 'https://loanuncle.com/',
         description: "",
@@ -277,7 +276,7 @@ export const projects: Array<ProjectProps> = [
         filter:'static'
     },
     {
-        key:18,
+        key:20,
         name: "Ecommerce Listing App",
         url: 'https://github.com/RamGoel/surplus-assignment',
         description: "",
@@ -290,7 +289,7 @@ export const projects: Array<ProjectProps> = [
         filter:'mobile-app'
     },
     {
-        key:19,
+        key:21,
         name: "Todo App",
         url: 'https://github.com/RamGoel/todo-react-native',
         description: "",
@@ -303,7 +302,7 @@ export const projects: Array<ProjectProps> = [
         filter:'mobile-app'
     },
     {
-        key:20,
+        key:22,
         name: "Instagram clone",
         url: 'https://ig-clone-reactjs.netlify.app/',
         description: "",
@@ -316,7 +315,7 @@ export const projects: Array<ProjectProps> = [
         filter:'reactjs'
     },
     {
-        key:21,
+        key:23,
         name: "Malnutrition Fighting App",
         url: 'https://feedwell.netlify.app/',
         description: "",
@@ -329,20 +328,20 @@ export const projects: Array<ProjectProps> = [
         filter:'reactjs'
     },
     {
-        key:21,
-        name: "blog-api",
-        url: 'https://github.com/RamGoel/blogAPI',
+        key:24,
+        name: "Teamo",
+        url: 'https://teamo-next.vercel.app',
         description: "",
         preview: "https://miro.medium.com/v2/resize:fit:1100/format:webp/1*sqT7dmx7PR4xKnyVJPiYeg.png",
-        skills: ["nodejs", "mongodb"],
+        skills: ["nextjs", "mongodb","express","tailwind"],
         extras: "",
         type:"tech",
         madeat: "Learning",
         year: 2023,
-        filter:'apis'
+        filter:'full-stack'
     },
     {
-        key:22,
+        key:25,
         name: "OTP Auth in React",
         url: 'https://github.com/RamGoel/otp-verify-react',
         description: "",
@@ -355,7 +354,7 @@ export const projects: Array<ProjectProps> = [
         filter:'assignment'
     },
     {
-        key:23,
+        key:26,
         name: "String Reverse",
         url: 'https://www.npmjs.com/package/fnpm-package',
         description: "",
@@ -368,7 +367,7 @@ export const projects: Array<ProjectProps> = [
         filter:'utilities'
     },
     {
-        key:24,
+        key:27,
         name: "Stocks Listing App",
         url: 'https://groww-task-delta.vercel.app/',
         description: "",
