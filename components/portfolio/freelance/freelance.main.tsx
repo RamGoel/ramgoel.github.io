@@ -3,6 +3,8 @@ import { freelanceAchievements, freelanceWork } from './freelance.constant'
 import FreelanceWorkCard from './cards/work.card'
 import { FreelanceAchievementsProps, FreelanceWorkProps } from './freelance.types'
 import FreelanceAchievementCard from './cards/achievements.card'
+const subject = 'We need to talk!';
+const body = 'Hi Ram, I came from your website and I need some service. Can we have a call so we can discuss this further?'
 
 const Freelance = () => {
     return (
@@ -21,7 +23,9 @@ const Freelance = () => {
                 })
             }
 
-            <p className='mt-4 mb-12'>Need a app/website or any integration? reach me via <a className='text-white font-semibold'  href='mailto:rgoel766@gmail.com'>mail</a></p>
+            <p className='mt-4 mb-12'>Need a app/website or any integration? reach me via <a className='text-white font-semibold' href={
+                `mailto:rgoel766@gmail.com?subject=${subject}&body=${body}`
+            }>mail</a></p>
         </div>
     )
 }
