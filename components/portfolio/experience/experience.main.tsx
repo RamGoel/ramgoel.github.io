@@ -5,7 +5,7 @@ import Card from './experience.card'
 
 const Experience = ({ type }:{type:string}) => {
   return (
-    <div>
+    <div id='experience' className='py-5'>
       <h1 className='text-slate-200 text-2xl font-semibold'>{
         type==='profession'?"Experience":'Extracurricular'
       }</h1>

@@ -6,9 +6,23 @@
 html,
 body {
   padding: 0;
-  scroll-behavior: smooth;
   line-height: 1.6;
   font-size: 18px;
+    scroll-behavior: smooth !important;
+}
+
+html{
+  scroll-behavior: smooth !important;
+}
+@layer base {
+  .font-outline-2 {
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+  }
+
+  .font-outline-4 {
+    -webkit-text-stroke: 4px rgb(255, 255, 255);
+  }
+  
 }
 
 * {
@@ -38,9 +52,9 @@ img {
     transform: translateY(-5px) rotate(-45deg);
 }
 
-#scrollable{
+/* #scrollable{
   scroll-behavior: smooth !important;
-}
+} */
 
 .section{
   height: 60vh;

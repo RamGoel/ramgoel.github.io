@@ -12,11 +12,11 @@ const Socials = () => {
           <a href='https://github.com/RamGoel' className='m-2 p-2 '>
               <i className='fab fa-github text-2xl hover:text-slate-200'></i>
           </a>
-          <a href="https://www.instagram.com/oppptimize/" className='m-2 p-2 '>
+          <a href="https://www.instagram.com/thatjuniordev/" className='m-2 p-2 '>
               <i className='fab fa-instagram text-2xl hover:text-slate-200'></i>
           </a>
-          <a href="mailto:rgoel766@gmail.com" className='m-2 p-2 '>
-              <i className='fa fa-envelope text-2xl hover:text-slate-200'></i>
+          <a href="https://medium.com/@rgoel766" className='m-2 p-2 '>
+              <i className='fab fa-medium text-2xl hover:text-slate-200'></i>
           </a>
     </div>
   )

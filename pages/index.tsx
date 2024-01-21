@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <div className='md:flex items-center justify-around'>
+      <title>Hey, I'm Ram Goel</title>
       <About />
       <Scrollable />
     </div>

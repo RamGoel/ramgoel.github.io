@@ -15,7 +15,7 @@ const Scrollable = () => {
           {/* <Experience type='position' /> */}
           {/* <Acheivements /> */}
         <Projects type='tech' />
-        <Projects type='blog' />
+        {/* <Projects type='blog' /> */}
         <Freelance />
         <Footer />
 

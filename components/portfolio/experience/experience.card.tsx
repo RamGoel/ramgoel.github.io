@@ -14,7 +14,7 @@ const Card = ({ data }: { data: ExperienceProps }) => {
     end
   }=data
   return (
-    <div className=' rounded-xl md:flex my-3 p-3 '>
+    <div className=' rounded-xl md:flex my-3 p-3  hover:border-2 shadow-lg hover:scale-[1.02] transition-all cursor-pointerZ py-4 border-gray-700 '>
       <div className='md:w-1/3'>
         <p className='text-sm mt-1 font-semibold'>{start.toLocaleUpperCase()} - {end.toLocaleUpperCase()}</p>
       </div>
