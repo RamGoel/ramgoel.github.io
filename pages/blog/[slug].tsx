@@ -9,7 +9,7 @@ const BlogPage = () => {
 
 
     return (
-        router?.query?.slug ? <BlogRenderer blogData={BlogRouter[router.query.slug]} /> : null
+        router?.query?.slug ? <BlogRenderer blogData={BlogRouter[(router.query.slug as any)]} /> : null
     )
 }
 
