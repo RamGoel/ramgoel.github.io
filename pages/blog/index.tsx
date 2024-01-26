@@ -1,6 +1,6 @@
 import BlogHeading from '@/components/blogs/blog-heading'
 import React from 'react'
-import { BlogRouter } from './router'
+import { BlogRouter } from '../../utils/router'
 import BlogCard from '@/components/blogs/blog-card'
 
 const BlogList = () => {

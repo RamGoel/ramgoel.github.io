@@ -1,7 +1,7 @@
 import ComponentRenderer from '@/components/blogs/component-render';
 import { useRouter } from 'next/router'
 import React from 'react'
-import { BlogRouter } from './router';
+import { BlogRouter } from '../../utils/router';
 import BlogRenderer from '@/components/blogs/blog-renderer';
 
 const BlogPage = () => {
