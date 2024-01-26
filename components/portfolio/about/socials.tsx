@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Socials = () => {
@@ -15,9 +16,9 @@ const Socials = () => {
           <a href="https://www.instagram.com/thatjuniordev/" className='m-2 p-2 '>
               <i className='fab fa-instagram text-2xl hover:text-slate-200'></i>
           </a>
-          <a href="https://medium.com/@rgoel766" className='m-2 p-2 '>
+          <Link href="/blog" className='m-2 p-2 '>
               <i className='fab fa-medium text-2xl hover:text-slate-200'></i>
-          </a>
+          </Link>
     </div>
   )
 }
