@@ -5,14 +5,11 @@ import React from 'react'
 export type ProjectCardProps={
     name:string,
     desc:string,
-    image:string,
+    image:any,
     liveURL:string
 }
 const ProjectCard = ({
-    name,
-    desc, 
     image,
-    liveURL
 }:ProjectCardProps) => {
     return (
         <div className='w-1/2 md:w-1/4'>
