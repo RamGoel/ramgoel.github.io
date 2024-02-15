@@ -1,26 +1,27 @@
 import React from 'react'
-const clients = [
-    "Expense Management App",
-    "Matching App for Flight Passengers",
-    "E-commerce for Farm Products",
-]
+import Link from 'next/link'
+import ProjectCard from './project-card'
+import { projects } from './project-config'
+
 const Portfolio = () => {
     return (
-        <div className='section h-auto flex items-end justify-center'>
+        <div className='mt-12 flex items-end justify-center'>
             <div>
-                <h1 className='text-center text-2xl text-white'>{`I've made & contributed to`}</h1>
+                <h1 className='text-center text-2xl text-white'>{`Stuff i've created so far...`}</h1>
 
-                <div className='flex flex-col  my-5  mx-auto'>
+                <div className='flex flex-wrap w-11/12 mx-auto items-center mt-10 justify-around'>
                     {
-                        clients.map((client, index) => (
-                            <div key={index} className='my-3'>
-                                <p className='text-2xl w-full text-left md:text-center hover:text-white hover:underline-offset-6 hover:underline transition-all cursor-pointer'>{client}</p>
-                            </div>
+                        projects.map((item, index) => (
+                            <ProjectCard key={index + item.name} {...item} />
                         ))
                     }
 
                 </div>
 
+                <div className='w-full flex items-center justify-center py-12'>
+                    <Link className='mx-auto text-center' href='https://ramgoel.github.io/SiteDesigns/'> View more  <i className='ml-1 fa fa-external-link'></i></Link>
+
+                </div>
             </div>
 
         </div>

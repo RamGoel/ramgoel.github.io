@@ -4,10 +4,10 @@ const Header = () => {
   return (
       <div className='w-11/12 mx-auto  flex items-center justify-between p-4 '>
           <div className='w-1/2'>
-              <p>🔥</p>
+              <p className='text-xl'>🔥</p>
           </div>
           <div className='w-1/2 flex items-center justify-end'>
-              <a className='text-sm'>rgoel766@gmail.com</a>
+              <a className='text-md'>rgoel766@gmail.com</a>
           </div>
     </div>
   )

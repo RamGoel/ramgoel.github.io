@@ -5,6 +5,7 @@ import { Dela_Gothic_One } from 'next/font/google'
 import Clients from '@/components/freelance/clients'
 import Portfolio from '@/components/freelance/portfolio'
 import Contact from '@/components/freelance/contact'
+import Socials from '@/components/portfolio/about/socials'
 const font = Dela_Gothic_One({ weight: "400", subsets: ['latin'] })
 
 const Freelance = () => {
@@ -12,9 +13,11 @@ const Freelance = () => {
     <div className={`${font.className} bg-black`}>
       <Header />
       <Hero />
-      {/* <Projects /> */}
       <Clients />
       <Portfolio />
+      <div className='flex items-center justify-center'>
+      <Socials />
+      </div>
       <Contact />
     </div>
   )
