@@ -82,7 +82,7 @@ const Projects = () => {
             if (!item.isGrid) {
               return;
             }
-            return <ArchiveCard data={item} key={item.key} />
+            return <ArchiveCard data={item} key={item?.key} />
           })
         }
       </div>}
