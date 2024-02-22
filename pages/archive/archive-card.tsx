@@ -14,7 +14,7 @@ const ArchiveCard = ({ data }: { data: ProjectProps }) => {
             <Image src={data?.preview} alt='project-image' className="rounded-xl w-full h-[230px] object-cover" width={400} height={320} />
             {/* </div> */}
             <div className='min-h-[150px]'>
-                <p className='my-3 text-sm text-white'>{data.description}</p>
+                <p className='my-3 text-sm text-white'>{data?.description}</p>
                 <ChipBox data={data?.skills} key={data?.key} />
             </div>
         </div>
