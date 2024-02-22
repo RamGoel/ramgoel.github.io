@@ -3,7 +3,7 @@ import React from 'react'
 
 const Story = () => {
     return (
-        <div className='md:h-screen flex items-center mb-10 md:-mt-20'>
+        <div className='md:h-screen flex items-center mb-10'>
             <div>
                 <h1 className='text-8xl shadow text-left font-outline-2 text-transparent font-bold leading-[120px]'>
                     I build, <br />apps and <span className='text-white italic'>websites</span>

@@ -12,7 +12,6 @@ const Projects = ({type}:{type:string}) => {
     <div id='projects' className='py-10'>
       <h1 className={`text-slate-200 text-2xl font-semibold ${type==''}`}>{
         type === 'tech' ? 'Projects' : 'Blogs'}</h1>
-  
       <div>
         {
           projects.filter(item => item.type === type).map((item: ProjectProps, index: number) => {
