@@ -14,34 +14,34 @@ const Projects = () => {
 
   useEffect(() => {
     const catSet: Array<string> = [];
-    projects.forEach(item => (item.filter !== 'blog') && catSet.push(item.filter))
+    projects.forEach(item => (item?.filter !== 'blog') && catSet.push(item.filter))
     setCategories(Array.from(new Set([...catSet])))
   }, [])
 
   useEffect(() => {
     setProjectsData(null)
     const newProjects = projects.filter((item) => {
-      if (selectedCategory === 'best') return item.isGrid
-      return item.filter === selectedCategory
+      if (selectedCategory === 'best') return item?.isGrid
+      return item?.filter === selectedCategory
     })
-    setProjectsData(old => newProjects)
+    setProjectsData(newProjects)
   }, [selectedCategory])
 
 
   if (!categories) {
-    return null;
+    return <></>;
   }
 
   return (
     <div className='w-11/12 mx-auto mt-20 '>
-      <p className='font-semibold text-lg text-teal-300 cursor-pointer hover:text-teal-200' onClick={() => router.push('/')}><i className='fa fa-arrow-left' /> Ram Goel</p>
+      <p className='font-semibold text-lg text-teal-300 cursor-pointer hover:text-teal-200' onClick={() => router?.push('/')}><i className='fa fa-arrow-left' /> Ram Goel</p>
       <h1 className='text-5xl font-bold text-slate-300'>All Projects</h1>
 
       <div className='mt-10 flex items-center justify-between'>
         <ChipBox onChangeHandler={(val: string) => setSelectedCategory(val)} selected={selectedCategory} data={['best', ...categories]} key1={110001} />
       </div>
 
-      {selectedCategory !== 'best' ? <table className='mt-12 w-full border-collapse text-left'>
+      {selectedCategory !== 'best' ? <table className='mt-12 mb-[30px] w-full border-collapse text-left'>
         <thead className="sticky top-0 z-10 border-b border-slate-300/10 bg-slate-900/75 px-6 py-5 backdrop-blur">
 
           <tr>
@@ -76,7 +76,7 @@ const Projects = () => {
           }
         </tbody>
 
-      </table> : <div className='p-4 mx-auto flex-wrap flex items-center justify-start'>
+      </table> : <div className='p-4 pb-[50px] mx-auto flex-wrap flex items-center justify-start'>
         {
           projectsData?.map(item => {
             if (!item.isGrid) {

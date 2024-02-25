@@ -7,10 +7,10 @@ export const projects: Array<ProjectProps> = [
     isGrid: true,
     url: "https://dumbel.vercel.app/",
     description:
-      "Dumbel is like Bumble but for developers, just signin with Github and explore profiles of developers from all over the world!",
+      "Dumbel is like Bumble but for developers, just signin with Github and explore profiles of developers from all over the world! It has 25+ users at present.",
     preview: require("@/public/projects/dumbel.png"),
     skills: ["nextjs", "nestjs", "mongodb", "tailwindcss", "shadcn"],
-    extras: "(20+ users)",
+    extras: "",
     type: "tech",
     madeat: "Learning",
     year: 2023,
