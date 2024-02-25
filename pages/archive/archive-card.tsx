@@ -7,7 +7,7 @@ import React from 'react'
 const ArchiveCard = ({ data }: { data: ProjectProps }) => {
     return (
         <div className='p-4 min-w-[400px] w-1/3'>
-            <Link href={data?.url}>
+            <Link href={data?.url ?? '/'}>
                 <h1 className='text-lg font-semibold my-3 text-white'>{data?.name} {data?.extras || null}</h1>
             </Link>
             <Image src={data?.preview} alt='project-image' className="rounded-xl w-full h-[230px] object-cover" width={400} height={320} />
