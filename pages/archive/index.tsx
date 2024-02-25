@@ -1,3 +1,4 @@
+'use client'
 import ChipBox from '@/components/portfolio/common/chipBox/chipBox.main'
 import { projects } from '@/components/portfolio/projects/projects.constants'
 import { ProjectProps } from '@/components/portfolio/projects/projects.types'
