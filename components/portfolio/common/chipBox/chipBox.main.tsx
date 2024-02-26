@@ -4,7 +4,7 @@ const ChipBox = ({ data, key1, selected, onChangeHandler }: { data: Array<string
   return (
     <div className='flex items-center gap-y-2 justify-start flex-wrap'>
       {
-        data.map((item: string, index: number) => {
+        data?.map((item: string, index: number) => {
           return <div onClick={() => {
             if (onChangeHandler && key1 === 110001) {
               onChangeHandler(item)
