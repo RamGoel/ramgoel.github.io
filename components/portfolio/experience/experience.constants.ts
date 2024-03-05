@@ -5,7 +5,7 @@ export const experiences: Array<ExperienceProps> = [
     key: 1,
     company: "Animall",
     start: "Dec 2023",
-    end: "Present",
+    end: "Feb 2024",
     skills: ["NextJS", "Linux", "Tailwind", "EJS"],
     url: "https://animall.in",
     description:
