@@ -23,7 +23,7 @@ const Freelance = () => {
                 })
             }
 
-            <p className='mt-4 mb-12'>Need a app/website or any integration? reach me via <a className='text-white font-semibold' href={
+            <p className='mt-4 mb-12 text-xs'>Need a app/website or any integration? reach me via <a className='text-white font-semibold' href={
                 `mailto:rgoel766@gmail.com?subject=${subject}&body=${body}`
             }>mail</a></p>
         </div>

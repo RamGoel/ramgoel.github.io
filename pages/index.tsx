@@ -1,10 +1,13 @@
-import { Inter } from 'next/font/google'
+import { Inter, Mulish } from 'next/font/google'
 import About from '@/components/portfolio/about/main'
 import Scrollable from '@/components/portfolio/scrollable/scrollable.main'
 import { useRouter } from 'next/router'
 import Freelance from './freelance'
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({
+  weight: ['200', '400', '600'],
+  subsets: ['latin']
+})
 
 export default function Home() {
   const { type } = useRouter().query;
@@ -13,7 +16,7 @@ export default function Home() {
     return <Freelance />
   }
   return (
-    <div className='md:flex items-center justify-around'>
+    <div className={`md:flex items-center justify-around ${inter.className} `}>
       <title>{`Hey, I'm Ram Goel`}</title>
       <About />
       <Scrollable />

@@ -35,8 +35,8 @@ const Projects = () => {
 
   return (
     <div className='w-11/12 mx-auto mt-20 '>
-      <p className='font-semibold text-lg text-teal-300 cursor-pointer hover:text-teal-200' onClick={() => router?.push('/')}><i className='fa fa-arrow-left' /> Ram Goel</p>
-      <h1 className='text-5xl font-bold text-slate-300'>All Projects</h1>
+      <p className='font-semibold text-md text-teal-300 cursor-pointer hover:text-teal-200' onClick={() => router?.push('/')}><i className='fa fa-arrow-left' /> Ram Goel</p>
+      <h1 className='text-4xl font-bold text-slate-300'>All Projects</h1>
 
       <div className='mt-10 flex items-center justify-between'>
         <ChipBox onChangeHandler={(val: string) => setSelectedCategory(val)} selected={selectedCategory} data={['best', ...categories]} key1={110001} />
@@ -57,17 +57,17 @@ const Projects = () => {
           {
             projectsData?.sort((a, b) => b.year - a.year).map((item: ProjectProps) => {
               return <tr key={item.key} className='border-b border-slate-300/10 last:border-none'>
-                <td className='py-4 pr-4 align-top text-sm'>{item.year}</td>
-                <td className='hidden md:block py-4 pr-4 align-top font-semibold leading-snug text-slate-200'>{item.name}</td>
+                <td className='py-4 pr-4 align-top text-xs'>{item.year}</td>
+                <td className='hidden md:block py-4 pr-4 text-xs align-top font-semibold leading-snug text-slate-200'>{item.name}</td>
                 <td className='md:hidden py-4 pr-4 align-top font-semibold leading-snug text-slate-200'>
                   <a href={item.url} className='hover:text-teal-300'>
                     {item.name} <i className='project-arrow fa fa-arrow-right -rotate-45 ml-2'></i>
                   </a>
                 </td>
-                <td className='hidden md:table-cell py-4 pr-4 align-top text-sm'>{item.madeat}</td>
-                <td className='hidden lg:table-cell py-4 pr-4 align-top text-sm'><ChipBox data={item.skills} key={item.key} /></td>
-                <td className='hidden lg:table-cell project-link py-4 pr-4 align-top text-sm font-semibold hover:text-teal-300'>
-                  <a href={item.url}>
+                <td className='hidden md:table-cell py-4 pr-4 align-top text-xs'>{item.madeat}</td>
+                <td className='hidden lg:table-cell py-4 pr-4 align-top text-xs'><ChipBox data={item.skills} key={item.key} /></td>
+                <td className='hidden lg:table-cell project-link py-4 pr-4 align-top text-xs font-semibold hover:text-teal-300'>
+                  <a href={item.url} target='_blank'>
                     {item.url.includes('com.') || item.url.includes('in.') ? `App Store` : item.url}
                   </a>
                   <i className='project-arrow fa fa-arrow-right -rotate-45 ml-2'></i>

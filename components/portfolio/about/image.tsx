@@ -6,9 +6,9 @@ const PImage = ({src}:{src:string}) => {
       <div className="pl-3">
       <Image
         src={src}
-        width={180}
-        className='rounded-full'
-        height={180}
+        width={150}
+        className='rounded-full  outline-8 outline-double outline-orange-100'
+        height={150}
       alt='profile-image'/>
     </div>
   )

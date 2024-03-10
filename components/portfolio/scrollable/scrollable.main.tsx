@@ -8,15 +8,13 @@ import Freelance from '../freelance/freelance.main'
 
 const Scrollable = () => {
   return (
-    <div className='scroll-d-none md:h-screen md:w-1/2 md:overflow-y-scroll py-3 '>
+    <div style={{
+      scrollBehavior: 'smooth'
+    }} className='scroll-d-none md:h-screen md:w-1/2 md:overflow-y-scroll py-3 '>
       <div className='w-11/12 mx-auto'>
-          <Story />
-          <Experience type='profession' />
-          {/* <Experience type='position' /> */}
-          {/* <Acheivements /> */}
+        <Story />
         <Projects type='tech' />
-        {/* <Projects type='blog' /> */}
-        <Freelance />
+        <Experience type='profession' />
         <Footer />
 
       </div>

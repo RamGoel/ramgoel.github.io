@@ -6,7 +6,7 @@ export const experiences: Array<ExperienceProps> = [
     company: "Animall",
     start: "Dec 2023",
     end: "Feb 2024",
-    skills: ["NextJS", "Linux", "Tailwind", "EJS"],
+    skills: ["NextJS", "Cloud", "Tailwind", "NestJS"],
     url: "https://animall.in",
     description:
       "Part of the frontend engineering team working at a scale of 100K daily active users, built data collection module from scratch & automated report generation (70% drop in TAT) ",
