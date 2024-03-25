@@ -21,7 +21,7 @@ const Projects = ({type}:{type:string}) => {
       </div>
 
       {type !== 'blog' && <div className='mt-5 py-3'>
-        <p onClick={() => router.push('/archive')} className='hover:text-teal-300 font-semibold text-sm cursor-pointer'>View all projects <i className='fa fa-arrow-right ml-0.5'></i></p>
+        <p onClick={() => router.push('/archive')} className='hover:scale-[0.95] hover:bg-violet-700 hover:border-violet-700 transition-all text-white border-2 border-white px-5 py-2 w-fit rounded-full font-semibold text-xs cursor-pointer'>View all projects <i className='fa fa-arrow-right ml-0.5'></i></p>
       </div>}
     </div>
   )
