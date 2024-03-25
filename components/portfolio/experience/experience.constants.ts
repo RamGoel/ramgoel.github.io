@@ -5,12 +5,12 @@ export const experiences: Array<ExperienceProps> = [
     key: 1,
     company: "Animall",
     start: "Dec 2023",
-    end: "Feb 2024",
-    skills: ["NextJS", "Cloud", "Tailwind", "NestJS"],
+    end: "Mar 2024",
+    skills: ["NextJS", "GCP", "Tailwind", "Jquery"],
     url: "https://animall.in",
     description:
       "Part of the frontend engineering team working at a scale of 100K daily active users, built data collection module from scratch & automated report generation (70% drop in TAT) ",
-    role: "Intern (Frontend)",
+    role: "Frontend Engineer Intern",
     type: "profession",
   },
   {
@@ -22,7 +22,7 @@ export const experiences: Array<ExperienceProps> = [
     url: "https://surplusapp.in",
     description:
       "Engineered the Bill Payments & Subscription Management Modules from scratch as Early employee. Integrated third party SDK's for payment & account integration.",
-    role: "Intern (React Native)",
+    role: "App Developer Intern",
     type: "profession",
   },
   {

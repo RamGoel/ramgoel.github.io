@@ -20,7 +20,7 @@ const Projects = ({type}:{type:string}) => {
         }
       </div>
 
-      {type !== 'blog' && <div className='my-3'>
+      {type !== 'blog' && <div className='mt-5 py-3'>
         <p onClick={() => router.push('/archive')} className='hover:text-teal-300 font-semibold text-sm cursor-pointer'>View all projects <i className='fa fa-arrow-right ml-0.5'></i></p>
       </div>}
     </div>
