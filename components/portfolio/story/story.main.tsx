@@ -9,7 +9,7 @@ const Story = () => {
                 <p className='text-sm leading-7 w-11/12 text-justify'>
                     I am a software engineer & 4th year CS undergrad from Uttar Pradesh, India. I love solving problems using code.
                     <br /><br />
-                    I have worked with 5 AgriTech, Fintech, and SaaS startups as Frontend Intern, from very early stage to 100k DAU. I work mostly with NextJs, Typescript and React Native and can do everyting from development to deployment.
+                    I have worked with 5 AgriTech, Fintech, SaaS startups, as Frontend Intern, from very early stage to 100k DAU. I work mostly with NextJs, Typescript and React Native and can do everyting from development to deployment.
                     <br /><br />
                     I have worked with 10+ clients as freelancer, whether it is adding a feature or building a MVP from scratch for your business, I can do it all.
                 </p>
