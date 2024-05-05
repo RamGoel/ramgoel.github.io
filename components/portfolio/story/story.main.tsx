@@ -21,6 +21,9 @@ const Story = () => {
                     <Link className='p-2 text-sm underline underline-offset-8 hover:-mb-3 transition-all' href='#projects'>
                         Side Projects  <i className='fa fa-arrow-right -rotate-45 group-hover:ml-2 transition-all'></i>
                     </Link>
+                    <Link className='p-2 text-sm text-yellow-300 underline underline-offset-8 hover:-mb-3 transition-all' href='https://gleaming-scilla-add.notion.site/Timeline-40472cfcf21f44d1a244dbf665ec31a9?pvs=4'>
+                        Timeline  <i className='fa fa-arrow-right -rotate-45 group-hover:ml-2 transition-all'></i>
+                    </Link>
 
                 </div>
 
