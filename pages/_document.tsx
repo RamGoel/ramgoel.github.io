@@ -1,15 +1,21 @@
-import { Html, Head, Main, NextScript } from 'next/document'
+import { Head, Html, Main, NextScript } from 'next/document'
 
 export default function Document() {
-  return (
-    <Html lang="en">
-      <Head title='Ram Goel'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
-      </Head>
-      <body className='bg-gradient-to-tr from-black to-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900'>
-        <Main />
-        <NextScript />
-      </body>
-    </Html>
-  )
+    return (
+        <Html lang="en">
+            <Head title="Ram Goel">
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+                    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+                    crossOrigin="anonymous"
+                    referrerPolicy="no-referrer"
+                />
+            </Head>
+            <body className="bg-gradient-to-tr from-black to-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+                <Main />
+                <NextScript />
+            </body>
+        </Html>
+    )
 }

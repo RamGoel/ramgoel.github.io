@@ -1,10 +1,11 @@
-import Hero from '@/components/v2/hero'
 import V2Layout from '@/layouts/v2'
 
-export default function Home() {
+const Startups = () => {
     return (
         <V2Layout>
-            <Hero />
+            <div></div>
         </V2Layout>
     )
 }
+
+export default Startups
