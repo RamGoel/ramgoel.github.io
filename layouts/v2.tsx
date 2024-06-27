@@ -10,7 +10,7 @@ const V2Layout = ({ children }: { children: any }) => {
         <div
             className={`bg-white lowercase flex  flex-col w-full text-black ${font.className}`}
         >
-            <title>About Ram | Founder, Engineer</title>
+            <title>About Ram | Engineer, Developer</title>
 
             <Header />
             <div className="h-[100px]">{children}</div>
