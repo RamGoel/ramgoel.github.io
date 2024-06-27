@@ -12,7 +12,7 @@ export default function Document() {
                     referrerPolicy="no-referrer"
                 />
             </Head>
-            <body className="bg-gradient-to-tr from-black to-slate-900 leading-relaxed text-slate-400 antialiased selection:bg-teal-300 selection:text-teal-900">
+            <body className="">
                 <Main />
                 <NextScript />
             </body>

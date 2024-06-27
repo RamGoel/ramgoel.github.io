@@ -8,12 +8,12 @@ const font = Poppins({
 const V2Layout = ({ children }: { children: any }) => {
     return (
         <div
-            className={`bg-white lowercase flex h-[100vh] flex-col w-full text-black ${font.className}`}
+            className={`bg-white lowercase flex  flex-col w-full text-black ${font.className}`}
         >
-            <title>About Ram | Founder, Developer</title>
+            <title>About Ram | Founder, Engineer</title>
 
             <Header />
-            <div className="flex-grow">{children}</div>
+            <div className="h-[100px]">{children}</div>
         </div>
     )
 }

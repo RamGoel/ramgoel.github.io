@@ -3,7 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 
-html,
+/* html,
 body {
   padding: 0;
   line-height: 1.6;
@@ -27,34 +27,31 @@ html{
 
 * {
   box-sizing: border-box;
-}
+} */
 
 
 
-img {
+/* img {
   max-width: 100%;
   display: block;
-}
+}*/
 
-.scroll-d-none::-webkit-scrollbar {
+*::-webkit-scrollbar {
   display: none;
 }
 
 
-.scroll-d-none {
-    -ms-overflow-style: none;  /* Internet Explorer and Edge */
-    scrollbar-width: none;  /* Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-
+/*
 .project-link:hover .project-arrow{
     transition:0.5s;
     transform: translateY(-5px) rotate(-45deg);
 }
 
-/* #scrollable{
-  scroll-behavior: smooth !important;
-} */
 
 .section{
   height: 60vh;
@@ -68,4 +65,4 @@ body::-webkit-scrollbar {
   .section{
     height: auto;
   }
-}
+} */

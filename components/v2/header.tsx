@@ -5,10 +5,12 @@ const Header = () => {
         <div className="flex w-full items-center p-[40px] !justify-between">
             <div className="flex items-center justify-start gap-2">
                 <div className="bg-[#604CC3] w-[20px] h-[20px]"></div>
-                <h1 className="text-2xl font-semibold">Ram Goel</h1>
+                <h1 className="text-2xl hidden md:block font-semibold">
+                    Ram Goel
+                </h1>
 
-                <p className="opacity-70 text-sm font-medium">
-                    /indie hacker /engineer
+                <p className="opacity-70 hidden md:block text-sm font-medium">
+                    /founder /engineer
                 </p>
             </div>
 
