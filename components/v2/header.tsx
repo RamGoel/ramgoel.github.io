@@ -10,7 +10,7 @@ const Header = () => {
                 </h1>
 
                 <p className="opacity-70 hidden md:block text-sm font-medium">
-                    /founder /engineer
+                    /developer /engineer
                 </p>
             </div>
 
@@ -21,8 +21,8 @@ const Header = () => {
                 <Link href={'/experience'} className="text-sm">
                     Experience
                 </Link>
-                <Link href={'/startups'} className="text-sm">
-                    Startups
+                <Link href={'/projects'} className="text-sm">
+                    Projects
                 </Link>
             </div>
         </div>

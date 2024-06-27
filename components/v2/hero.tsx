@@ -26,7 +26,7 @@ const Hero = () => {
                             </h1>
                             <div className="w-[100px] my-5 h-[5px] bg-white md:bg-violet-600"></div>
                             <p className="text-white md:text-black">
-                                founder / engineer
+                                developer / engineer
                             </p>
                         </div>
 

@@ -91,13 +91,21 @@ export const experiences = [
     },
 ]
 
-export const startups = [
+export const projects = [
     {
         name: 'LemmaUI',
         description:
             'LemmaUI helps you convert your API responses into beautiful UI components.In-built support for Tailwind CSS and Supports various UI Libraries like Material UI, Chakra UI, etc.',
         time: 'June 2024',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoypv-YhJjQ_9zkzMtYr9tgJXkC_aAEW-bw&s',
+    },
+    {
+        name: 'EcoEcho',
+        description:
+            'EcoEcho is a personal sustainability app which assigns nature friendly tasks to users which help them reduce their carbon footprint, helping people adopt eco-friendly habits in their daily lives.',
+        time: 'April 2024',
+        image: 'https://sustain-globe.netlify.app/icon.svg',
+        link: 'https://sustain-globe.netlify.app/',
     },
     {
         name: 'Dumbel',
