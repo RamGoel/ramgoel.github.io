@@ -13,7 +13,7 @@ export const experiences = [
              <p>- Optimized the number of API calls, and the response time</p>
              </div>
             `,
-        role: 'FullStack + GenAI Enginer',
+        role: 'FullStack + GenAI Engineer',
         type: 'profession',
         icon: 'https://framerusercontent.com/images/A9DsIoq6hkJgbGBX8cIcdcQcNk.png?scale-down-to=512',
     },
