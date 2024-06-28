@@ -69,21 +69,7 @@ const Hero = () => {
                         <div className="w-[200px] my-8 h-[5px] bg-violet-600"></div>
 
                         <p className="w-10/12 md:w-[400px] mb-4 leading-[35px] lowercase">
-                            I&apos;m currently working remotely at{' '}
-                            <Link
-                                href={'https://getconch.ai/'}
-                                className="font-semibold text-violet-600"
-                            >
-                                ConchAI
-                            </Link>{' '}
-                            <Image
-                                height={100}
-                                width={100}
-                                alt="flag"
-                                className="w-[20px] h-[15px] inline"
-                                src={require('@/public/flag.png')}
-                            />{' '}
-                            as a full stack + gen-ai engineer . I have
+                            I&apos;m a full stack + gen-ai engineer . I have
                             previously worked at{' '}
                             <Link
                                 className="font-semibold text-violet-600"
