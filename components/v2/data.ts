@@ -95,9 +95,10 @@ export const projects = [
     {
         name: 'LemmaUI',
         description:
-            'LemmaUI helps you convert your API responses into beautiful UI components.In-built support for Tailwind CSS and Supports various UI Libraries like Material UI, Chakra UI, etc.',
+            'LemmaUI helps you convert your API responses into beautiful UI components. In-built support for Tailwind CSS and Supports various UI Libraries like Material UI, Chakra UI, etc.',
         time: 'June 2024',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoypv-YhJjQ_9zkzMtYr9tgJXkC_aAEW-bw&s',
+        link: 'https://lemma-ui.vercel.app/',
     },
     {
         name: 'EcoEcho',
