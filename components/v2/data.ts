@@ -1,22 +1,22 @@
 export const experiences = [
-    {
-        key: 0,
-        company: 'ConchAI',
-        start: 'April 2024',
-        end: 'Present',
-        skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
-        url: 'https://animall.in',
-        description: `
-             <div class="text-sm flex flex-col gap-2">
-             <p>- Integrated LLM models to generate responses </p>
-             <p>- processed the documents in realtime to answer user queries. </p>
-             <p>- Optimized the number of API calls, and the response time</p>
-             </div>
-            `,
-        role: 'FullStack + GenAI Engineer',
-        type: 'profession',
-        icon: 'https://framerusercontent.com/images/A9DsIoq6hkJgbGBX8cIcdcQcNk.png?scale-down-to=512',
-    },
+    // {
+    //     key: 0,
+    //     company: 'ConchAI',
+    //     start: 'April 2024',
+    //     end: 'Present',
+    //     skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
+    //     url: 'https://animall.in',
+    //     description: `
+    //          <div class="text-sm flex flex-col gap-2">
+    //          <p>- Integrated LLM models to generate responses </p>
+    //          <p>- processed the documents in realtime to answer user queries. </p>
+    //          <p>- Optimized the number of API calls, and the response time</p>
+    //          </div>
+    //         `,
+    //     role: 'FullStack + GenAI Engineer',
+    //     type: 'profession',
+    //     icon: 'https://framerusercontent.com/images/A9DsIoq6hkJgbGBX8cIcdcQcNk.png?scale-down-to=512',
+    // },
     {
         key: 1,
         company: 'Animall',
