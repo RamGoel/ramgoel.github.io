@@ -15,7 +15,7 @@ const Projects = () => {
                     <p className="text-center mt-4">
                         some of the best projects I have worked on :)
                     </p>
-                    <div className="grid grid-cols-1 gap-[1rem] py-[50px]">
+                    <div className="grid w-full md:w-1/2 mx-auto grid-cols-1 gap-[3rem] py-[50px]">
                         {projects.map((item: any, index: number) => {
                             return <StartupCard startup={item} key={index} />
                         })}

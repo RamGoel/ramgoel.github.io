@@ -16,7 +16,7 @@ const Header = () => {
 
             <div className="flex items-center gap-3 justify-end">
                 <Link href={'/'} className="text-sm">
-                    Me
+                    about
                 </Link>
                 <Link href={'/experience'} className="text-sm">
                     Experience
@@ -24,6 +24,9 @@ const Header = () => {
                 <Link href={'/projects'} className="text-sm">
                     Projects
                 </Link>
+                {/* <Link href={'/projects'} className="text-sm">
+                    Why me?
+                </Link> */}
             </div>
         </div>
     )

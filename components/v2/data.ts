@@ -1,22 +1,22 @@
 export const experiences = [
-    // {
-    //     key: 0,
-    //     company: 'ConchAI',
-    //     start: 'April 2024',
-    //     end: 'Present',
-    //     skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
-    //     url: 'https://animall.in',
-    //     description: `
-    //          <div class="text-sm flex flex-col gap-2">
-    //          <p>- Integrated LLM models to generate responses </p>
-    //          <p>- processed the documents in realtime to answer user queries. </p>
-    //          <p>- Optimized the number of API calls, and the response time</p>
-    //          </div>
-    //         `,
-    //     role: 'FullStack + GenAI Engineer',
-    //     type: 'profession',
-    //     icon: 'https://framerusercontent.com/images/A9DsIoq6hkJgbGBX8cIcdcQcNk.png?scale-down-to=512',
-    // },
+    {
+        key: 0,
+        company: 'ConchAI',
+        start: 'April 2024',
+        end: 'Present',
+        skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
+        url: 'https://getconch.ai',
+        description: `
+             <div class="text-sm flex flex-col gap-2">
+             <p>- Integrated LLM models to generate responses </p>
+             <p>- processed the documents in realtime to answer user queries. </p>
+             <p>- Optimized the number of API calls, and the response time</p>
+             </div>
+            `,
+        role: 'FullStack + GenAI Engineer',
+        type: 'profession',
+        icon: 'https://framerusercontent.com/images/A9DsIoq6hkJgbGBX8cIcdcQcNk.png?scale-down-to=512',
+    },
     {
         key: 1,
         company: 'Animall',
@@ -33,7 +33,7 @@ export const experiences = [
             `,
         role: 'Frontend Engineer Intern',
         type: 'profession',
-        icon: 'https://static-assets.animall.in/static/images/logo-animall.png',
+        icon: 'https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/xgwkslvkifnpzhbeby5g',
     },
     {
         key: 2,
@@ -49,7 +49,7 @@ export const experiences = [
              <p>- Integrated Account Aggregator for fetching latest payments from bank. </p>
              </div>
            `,
-        role: 'Frontend Engineer Intern',
+        role: 'App Developer Intern',
         type: 'profession',
         icon: 'https://media.licdn.com/dms/image/C4D0BAQHgc5wW2RORcA/company-logo_200_200/0/1670421302900/appsurplus_logo?e=2147483647&v=beta&t=Zc2CIH-UMZV8PNuVy7BB0cQRaoYWKwKh6_wvfKMkAZg',
     },
@@ -94,40 +94,35 @@ export const experiences = [
 export const projects = [
     {
         name: 'LemmaUI',
-        description:
-            'LemmaUI helps you convert your API responses into beautiful UI components. In-built support for Tailwind CSS and Supports various UI Libraries like Material UI, Chakra UI, etc.',
+        description: 'convert your API responses into beautiful Tailwind UI.',
         time: 'June 2024',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoypv-YhJjQ_9zkzMtYr9tgJXkC_aAEW-bw&s',
         link: 'https://lemma-ui.vercel.app/',
     },
     {
         name: 'EcoEcho',
-        description:
-            'EcoEcho is a personal sustainability app which assigns nature friendly tasks to users which help them reduce their carbon footprint, helping people adopt eco-friendly habits in their daily lives.',
+        description: 'A personal sustainability app to reduce nature impact',
         time: 'April 2024',
         image: 'https://sustain-globe.netlify.app/icon.svg',
         link: 'https://sustain-globe.netlify.app/',
     },
     {
         name: 'Dumbel',
-        description:
-            'Dumbel helps you connect with other developers. Whether you want to find teammate for a hackathon, or looking for a partner for your next project. Dumbel helps your find all.',
+        description: 'connect with other developers, or find teammate.',
         time: 'January 2024',
         image: 'https://dumbel.vercel.app/icon.png?2af62662855a959f',
         link: 'https://dumbel.vercel.app/',
     },
     {
         name: 'Ticketoo',
-        description:
-            'ticketoo helps you list your unused tickets on platform and find buyers for your tickets. Seamless process for listing tickets, and category based filters for enhanced user experience.',
+        description: 'list your unused tickets or buy unused tickets.',
         time: 'August 2023',
         image: 'https://ticketoo.vercel.app/lg%20(2).png',
         link: 'https://ticketoo.vercel.app/',
     },
     {
         name: 'Portify',
-        description:
-            'Enter your information in Portify and create your portfolio website. Get your portfolio in less than 5 minutes. Claim your username now!',
+        description: 'Get your portfolio in less than 5 minutes.',
         time: 'March 2023',
         image: 'https://i.ibb.co/2KCSYNP/P.png',
         link: 'https://portify-nine.vercel.app/',
