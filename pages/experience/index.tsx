@@ -19,13 +19,13 @@ const Experience = () => {
                             </h1>
                             <Link
                                 href="/resume.pdf"
-                                className="text-sm hover:translate-y-[-2px] transition-all text-[#604CC3] cursor-pointer flex items-center gap-2"
+                                className="text-sm 2xl:text-md hover:translate-y-[-2px] transition-all text-[#604CC3] cursor-pointer flex items-center gap-2"
                             >
                                 Download Resume <ArrowUpRight size={15} />
                             </Link>
                         </div>
 
-                        <p className="mt-4 text-sm leading-[30px]">
+                        <p className="mt-4 text-sm 2xl:text-md leading-[30px] 2xl:leading-[40px]">
                             I graduated{' '}
                             {moment().format('YYYY') === '2024'
                                 ? 'this year'
@@ -57,7 +57,7 @@ const Experience = () => {
                             </span>
                         </p>
                     </div>
-                    <div className="grid grid-cols-1 w-full md:w-1/2 mt-[30px] md:mt-0 gap-[1rem] md:gap-[.5rem] ">
+                    <div className="grid grid-cols-1 w-full md:w-1/2 mt-[30px] md:mt-0 gap-[1rem] md:gap-[.5rem] 2xl:gap-[2rem] ">
                         {experiences
                             .filter((item) => item.type === 'profession')
                             .map((item, index) => {

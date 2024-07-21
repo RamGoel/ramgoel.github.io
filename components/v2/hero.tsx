@@ -15,44 +15,44 @@ const Hero = () => {
                             <Image
                                 src={LINKEDIN_PROFILE_URL}
                                 width={150}
-                                className="rounded-full min-[2100px]:h-[200px] min-[2100px]:w-[200px] "
+                                className="rounded-full 2xl:h-[250px] 2xl:w-[250px] "
                                 height={150}
                                 alt="profile-image"
                             />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <h1 className="font-semibold text-xl text-white md:text-black ">
+                            <h1 className="font-semibold text-xl 2xl:text-4xl text-white md:text-black ">
                                 Ram Goel
                             </h1>
-                            <div className="w-[100px] my-2 h-[5px] bg-white md:bg-violet-600"></div>
-                            <p className="text-white text-sm md:text-black">
+                            <div className="w-[100px] my-2 2xl:my-4 h-[5px] bg-white md:bg-violet-600"></div>
+                            <p className="text-white text-sm 2xl:text-md md:text-black">
                                 developer / engineer
                             </p>
                         </div>
 
-                        <div className="flex items-center h-[40px] absolute w-full bg-white bottom-0 justify-center gap-[1rem]">
+                        <div className="flex items-center h-[40px] 2xl:h-[60px] absolute w-full bg-white bottom-0 justify-center gap-[1rem]">
                             <Link href="https://www.linkedin.com/in/ramgoel/">
                                 <FaLinkedinIn
                                     size={20}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
                                 />
                             </Link>
                             <Link href="https://github.com/RamGoel">
                                 <FaGithub
                                     size={20}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
                                 />
                             </Link>
                             <Link href="https://ramgoel.hashnode.dev/">
                                 <FaHashnode
                                     size={20}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
                                 />
                             </Link>
                             <Link href="https://x.com/theramgoel">
                                 <RiTwitterXFill
                                     size={20}
-                                    className="cursor-pointer"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
                                 />
                             </Link>
                         </div>
@@ -66,7 +66,7 @@ const Hero = () => {
 
                         <div className="w-[200px] my-4 min-[2100px]:my-8 h-[5px] bg-violet-600"></div>
 
-                        <p className="w-10/12 md:w-[400px] text-sm mb-4 leading-[35px] lowercase">
+                        <p className="w-10/12 md:w-[400px] text-sm 2xl:text-md mb-4 leading-[35px] lowercase">
                             I&apos;m a full stack + gen-ai engineer based in
                             Uttar Pradesh, India📍. I have previously worked at{' '}
                             <Link
