@@ -91,6 +91,12 @@ export const experiences = [
     },
 ]
 
+export const whyMePoints = [
+    'I am a quick learner, learned about storybook in few days for my GSOC proposal.',
+    `I don't need designs for most things, just give me few references and I'll build upon it`,
+    `I don't need designs for most things, just give me few references and I'll build upon it`,
+]
+
 export const projects = [
     {
         name: 'LemmaUI',
@@ -98,6 +104,7 @@ export const projects = [
         time: 'June 2024',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsoypv-YhJjQ_9zkzMtYr9tgJXkC_aAEW-bw&s',
         link: 'https://lemma-ui.vercel.app/',
+        type: 'Side Projects',
     },
     {
         name: 'EcoEcho',
@@ -105,6 +112,7 @@ export const projects = [
         time: 'April 2024',
         image: 'https://sustain-globe.netlify.app/icon.svg',
         link: 'https://sustain-globe.netlify.app/',
+        type: 'Side Projects',
     },
     {
         name: 'Dumbel',
@@ -112,6 +120,7 @@ export const projects = [
         time: 'January 2024',
         image: 'https://dumbel.vercel.app/icon.png?2af62662855a959f',
         link: 'https://dumbel.vercel.app/',
+        type: 'Side Projects',
     },
     {
         name: 'Ticketoo',
@@ -119,6 +128,7 @@ export const projects = [
         time: 'August 2023',
         image: 'https://ticketoo.vercel.app/lg%20(2).png',
         link: 'https://ticketoo.vercel.app/',
+        type: 'Side Projects',
     },
     {
         name: 'Portify',
@@ -126,5 +136,54 @@ export const projects = [
         time: 'March 2023',
         image: 'https://i.ibb.co/2KCSYNP/P.png',
         link: 'https://portify-nine.vercel.app/',
+        type: 'Side Projects',
+    },
+    {
+        name: 'JustToys',
+        description: 'Website for Kids Toy Company',
+        time: 'June 2024',
+        image: 'https://just-toys.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.3aced068.png&w=1080&q=75',
+        link: 'https://just-toys.vercel.app/',
+        type: 'Static Websites',
+    },
+    {
+        name: 'LoanUncle',
+        description: 'Website for a Loan Agent Company',
+        time: 'August 2023',
+        image: 'https://loanuncle.com/assets/images/LoanUncle.png',
+        link: 'https://loanuncle.com/',
+        type: 'Static Websites',
+    },
+    {
+        name: 'Surplus',
+        description: 'Landing page for Surplus App',
+        time: 'July 2023',
+        image: 'https://www.surplusapp.in/static/media/logo.48a77c1cf5236686a67719663ec98f96.svg',
+        link: 'https://surplusapp.in/',
+        type: 'Static Websites',
+    },
+    {
+        name: 'Genero',
+        description: 'Website for college annual fest',
+        time: 'April 2023',
+        image: 'https://i.ibb.co/51ZNnWz/Genero23-01-1.png',
+        link: 'https://genero23.netlify.app/',
+        type: 'Static Websites',
+    },
+    {
+        name: 'TedxABESEC',
+        description: 'Website for a TED event in college',
+        time: 'October 2022',
+        image: 'https://tedxabesec.in/assets/img/logo-black.png',
+        link: 'https://tedxabesec.in/',
+        type: 'Static Websites',
+    },
+    {
+        name: 'HackHaven',
+        description: 'Website for college Hackathon',
+        time: 'JUne 2023',
+        image: 'https://i.pinimg.com/736x/b6/58/39/b658391177941f5b1e486874e7b18702.jpg',
+        link: 'https://hackhaven.netlify.app/',
+        type: 'Static Websites',
     },
 ]
