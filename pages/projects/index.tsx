@@ -26,7 +26,7 @@ const Projects = () => {
                             ) {
                                 return (
                                     <div key={index}>
-                                        <h1 className="text-lg font-semibold mb-4">
+                                        <h1 className="text-lg text-center md:text-left font-semibold mb-4">
                                             {item.type}
                                         </h1>
                                         <StartupCard
