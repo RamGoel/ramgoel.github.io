@@ -99,6 +99,15 @@ export const whyMePoints = [
 
 export const projects = [
     {
+        name: 'Dumbel (70+ users)',
+        description:
+            'connect with developers, find teammates, or share knowledge',
+        time: 'January 2024',
+        image: 'https://dumbel.vercel.app/icon.png?2af62662855a959f',
+        link: 'https://dumbel.vercel.app/',
+        type: 'Side Projects',
+    },
+    {
         name: 'LemmaUI',
         description: 'convert your API responses into beautiful Tailwind UI.',
         time: 'June 2024',
@@ -114,14 +123,7 @@ export const projects = [
         link: 'https://sustain-globe.netlify.app/',
         type: 'Side Projects',
     },
-    {
-        name: 'Dumbel',
-        description: 'connect with other developers, or find teammate.',
-        time: 'January 2024',
-        image: 'https://dumbel.vercel.app/icon.png?2af62662855a959f',
-        link: 'https://dumbel.vercel.app/',
-        type: 'Side Projects',
-    },
+
     {
         name: 'Ticketoo',
         description: 'list your unused tickets or buy unused tickets.',
@@ -185,5 +187,39 @@ export const projects = [
         image: 'https://i.pinimg.com/736x/b6/58/39/b658391177941f5b1e486874e7b18702.jpg',
         link: 'https://hackhaven.netlify.app/',
         type: 'Static Websites',
+    },
+]
+
+export const contributions = [
+    {
+        name: 'AsyncAPI',
+        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
+        description:
+            'Conference archive page, and some responsive design fixes.',
+        links: [
+            {
+                name: 'conference-website',
+                link: 'https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+author%3ARamGoel+',
+            },
+            {
+                name: 'website',
+                link: 'https://github.com/asyncapi/website/pulls?q=is%3Apr+author%3ARamGoel+is%3Aclosed',
+            },
+        ],
+    },
+    {
+        name: 'MojaGlobal',
+        icon: 'https://avatars.githubusercontent.com/u/19564969?s=280&v=4',
+        description: 'Some UI fixes when I was getting started',
+        links: [
+            {
+                name: 'flint-ui',
+                link: 'https://github.com/moja-global/FLINT-UI/pulls?q=is%3Apr+author%3ARamGoel+is%3Aclosed',
+            },
+            {
+                name: 'docs',
+                link: 'https://github.com/moja-global/moja_global_docs/pulls?q=is%3Apr+author%3ARamGoel+is%3Aclosed',
+            },
+        ],
     },
 ]

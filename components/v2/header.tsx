@@ -9,18 +9,16 @@ const Header = () => {
                     Ram Goel
                 </h1>
 
-                <p className="opacity-70 hidden md:block text-sm 2xl:text-md font-medium">
+                {/* <p className="opacity-70 hidden md:block text-sm 2xl:text-md font-medium">
                     /developer /engineer
-                </p>
+                </p> */}
             </div>
 
             <div className="flex items-center gap-3 2xl:text-md text-sm justify-end">
                 <Link href={'/'}>about</Link>
                 <Link href={'/experience'}>Experience</Link>
                 <Link href={'/projects'}>Projects</Link>
-                {/* <Link href={'/projects'} className="text-sm">
-                    Why me?
-                </Link> */}
+                <Link href={'/contributions'}>contributions</Link>
             </div>
         </div>
     )

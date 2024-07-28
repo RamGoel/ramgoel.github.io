@@ -1,10 +1,11 @@
 import { LINKEDIN_PROFILE_URL } from '@/utils/strings'
+import { ArrowRight } from 'lucide-react'
+import moment from 'moment'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FaGithub } from 'react-icons/fa'
+import { FaGithub, FaProductHunt } from 'react-icons/fa'
 import { FaHashnode, FaLinkedinIn } from 'react-icons/fa6'
 import { RiTwitterXFill } from 'react-icons/ri'
-
 const Hero = () => {
     return (
         <div className="h-full">
@@ -30,36 +31,42 @@ const Hero = () => {
                             </p>
                         </div>
 
-                        <div className="flex items-center h-[40px] 2xl:h-[60px] absolute w-full bg-white bottom-0 justify-center gap-[1rem]">
+                        <div className="flex items-center h-[40px] 2xl:h-[60px] absolute w-full bg-white bottom-0 justify-center gap-[1.5rem]">
                             <Link href="https://www.linkedin.com/in/ramgoel/">
                                 <FaLinkedinIn
                                     size={20}
-                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
                             <Link href="https://github.com/RamGoel">
                                 <FaGithub
                                     size={20}
-                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
                             <Link href="https://ramgoel.hashnode.dev/">
                                 <FaHashnode
                                     size={20}
-                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
                             <Link href="https://x.com/theramgoel">
                                 <RiTwitterXFill
                                     size={20}
-                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px]"
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
+                                />
+                            </Link>
+                            <Link href="https://www.producthunt.com/@ram_goel">
+                                <FaProductHunt
+                                    size={20}
+                                    className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
                         </div>
                     </div>
                 </div>
                 <div className=" w-full md:w-[50%] h-fit md:h-[90%] relative">
-                    <div className="m-[5%]">
+                    <div className="mx-[5%]">
                         <h1 className="text-5xl min-[2100px]:text-8xl m-0 md:ml-[-7px] font-bold">
                             Namaste
                         </h1>
@@ -67,8 +74,28 @@ const Hero = () => {
                         <div className="w-[200px] my-4 min-[2100px]:my-8 h-[5px] bg-violet-600"></div>
 
                         <p className="w-10/12 md:w-[400px] text-sm 2xl:text-md mb-4 leading-[35px] lowercase">
+                            started to code{' '}
+                            <ArrowRight size={13} className="inline" />{' '}
+                            {moment(new Date('2019-04-04')).fromNow()}, <br />{' '}
+                            first internship{' '}
+                            <ArrowRight size={13} className="inline" />{' '}
+                            {moment(new Date('2021-04-04')).fromNow()}, <br />
+                            first job{' '}
+                            <ArrowRight size={13} className="inline" />{' '}
+                            {moment(new Date('2024-03-27')).fromNow()}.
+                            <br />
+                            <br />
                             I&apos;m a full stack + gen-ai engineer based in
-                            Uttar Pradesh, India📍. I have previously worked at{' '}
+                            India. <br /> I am working as a fullstack engineer
+                            at{' '}
+                            <Link
+                                className="font-semibold text-violet-600"
+                                href={'https://getconch.ai/'}
+                                target="_blank"
+                            >
+                                Conch-AI
+                            </Link>
+                            , previously worked at{' '}
                             <Link
                                 className="font-semibold text-violet-600"
                                 href={'https://animall.in/'}
@@ -78,9 +105,9 @@ const Hero = () => {
                             </Link>{' '}
                             & various early stage startups.
                             <br />
-                            <br />I love building softwares to solve real-life
-                            problems, no matter how small or big. My best two
-                            projects so far, are{' '}
+                            <br />I love building softwares and launch to{' '}
+                            <span className="font-semibold">real users</span>,
+                            My best two projects so far, are{' '}
                             <Link
                                 className="font-semibold text-violet-600"
                                 href={'https://dumbel.vercel.app'}
@@ -95,7 +122,7 @@ const Hero = () => {
                                 target="_blank"
                             >
                                 Lemma
-                            </Link>
+                            </Link>{' '}
                         </p>
                     </div>
                 </div>
