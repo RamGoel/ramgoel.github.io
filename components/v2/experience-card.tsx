@@ -26,9 +26,9 @@ const ExperienceCard = ({ experience }: { experience: ExperienceProps }) => {
                 <h1 className="text-md 2xl:text-lg font-semibold ">
                     {experience.company}
                 </h1>
-                <div className="flex text-sm 2xl:text-md opacity-75 flex-wrap items-center justify-between">
-                    <p>{experience.role}</p>
-                    <p>
+                <div className="flex text-sm 2xl:text-md opacity-75 gap-2 flex-wrap items-center flex-col-reverse md:flex-row justify-start md:justify-between">
+                    <p className="w-full md:w-auto">{experience.role}</p>
+                    <p className="w-full md:w-auto">
                         {experience.start} — {experience.end}
                     </p>
                 </div>

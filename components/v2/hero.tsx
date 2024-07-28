@@ -21,7 +21,7 @@ const Hero = () => {
                                 alt="profile-image"
                             />
                         </div>
-                        <div className="flex flex-col items-center justify-center">
+                        <div className="flex my-2 md:my-0 flex-col items-center justify-center">
                             <h1 className="font-semibold text-xl 2xl:text-4xl text-white md:text-black ">
                                 Ram Goel
                             </h1>
@@ -66,14 +66,14 @@ const Hero = () => {
                     </div>
                 </div>
                 <div className=" w-full md:w-[50%] h-fit md:h-[90%] relative">
-                    <div className="mx-[5%]">
+                    <div className="mx-[5%] my-[5%] md:my-0">
                         <h1 className="text-5xl min-[2100px]:text-8xl m-0 md:ml-[-7px] font-bold">
                             Namaste
                         </h1>
 
                         <div className="w-[200px] my-4 min-[2100px]:my-8 h-[5px] bg-violet-600"></div>
 
-                        <p className="w-10/12 md:w-[400px] text-sm 2xl:text-md mb-4 leading-[35px] lowercase">
+                        <p className="w-full md:w-[400px] text-sm 2xl:text-md mb-4 leading-[35px] lowercase">
                             started to code{' '}
                             <ArrowRight size={13} className="inline" />{' '}
                             {moment(new Date('2019-04-04')).fromNow()}, <br />{' '}
@@ -86,8 +86,7 @@ const Hero = () => {
                             <br />
                             <br />
                             I&apos;m a full stack + gen-ai engineer based in
-                            India. <br /> I am working as a fullstack engineer
-                            at{' '}
+                            India. I am working as a fullstack engineer at{' '}
                             <Link
                                 className="font-semibold text-violet-600"
                                 href={'https://getconch.ai/'}

@@ -21,7 +21,7 @@ const ContributionCard = ({ contribution }: any) => {
                 </div>
             </div>
             <div className="flex flex-col gap-1 w-full">
-                <div className="flex mt-1 items-center justify-start gap-4">
+                <div className="flex mt-1 items-center flex-wrap justify-start gap-4">
                     {contribution?.links?.map(
                         (
                             item: { link: string; name: string },

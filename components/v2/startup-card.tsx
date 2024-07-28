@@ -24,7 +24,7 @@ const StartupCard = ({ startup }: { startup: any }) => {
                 </div>
             </div>
             <div className="flex flex-col gap-1 w-full">
-                <div className="flex items-start justify-between">
+                <div className="flex items-start flex-col md:flex-row justify-between">
                     <h1 className="text-md 2xl:text-lg text-violet-600 font-semibold">
                         {startup.name}
                     </h1>
