@@ -9,7 +9,7 @@ const font = Poppins({
 const MainLayout = ({ children }: { children: any }) => {
     return (
         <div
-            className={`bg-white lowercase flex  flex-col w-full text-black ${font.className}`}
+            className={`bg-white flex flex-col w-full text-black ${font.className}`}
         >
             <title>About Ram | Engineer, Developer</title>
 

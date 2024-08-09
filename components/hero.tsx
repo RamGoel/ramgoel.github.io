@@ -104,7 +104,7 @@ const Hero = () => {
 
                         <div className="w-[200px] my-4 min-[2100px]:my-8 h-[5px] bg-violet-600"></div>
 
-                        <p className="w-full md:w-[400px] text-sm 2xl:text-md mb-4 leading-[35px] lowercase">
+                        <p className="w-full md:w-[400px] text-sm 2xl:text-[15px] mb-4 leading-10">
                             started to code{' '}
                             <ArrowRight size={13} className="inline" />{' '}
                             {moment(new Date('2019-04-04')).fromNow()}, <br />{' '}

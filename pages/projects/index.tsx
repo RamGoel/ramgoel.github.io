@@ -51,7 +51,7 @@ const Projects = () => {
                 >
                     <p className="">
                         View{' '}
-                        {isWebsites !== null ? 'full-stack Apps' : 'Websites'}{' '}
+                        {isWebsites !== null ? 'Full-Stack Apps' : 'Websites'}{' '}
                         I&apos;ve built
                     </p>
                     <ArrowRight size={18} />

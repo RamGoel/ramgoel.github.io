@@ -7,10 +7,11 @@ export const experiences = [
         skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
         url: 'https://getconch.ai',
         description: `
-             <div class="text-sm flex flex-col gap-2">
-             <p>- Integrated LLM models to generate responses </p>
-             <p>- processed the documents in realtime to answer user queries. </p>
-             <p>- Optimized the number of API calls, and the response time</p>
+             <div class="mt-2 uppercase flex flex-col gap-2">
+             <p>• Utilized LLM models for usecases like text generation, summarization, and translation </p>
+             <p>• Implemented AI Test coverage for 90% of the application. </p>
+             <p>• Implemented A/B tests to test the new features</p>
+             <p>• Designed and Implemented ETL pipeline for citing the documents.</p>
              </div>
             `,
         role: 'FullStack + GenAI Engineer',
@@ -25,10 +26,10 @@ export const experiences = [
         skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
         url: 'https://animall.in',
         description: `
-             <div class="text-sm flex flex-col gap-2">
-             <p>- Worked on a scale of 100K Daily Active users. </p>
-             <p>- Built Cattle data collection module from scratch </p>
-             <p>- Automated report generation (Report generation time decreased from 1-2 days to 10 minute) </p>
+             <div class="mt-2 flex flex-col gap-2">
+             <p>• Worked on a scale of 100K DAU </p>
+             <p>• Built Cattle data collection module from scratch for ground team usage </p>
+             <p>• Automated report generation (TAT decreased from 1-2 days to 15 minute) </p>
              </div>
             `,
         role: 'Frontend Engineer Intern',
@@ -43,10 +44,10 @@ export const experiences = [
         skills: ['React Native', 'ReactJs', 'Tailwind', 'SCSS'],
         url: 'https://surplusapp.in',
         description: `
-            <div class="text-sm flex flex-col gap-2">
-             <p>- Created recurring payments tracker with automated reminders </p>
-             <p>- Integrated BBPS SDK for bill payments using app. </p>
-             <p>- Integrated Account Aggregator for fetching latest payments from bank. </p>
+            <div class="mt-2 flex flex-col gap-2">
+             <p>• Created recurring payments tracker with automated reminders </p>
+             <p>• Integrated BBPS SDK for bill payments using app. </p>
+             <p>• Integrated Account Aggregator for automated fetching of latest transactions. </p>
              </div>
            `,
         role: 'App Developer Intern',
@@ -61,10 +62,10 @@ export const experiences = [
         skills: ['React Native', 'ReactJs'],
         url: 'https://simplifii.com',
         description: `
-            <div class="text-sm flex flex-col gap-2">
-             <p>- Integrated automatic OTP verification, and app tour in one of the client project. </p>
-             <p>- Taken client interviews for collecting requirements, and worked on them.</p>
-             <p>- Created landing page website for a e-commerce client. </p>
+            <div class="mt-2 flex flex-col gap-2">
+             <p>• Integrated automatic OTP verification, and app tour in one of the client project. </p>
+             <p>• Taken client interviews for collecting requirements, and worked on them.</p>
+             <p>• Created landing page website for a e-commerce client. </p>
              </div>
             `,
         role: 'Software Engineer Intern',
@@ -80,9 +81,9 @@ export const experiences = [
         skills: ['ReactJs', 'HTML', 'CSS', 'Figma'],
         url: 'https://neyx.in/',
         description: `
-             <div class="text-sm flex flex-col gap-2">
-             <p>- Integrated socketio into the AI chatbot, built using React and Django </p>
-             <p>- Created company website in ReactJS.  </p>
+             <div class="mt-2 flex flex-col gap-2">
+             <p>• Integrated socketio into the AI chatbot, built using React and Django </p>
+             <p>• Created company website in ReactJS.  </p>
              </div>
             `,
         role: 'Intern (React)',

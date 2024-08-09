@@ -23,7 +23,7 @@ const Experience = () => {
                         </Link>
                     </div>
 
-                    <p className="mt-4 text-sm 2xl:text-md leading-[30px] 2xl:leading-[40px]">
+                    <p className="mt-4 text-sm 2xl:text-[15px] leading-[30px] 2xl:leading-[40px]">
                         I graduated{' '}
                         {moment().format('YYYY') === '2024'
                             ? 'this year'
@@ -57,6 +57,7 @@ const Experience = () => {
                 <div className="grid grid-cols-1 w-full md:w-1/2 mt-[30px] md:mt-0 gap-[1rem] md:gap-[.5rem] 2xl:gap-[2rem] ">
                     {experiences
                         .filter((item) => item.type === 'profession')
+                        .slice(0, 3)
                         .map((item, index) => {
                             return (
                                 <ExperienceCard experience={item} key={index} />

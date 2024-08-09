@@ -11,18 +11,6 @@ const config: Config = {
             animation: {
                 slide: 'slide 3.5s linear infinite',
             },
-            fontSize: {
-                sm: '0.8rem',
-                md: '1rem',
-                lg: '1.2rem',
-                xl: '1.5rem',
-                '2xl': '1.8rem',
-                '3xl': '2.2rem',
-                '4xl': '2.5rem',
-                '5xl': '3rem',
-                '6xl': '4rem',
-                '7xl': '5rem',
-            },
             keyframes: {
                 slide: {
                     '0%': { transform: 'translateY(100%)', opacity: '0.1' },
