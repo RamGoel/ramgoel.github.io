@@ -6,6 +6,9 @@ import Link from 'next/link'
 import { FaGithub, FaProductHunt } from 'react-icons/fa'
 import { FaHashnode, FaLinkedinIn } from 'react-icons/fa6'
 import { RiTwitterXFill } from 'react-icons/ri'
+import 'react-tooltip/dist/react-tooltip.css'
+import CustomTooltip from './custom-tooltip'
+
 const Hero = () => {
     return (
         <div className="h-full">
@@ -32,31 +35,59 @@ const Hero = () => {
                         </div>
 
                         <div className="flex items-center h-[40px] 2xl:h-[60px] absolute w-full bg-white bottom-0 justify-center gap-[1.5rem]">
-                            <Link href="https://www.linkedin.com/in/ramgoel/">
+                            <CustomTooltip id="linkedin-tooltip" />
+                            <CustomTooltip id="github-tooltip" />
+                            <CustomTooltip id="blog-tooltip" />
+                            <CustomTooltip id="twitter-tooltip" />
+                            <CustomTooltip id="product-hunt-tooltip" />
+
+                            <Link
+                                data-tooltip-id="linkedin-tooltip"
+                                data-tooltip-content="Serious Stuff!"
+                                href="https://www.linkedin.com/in/ramgoel/"
+                            >
                                 <FaLinkedinIn
                                     size={20}
                                     className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
-                            <Link href="https://github.com/RamGoel">
+
+                            <Link
+                                data-tooltip-id="github-tooltip"
+                                data-tooltip-content="My treasure!"
+                                href="https://github.com/RamGoel"
+                            >
                                 <FaGithub
                                     size={20}
                                     className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
-                            <Link href="https://ramgoel.hashnode.dev/">
+
+                            <Link
+                                data-tooltip-id="blog-tooltip"
+                                data-tooltip-content="Rarely!"
+                                href="https://ramgoel.hashnode.dev/"
+                            >
                                 <FaHashnode
                                     size={20}
                                     className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
-                            <Link href="https://x.com/theramgoel">
+                            <Link
+                                data-tooltip-id="twitter-tooltip"
+                                data-tooltip-content="Total Shitpost!"
+                                href="https://x.com/theramgoel"
+                            >
                                 <RiTwitterXFill
                                     size={20}
                                     className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"
                                 />
                             </Link>
-                            <Link href="https://www.producthunt.com/@ram_goel">
+                            <Link
+                                data-tooltip-id="product-hunt-tooltip"
+                                data-tooltip-content="what I shipped!"
+                                href="https://www.producthunt.com/@ram_goel"
+                            >
                                 <FaProductHunt
                                     size={20}
                                     className="cursor-pointer 2xl:w-[25px] 2xl:h-[25px] hover:translate-y-[-3px] transition-all"

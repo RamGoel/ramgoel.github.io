@@ -8,10 +8,6 @@ const Header = () => {
                 <h1 className="text-2xl hidden md:block font-semibold">
                     Ram Goel
                 </h1>
-
-                {/* <p className="opacity-70 hidden md:block text-sm 2xl:text-md font-medium">
-                    /developer /engineer
-                </p> */}
             </div>
 
             <div className="flex items-center gap-3 2xl:text-md text-sm justify-end">

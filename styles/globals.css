@@ -3,38 +3,7 @@
 @tailwind utilities;
 @tailwind variants;
 
-/* html,
-body {
-  padding: 0;
-  line-height: 1.6;
-  font-size: 18px;
-    scroll-behavior: smooth !important;
-}
 
-html{
-  scroll-behavior: smooth !important;
-}
-@layer base {
-  .font-outline-2 {
-    -webkit-text-stroke: 2px rgb(255, 255, 255);
-  }
-
-  .font-outline-4 {
-    -webkit-text-stroke: 4px rgb(255, 255, 255);
-  }
-  
-}
-
-* {
-  box-sizing: border-box;
-} */
-
-
-
-/* img {
-  max-width: 100%;
-  display: block;
-}*/
 
 *::-webkit-scrollbar {
   display: none;
@@ -45,24 +14,3 @@ html{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-
-/*
-.project-link:hover .project-arrow{
-    transition:0.5s;
-    transform: translateY(-5px) rotate(-45deg);
-}
-
-
-.section{
-  height: 60vh;
-}
-
-body::-webkit-scrollbar {
-  display: none;
-}
-
-@media screen and (max-width: 768px) {
-  .section{
-    height: auto;
-  }
-} */

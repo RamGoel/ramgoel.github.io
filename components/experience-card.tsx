@@ -1,7 +1,6 @@
 import Image from 'next/image'
-import { ExperienceProps } from '../portfolio/experience/experience.types'
 
-const ExperienceCard = ({ experience }: { experience: ExperienceProps }) => {
+const ExperienceCard = ({ experience }: { experience: any }) => {
     return (
         <div className=" relative w-11/12 flex gap-4 flex-col md:flex-row items-stretch justify-between py-1 px-[5%]">
             <div className="flex  items-center justify-start md:justify-center">
