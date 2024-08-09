@@ -23,7 +23,7 @@ const Experience = () => {
                         </Link>
                     </div>
 
-                    <p className="mt-4 text-sm 2xl:text-[15px] leading-[30px] 2xl:leading-[40px]">
+                    <p className="mt-4 text-sm 2xl:text-md leading-[30px] 2xl:leading-[40px]">
                         I graduated{' '}
                         {moment().format('YYYY') === '2024'
                             ? 'this year'

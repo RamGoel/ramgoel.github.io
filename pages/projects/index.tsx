@@ -40,7 +40,7 @@ const Projects = () => {
                 </div>
 
                 <div
-                    className="flex items-center justify-center text-violet-600 gap-2 cursor-pointer"
+                    className="flex items-center mb-10 justify-center text-violet-600 gap-2 cursor-pointer"
                     onClick={() => {
                         if (isWebsites !== null) {
                             window.location.href = '/projects'

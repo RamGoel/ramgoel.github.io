@@ -4,8 +4,8 @@ import { FaGithub } from 'react-icons/fa'
 
 const ContributionCard = ({ contribution }: any) => {
     return (
-        <div className=" w-11/12 flex flex-col gap-4 md:flex-row items-center justify-between rounded-xl  mx-auto">
-            <div className="flex items-center w-fit mr-auto justify-start md:justify-center">
+        <div className=" w-11/12 flex flex-col gap-4 md:flex-row items-top justify-between rounded-xl  mx-auto">
+            <div className="flex items-top w-fit mr-auto justify-start md:justify-center">
                 <div
                     className={`relative w-[50px] h-[50px] 2xl:w-[60px] 2xl:h-[60px] cursor-pointer flex items-center justify-center  rounded-full border-[5px]`}
                 >
@@ -15,7 +15,7 @@ const ContributionCard = ({ contribution }: any) => {
                             width={100}
                             height={100}
                             alt="logo"
-                            className="my-4 mr-auto  rounded-full"
+                            className="my-4 mr-auto rounded-full"
                         />
                     ) : null}
                 </div>

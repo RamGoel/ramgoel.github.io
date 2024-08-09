@@ -6,13 +6,7 @@ export const experiences = [
         end: 'Present',
         skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
         url: 'https://getconch.ai',
-        description: `
-             <div class="mt-2 uppercase flex flex-col gap-2">
-             <p>• Utilized LLM models for usecases like text generation, summarization, and translation </p>
-             <p>• Implemented AI Test coverage for 90% of the application. </p>
-             <p>• Implemented A/B tests to test the new features</p>
-             <p>• Designed and Implemented ETL pipeline for citing the documents.</p>
-             </div>
+        description: `Utilized LLM models for usecases like text generation, summarization, and translation.\nImplemented AI Test coverage for 90% of the application.\nImplemented A/B tests to test the new features.\nDesigned and Implemented ETL pipeline for citing the documents.
             `,
         role: 'FullStack + GenAI Engineer',
         type: 'profession',
@@ -25,12 +19,7 @@ export const experiences = [
         end: 'Mar 2024',
         skills: ['NextJS', 'GCP', 'Tailwind', 'Jquery'],
         url: 'https://animall.in',
-        description: `
-             <div class="mt-2 flex flex-col gap-2">
-             <p>• Worked on a scale of 100K DAU </p>
-             <p>• Built Cattle data collection module from scratch for ground team usage </p>
-             <p>• Automated report generation (TAT decreased from 1-2 days to 15 minute) </p>
-             </div>
+        description: `Worked on a scale of 100K DAU \nBuilt Cattle data collection module from scratch for ground team usage \nAutomated report generation (TAT decreased from 1-2 days to 15 minute) \n
             `,
         role: 'Frontend Engineer Intern',
         type: 'profession',
@@ -44,11 +33,9 @@ export const experiences = [
         skills: ['React Native', 'ReactJs', 'Tailwind', 'SCSS'],
         url: 'https://surplusapp.in',
         description: `
-            <div class="mt-2 flex flex-col gap-2">
-             <p>• Created recurring payments tracker with automated reminders </p>
-             <p>• Integrated BBPS SDK for bill payments using app. </p>
-             <p>• Integrated Account Aggregator for automated fetching of latest transactions. </p>
-             </div>
+             Created recurring payments tracker with automated reminders \n
+             Integrated BBPS SDK for bill payments using app. \n
+             Integrated Account Aggregator for automated fetching of latest transactions. \n
            `,
         role: 'App Developer Intern',
         type: 'profession',
@@ -62,11 +49,9 @@ export const experiences = [
         skills: ['React Native', 'ReactJs'],
         url: 'https://simplifii.com',
         description: `
-            <div class="mt-2 flex flex-col gap-2">
-             <p>• Integrated automatic OTP verification, and app tour in one of the client project. </p>
-             <p>• Taken client interviews for collecting requirements, and worked on them.</p>
-             <p>• Created landing page website for a e-commerce client. </p>
-             </div>
+             Integrated automatic OTP verification, and app tour in one of the client project. \n
+             Taken client interviews for collecting requirements, and worked on them. \n
+             Created landing page website for a e-commerce client. \n
             `,
         role: 'Software Engineer Intern',
         type: 'profession',
@@ -81,10 +66,8 @@ export const experiences = [
         skills: ['ReactJs', 'HTML', 'CSS', 'Figma'],
         url: 'https://neyx.in/',
         description: `
-             <div class="mt-2 flex flex-col gap-2">
-             <p>• Integrated socketio into the AI chatbot, built using React and Django </p>
-             <p>• Created company website in ReactJS.  </p>
-             </div>
+             Integrated socketio into the AI chatbot, built using React and Django \n
+             Created company website in ReactJS.  \n
             `,
         role: 'Intern (React)',
         type: 'profession',
