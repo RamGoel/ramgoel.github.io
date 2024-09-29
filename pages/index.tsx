@@ -129,7 +129,7 @@ export default function Home() {
                     </a>
                     , and a tool to convert{' '}
                     <a
-                        href="https://dumbel.vercel.app/"
+                        href="https://lemma-ui.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="underline"
