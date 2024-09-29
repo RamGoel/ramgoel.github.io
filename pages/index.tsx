@@ -75,6 +75,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
         >
+            <title>Ram Goel</title>
             <CustomTooltip id="hover-tooltip" />
             <motion.main
                 variants={childVariants}
@@ -82,9 +83,9 @@ export default function Home() {
             >
                 <Image
                     src={LINKEDIN_PROFILE_URL}
-                    width={120}
-                    className="rounded-full 2xl:h-[250px] 2xl:w-[250px] "
-                    height={120}
+                    width={500}
+                    className="rounded-full w-[160px] h-[160px]"
+                    height={500}
                     alt="profile-image"
                 />
                 <motion.h1
