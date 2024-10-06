@@ -16,7 +16,7 @@ const containerVariants = {
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.2, // Delay between each child
+            staggerChildren: 0.3, // Delay between each child
         },
     },
 }
@@ -29,7 +29,7 @@ const childVariants = {
         opacity: 1,
         y: 0, // Slide up to original position
         transition: {
-            duration: 0.5, // Animation duration for each child
+            duration: 1, // Animation duration for each child
         },
     },
 }
@@ -96,8 +96,19 @@ export default function Home() {
                 </motion.h1>
                 <motion.p variants={childVariants} className="text-lg">
                     I&apos;m a full stack engineer at ConchAI, a AI powered
-                    writing and study platform based out of United States .
-                    Previously I have worked at{' '}
+                    writing and study platform based out of{' '}
+                    <span className="inline-flex ">
+                        <Image
+                            src={
+                                'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/800px-Flag_of_the_United_States.png'
+                            }
+                            className="w-[25px] h-[15px]"
+                            width={500}
+                            height={500}
+                            alt="usa"
+                        />
+                    </span>{' '}
+                    . Previously I have worked at{' '}
                     <a
                         href="https://www.linkedin.com/company/animall-in/"
                         target="_blank"
@@ -136,6 +147,16 @@ export default function Home() {
                     >
                         API responses to frontend code.
                     </a>
+                </motion.p>
+
+                <motion.p variants={childVariants} className="text-lg">
+                    Wanna see more work,{' '}
+                    <Link
+                        href="https://gleaming-scilla-add.notion.site/My-Work-109ab15484d5800facaedefcb065a0ca"
+                        className="underline text-yellow-500"
+                    >
+                        click here
+                    </Link>
                 </motion.p>
                 <div className="flex items-center mt-3 justify-start gap-6">
                     {socials.map((social) => (
