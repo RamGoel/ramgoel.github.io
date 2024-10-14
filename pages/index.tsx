@@ -11,6 +11,8 @@ import {
     FaTwitter,
 } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
+import Badge from '@/components/badge'
+import { ArrowUpRight } from 'lucide-react'
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -128,37 +130,8 @@ export default function Home() {
                     </a>{' '}
                     and 2 other startups.
                 </motion.p>
-                <motion.p variants={childVariants} className="text-lg">
-                    I love to build apps in my free time. I&apos;ve built a{' '}
-                    <a
-                        href="https://dumbel.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                    >
-                        platform to connect devs
-                    </a>
-                    , and a tool to convert{' '}
-                    <a
-                        href="https://lemma-ui.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                    >
-                        API responses to frontend code.
-                    </a>
-                </motion.p>
 
-                <motion.p variants={childVariants} className="text-lg">
-                    Wanna see more work,{' '}
-                    <Link
-                        href="https://gleaming-scilla-add.notion.site/My-Work-109ab15484d5800facaedefcb065a0ca"
-                        className="underline text-yellow-500"
-                    >
-                        click here
-                    </Link>
-                </motion.p>
-                <div className="flex items-center mt-3 justify-start gap-6">
+                <div className="flex items-center my-3 justify-start gap-6">
                     {socials.map((social) => (
                         <Link
                             href={social.url}
@@ -172,6 +145,108 @@ export default function Home() {
                     ))}
                 </div>
 
+                <hr className="my-4 opacity-10" />
+
+                <div className="flex items-center justify-between flex-wrap">
+                    <motion.h2
+                        variants={childVariants}
+                        className="text-2xl font-semibold mb-2"
+                    >
+                        My Work
+                    </motion.h2>
+                    <Link
+                        href="https://gleaming-scilla-add.notion.site/My-Work-109ab15484d5800facaedefcb065a0ca"
+                        className="underline text-yellow-500 flex items-center"
+                    >
+                        See more work on notion{' '}
+                        <ArrowUpRight size={18} className="mt-[3px]" />
+                    </Link>
+                </div>
+                <motion.div
+                    variants={containerVariants}
+                    className="flex items-center justify-start gap-4 flex-wrap"
+                >
+                    <motion.div
+                        variants={childVariants}
+                        className="text-lg relative rounded-lg w-fit "
+                    >
+                        <Image
+                            src={require('@/public/shadmore.png')}
+                            width={1500}
+                            className="w-[300px] object-cover rounded-lg h-[170px]"
+                            height={1500}
+                            alt="shadmore"
+                        />
+                        <div className="flex items-center justify-between">
+                            <p className="text-sm my-2 ml-1">
+                                components I made
+                            </p>
+                            <Link
+                                href="https://prelyst.vercel.app/"
+                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
+                            >
+                                <ArrowUpRight size={13} className="mt-[1px]" />
+                            </Link>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        variants={childVariants}
+                        className="text-lg  relative rounded-lg w-fit"
+                    >
+                        <Image
+                            src={require('@/public/dumbel.png')}
+                            width={1500}
+                            className="w-[300px] object-cover rounded-lg h-[170px]"
+                            height={1500}
+                            alt="shadmore"
+                        />
+
+                        <div className="flex items-center justify-between w-full ">
+                            <p className="text-sm my-2 ml-1">
+                                developers matching platform
+                            </p>
+                            <Link
+                                href="https://dumbel.vercel.app/"
+                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
+                            >
+                                <ArrowUpRight size={13} className="mt-[1px]" />
+                            </Link>
+                        </div>
+                    </motion.div>
+                    <motion.div
+                        variants={childVariants}
+                        className="text-lg relative rounded-lg w-fit "
+                    >
+                        <Image
+                            src={require('@/public/lemma.png')}
+                            width={1500}
+                            className="w-[300px] object-cover rounded-lg h-[170px]"
+                            height={1500}
+                            alt="shadmore"
+                        />
+                        <div className="flex items-center justify-between w-full ">
+                            <p className="text-sm my-2 ml-1">
+                                JSON to UI Code (GenAI)
+                            </p>
+                            <Link
+                                href="https://lemma-ui.vercel.app/"
+                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
+                            >
+                                <ArrowUpRight size={13} className="mt-[1px]" />
+                            </Link>
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                <hr className="my-4 opacity-10" />
+
+                <motion.h2
+                    variants={childVariants}
+                    className="text-2xl text-center font-semibold mb-2"
+                >
+                    The <span className="text-yellow-500 text-3xl">♡</span> I
+                    got
+                </motion.h2>
                 <div className="my-5 flex flex-col gap-2">
                     <Image
                         src={require('@/public/appreciate.png')}
