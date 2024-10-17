@@ -132,6 +132,18 @@ export default function Home() {
                 </motion.p>
 
                 <div className="flex items-center my-3 justify-start gap-6">
+                    <button
+                        onClick={() => {
+                            window.open(
+                                'https://cal.com/ram-goel/15min',
+                                '_blank'
+                            )
+                        }}
+                        className="flex bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
+                    >
+                        Book a call{' '}
+                        <ArrowUpRight size={18} className="mt-[3px]" />
+                    </button>
                     {socials.map((social) => (
                         <Link
                             href={social.url}
