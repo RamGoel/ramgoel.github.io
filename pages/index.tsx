@@ -81,7 +81,7 @@ export default function Home() {
             <CustomTooltip id="hover-tooltip" />
             <motion.main
                 variants={childVariants}
-                className="py-[15vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-1/2 mx-auto"
+                className="py-[15vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
             >
                 <Image
                     src={LINKEDIN_PROFILE_URL}
