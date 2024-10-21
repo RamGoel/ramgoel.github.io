@@ -64,8 +64,8 @@ const PrivacyPolicy = () => {
                 </h2>
                 <p className="text-neutral-700 dark:text-neutral-300">
                     Our extension interacts with ChatGPT, which has its own
-                    privacy policy. We recommend reviewing ChatGPT's privacy
-                    policy to understand how they handle your data.
+                    privacy policy. We recommend reviewing ChatGPT&apos;s
+                    privacy policy to understand how they handle your data.
                 </p>
             </section>
 
