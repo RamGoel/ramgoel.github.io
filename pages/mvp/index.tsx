@@ -14,6 +14,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Footer from './_components/footer'
 import StackSlider from './_components/stack'
+import Work from './_components/work'
 
 const font = Bricolage_Grotesque({
     subsets: ['latin'],
@@ -24,7 +25,7 @@ const AgencyPage = () => {
     return (
         <div
             id="agencyPage"
-            className={` bg-neutral-100 text-white dark:bg-neutral-900 ${font.className}`}
+            className={` bg-neutral-100 pt-[100px] text-white dark:bg-neutral-900 ${font.className}`}
         >
             <Head>
                 <title>Ram Goel - MVP in 3 weeks</title>
@@ -42,7 +43,10 @@ const AgencyPage = () => {
                 color="white"
             />
 
-            <div className="h-[80vh] flex flex-col items-center justify-center">
+            <div
+                id="hero"
+                className="h-[80vh] flex flex-col items-center justify-center"
+            >
                 <div className="flex flex-row text-white rounded-full bg-emerald-500/40 border-emerald-500 border-2 px-4 py-1 items-center">
                     <RiHeart3Line className="mr-2" /> Loved by 5+ founders
                 </div>
@@ -79,7 +83,7 @@ const AgencyPage = () => {
 
             <div
                 id="reviews"
-                className="pt-10 flex flex-col items-center justify-center"
+                className="pt-[150px] flex flex-col items-center justify-center"
             >
                 <h2 className="text-4xl text-center font-semibold mb-2">
                     What people say about me
@@ -90,9 +94,9 @@ const AgencyPage = () => {
                 <div className="my-5 flex flex-col gap-2">
                     <Image
                         src={require('@/public/appreciate.png')}
-                        width={1500}
+                        width={1200}
                         className=""
-                        height={1500}
+                        height={1200}
                         alt="appreciate"
                     />
                 </div>
@@ -100,6 +104,10 @@ const AgencyPage = () => {
 
             <div id="companies" className="pt-10">
                 <Companies />
+            </div>
+
+            <div id="work" className="">
+                <Work />
             </div>
 
             <div id="pricing" className="pt-10">
