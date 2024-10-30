@@ -14,6 +14,7 @@ import {
     RiReactjsLine,
     RiSupabaseLine,
     RiTailwindCssLine,
+    RiTriangleLine,
 } from 'react-icons/ri'
 import { FaChrome } from 'react-icons/fa'
 
@@ -42,47 +43,13 @@ const items = [
         ),
     },
     {
-        id: 4,
-        type: 'icon',
-        content: (
-            <RiJavascriptLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
-    {
         id: 5,
         type: 'icon',
         content: (
             <RiNodejsLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
         ),
     },
-    {
-        id: 5,
-        type: 'icon',
-        content: (
-            <FaFigma className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
-    {
-        id: 6,
-        type: 'icon',
-        content: (
-            <FaStripe className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
-    {
-        id: 7,
-        type: 'icon',
-        content: (
-            <RiDatabase2Line className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
-    {
-        id: 8,
-        type: 'icon',
-        content: (
-            <RiOpenaiLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
+
     {
         id: 9,
         type: 'icon',
@@ -90,19 +57,11 @@ const items = [
             <RiSupabaseLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
         ),
     },
-
-    {
-        id: 10,
-        type: 'icon',
-        content: (
-            <RiFirebaseLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
-        ),
-    },
     {
         id: 11,
         type: 'icon',
         content: (
-            <FaChrome className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+            <RiTriangleLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
         ),
     },
 ]
@@ -138,16 +97,16 @@ const StackSlider = () => {
                                 </p>
                             ) : item.type === 'icon' ? (
                                 item.content
-                            ) : (
+                            ) : typeof item.content === 'string' ? (
                                 <Image
                                     key={index}
                                     src={item.content}
-                                    alt={item.alt || 'company'}
+                                    alt={'company'}
                                     className="w-[150px] h-[60px] hover:saturate-100 transition-all duration-300 cursor-pointer rounded-md object-contain saturate-0"
                                     width={500}
                                     height={500}
                                 />
-                            )}
+                            ) : null}
                         </div>
                     ))}
                 </motion.div>
