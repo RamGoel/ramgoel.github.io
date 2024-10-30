@@ -3,25 +3,117 @@ import { motion } from 'framer-motion'
 import AnimallSVG from '@/public/agency/animall.svg'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
+import { FaFigma, FaQuestion, FaStripe } from 'react-icons/fa6'
+import {
+    RiDatabase2Line,
+    RiFirebaseLine,
+    RiJavascriptLine,
+    RiNextjsLine,
+    RiNodejsLine,
+    RiOpenaiLine,
+    RiReactjsLine,
+    RiSupabaseLine,
+    RiTailwindCssLine,
+} from 'react-icons/ri'
+import { FaChrome } from 'react-icons/fa'
 
 const inter = Inter({ subsets: ['latin'] })
 
 const items = [
-    { id: 1, type: 'text', content: 'sur+' },
-    { id: 2, type: 'image', content: AnimallSVG, alt: 'company' },
-    { id: 3, type: 'text', content: 'checkout' },
-    { id: 4, type: 'image', content: '/agency/conch.avif', alt: 'company' },
+    {
+        id: 1,
+        type: 'icon',
+        content: (
+            <RiReactjsLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 2,
+        type: 'icon',
+        content: (
+            <RiNextjsLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 3,
+        type: 'icon',
+        content: (
+            <RiTailwindCssLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 4,
+        type: 'icon',
+        content: (
+            <RiJavascriptLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 5,
+        type: 'icon',
+        content: (
+            <RiNodejsLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 5,
+        type: 'icon',
+        content: (
+            <FaFigma className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 6,
+        type: 'icon',
+        content: (
+            <FaStripe className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 7,
+        type: 'icon',
+        content: (
+            <RiDatabase2Line className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 8,
+        type: 'icon',
+        content: (
+            <RiOpenaiLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 9,
+        type: 'icon',
+        content: (
+            <RiSupabaseLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+
+    {
+        id: 10,
+        type: 'icon',
+        content: (
+            <RiFirebaseLine className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
+    {
+        id: 11,
+        type: 'icon',
+        content: (
+            <FaChrome className="w-12 h-12 text-neutral-500 hover:text-emerald-500 transition-all duration-300 cursor-pointer" />
+        ),
+    },
 ]
 
-const CompaniesSlider = () => {
+const StackSlider = () => {
     return (
-        <div
-            id="companies"
-            className="flex flex-col h-[70vh] items-center gap-10 justify-center text-white overflow-hidden"
-        >
-            <h1 className="text-4xl font-bold">
-                Companies we&apos;ve worked with
-            </h1>{' '}
+        <div className="flex flex-col h-[70vh] items-center gap-10 justify-center text-white overflow-hidden">
+            <h1 className="text-4xl mb-[-35px] font-bold">Tech Stack we use</h1>{' '}
+            <p className="text-neutral-500 text-center text-lg">
+                We use the latest and greatest tools to build your product
+            </p>
             <div className="relative w-[50vw] mx-auto flex items-center justify-center h-[100px] overflow-hidden">
                 <div className="absolute left-0 top-0 h-full w-[200px] bg-gradient-to-r from-neutral-900 to-transparent z-10"></div>
                 <div className="absolute right-0 top-0 h-full w-[200px] bg-gradient-to-l from-neutral-900 to-transparent z-10"></div>
@@ -44,6 +136,8 @@ const CompaniesSlider = () => {
                                 >
                                     {item.content}
                                 </p>
+                            ) : item.type === 'icon' ? (
+                                item.content
                             ) : (
                                 <Image
                                     key={index}
@@ -80,6 +174,8 @@ const CompaniesSlider = () => {
                                 >
                                     {item.content}
                                 </p>
+                            ) : item.type === 'icon' ? (
+                                item.content
                             ) : (
                                 <Image
                                     key={index}
@@ -98,4 +194,4 @@ const CompaniesSlider = () => {
     )
 }
 
-export default CompaniesSlider
+export default StackSlider

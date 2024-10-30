@@ -1,16 +1,22 @@
 @tailwind base;
-@tailwind components;
 @tailwind utilities;
 @tailwind variants;
 
 
 
-*::-webkit-scrollbar {
-  display: none;
-}
 
-
-* {
-  -ms-overflow-style: none;
+#agencyPage {
+  scroll-behavior: smooth !important;
+  height: 100vh;
+  overflow-y: auto;
   scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+
+  &::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari and Opera */
+  }
+
 }

@@ -205,6 +205,9 @@ export default function Home() {
                         variants={childVariants}
                         className="text-lg  relative rounded-lg w-fit"
                     >
+                        <div className="absolute bottom-11 right-2 bg-yellow-500/60 text-xs text-white px-2 py-1 rounded-full border-2 border-yellow-500">
+                            75+ users
+                        </div>
                         <Image
                             src={require('@/public/dumbel.png')}
                             width={1500}
