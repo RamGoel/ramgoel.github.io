@@ -135,7 +135,7 @@ const StackSlider = () => {
                                 </p>
                             ) : item.type === 'icon' ? (
                                 item.content
-                            ) : (
+                            ) : typeof item.content === 'string' ? (
                                 <Image
                                     key={index}
                                     src={item.content}
@@ -144,7 +144,7 @@ const StackSlider = () => {
                                     width={500}
                                     height={500}
                                 />
-                            )}
+                            ) : null}
                         </div>
                     ))}
                 </motion.div>
