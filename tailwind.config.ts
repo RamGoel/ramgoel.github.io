@@ -11,6 +11,7 @@ const config: Config = {
             animation: {
                 slide: 'slide 3.5s linear infinite',
             },
+
             keyframes: {
                 slide: {
                     '0%': { transform: 'translateY(100%)', opacity: '0.1' },

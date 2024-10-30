@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcast Generator with Tone Control</title>
+    <style>
+        .controls {
+            margin: 10px 0;
+        }
+
+        .controls label {
+            display: inline-block;
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <textarea id="scriptInput" rows="10" cols="50">
+[MALE] Hello, welcome to our podcast!
+[FEMALE] Thanks for having me. It's great to be here.
+[MALE] Let's start with our first topic. What do you think about AI?
+[FEMALE] AI is a fascinating field with lots of potential and challenges.
+[MALE] That's interesting. Could you elaborate on some of those challenges?
+[FEMALE] Sure! One major challenge is ensuring AI systems are ethical and unbiased.
+    </textarea>
+    <div class="controls">
+        <label>Male Voice:</label>
+        <select id="maleVoiceSelect"></select>
+    </div>
+    <div class="controls">
+        <label>Female Voice:</label>
+        <select id="femaleVoiceSelect"></select>
+    </div>
+    <div class="controls">
+        <label>Male Pitch:</label>
+        <input type="range" id="malePitch" min="0.5" max="2" step="0.1" value="1">
+    </div>
+    <div class="controls">
+        <label>Female Pitch:</label>
+        <input type="range" id="femalePitch" min="0.5" max="2" step="0.1" value="1">
+    </div>
+    <div class="controls">
+        <label>Male Rate:</label>
+        <input type="range" id="maleRate" min="0.5" max="2" step="0.1" value="1">
+    </div>
+    <div class="controls">
+        <label>Female Rate:</label>
+        <input type="range" id="femaleRate" min="0.5" max="2" step="0.1" value="1">
+    </div>
+    <button onclick="generatePodcast()">Generate Podcast</button>
+    <br>
+    <audio id="audioOutput" controls></audio>
+
+    <script>
+        let voices = [];
+
+        function populateVoiceList() {
+            voices = speechSynthesis.getVoices();
+            const maleSelect = document.getElementById('maleVoiceSelect');
+            const femaleSelect = document.getElementById('femaleVoiceSelect');
+
+            maleSelect.innerHTML = '';
+            femaleSelect.innerHTML = '';
+
+            voices.forEach((voice, i) => {
+                if (voice.lang.startsWith('en')) {
+                    const option = new Option(voice.name, i);
+                    if (voice.name.includes('Male')) {
+                        maleSelect.add(option);
+                    } else if (voice.name.includes('Female')) {
+                        femaleSelect.add(option);
+                    } else {
+                        maleSelect.add(option.cloneNode(true));
+                        femaleSelect.add(option);
+                    }
+                }
+            });
+        }
+
+        speechSynthesis.onvoiceschanged = populateVoiceList;
+
+        function generatePodcast() {
+            const script = document.getElementById('scriptInput').value;
+            const lines = script.split('\n').filter(line => line.trim() !== '');
+            const audio = document.getElementById('audioOutput');
+
+            let audioBlobs = [];
+            let currentLine = 0;
+
+            function speakNext() {
+                if (currentLine >= lines.length) {
+                    const fullAudio = new Blob(audioBlobs, { type: 'audio/wav' });
+                    audio.src = URL.createObjectURL(fullAudio);
+                    return;
+                }
+
+                const line = lines[currentLine];
+                const match = line.match(/^\[(MALE|FEMALE)\]\s*(.*)/);
+
+                if (match) {
+                    const gender = match[1];
+                    const text = match[2];
+
+                    const utterance = new SpeechSynthesisUtterance(text);
+
+                    if (gender === 'MALE') {
+                        utterance.voice = voices[document.getElementById('maleVoiceSelect').value];
+                        utterance.pitch = parseFloat(document.getElementById('malePitch').value);
+                        utterance.rate = parseFloat(document.getElementById('maleRate').value);
+                    } else {
+                        utterance.voice = voices[document.getElementById('femaleVoiceSelect').value];
+                        utterance.pitch = parseFloat(document.getElementById('femalePitch').value);
+                        utterance.rate = parseFloat(document.getElementById('femaleRate').value);
+                    }
+
+                    utterance.onend = function (event) {
+                        audioBlobs.push(new Blob([event.target.text], { type: 'audio/wav' }));
+                        currentLine++;
+                        speakNext();
+                    };
+
+                    speechSynthesis.speak(utterance);
+                } else {
+                    console.error('Invalid line format:', line);
+                    currentLine++;
+                    speakNext();
+                }
+            }
+
+            speakNext();
+        }
+
+        // Initial population of voice list
+        if (speechSynthesis.onvoiceschanged !== undefined) {
+            speechSynthesis.onvoiceschanged = populateVoiceList;
+        } else {
+            populateVoiceList();
+        }
+    </script>
+</body>
+
+</html>
