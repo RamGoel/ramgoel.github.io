@@ -139,7 +139,7 @@ const StackSlider = () => {
                                 <Image
                                     key={index}
                                     src={item.content}
-                                    alt={item.alt || 'company'}
+                                    alt={'company'}
                                     className="w-[150px] h-[60px] hover:saturate-100 transition-all duration-300 cursor-pointer rounded-md object-contain saturate-0"
                                     width={500}
                                     height={500}
