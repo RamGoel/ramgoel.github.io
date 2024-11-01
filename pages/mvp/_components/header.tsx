@@ -1,4 +1,6 @@
+import { redirectToCal } from '@/utils/redirect'
 import Link from 'next/link'
+import { RiCalendar2Line } from 'react-icons/ri'
 
 const Header = () => {
     return (
@@ -8,7 +10,7 @@ const Header = () => {
                     <h1 className="text-2xl font-bold">Ram Goel.</h1>
                 </Link>
 
-                <div className="flex flex-row gap-6">
+                {/* <div className="flex flex-row gap-6">
                     <Link
                         className="hover:text-emerald-500 transition-all duration-300"
                         href={'#reviews'}
@@ -34,17 +36,13 @@ const Header = () => {
                     >
                         Work
                     </Link>
-                </div>
+                </div> */}
 
                 <button
-                    data-tally-open="m6QrzY"
-                    data-tally-emoji-text="🚀"
-                    data-tally-emoji-animation="wave"
-                    data-tooltip-id="hover-tooltip"
-                    data-tooltip-content="A Form will open in bottom right"
-                    className="bg-emerald-600 px-4 py-1 rounded-md"
+                    onClick={redirectToCal}
+                    className="bg-emerald-600 px-4 py-1 w-[150px] hover:bg-emerald-700 rounded-md flex flex-row items-center justify-center gap-2"
                 >
-                    Get Started
+                    Book a call <RiCalendar2Line className="w-4 h-4" />
                 </button>
             </div>
         </div>

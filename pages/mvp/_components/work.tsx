@@ -7,31 +7,37 @@ const items = [
     {
         id: 1,
         path: '/shadmore.png',
-        title: 'Component Library',
+        title: 'Shadcn based UI Components',
         link: 'https://prelyst.vercel.app/',
     },
     {
         id: 2,
         path: '/dumbel.png',
-        title: 'Find Tech Partners',
+        title: 'Find Tech Partners for Hackathons/Events',
         link: 'https://dumbel.vercel.app/',
     },
     {
         id: 3,
         path: '/lemma.png',
-        title: 'JSON to UI Code (GenAI)',
+        title: 'Convert JSON to Frontend Code (GenAI)',
         link: 'https://lemma-ui.vercel.app/',
+    },
+    {
+        id: 4,
+        path: '/micnote.png',
+        title: 'Take notes using voice',
+        link: 'https://micnote-app.vercel.app/',
     },
 ]
 const WhyUsPage = () => {
     return (
-        <div className="flex h-[80vh] flex-col text-white items-center justify-center">
-            <h1 className="text-4xl font-bold">Work I did</h1>
+        <div className="flex py-10 flex-col text-white items-center justify-center">
+            <h1 className="text-4xl font-bold">A glimpse of my work</h1>
             <p className="text-neutral-500 text-center text-lg">
                 Here are some of the projects I have worked on
             </p>
 
-            <div className="flex gap-10 mt-10 items-center justify-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-10 items-center justify-center">
                 {items.map((item) => (
                     <WorkCard
                         key={item.id}
@@ -55,15 +61,15 @@ const WorkCard = ({
     link: string
 }) => {
     return (
-        <div className="text-lg relative rounded-lg w-fit ">
+        <div className="text-lg relative rounded-lg bg-neutral-800/40 p-2 border-[2px] border-neutral-800 w-fit ">
             <Image
                 src={src}
-                width={1500}
-                className="w-[300px] object-cover rounded-lg h-[170px]"
-                height={1500}
+                width={500}
+                className="w-[500px] object-cover rounded-lg h-[300px]"
+                height={500}
                 alt={title}
             />
-            <div className="flex items-center justify-between">
+            <div className="flex items-center mt-2 justify-between">
                 <p className="text-sm my-2 ml-1">{title}</p>
                 <Link
                     href={link}
