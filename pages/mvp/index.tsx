@@ -53,10 +53,10 @@ const AgencyPage = () => {
                     <Clock8 size={16} className="mr-2" /> 4 slots left for
                     november
                 </div>
-                <h1 className="text-[70px] text-center leading-[70px] my-5 md:text-[120px] md:leading-[120px] font-extrabold text-neutral-900 dark:text-neutral-100">
+                <h1 className="text-[70px] text-center leading-[70px] my-5 md:text-[120px] md:leading-[120px] font-extrabold text-neutral-100">
                     MVP in <span className="text-emerald-500">3 weeks</span>
                 </h1>
-                <p className="text-neutral-700 text-md md:text-xl text-center dark:text-neutral-300">
+                <p className="text-md md:text-xl text-center text-neutral-500">
                     Turning ideas into reality, fast. IDEA to MVP in just a few
                     weeks.
                     <br /> Get first draft in 1 week, Regular Updates, ready for

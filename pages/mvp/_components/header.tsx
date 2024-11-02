@@ -4,7 +4,7 @@ import { RiCalendar2Line } from 'react-icons/ri'
 
 const Header = () => {
     return (
-        <div className="flex text-white flex-row items-center justify-center fixed top-0 left-0 w-full h-24 bg-neutral-100 dark:bg-neutral-900 z-50">
+        <div className="flex text-white flex-row items-center justify-center fixed top-0 left-0 w-full h-24 bg-neutral-900 z-50">
             <div className="flex flex-row items-center justify-between w-11/12 md:w-1/2">
                 <Link href={'#hero'}>
                     <h1 className="text-2xl font-bold">Ram Goel.</h1>
