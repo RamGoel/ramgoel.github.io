@@ -27,7 +27,7 @@ const AgencyPage = () => {
     return (
         <div
             id="agencyPage"
-            className={` bg-neutral-100 px-4 md:px-0 pt-[100px] text-white dark:bg-neutral-900 ${font.className}`}
+            className={`px-4 md:px-0 pt-[100px] text-white bg-neutral-900 ${font.className}`}
         >
             <Head>
                 <title>Ram Goel - MVP in 3 weeks</title>
