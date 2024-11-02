@@ -108,10 +108,6 @@ const AgencyPage = () => {
                 </div>
             </div>
 
-            <div id="companies" className="pt-10">
-                <Companies />
-            </div>
-
             <div id="work" className="">
                 <Work />
             </div>
