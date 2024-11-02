@@ -27,7 +27,7 @@ const AgencyPage = () => {
     return (
         <div
             id="agencyPage"
-            className={` bg-neutral-100 pt-[100px] text-white dark:bg-neutral-900 ${font.className}`}
+            className={` bg-neutral-100 px-4 md:px-0 pt-[100px] text-white dark:bg-neutral-900 ${font.className}`}
         >
             <Head>
                 <title>Ram Goel - MVP in 3 weeks</title>
@@ -47,23 +47,23 @@ const AgencyPage = () => {
 
             <div
                 id="hero"
-                className="h-[80vh] flex flex-col items-center justify-center"
+                className="h-fit mt-10 md:mt-0 md:h-[80vh] flex flex-col items-center justify-center"
             >
                 <div className="flex flex-row text-white rounded-full bg-emerald-500/40 border-emerald-500 border-2 px-4 py-1 items-center">
                     <Clock8 size={16} className="mr-2" /> 4 slots left for
                     november
                 </div>
-                <h1 className="text-[120px] mb-[-25px] font-extrabold text-neutral-900 dark:text-neutral-100">
+                <h1 className="text-[70px] text-center leading-[70px] my-5 md:text-[120px] md:leading-[120px] font-extrabold text-neutral-900 dark:text-neutral-100">
                     MVP in <span className="text-emerald-500">3 weeks</span>
                 </h1>
-                <p className="text-neutral-700 text-xl text-center dark:text-neutral-300">
+                <p className="text-neutral-700 text-md md:text-xl text-center dark:text-neutral-300">
                     Turning ideas into reality, fast. IDEA to MVP in just a few
                     weeks.
                     <br /> Get first draft in 1 week, Regular Updates, ready for
                     launch in 2-3 weeks
                 </p>
 
-                <div className="flex flex-row gap-4 mt-5">
+                <div className="flex flex-col md:flex-row gap-4 mt-5">
                     <button
                         className="bg-emerald-600 flex flex-row items-center justify-center gap-2 min-w-[200px] hover:bg-emerald-700 text-white px-4 py-3 rounded-md"
                         onClick={redirectToCal}

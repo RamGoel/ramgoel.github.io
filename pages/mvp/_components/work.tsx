@@ -32,7 +32,9 @@ const items = [
 const WhyUsPage = () => {
     return (
         <div className="flex py-10 flex-col text-white items-center justify-center">
-            <h1 className="text-4xl font-bold">A glimpse of my work</h1>
+            <h1 className="text-4xl text-center font-bold">
+                A glimpse of my work
+            </h1>
             <p className="text-neutral-500 text-center text-lg">
                 Here are some of the projects I have worked on
             </p>
@@ -61,11 +63,11 @@ const WorkCard = ({
     link: string
 }) => {
     return (
-        <div className="text-lg relative rounded-lg bg-neutral-800/40 p-2 border-[2px] border-neutral-800 w-fit ">
+        <div className="text-lg relative rounded-lg mx-auto md:mx-0 bg-neutral-800/40 p-2 border-[2px] border-neutral-800 w-11/12 md:w-fit ">
             <Image
                 src={src}
                 width={500}
-                className="w-[500px] object-cover rounded-lg h-[300px]"
+                className="w-full md:w-[500px] object-cover rounded-lg h-[300px] md:h-[400px]"
                 height={500}
                 alt={title}
             />

@@ -79,6 +79,19 @@ export default function Home() {
         >
             <title>Ram Goel</title>
             <CustomTooltip id="hover-tooltip" />
+            <motion.div
+                initial={{ y: -100, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+                className="flex items-center p-2 bg-gradient-to-r from-blue-600 to-purple-600 justify-center"
+            >
+                <p className="text-sm">
+                    Want me to build a MVP for your startup?{' '}
+                    <Link href="/mvp" className="underline">
+                        Click here
+                    </Link>
+                </p>
+            </motion.div>
             <motion.main
                 variants={childVariants}
                 className="py-[15vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"

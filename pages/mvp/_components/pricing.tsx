@@ -15,7 +15,7 @@ const PricingSection = () => {
     return (
         <div className="flex flex-col mb-[50px] text-white items-center justify-center">
             <h1 className="text-4xl font-bold">Our Pricing</h1>
-            <p className="text-neutral-500 text-center text-lg mt-2">
+            <p className="text-neutral-500 w-3/4 md:w-full text-center text-lg mt-2">
                 Simple pricing to{' '}
                 <span className="text-emerald-500">
                     speed up your decision, instead of delays.
@@ -28,9 +28,6 @@ const PricingSection = () => {
                     key={1}
                     className="border-2 relative max-w-[400px] flex flex-col rounded-lg border-neutral-800 p-6"
                 >
-                    <div className="flex absolute top-3 right-3 flex-row w-fit text-white rounded-xl bg-emerald-500/40 border-emerald-500 border-2 text-sm px-3 py-1 items-center">
-                        12hr Turnaround
-                    </div>
                     <h1 className="text-2xl font-bold">Custom Pricing</h1>
                     <p className="opacity-60 w-full mt-2">
                         Book a call with me and we can discuss your project in

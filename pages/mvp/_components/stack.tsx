@@ -70,10 +70,10 @@ const StackSlider = () => {
     return (
         <div className="flex flex-col h-[70vh] items-center gap-10 justify-center text-white overflow-hidden">
             <h1 className="text-4xl mb-[-35px] font-bold">Tech Stack we use</h1>{' '}
-            <p className="text-neutral-500 text-center text-lg">
+            <p className="text-neutral-500 w-3/4 md:w-full text-center text-lg">
                 We use the latest and greatest tools to build your product
             </p>
-            <div className="relative w-[50vw] mx-auto flex items-center justify-center h-[100px] overflow-hidden">
+            <div className="relative w-11/12 md:w-[50vw] mx-auto flex items-center justify-center h-[100px] overflow-hidden">
                 <div className="absolute left-0 top-0 h-full w-[200px] bg-gradient-to-r from-neutral-900 to-transparent z-10"></div>
                 <div className="absolute right-0 top-0 h-full w-[200px] bg-gradient-to-l from-neutral-900 to-transparent z-10"></div>
 
@@ -111,7 +111,7 @@ const StackSlider = () => {
                     ))}
                 </motion.div>
             </div>
-            <div className="relative w-[50vw] mx-auto flex items-center justify-center h-[100px] overflow-hidden">
+            <div className="relative w-11/12 md:w-[50vw] mx-auto flex items-center justify-center h-[100px] overflow-hidden">
                 <div className="absolute left-0 top-0 h-full w-[200px] bg-gradient-to-r from-neutral-900 to-transparent z-10"></div>
                 <div className="absolute right-0 top-0 h-full w-[200px] bg-gradient-to-l from-neutral-900 to-transparent z-10"></div>
 

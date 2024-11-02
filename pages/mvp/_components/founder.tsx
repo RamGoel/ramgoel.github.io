@@ -5,11 +5,11 @@ import React from 'react'
 
 const FounderSection = () => {
     return (
-        <div className="h-[80vh] flex w-[60%] mx-auto items-center justify-center gap-5">
+        <div className="h-fit md:h-[80vh] flex flex-col md:flex-row w-10/12 md:w-[60%] mx-auto items-center justify-center gap-5">
             <Image
                 src={LINKEDIN_PROFILE_URL}
                 width={800}
-                className="rounded-full w-[300px] h-[300px]"
+                className="rounded-full w-[250px] md:w-[300px] h-[250px] md:h-[300px]"
                 height={800}
                 alt="profile-image"
             />

@@ -38,7 +38,7 @@ let SERVICES = [
 ]
 const Services = () => {
     return (
-        <div className="flex items-center gap-5 justify-center">
+        <div className="flex flex-col md:flex-row items-center gap-5 justify-center">
             {SERVICES.map((service, index) => (
                 <div
                     key={index}

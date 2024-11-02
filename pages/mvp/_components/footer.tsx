@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Footer = () => {
     return (
-        <footer className="w-full py-8 text-center text-white">
+        <footer className="w-full py-8 px-4 text-left  md:text-center text-white">
             <p className="text-sm">
                 Need custom work? or any assistance{' '}
                 <Link
