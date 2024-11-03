@@ -40,7 +40,7 @@ const Header = () => {
 
                 <button
                     onClick={redirectToCal}
-                    className="bg-emerald-600 px-4 py-1 w-[150px] hover:bg-emerald-700 rounded-md flex flex-row items-center justify-center gap-2"
+                    className="bg-emerald-600 px-4 py-2 w-[150px] hover:bg-emerald-700 rounded-md flex flex-row items-center justify-center gap-2"
                 >
                     Book a call <RiCalendar2Line className="w-4 h-4" />
                 </button>

@@ -87,6 +87,10 @@ const AgencyPage = () => {
                 </div>
             </div>
 
+            <div id="work" className="">
+                <Work />
+            </div>
+
             <div
                 id="reviews"
                 className="pt-[150px] flex flex-col items-center justify-center"
@@ -106,10 +110,6 @@ const AgencyPage = () => {
                         alt="appreciate"
                     />
                 </div>
-            </div>
-
-            <div id="work" className="">
-                <Work />
             </div>
 
             <div id="pricing" className="pt-10">

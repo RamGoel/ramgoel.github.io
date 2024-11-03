@@ -67,7 +67,7 @@ const WorkCard = ({
             <Image
                 src={src}
                 width={500}
-                className="w-full md:w-[500px] object-cover rounded-lg h-[300px] md:h-[400px]"
+                className="w-full md:w-[500px] object-cover rounded-lg h-[300px]"
                 height={500}
                 alt={title}
             />
