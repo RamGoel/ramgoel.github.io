@@ -5,6 +5,12 @@ import React from 'react'
 
 const items = [
     {
+        id: 0,
+        path: '/devtools.png',
+        title: 'AI Tools Directory for Developers',
+        link: 'https://devtools-ai.vercel.app/',
+    },
+    {
         id: 1,
         path: '/shadmore.png',
         title: 'Shadcn based UI Components',
