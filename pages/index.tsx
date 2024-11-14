@@ -13,6 +13,7 @@ import {
 import { motion } from 'framer-motion'
 import Badge from '@/components/badge'
 import { ArrowUpRight } from 'lucide-react'
+import WorkCard from '@/components/work-card'
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -110,38 +111,9 @@ export default function Home() {
                     Hi, I&apos;m Ram Goel👋
                 </motion.h1>
                 <motion.p variants={childVariants} className="text-lg">
-                    I&apos;m a full stack engineer at ConchAI, a AI powered
-                    writing and study platform based out of{' '}
-                    <span className="inline-flex ">
-                        <Image
-                            src={
-                                'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Flag_of_the_United_States.png/800px-Flag_of_the_United_States.png'
-                            }
-                            className="w-[25px] h-[15px]"
-                            width={500}
-                            height={500}
-                            alt="usa"
-                        />
-                    </span>{' '}
-                    . Previously I have worked at{' '}
-                    <a
-                        href="https://www.linkedin.com/company/animall-in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                    >
-                        Animall
-                    </a>
-                    ,{' '}
-                    <a
-                        href="https://www.linkedin.com/company/appsurplus/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline"
-                    >
-                        Surplus
-                    </a>{' '}
-                    and 2 other startups.
+                    I&apos;m a full stack engineer building with GenAI right
+                    now. I have worked at 5+ startups and have built products
+                    that have been used by 100+ users.
                 </motion.p>
 
                 <div className="flex items-center my-3 justify-start gap-6">
@@ -189,81 +161,26 @@ export default function Home() {
                 </div>
                 <motion.div
                     variants={containerVariants}
-                    className="flex items-center justify-start gap-4 flex-wrap"
+                    className="flex items-top justify-start gap-4 flex-wrap"
                 >
-                    <motion.div
-                        variants={childVariants}
-                        className="text-lg relative rounded-lg w-fit "
-                    >
-                        <Image
-                            src={require('@/public/shadmore.png')}
-                            width={1500}
-                            className="w-[300px] object-cover rounded-lg h-[170px]"
-                            height={1500}
-                            alt="shadmore"
-                        />
-                        <div className="flex items-center justify-between">
-                            <p className="text-sm my-2 ml-1">
-                                components I made
-                            </p>
-                            <Link
-                                href="https://prelyst.vercel.app/"
-                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
-                            >
-                                <ArrowUpRight size={13} className="mt-[1px]" />
-                            </Link>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        variants={childVariants}
-                        className="text-lg  relative rounded-lg w-fit"
-                    >
-                        <div className="absolute bottom-11 right-2 bg-yellow-500/60 text-xs text-white px-2 py-1 rounded-full border-2 border-yellow-500">
-                            75+ users
-                        </div>
-                        <Image
-                            src={require('@/public/dumbel.png')}
-                            width={1500}
-                            className="w-[300px] object-cover rounded-lg h-[170px]"
-                            height={1500}
-                            alt="shadmore"
-                        />
-
-                        <div className="flex items-center justify-between w-full ">
-                            <p className="text-sm my-2 ml-1">
-                                developers matching platform
-                            </p>
-                            <Link
-                                href="https://dumbel.vercel.app/"
-                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
-                            >
-                                <ArrowUpRight size={13} className="mt-[1px]" />
-                            </Link>
-                        </div>
-                    </motion.div>
-                    <motion.div
-                        variants={childVariants}
-                        className="text-lg relative rounded-lg w-fit "
-                    >
-                        <Image
-                            src={require('@/public/lemma.png')}
-                            width={1500}
-                            className="w-[300px] object-cover rounded-lg h-[170px]"
-                            height={1500}
-                            alt="shadmore"
-                        />
-                        <div className="flex items-center justify-between w-full ">
-                            <p className="text-sm my-2 ml-1">
-                                JSON to UI Code (GenAI)
-                            </p>
-                            <Link
-                                href="https://lemma-ui.vercel.app/"
-                                className="animate-pulse hover:animate-none h-[20px] rounded-full w-[20px] hover:scale-110 transition-all flex items-center justify-center text-xs underline bg-[#f5f5f5] text-black"
-                            >
-                                <ArrowUpRight size={13} className="mt-[1px]" />
-                            </Link>
-                        </div>
-                    </motion.div>
+                    <WorkCard
+                        image={require('@/public/shadmore.png')}
+                        title="ShadMoreUI"
+                        link="https://prelyst.vercel.app/"
+                        description="Collection of 5-6 components I built for fun"
+                    />
+                    <WorkCard
+                        image={require('@/public/dumbel.png')}
+                        title="Dumbel"
+                        link="https://dumbel.vercel.app/"
+                        description="A platform to find tech partners for hackathons/events, post fun things, and match with other developers"
+                    />
+                    <WorkCard
+                        image={require('@/public/lemma.png')}
+                        title="LemmaUI"
+                        link="https://lemma-ui.vercel.app/"
+                        description="Lemma helps developers provide JSON, e.g, API Responses, and convert it to frontend code in seconds"
+                    />
                 </motion.div>
 
                 <hr className="my-4 opacity-10" />
