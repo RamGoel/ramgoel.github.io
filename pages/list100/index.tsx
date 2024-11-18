@@ -157,7 +157,7 @@ const page = () => {
                 <span>•</span>
                 <Link href="/list100">List 100</Link>
             </div>
-            <div className="w-10/12 md:w-3/4 m-0px md:m-[30px] mx-auto">
+            <div className="w-10/12 xl:w-1/2 m-[0px] md:m-[30px] md:mx-auto">
                 <h1 className="text-4xl font-bold">List 100</h1>
                 <p className="mt-2">
                     Things I want to do before I die. Please let me know if you

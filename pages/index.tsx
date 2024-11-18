@@ -140,7 +140,7 @@ export default function Home() {
                                 '_blank'
                             )
                         }}
-                        className="flex mr-auto md:mr-0 bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
+                        className="flex mr-auto min-w-[140px] md:mr-0 bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
                     >
                         Book a call{' '}
                         <ArrowUpRight size={18} className="mt-[3px]" />
