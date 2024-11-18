@@ -79,43 +79,59 @@ export default function Home() {
             animate="visible"
         >
             <title>Ram Goel</title>
+
             <CustomTooltip id="hover-tooltip" />
-            <motion.div
-                initial={{ y: -100, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="flex items-center p-2 bg-gradient-to-r from-blue-600 to-purple-600 justify-center"
-            >
-                <p className="text-sm">
-                    Want me to build a MVP for your startup?{' '}
-                    <Link href="/mvp" className="underline">
-                        Click here
-                    </Link>
-                </p>
-            </motion.div>
+
+            <div className="flex p-[20px] items-center gap-2">
+                <Link href="/">Ram Goel</Link>
+                <span>•</span>
+                <Link href="/list100">List 100</Link>
+            </div>
             <motion.main
                 variants={childVariants}
-                className="py-[15vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
+                className="py-[5vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
             >
-                <Image
-                    src={LINKEDIN_PROFILE_URL}
-                    width={500}
-                    className="rounded-full w-[160px] h-[160px]"
-                    height={500}
-                    alt="profile-image"
-                />
-                <motion.h1
-                    variants={childVariants}
-                    className="text-3xl font-semibold"
-                >
-                    Hi, I&apos;m Ram Goel👋
-                </motion.h1>
-                <motion.p variants={childVariants} className="text-lg">
-                    I&apos;m a full stack engineer building with GenAI right
-                    now. I have worked at 5+ startups and have built products
-                    that have been used by 100+ users.
-                </motion.p>
-
+                <div className="flex flex-row-reverse items-center gap-10">
+                    <Image
+                        src={LINKEDIN_PROFILE_URL}
+                        width={500}
+                        className="rounded-full w-[200px] h-[200px]"
+                        height={500}
+                        alt="profile-image"
+                    />
+                    <div className="flex flex-col gap-4">
+                        <motion.p variants={childVariants}>
+                            I’m Ram Goel, a engineer. I grew up in a small town{' '}
+                            <Link
+                                className="underline"
+                                href="https://en.wikipedia.org/wiki/Amroha"
+                            >
+                                Amroha
+                            </Link>{' '}
+                            in Uttar Pradesh, India. Moved out for studies but
+                            eventually returned to home due to remote work.
+                        </motion.p>
+                        <motion.p variants={childVariants}>
+                            My focus is on full-stack systems in production. I’m
+                            currently exploring creative use cases of Generative
+                            AI in education and productivity.
+                        </motion.p>
+                        <motion.p variants={childVariants}>
+                            Some startups I’ve worked with include Animall,
+                            ConchAI, and Surplus, across fintech, edtech, and
+                            agritech sectors
+                        </motion.p>
+                        <motion.p variants={childVariants}>
+                            I graduated from a computer science degree, and I
+                            love to learn about new things and build products
+                            that help people.
+                        </motion.p>
+                        <motion.p variants={childVariants}>
+                            Reach out if you want to find a way to work
+                            together!
+                        </motion.p>
+                    </div>
+                </div>
                 <div className="flex items-center my-3 justify-start gap-6">
                     <button
                         onClick={() => {
