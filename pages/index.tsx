@@ -82,7 +82,7 @@ export default function Home() {
 
             <CustomTooltip id="hover-tooltip" />
 
-            <div className="flex p-[20px] items-center gap-2">
+            <div className="flex p-[20px] w-full justify-center md:justify-start items-center gap-2">
                 <Link href="/">Ram Goel</Link>
                 <span>•</span>
                 <Link href="/list100">List 100</Link>
@@ -91,7 +91,7 @@ export default function Home() {
                 variants={childVariants}
                 className="py-[5vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
             >
-                <div className="flex flex-row-reverse items-center gap-10">
+                <div className="flex flex-col md:flex-row-reverse items-center gap-10">
                     <Image
                         src={LINKEDIN_PROFILE_URL}
                         width={500}
@@ -132,7 +132,7 @@ export default function Home() {
                         </motion.p>
                     </div>
                 </div>
-                <div className="flex items-center my-3 justify-start gap-6">
+                <div className="flex flex-col md:flex-row items-center my-3 justify-start gap-6">
                     <button
                         onClick={() => {
                             window.open(
@@ -140,22 +140,24 @@ export default function Home() {
                                 '_blank'
                             )
                         }}
-                        className="flex bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
+                        className="flex mr-auto md:mr-0 bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
                     >
                         Book a call{' '}
                         <ArrowUpRight size={18} className="mt-[3px]" />
                     </button>
-                    {socials.map((social) => (
-                        <Link
-                            href={social.url}
-                            data-tooltip-id="hover-tooltip"
-                            data-tooltip-content={social.name}
-                            key={social.name}
-                            className="flex items-center gap-2 hover:scale-110 transition-all"
-                        >
-                            {social.icon}
-                        </Link>
-                    ))}
+                    <div className="flex gap-4 justify-start w-full">
+                        {socials.map((social) => (
+                            <Link
+                                href={social.url}
+                                data-tooltip-id="hover-tooltip"
+                                data-tooltip-content={social.name}
+                                key={social.name}
+                                className="flex items-center gap-2 hover:scale-110 transition-all"
+                            >
+                                {social.icon}
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
                 <hr className="my-4 opacity-10" />
@@ -165,13 +167,16 @@ export default function Home() {
                         variants={childVariants}
                         className="text-2xl font-semibold mb-2"
                     >
-                        My Work
+                        My best work
                     </motion.h2>
                     <Link
                         href="https://gleaming-scilla-add.notion.site/My-Work-109ab15484d5800facaedefcb065a0ca"
                         className="underline text-yellow-500 flex items-center"
                     >
-                        See more work on notion{' '}
+                        <span className="hidden md:block">
+                            See more work on notion
+                        </span>{' '}
+                        <span className="block md:hidden">more work</span>{' '}
                         <ArrowUpRight size={18} className="mt-[3px]" />
                     </Link>
                 </div>
@@ -180,20 +185,20 @@ export default function Home() {
                     className="flex items-top justify-start gap-4 flex-wrap"
                 >
                     <WorkCard
-                        image={require('@/public/shadmore.png')}
-                        title="ShadMoreUI"
-                        link="https://prelyst.vercel.app/"
-                        description="Collection of 5-6 components I built for fun"
+                        image={require('@/public/noterr.png')}
+                        title="Noterr (Building)"
+                        link="https://noterr.ramgoel.com/"
+                        description="Save & organize anything from internet in one place, build your own knowledge base."
                     />
                     <WorkCard
                         image={require('@/public/dumbel.png')}
-                        title="Dumbel"
+                        title="Dumbel (75+ users)"
                         link="https://dumbel.vercel.app/"
                         description="A platform to find tech partners for hackathons/events, post fun things, and match with other developers"
                     />
                     <WorkCard
                         image={require('@/public/lemma.png')}
-                        title="LemmaUI"
+                        title="LemmaUI (GenAI)"
                         link="https://lemma-ui.vercel.app/"
                         description="Lemma helps developers provide JSON, e.g, API Responses, and convert it to frontend code in seconds"
                     />

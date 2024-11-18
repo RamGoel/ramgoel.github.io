@@ -33,9 +33,9 @@ const WorkCard = ({
         <motion.div
             onClick={() => router.push(link)}
             variants={childVariants}
-            className="text-lg max-w-[300px] bg-neutral-800 p-2 border-[2px] rounded-tl-none border-neutral-700 relative cursor-pointer rounded-lg w-fit "
+            className="text-lg w-full md:max-w-[300px] bg-neutral-800 p-2 border-[2px] rounded-tl-none border-neutral-700 relative cursor-pointer rounded-lg "
         >
-            <div className="w-[280px] h-[160px] overflow-hidden rounded-lg rounded-tl-none">
+            <div className="w-full md:w-[280px] h-[160px] overflow-hidden rounded-lg rounded-tl-none">
                 <Image
                     src={image}
                     width={1500}
