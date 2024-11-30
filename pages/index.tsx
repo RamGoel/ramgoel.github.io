@@ -14,28 +14,35 @@ import { motion } from 'framer-motion'
 import Badge from '@/components/badge'
 import { ArrowUpRight } from 'lucide-react'
 import WorkCard from '@/components/work-card'
+import Navbar from '@/components/nav'
+import { projects } from '@/data/posts'
+
 const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
         opacity: 1,
         transition: {
-            staggerChildren: 0.3, // Delay between each child
+            staggerChildren: 0.3,
         },
     },
 }
+
 const childVariants = {
     hidden: {
         opacity: 0,
-        y: 50, // Start below
+        y: 50,
+        filter: 'blur(10px)',
     },
     visible: {
         opacity: 1,
-        y: 0, // Slide up to original position
+        y: 0,
+        filter: 'blur(0px)',
         transition: {
-            duration: 1, // Animation duration for each child
+            duration: 1,
         },
     },
 }
+
 const font = Bricolage_Grotesque({
     subsets: ['latin'],
     weight: ['400', '500', '600', '700'],
@@ -57,17 +64,6 @@ let socials = [
         icon: <FaTwitter size={20} />,
         url: 'https://twitter.com/theramgoel',
     },
-
-    {
-        name: 'Product Hunt',
-        icon: <FaProductHunt size={20} />,
-        url: 'https://www.producthunt.com/@ram_goel',
-    },
-    {
-        name: 'Blog',
-        icon: <FaHashnode size={20} />,
-        url: 'https://ramgoel.hashnode.dev/',
-    },
 ]
 
 export default function Home() {
@@ -82,16 +78,15 @@ export default function Home() {
 
             <CustomTooltip id="hover-tooltip" />
 
-            <div className="flex p-[20px] w-full justify-center md:justify-start items-center gap-2">
-                <Link href="/">Ram Goel</Link>
-                <span>•</span>
-                <Link href="/list100">List 100</Link>
-            </div>
+            <Navbar />
             <motion.main
-                variants={childVariants}
+                variants={containerVariants}
                 className="py-[5vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
             >
-                <div className="flex flex-col md:flex-row-reverse items-center gap-10">
+                <motion.div
+                    variants={childVariants}
+                    className="flex flex-col items-start gap-6"
+                >
                     <Image
                         src={LINKEDIN_PROFILE_URL}
                         width={500}
@@ -101,127 +96,68 @@ export default function Home() {
                     />
                     <div className="flex flex-col gap-4">
                         <motion.p variants={childVariants}>
-                            I’m Ram Goel, a engineer. I grew up in a small town{' '}
+                            I&apos;m Ram Goel. I work on GenAI and full-stack.
+                        </motion.p>
+
+                        <motion.p variants={childVariants}>
+                            I graduated from a CS degree, building{' '}
                             <Link
-                                className="underline"
-                                href="https://en.wikipedia.org/wiki/Amroha"
+                                className="underline text-yellow-500"
+                                href="https://noterr.ramgoel.com/"
                             >
-                                Amroha
-                            </Link>{' '}
-                            in Uttar Pradesh, India. Moved out for studies but
-                            eventually returned to home due to remote work.
-                        </motion.p>
-                        <motion.p variants={childVariants}>
-                            My focus is on full-stack systems in production. I’m
-                            currently exploring creative use cases of Generative
-                            AI in education and productivity.
-                        </motion.p>
-                        <motion.p variants={childVariants}>
-                            Some startups I’ve worked with include Animall,
-                            ConchAI, and Surplus, across fintech, edtech, and
-                            agritech sectors
-                        </motion.p>
-                        <motion.p variants={childVariants}>
-                            I graduated from a computer science degree, and I
-                            love to learn about new things and build products
-                            that help people.
+                                Noterr
+                            </Link>
+                            , that helps you organize the internet.
                         </motion.p>
                         <motion.p variants={childVariants}>
                             Reach out if you want to find a way to work
                             together!
                         </motion.p>
                     </div>
-                </div>
-                <div className="flex flex-col md:flex-row items-center my-3 justify-start gap-6">
-                    <button
-                        onClick={() => {
-                            window.open(
-                                'https://cal.com/ram-goel/15min',
-                                '_blank'
-                            )
-                        }}
-                        className="flex mr-auto min-w-[140px] md:mr-0 bg-yellow-500 text-black px-4 py-2 rounded-lg items-center gap-2 hover:scale-110 transition-all"
-                    >
-                        Book a call{' '}
-                        <ArrowUpRight size={18} className="mt-[3px]" />
-                    </button>
-                    <div className="flex gap-4 justify-start w-full">
+                </motion.div>
+                <motion.div
+                    variants={childVariants}
+                    className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
+                >
+                    <div className="flex gap-6 justify-start w-full">
                         {socials.map((social) => (
-                            <Link
-                                href={social.url}
-                                data-tooltip-id="hover-tooltip"
-                                data-tooltip-content={social.name}
+                            <motion.div
                                 key={social.name}
-                                className="flex items-center gap-2 hover:scale-110 transition-all"
+                                variants={childVariants}
                             >
-                                {social.icon}
-                            </Link>
+                                <Link
+                                    href={social.url}
+                                    data-tooltip-id="hover-tooltip"
+                                    data-tooltip-content={social.name}
+                                    className="flex items-center gap-2 hover:scale-110 transition-all"
+                                >
+                                    {social.icon}
+                                </Link>
+                            </motion.div>
                         ))}
                     </div>
-                </div>
-
-                <hr className="my-4 opacity-10" />
-
-                <div className="flex items-center justify-between flex-wrap">
-                    <motion.h2
-                        variants={childVariants}
-                        className="text-2xl font-semibold mb-2"
-                    >
-                        My best work
-                    </motion.h2>
-                    <Link
-                        href="https://gleaming-scilla-add.notion.site/My-Work-109ab15484d5800facaedefcb065a0ca"
-                        className="underline text-yellow-500 flex items-center"
-                    >
-                        <span className="hidden md:block">
-                            See more work on notion
-                        </span>{' '}
-                        <span className="block md:hidden">more work</span>{' '}
-                        <ArrowUpRight size={18} className="mt-[3px]" />
-                    </Link>
-                </div>
-                <motion.div
-                    variants={containerVariants}
-                    className="flex items-top justify-start gap-4 flex-wrap"
-                >
-                    <WorkCard
-                        image={require('@/public/noterr.png')}
-                        title="Noterr (Building)"
-                        link="https://noterr.ramgoel.com/"
-                        description="Save & organize anything from internet in one place, build your own knowledge base."
-                    />
-                    <WorkCard
-                        image={require('@/public/dumbel.png')}
-                        title="Dumbel (75+ users)"
-                        link="https://dumbel.vercel.app/"
-                        description="A platform to find tech partners for hackathons/events, post fun things, and match with other developers"
-                    />
-                    <WorkCard
-                        image={require('@/public/lemma.png')}
-                        title="LemmaUI (GenAI)"
-                        link="https://lemma-ui.vercel.app/"
-                        description="Lemma helps developers provide JSON, e.g, API Responses, and convert it to frontend code in seconds"
-                    />
                 </motion.div>
 
-                <hr className="my-4 opacity-10" />
-
-                <motion.h2
-                    variants={childVariants}
-                    className="text-2xl text-center font-semibold mb-2"
+                <motion.ol
+                    variants={containerVariants}
+                    className="flex list-decimal flex-col gap-4"
                 >
-                    The <span className="text-yellow-500 text-3xl">♡</span> I
-                    got
-                </motion.h2>
-                <div className="my-5 flex flex-col gap-2">
-                    <Image
-                        src={require('@/public/appreciate.png')}
-                        width={1500}
-                        className=""
-                        height={1500}
-                        alt="appreciate"
-                    />
-                </div>
+                    {projects.map((project, index) => (
+                        <motion.li
+                            key={project.id}
+                            variants={childVariants}
+                            className="flex items-center gap-2"
+                        >
+                            <p className="">{index + 1}.</p>
+                            <Link href={project.url} className="underline">
+                                {project.title}
+                            </Link>
+                            <p className="text-neutral-500">
+                                {project.content}
+                            </p>
+                        </motion.li>
+                    ))}
+                </motion.ol>
             </motion.main>
         </motion.section>
     )
