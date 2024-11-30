@@ -42,10 +42,10 @@ export const projects: {
     },
     {
         id: '5',
-        title: 'ram/shadmore',
+        title: 'ram/prelyst',
         date: '2024',
         content: 'some UI components for your next project.',
-        url: 'https://shadmore.vercel.app/',
+        url: 'https://prelyst.vercel.app/',
     },
     {
         id: '6',

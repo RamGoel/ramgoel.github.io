@@ -11,9 +11,6 @@ import {
     FaTwitter,
 } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
-import Badge from '@/components/badge'
-import { ArrowUpRight } from 'lucide-react'
-import WorkCard from '@/components/work-card'
 import Navbar from '@/components/nav'
 import { projects } from '@/data/posts'
 
@@ -30,12 +27,10 @@ const containerVariants = {
 const childVariants = {
     hidden: {
         opacity: 0,
-        y: 50,
         filter: 'blur(10px)',
     },
     visible: {
         opacity: 1,
-        y: 0,
         filter: 'blur(0px)',
         transition: {
             duration: 1,
@@ -90,11 +85,11 @@ export default function Home() {
                     <Image
                         src={LINKEDIN_PROFILE_URL}
                         width={500}
-                        className="rounded-full w-[200px] h-[200px]"
+                        className="rounded-full w-[190px] h-[190px]"
                         height={500}
                         alt="profile-image"
                     />
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-2">
                         <motion.p variants={childVariants}>
                             I&apos;m Ram Goel. I work on GenAI and full-stack.
                         </motion.p>
