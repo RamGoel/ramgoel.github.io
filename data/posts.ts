@@ -24,7 +24,7 @@ export const projects: {
         title: 'ram/updately',
         date: '2024',
         content: 'interactive changelog for your SaaS under 2 minutes.',
-        url: 'https://updately.ramgoel.com/',
+        url: 'https://updatly.ramgoel.com/',
     },
     {
         id: '4',
