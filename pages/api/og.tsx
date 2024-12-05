@@ -33,6 +33,7 @@ export default async function handler(req: NextRequest) {
                             'linear-gradient(to bottom right, #000000 21.66%, #78716c 86.47%)',
                         backgroundClip: 'text',
                         color: 'transparent',
+                        textAlign: 'center',
                         letterSpacing: '-0.02em',
                     }}
                 >
