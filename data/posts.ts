@@ -3,14 +3,7 @@ export const posts: {
     title: string
     date: string
     content: string
-}[] = [
-    {
-        id: '1',
-        title: 'Good Package vs Good Company as Fresher',
-        date: '2024-12-05',
-        content: 'Writing about things I care about',
-    },
-]
+}[] = []
 
 export const projects: {
     id: string

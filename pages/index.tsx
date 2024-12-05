@@ -14,6 +14,7 @@ import { motion } from 'framer-motion'
 import Navbar from '@/components/nav'
 import { projects } from '@/data/posts'
 import Head from 'next/head'
+import { RiBuilding2Line, RiLiveLine, RiMagicLine } from 'react-icons/ri'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -86,85 +87,99 @@ export default function Home() {
             <Navbar />
             <motion.main
                 variants={containerVariants}
-                className="py-[5vh] xl:pb-0 flex flex-col gap-4 w-11/12 md:w-3/4 xl:w-[63%] min-[1800px]:w-[50%] mx-auto"
+                className="py-[5vh] w-11/12 md:w-10/12 xl:pb-0 flex flex-col gap-4 mx-auto"
             >
                 <motion.div
                     variants={childVariants}
-                    className="flex flex-col items-start gap-6"
+                    className="flex flex-col md:flex-row items-center gap-6"
                 >
                     <Image
-                        src={LINKEDIN_PROFILE_URL}
-                        width={500}
-                        className="rounded-full w-[170px] h-[170px]"
-                        height={500}
+                        src="/despo.png"
+                        width={1000}
+                        className="w-11/12 md:w-[600px]"
+                        height={1000}
                         alt="profile-image"
                     />
-                    <div className="flex flex-col gap-2">
-                        <motion.p variants={childVariants}>
-                            I&apos;m Ram Goel. I work on GenAI and full-stack.
-                        </motion.p>
-
-                        <motion.p variants={childVariants}>
-                            I graduated from a CS degree, building{' '}
-                            <Link
-                                className="underline text-yellow-500"
-                                href="https://noterr.ramgoel.com/"
-                            >
-                                Noterr
-                            </Link>
-                            , that helps you organize the internet.
-                        </motion.p>
-                        <motion.p variants={childVariants}>
-                            Reach out if you want to find a way to work
-                            together!
-                        </motion.p>
-                    </div>
-                </motion.div>
-                <motion.div
-                    variants={childVariants}
-                    className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
-                >
-                    <div className="flex gap-6 justify-start w-full">
-                        {socials.map((social) => (
-                            <motion.div
-                                key={social.name}
-                                variants={childVariants}
-                            >
-                                <Link
-                                    href={social.url}
-                                    data-tooltip-id="hover-tooltip"
-                                    data-tooltip-content={social.name}
-                                    className="flex items-center gap-2 hover:scale-110 transition-all"
-                                >
-                                    {social.icon}
-                                </Link>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                <motion.ol
-                    variants={containerVariants}
-                    className="flex list-decimal flex-col gap-4"
-                >
-                    {projects.map((project, index) => (
-                        <motion.li
-                            key={project.id}
+                    <div className="flex flex-col gap-6">
+                        <motion.div
                             variants={childVariants}
-                            className="flex flex-col md:flex-row items-center gap-2"
+                            className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
                         >
-                            <div className="flex mr-auto items-center gap-2">
-                                <p className="">{index + 1}.</p>
-                                <Link href={project.url} className="underline">
-                                    {project.title}
-                                </Link>
+                            <div className="flex gap-6 items-center justify-start w-full">
+                                {socials.map((social) => (
+                                    <motion.div
+                                        key={social.name}
+                                        variants={childVariants}
+                                    >
+                                        <Link
+                                            href={social.url}
+                                            data-tooltip-id="hover-tooltip"
+                                            data-tooltip-content={social.name}
+                                            className="flex items-center gap-2 hover:scale-110 transition-all"
+                                        >
+                                            {social.icon}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                                <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
+                                    <RiBuilding2Line /> Building Noterr
+                                </div>
                             </div>
-                            <p className="text-neutral-500 w-full text-left">
-                                {project.content}
-                            </p>
-                        </motion.li>
-                    ))}
-                </motion.ol>
+                        </motion.div>
+                        <hr className="w-full border-neutral-700/30" />
+
+                        <div className="flex flex-col gap-2">
+                            <motion.p variants={childVariants}>
+                                I&apos;m Ram Goel. I work on GenAI and
+                                full-stack.
+                            </motion.p>
+
+                            <motion.p variants={childVariants}>
+                                I graduated from a CS degree, building{' '}
+                                <Link
+                                    className="underline text-yellow-200"
+                                    href="https://noterr.ramgoel.com/"
+                                >
+                                    Noterr
+                                </Link>
+                                , that helps you organize the internet.
+                            </motion.p>
+
+                            <motion.p variants={childVariants}>
+                                Reach out if you want to find a way to work
+                                together!
+                            </motion.p>
+                        </div>
+
+                        <hr className="w-full border-neutral-700/30" />
+
+                        <motion.ol
+                            variants={containerVariants}
+                            className="flex list-decimal flex-col gap-4"
+                        >
+                            {projects.map((project, index) => (
+                                <motion.li
+                                    key={project.id}
+                                    variants={childVariants}
+                                    className="flex flex-col md:flex-row items-center gap-2"
+                                >
+                                    <div className="flex mr-auto items-center gap-2">
+                                        <p className="">{index + 1}.</p>
+                                        <Link
+                                            href={project.url}
+                                            className="underline hover:text-yellow-200 transition-all"
+                                        >
+                                            {project.title}
+                                        </Link>
+                                    </div>
+                                    <p className="text-neutral-500 w-full text-left">
+                                        {project.content}
+                                    </p>
+                                </motion.li>
+                            ))}
+                        </motion.ol>
+                    </div>
+                </motion.div>
             </motion.main>
         </motion.section>
     )
