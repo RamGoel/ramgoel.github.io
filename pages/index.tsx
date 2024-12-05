@@ -13,6 +13,7 @@ import {
 import { motion } from 'framer-motion'
 import Navbar from '@/components/nav'
 import { projects } from '@/data/posts'
+import Head from 'next/head'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,7 +70,14 @@ export default function Home() {
             initial="hidden"
             animate="visible"
         >
-            <title>Ram Goel</title>
+            <Head>
+                <title>Ram Goel</title>
+                <meta
+                    name="description"
+                    content="I work on GenAI and full-stack"
+                />
+                <meta property="og:image" content={`/api/og?title=Ram Goel`} />
+            </Head>
 
             <CustomTooltip id="hover-tooltip" />
 
