@@ -63,17 +63,6 @@ let socials = [
     },
 ]
 
-export const metadata = {
-    title: 'Ram Goel - GenAI and Full Stack Developer',
-    description:
-        'I work on GenAI and full-stack development. Building Noterr to help organize the internet.',
-    author: 'Ram Goel',
-    url: 'https://ramgoel.com',
-    image: 'https://ramgoel.com/api/og?title=Ram Goel',
-    type: 'website',
-    siteName: 'Ram Goel',
-}
-
 export default function Home() {
     return (
         <motion.section
@@ -96,7 +85,7 @@ export default function Home() {
                     <Image
                         src="/despo.png"
                         width={1000}
-                        className="w-11/12 md:w-[600px]"
+                        className="w-11/12 md:w-[650px]"
                         height={1000}
                         alt="profile-image"
                     />
