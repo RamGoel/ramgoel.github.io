@@ -1,6 +1,7 @@
 import Navbar from '@/components/nav'
 import { posts } from '@/data/posts'
 import moment from 'moment'
+import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 
@@ -8,7 +9,19 @@ const PostPage = () => {
     return (
         <div className="bg-zinc-900 text-white min-h-screen">
             <Navbar />
-
+            <Head>
+                <title>Posts</title>
+                <meta
+                    name="description"
+                    content="Writing about things I care about"
+                />
+                <meta property="og:title" content="Posts" />
+                <meta
+                    property="og:description"
+                    content="Writing about things I care about"
+                />
+                <meta property="og:image" content={`/api/og?title=Posts`} />
+            </Head>
             <div className="w-10/12 xl:w-1/2 my-[30px] mx-auto">
                 {posts.length ? (
                     posts.map((post) => (
