@@ -58,6 +58,7 @@ export default function Document() {
 
                 <meta name="theme-color" content="#18181B" />
                 <meta property="og:site_name" content="Ram Goel" />
+                <title>Ram Goel - GenAI and Full Stack Developer</title>
 
                 <Main />
                 <NextScript />
