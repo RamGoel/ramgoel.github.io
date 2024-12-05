@@ -21,7 +21,7 @@ export const projects: {
     },
     {
         id: '2',
-        title: 'ram/updately',
+        title: 'ram/updatly',
         date: '2024',
         content: 'interactive changelog for your SaaS under 2 minutes.',
         url: 'https://updatly.ramgoel.com/',
@@ -42,16 +42,16 @@ export const projects: {
     },
     {
         id: '5',
-        title: 'ram/prelyst',
+        title: 'ram/placemate',
         date: '2024',
-        content: 'some UI components for your next project.',
-        url: 'https://prelyst.vercel.app/',
+        content: 'College Placement Portal (Final Year Project)',
+        url: 'https://placemate-student.netlify.app/',
     },
     {
         id: '6',
-        title: 'ram/portify',
+        title: 'ram/checkout',
         date: '2024',
-        content: 'Build a portfolio in minutes.',
-        url: 'https://portify-nine.vercel.app/',
+        content: 'Flight Buddy Platform (Mobile App, Freelance)',
+        url: 'https://www.youtube.com/watch?v=tBhV8Ks-ez0',
     },
 ]

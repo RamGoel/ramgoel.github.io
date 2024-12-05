@@ -85,7 +85,7 @@ export default function Home() {
                     <Image
                         src={LINKEDIN_PROFILE_URL}
                         width={500}
-                        className="rounded-full w-[190px] h-[190px]"
+                        className="rounded-full w-[170px] h-[170px]"
                         height={500}
                         alt="profile-image"
                     />
@@ -141,13 +141,15 @@ export default function Home() {
                         <motion.li
                             key={project.id}
                             variants={childVariants}
-                            className="flex items-center gap-2"
+                            className="flex flex-col md:flex-row items-center gap-2"
                         >
-                            <p className="">{index + 1}.</p>
-                            <Link href={project.url} className="underline">
-                                {project.title}
-                            </Link>
-                            <p className="text-neutral-500">
+                            <div className="flex mr-auto items-center gap-2">
+                                <p className="">{index + 1}.</p>
+                                <Link href={project.url} className="underline">
+                                    {project.title}
+                                </Link>
+                            </div>
+                            <p className="text-neutral-500 w-full text-left">
                                 {project.content}
                             </p>
                         </motion.li>
