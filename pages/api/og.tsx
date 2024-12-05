@@ -25,6 +25,10 @@ export default async function handler(req: NextRequest) {
                         'linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)',
                 }}
             >
+                {/* <p style={{ fontSize: '20px', fontFamily: 'SF Pro' }}>
+                        Ram Goel
+                    </p> */}
+
                 <h1
                     style={{
                         fontSize: '100px',
@@ -39,6 +43,9 @@ export default async function handler(req: NextRequest) {
                 >
                     {title}
                 </h1>
+                <p style={{ fontSize: '28px', fontFamily: 'SF Pro' }}>
+                    Ram Goel
+                </p>
             </div>
         ),
         {
