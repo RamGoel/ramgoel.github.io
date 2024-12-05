@@ -62,6 +62,17 @@ let socials = [
     },
 ]
 
+export const metadata = {
+    title: 'Ram Goel - GenAI and Full Stack Developer',
+    description:
+        'I work on GenAI and full-stack development. Building Noterr to help organize the internet.',
+    author: 'Ram Goel',
+    url: 'https://ramgoel.com',
+    image: 'https://ramgoel.com/api/og?title=Ram Goel',
+    type: 'website',
+    siteName: 'Ram Goel',
+}
+
 export default function Home() {
     return (
         <motion.section
@@ -70,15 +81,6 @@ export default function Home() {
             initial="hidden"
             animate="visible"
         >
-            <Head>
-                <title>Ram Goel</title>
-                <meta
-                    name="description"
-                    content="I work on GenAI and full-stack"
-                />
-                <meta property="og:image" content={`/api/og?title=Ram Goel`} />
-            </Head>
-
             <CustomTooltip id="hover-tooltip" />
 
             <Navbar />
