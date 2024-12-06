@@ -7,6 +7,7 @@ import Navbar from '@/components/nav'
 import { projects } from '@/data/posts'
 import localFont from 'next/font/local'
 import { RiBuilding2Line } from 'react-icons/ri'
+import { FaEnvelope } from 'react-icons/fa'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -47,6 +48,11 @@ let socials = [
         name: 'Twitter',
         icon: <FaTwitter size={20} />,
         url: 'https://twitter.com/theramgoel',
+    },
+    {
+        name: 'Email',
+        icon: <FaEnvelope size={20} />,
+        url: 'mailto:ramgoel@gmail.com',
     },
 ]
 
