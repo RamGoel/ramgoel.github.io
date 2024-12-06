@@ -23,7 +23,7 @@ export const projects: {
         id: '2',
         title: 'ram/updatly',
         date: '2024',
-        content: 'interactive changelog for your SaaS under 2 minutes.',
+        content: 'interactive changelog for your SaaS.',
         url: 'https://updatly.ramgoel.com/',
     },
     {
@@ -37,7 +37,7 @@ export const projects: {
         id: '3',
         title: 'ram/dumbel',
         date: '2024',
-        content: 'match with developers, find people for hackathons, etc.',
+        content: 'match with developers, connect with people, etc.',
         url: 'https://dumbel.vercel.app/',
     },
     {

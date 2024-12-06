@@ -1,20 +1,12 @@
 import CustomTooltip from '@/components/custom-tooltip'
-import { LINKEDIN_PROFILE_URL } from '@/utils/strings'
-import { Bricolage_Grotesque } from 'next/font/google'
 import Image from 'next/image'
 import Link from 'next/link'
-import {
-    FaGithub,
-    FaHashnode,
-    FaLinkedin,
-    FaProductHunt,
-    FaTwitter,
-} from 'react-icons/fa6'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa6'
 import { motion } from 'framer-motion'
 import Navbar from '@/components/nav'
 import { projects } from '@/data/posts'
-import Head from 'next/head'
-import { RiBuilding2Line, RiLiveLine, RiMagicLine } from 'react-icons/ri'
+import localFont from 'next/font/local'
+import { RiBuilding2Line } from 'react-icons/ri'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -40,11 +32,6 @@ const childVariants = {
     },
 }
 
-const font = Bricolage_Grotesque({
-    subsets: ['latin'],
-    weight: ['400', '500', '600', '700'],
-})
-
 let socials = [
     {
         name: 'LinkedIn',
@@ -66,7 +53,7 @@ let socials = [
 export default function Home() {
     return (
         <motion.section
-            className={`bg-zinc-900 text-white min-h-screen ${font.className}`}
+            className={`bg-zinc-900 text-white min-h-screen`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
