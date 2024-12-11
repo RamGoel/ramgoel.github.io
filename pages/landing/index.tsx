@@ -12,10 +12,7 @@ const AllLandingPages = () => {
 
                     <div className="w-full flex flex-col gap-3 h-full">
                         {landingPages.map((page, index) => (
-                            <Link
-                                href={`/landing/${page.slug}`}
-                                key={page.slug}
-                            >
+                            <Link href={page.link} key={page.slug}>
                                 <h1 className="text-white hover:underline flex items-center gap-2 font-serif text-xl">
                                     {index + 1}. {page.title} <ArrowUpRight />
                                 </h1>

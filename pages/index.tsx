@@ -8,6 +8,7 @@ import { projects } from '@/data/posts'
 import localFont from 'next/font/local'
 import { RiBuilding2Line } from 'react-icons/ri'
 import { FaEnvelope } from 'react-icons/fa'
+import { ArrowUpRight } from 'lucide-react'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -103,9 +104,12 @@ export default function Home() {
                                         </Link>
                                     </motion.div>
                                 ))}
-                                <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
-                                    <RiBuilding2Line /> Building Noterr
-                                </div>
+                                <Link href="/landing">
+                                    <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
+                                        <ArrowUpRight size={18} /> landing pages
+                                        I built
+                                    </div>
+                                </Link>
                             </div>
                         </motion.div>
                         <hr className="w-full border-neutral-700/30" />
