@@ -1,10 +1,3 @@
-export const posts: {
-    id: string
-    title: string
-    date: string
-    content: string
-}[] = []
-
 export const projects: {
     id: string
     title: string
