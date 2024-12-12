@@ -3,7 +3,7 @@ import { Head, Html, Main, NextScript } from 'next/document'
 export default function Document() {
     return (
         <Html lang="en">
-            <body className="">
+            <Head>
                 <meta charSet="UTF-8" />
                 <meta
                     name="viewport"
@@ -55,8 +55,8 @@ export default function Document() {
 
                 <meta name="theme-color" content="#18181B" />
                 <meta property="og:site_name" content="Ram Goel" />
-                <title>Ram Goel - GenAI and Full Stack Developer</title>
-
+            </Head>
+            <body className="">
                 <Main />
                 <NextScript />
             </body>

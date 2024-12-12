@@ -9,6 +9,7 @@ import localFont from 'next/font/local'
 import { RiBuilding2Line } from 'react-icons/ri'
 import { FaEnvelope } from 'react-icons/fa'
 import { ArrowUpRight } from 'lucide-react'
+import Head from 'next/head'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -65,6 +66,9 @@ export default function Home() {
             initial="hidden"
             animate="visible"
         >
+            <Head>
+                <title>Ram Goel - GenAI and Full Stack Developer</title>
+            </Head>
             <CustomTooltip id="hover-tooltip" />
 
             <Navbar />
