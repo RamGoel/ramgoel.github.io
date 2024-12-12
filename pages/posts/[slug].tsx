@@ -84,7 +84,7 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
             </Head>
 
             <div
-                className={`flex flex-col gap-2 max-w-2xl pt-5 mx-auto rounded-xl ${
+                className={`flex flex-col gap-2 md:max-w-2xl w-11/12 pt-5 mx-auto rounded-xl ${
                     otherPosts.length > 0 ? '' : 'pb-[50px]'
                 }`}
             >

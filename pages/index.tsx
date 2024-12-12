@@ -75,9 +75,9 @@ const ProjectsSection = () => {
                 <motion.li
                     key={project.id}
                     variants={childVariants}
-                    className="flex flex-col md:flex-row items-center gap-2"
+                    className="flex flex-col w-full md:flex-row items-center gap-2"
                 >
-                    <div className="flex items-center w-fit gap-2">
+                    <div className="hidden md:flex items-center w-fit gap-2">
                         <p className="">{index + 1}.</p>
                         <Link
                             href={project.url}
@@ -89,16 +89,41 @@ const ProjectsSection = () => {
                             {project.content}
                         </p>
                     </div>
-                    <p className="text-neutral-500 ml-auto text-right">
-                        {project.users} users
+                    <div className="flex md:hidden items-center w-full gap-2">
+                        <p className="">{index + 1}.</p>
+                        <Link
+                            href={project.url}
+                            className="underline hover:text-yellow-200 transition-all"
+                        >
+                            {project.title}
+                        </Link>
+
+                        <p className="text-neutral-500 ml-auto text-right">
+                            {project.users} users
+                        </p>
+                        {project.active && (
+                            <div
+                                data-tooltip-id="hover-tooltip"
+                                data-tooltip-content="Actively working on it"
+                                className="bg-green-500 w-2 h-2 animate-pulse rounded-full"
+                            ></div>
+                        )}
+                    </div>
+                    <p className="block md:hidden w-full text-neutral-500 text-left">
+                        {project.content}
                     </p>
-                    {project.active && (
-                        <div
-                            data-tooltip-id="hover-tooltip"
-                            data-tooltip-content="Actively working on it"
-                            className="bg-green-500 w-2 h-2 animate-pulse rounded-full"
-                        ></div>
-                    )}
+                    <div className="hidden md:flex items-center w-fit gap-2">
+                        <p className="text-neutral-500 ml-auto text-right">
+                            {project.users} users
+                        </p>
+                        {project.active && (
+                            <div
+                                data-tooltip-id="hover-tooltip"
+                                data-tooltip-content="Actively working on it"
+                                className="bg-green-500 w-2 h-2 animate-pulse rounded-full"
+                            ></div>
+                        )}
+                    </div>
                 </motion.li>
             ))}
         </motion.ol>
@@ -111,7 +136,7 @@ const SocialsSection = () => {
             variants={childVariants}
             className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
         >
-            <div className="flex gap-6 items-center justify-start w-full">
+            <div className="flex gap-6 items-center justify-center md:justify-start w-full">
                 {socials.map((social) => (
                     <motion.div key={social.name} variants={childVariants}>
                         <Link
