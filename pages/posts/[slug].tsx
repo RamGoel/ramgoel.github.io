@@ -3,11 +3,11 @@ import path from 'path'
 import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import Navbar from '@/components/nav'
 import Head from 'next/head'
 import moment from 'moment'
 import { Bricolage_Grotesque } from 'next/font/google'
 import Link from 'next/link'
+import { ArrowLeft, ChevronLeft } from 'lucide-react'
 
 const font = Bricolage_Grotesque({ subsets: ['latin'] })
 
@@ -16,10 +16,9 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
         (post: any) => post.title !== frontmatter.title
     )
     return (
-        <div className="bg-zinc-900 text-white">
-            <Navbar />
+        <div className="bg-zinc-900 min-h-screen text-white">
             <Head>
-                <title>Posts</title>
+                <title>{`${frontmatter?.title} - Ram Goel`}</title>
                 <meta
                     name="description"
                     content={`${frontmatter?.title} - Ram Goel`}
@@ -83,11 +82,20 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
                 <meta property="og:site_name" content="Ram Goel" />
                 <title>{`${frontmatter?.title} - Ram Goel`}</title>
             </Head>
+
             <div
-                className={`p-4 flex flex-col gap-2 max-w-2xl pt-10 mx-auto rounded-xl ${
+                className={`flex flex-col gap-2 max-w-2xl pt-5 mx-auto rounded-xl ${
                     otherPosts.length > 0 ? '' : 'pb-[50px]'
                 }`}
             >
+                <div className="flex justify-between items-center py-4">
+                    <Link
+                        href="/"
+                        className="flex items-center opacity-60 hover:opacity-100 transition-all duration-300 gap-2"
+                    >
+                        <ChevronLeft size={18} /> Home
+                    </Link>
+                </div>
                 <h1 className={`text-3xl ${font.className} font-semibold`}>
                     {frontmatter?.title}
                 </h1>
