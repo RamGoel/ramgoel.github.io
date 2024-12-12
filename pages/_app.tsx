@@ -1,11 +1,10 @@
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
-import localFont from 'next/font/local'
+import { Bricolage_Grotesque, Inter } from 'next/font/google'
 
-const font = localFont({
-    src: '../public/fonts/nothing.ttf',
-    weight: '400',
+const font = Bricolage_Grotesque({
+    subsets: ['latin'],
 })
 
 export default function App({ Component, pageProps }: AppProps) {

@@ -7,9 +7,6 @@ import Link from 'next/link'
 import path from 'path'
 import fs from 'fs'
 import React from 'react'
-import ReactMarkdown from 'react-markdown'
-
-const font = Bricolage_Grotesque({ subsets: ['latin'] })
 
 const PostPage = ({ posts }: { posts: any }) => {
     return (
@@ -27,34 +24,66 @@ const PostPage = ({ posts }: { posts: any }) => {
                     content="Writing about things I care about"
                 />
                 <meta property="og:image" content={`/api/og?title=Posts`} />
+                <meta charSet="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+
+                <meta name="title" content="Posts" data-rh="true" />
+                <meta
+                    name="description"
+                    content="Writing about things I care about"
+                    data-rh="true"
+                />
+                <meta name="author" content="Ram Goel" />
+                <link rel="author" href="https://ramgoel.com" data-rh="true" />
+
+                <meta property="og:title" content="Posts" />
+                <meta
+                    property="og:description"
+                    content="Writing about things I care about"
+                />
+                <meta
+                    property="og:image"
+                    content="https://ramgoel.com/api/og?title=Posts"
+                />
+                <meta property="og:url" content="https://ramgoel.com/posts" />
+
+                <meta name="twitter:title" content="Posts" />
+                <meta
+                    name="twitter:description"
+                    content="Writing about things I care about"
+                />
+                <meta
+                    name="twitter:image"
+                    content="https://ramgoel.com/api/og?title=Posts"
+                />
+                <meta name="twitter:site" content="@theramgoel" />
+                <meta name="twitter:creator" content="@theramgoel" />
+                <meta name="twitter:card" content="summary_large_image" />
+
+                <meta name="theme-color" content="#18181B" />
+                <meta property="og:site_name" content="Ram Goel" />
+                <title>Posts</title>
             </Head>
             <div className="w-10/12 xl:w-1/2 my-[30px] mx-auto">
                 {posts.length ? (
-                    posts.map((post: any) => (
-                        <Link
-                            href={`/posts/${post.slug}`}
-                            key={post.id}
-                            className="flex hover:bg-zinc-800 rounded-xl flex-col gap-1 cursor-pointer transition-all duration-300 p-4"
-                        >
-                            <h1
-                                className={`text-2xl ${font.className} font-semibold`}
+                    <div className="flex flex-col gap-2">
+                        {posts.map((post: any) => (
+                            <Link
+                                href={`/posts/${post.slug}`}
+                                key={post.slug}
+                                className="border-b-[.5px] flex justify-between border-zinc-700 hover:border-zinc-500 border-dashed transition-all duration-300 w-full py-3"
                             >
-                                {post.title}
-                            </h1>
-                            <p className="text-md opacity-60">
-                                {moment(post.date).format('ddd, DD MMMM YYYY')}
-                            </p>
+                                <p>{post.title}</p>
 
-                            <div className="flex items-center gap-1">
-                                <ReactMarkdown className={`${font.className}`}>
-                                    {post.content.slice(0, 100) + '...'}
-                                </ReactMarkdown>
-                                <span className={`${font.className} underline`}>
-                                    Read More
-                                </span>
-                            </div>
-                        </Link>
-                    ))
+                                <p className="text-sm text-neutral-500">
+                                    {moment(post.date).format('DD MMM YYYY')}
+                                </p>
+                            </Link>
+                        ))}
+                    </div>
                 ) : (
                     <div className="w-10/12 xl:w-1/2 my-[30px] mx-auto">
                         <h1 className="text-md text-center text-neutral-600">

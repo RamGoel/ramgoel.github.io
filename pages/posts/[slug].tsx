@@ -19,17 +19,69 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
         <div className="bg-zinc-900 text-white">
             <Navbar />
             <Head>
-                <title>{frontmatter?.title}</title>
-                <meta name="description" content={content?.slice(0, 100)} />
-                <meta property="og:title" content={frontmatter?.title} />
+                <title>Posts</title>
+                <meta
+                    name="description"
+                    content={`${frontmatter?.title} - Ram Goel`}
+                />
+                <meta property="og:title" content={`${frontmatter?.title}`} />
                 <meta
                     property="og:description"
-                    content={content?.slice(0, 100)}
+                    content={`${frontmatter?.title} - Ram Goel`}
                 />
                 <meta
                     property="og:image"
-                    content={`/api/og?title=${frontmatter?.title}}`}
+                    content={`/api/og?title=${frontmatter?.title}`}
                 />
+                <meta charSet="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+
+                <meta
+                    name="title"
+                    content={`${frontmatter?.title}`}
+                    data-rh="true"
+                />
+                <meta
+                    name="description"
+                    content={`${frontmatter?.title} - Ram Goel`}
+                    data-rh="true"
+                />
+                <meta name="author" content="Ram Goel" />
+                <link rel="author" href="https://ramgoel.com" data-rh="true" />
+
+                <meta property="og:title" content={`${frontmatter?.title}`} />
+                <meta
+                    property="og:description"
+                    content={`${frontmatter?.title} - Ram Goel`}
+                />
+                <meta
+                    property="og:image"
+                    content={`https://ramgoel.com/api/og?title=${frontmatter?.title}`}
+                />
+                <meta
+                    property="og:url"
+                    content={`https://ramgoel.com/posts/${frontmatter?.slug}`}
+                />
+
+                <meta name="twitter:title" content={`${frontmatter?.title}`} />
+                <meta
+                    name="twitter:description"
+                    content={`${frontmatter?.title} - Ram Goel`}
+                />
+                <meta
+                    name="twitter:image"
+                    content={`https://ramgoel.com/api/og?title=${frontmatter?.title}`}
+                />
+                <meta name="twitter:site" content="@theramgoel" />
+                <meta name="twitter:creator" content="@theramgoel" />
+                <meta name="twitter:card" content="summary_large_image" />
+
+                <meta name="theme-color" content="#18181B" />
+                <meta property="og:site_name" content="Ram Goel" />
+                <title>{`${frontmatter?.title} - Ram Goel`}</title>
             </Head>
             <div
                 className={`p-4 flex flex-col gap-2 max-w-2xl pt-10 mx-auto rounded-xl ${
