@@ -77,7 +77,7 @@ const ProjectsSection = () => {
                     variants={childVariants}
                     className="flex flex-col w-full md:flex-row items-center gap-2"
                 >
-                    <div className="hidden md:flex items-center w-fit gap-2">
+                    <div className="hidden md:flex items-center flex-1 gap-2">
                         <p className="">{index + 1}.</p>
                         <Link
                             href={project.url}
