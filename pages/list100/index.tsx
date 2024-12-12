@@ -1,4 +1,3 @@
-import Navbar from '@/components/nav'
 import { motion } from 'framer-motion'
 import { Bricolage_Grotesque } from 'next/font/google'
 import Link from 'next/link'
@@ -153,7 +152,6 @@ const page = () => {
             animate="visible"
         >
             <title>List 100 • Ram Goel</title>
-            <Navbar />
             <div className="w-10/12 xl:w-1/2 my-[30px] mx-auto">
                 <h1 className="text-4xl font-bold">List 100</h1>
                 <p className="mt-2">
