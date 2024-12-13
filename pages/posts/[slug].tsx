@@ -102,6 +102,19 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
                 <p className="text-md opacity-60">
                     {moment(frontmatter?.date).format('DD MMMM YYYY')}
                 </p>
+
+                {frontmatter?.youtube && (
+                    <div className="w-[70%] mb-5">
+                        <iframe
+                            src={frontmatter?.youtube}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            className="w-full aspect-video"
+                        ></iframe>
+                    </div>
+                )}
+
                 <ReactMarkdown
                     className={`${font.className}`}
                     remarkPlugins={[remarkGfm]}

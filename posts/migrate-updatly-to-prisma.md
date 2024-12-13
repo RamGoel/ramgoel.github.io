@@ -1,14 +1,10 @@
 ---
 title: 'Migrate Updatly to Prisma'
 date: '2024-12-12'
+youtube: 'https://www.youtube.com/embed/xjiunYXld4Y?si=0NSL7y-wOvSI1YKo'
 ---
 
-[![Watch the video](https://img.youtube.com/vi/xjiunYXld4Y/0.jpg)](https://youtu.be/xjiunYXld4Y)
-
-&ZeroWidthSpace;
-&ZeroWidthSpace;
-
-Watch the above video for full explanation. I've recently migrated [Updatly](https://updatly.ramgoel.com/) - a changelog tool for SaaS, from Mongoose to Prisma.
+I've recently migrated [Updatly](https://updatly.ramgoel.com/) - a changelog tool for SaaS, from Mongoose to Prisma.
 
 &ZeroWidthSpace;
 &ZeroWidthSpace;

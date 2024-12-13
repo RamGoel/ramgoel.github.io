@@ -11,6 +11,7 @@ import path from 'path'
 import matter from 'gray-matter'
 import fs from 'fs'
 import moment from 'moment'
+import { RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri'
 
 export default function Home({ posts }: { posts: any }) {
     return (
@@ -183,9 +184,19 @@ const BlogSection = ({ posts }: { posts: any }) => {
                         >
                             <p>{post.title}</p>
 
-                            <p className="text-sm text-neutral-500">
-                                {moment(post.date).format('DD MMM YYYY')}
-                            </p>
+                            <div className="flex items-center gap-2">
+                                {post.youtube && (
+                                    <RiYoutubeLine
+                                        size={18}
+                                        data-tooltip-id="hover-tooltip"
+                                        data-tooltip-content="Related video available"
+                                        className="text-neutral-500"
+                                    />
+                                )}
+                                <p className="text-sm text-neutral-500">
+                                    {moment(post.date).format('DD MMM YYYY')}
+                                </p>
+                            </div>
                         </Link>
                     ))}
                 </div>
@@ -209,6 +220,7 @@ export async function getStaticProps({ params }: { params: any }) {
             date: data.date,
             content: content,
             id: filename,
+            youtube: data.youtube,
         }
     })
 
