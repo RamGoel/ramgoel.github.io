@@ -70,7 +70,17 @@ const ProjectsSection = () => {
             variants={containerVariants}
             className="flex list-decimal flex-col gap-4"
         >
-            <h3 className="text-xl font-bold">Side Projects</h3>
+            <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
+                <h3 className="text-xl font-bold">Side Projects</h3>
+                <Link
+                    className="underline flex opacity-60 hover:opacity-100 items-center text-yellow-300"
+                    href={
+                        'https://www.linkedin.com/in/ramgoel/details/experience/'
+                    }
+                >
+                    Work Experience <ArrowUpRight size={20} />
+                </Link>
+            </div>
             {projects.map((project, index) => (
                 <motion.li
                     key={project.id}
