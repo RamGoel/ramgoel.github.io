@@ -23,7 +23,7 @@ const AllLandingPages = () => {
                             </div>
                         </Link>
                     </div>
-                    <h1 className="text-white text-4xl">Some more projects</h1>
+                    <h1 className="text-white text-2xl">Some more projects</h1>
 
                     <div className="w-full flex flex-col gap-4 h-full">
                         {landingPages.map((page, index) => (
@@ -32,7 +32,7 @@ const AllLandingPages = () => {
                                 key={page.slug}
                                 className="flex items-center justify-between gap-2"
                             >
-                                <h1 className="text-white hover:underline flex items-center gap-2 text-xl">
+                                <h1 className="text-white hover:underline flex items-center gap-2 text-md">
                                     {index + 1}. {page.title} <ArrowUpRight />
                                 </h1>
 
