@@ -11,9 +11,9 @@ import {
 
 const Hire = () => {
     return (
-        <div className="bg-neutral-900 flex items-stretch pt-[100px] text-white min-h-screen">
+        <div className="bg-neutral-900 flex flex-col md:flex-row items-stretch md:pt-[100px] text-white min-h-screen">
             <title>Hire Ram Goel</title>
-            <div className="w-1/3 mx-auto pt-[50px] flex flex-col gap-4">
+            <div className="w-11/12 md:w-1/3 mx-auto pt-[50px] flex flex-col gap-4">
                 <h1 className="text-4xl font-bold">Hi, I&apos;m Ram</h1>
                 <p className="text-lg">
                     Are you short on developers or want someone for a short-term
@@ -26,7 +26,7 @@ const Hire = () => {
                 </p>
                 <ProjectsSection hideTitle />
 
-                <div className="mt-3 flex items-center gap-3">
+                <div className="mt-3 flex flex-col md:flex-row items-start md:items-center gap-3">
                     <div
                         onClick={() =>
                             window.open('https://wa.me/+916396331046', '_blank')
@@ -42,7 +42,7 @@ const Hire = () => {
                     </div>
                 </div>
             </div>
-            <div className="w-1/3 mx-auto pt-[50px] flex flex-col gap-2">
+            <div className="w-11/12 md:w-1/3 mx-auto pt-[50px] flex flex-col gap-2">
                 <div className="">
                     <Faq />
                 </div>
