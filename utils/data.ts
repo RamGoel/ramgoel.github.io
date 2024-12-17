@@ -1,4 +1,10 @@
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import {
+    FaEnvelope,
+    FaGithub,
+    FaLinkedin,
+    FaTwitter,
+    FaYoutube,
+} from 'react-icons/fa'
 
 export const socials = [
     {
@@ -20,6 +26,11 @@ export const socials = [
         name: 'Email',
         icon: FaEnvelope,
         url: 'mailto:ramgoel@gmail.com',
+    },
+    {
+        name: 'Youtube',
+        icon: FaYoutube,
+        url: 'https://www.youtube.com/@theramgoel',
     },
 ]
 
@@ -66,6 +77,15 @@ export const projects: {
         content: 'match with developers, connect with people, etc.',
         url: 'https://dumbel.vercel.app/',
         users: 80,
+        active: false,
+    },
+    {
+        id: '4',
+        title: 'ram/devtools',
+        date: '2024',
+        content: 'ai dev tools directory',
+        url: 'https://devtools-ai.vercel.app/',
+        users: 8,
         active: false,
     },
 ]

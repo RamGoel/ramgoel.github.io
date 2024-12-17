@@ -12,6 +12,7 @@ import matter from 'gray-matter'
 import fs from 'fs'
 import moment from 'moment'
 import { RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri'
+import { useEffect, useState } from 'react'
 
 export default function Home({ posts }: { posts: any }) {
     return (
@@ -49,12 +50,12 @@ const AboutSection = () => {
     return (
         <div className="flex flex-col gap-2">
             <motion.p variants={childVariants}>
-                I&apos;m Ram Goel. A full-stack engineer from India who&apos;s
-                tinkering with GenAI.
+                I&apos;m Ram Goel. I&apos;ve been in software development for{' '}
+                {moment().diff(moment('2021-01-01'), 'years')} years.
             </motion.p>
 
             <motion.p variants={childVariants}>
-                I graduated from a CS degree, worked at a few startups, and did
+                A full-stack engineer from India, worked at few startups and did
                 some freelance projects.
             </motion.p>
 
@@ -142,6 +143,15 @@ const ProjectsSection = () => {
 }
 
 const SocialsSection = () => {
+    const [showAllProjects, setShowAllProjects] = useState(false)
+
+    useEffect(() => {
+        const query = new URLSearchParams(window.location.search)
+        const showAll = query.has('showAll')
+        if (showAll) {
+            setShowAllProjects(true)
+        }
+    }, [])
     return (
         <motion.div
             variants={childVariants}
@@ -160,11 +170,14 @@ const SocialsSection = () => {
                         </Link>
                     </motion.div>
                 ))}
-                <Link href="/landing" className="ml-auto hidden md:block">
-                    <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
-                        <ArrowUpRight size={18} /> landing pages I built
-                    </div>
-                </Link>
+                {showAllProjects && (
+                    <Link href="/landing" className="ml-auto hidden md:block">
+                        <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
+                            <ArrowUpRight size={18} /> see mobile apps & landing
+                            pages I built
+                        </div>
+                    </Link>
+                )}
             </div>
         </motion.div>
     )
