@@ -1,18 +1,17 @@
 import CustomTooltip from '@/components/custom-tooltip'
+import { childVariants, containerVariants } from '@/utils/animations'
+import { projects, socials } from '@/utils/data'
+import { motion } from 'framer-motion'
+import fs from 'fs'
+import matter from 'gray-matter'
+import { ArrowUpRight } from 'lucide-react'
+import moment from 'moment'
+import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
-import { projects } from '@/utils/data'
-import { ArrowUpRight } from 'lucide-react'
-import Head from 'next/head'
-import { containerVariants, childVariants } from '@/utils/animations'
-import { socials } from '@/utils/data'
 import path from 'path'
-import matter from 'gray-matter'
-import fs from 'fs'
-import moment from 'moment'
-import { RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri'
 import { useEffect, useState } from 'react'
+import { RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri'
 
 export default function Home({ posts }: { posts: any }) {
     return (
@@ -66,23 +65,25 @@ const AboutSection = () => {
     )
 }
 
-const ProjectsSection = () => {
+export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
     return (
         <motion.ol
             variants={containerVariants}
             className="flex list-decimal flex-col gap-4"
         >
-            <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
-                <h3 className="text-xl font-bold">Side Projects</h3>
-                <Link
-                    className="underline flex opacity-60 hover:opacity-100 items-center text-yellow-300"
-                    href={
-                        'https://www.linkedin.com/in/ramgoel/details/experience/'
-                    }
-                >
-                    Work Experience <ArrowUpRight size={20} />
-                </Link>
-            </div>
+            {!hideTitle ? (
+                <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
+                    <h3 className="text-xl font-bold">Side Projects</h3>
+                    <Link
+                        className="underline flex opacity-60 hover:opacity-100 items-center text-yellow-300"
+                        href={
+                            'https://www.linkedin.com/in/ramgoel/details/experience/'
+                        }
+                    >
+                        Work Experience <ArrowUpRight size={20} />
+                    </Link>
+                </div>
+            ) : null}
             {projects.map((project, index) => (
                 <motion.li
                     key={project.id}
