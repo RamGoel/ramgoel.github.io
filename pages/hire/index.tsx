@@ -8,6 +8,7 @@ import {
     RiMailFill,
     RiWhatsappLine,
 } from 'react-icons/ri'
+import Link from 'next/link'
 
 const Hire = () => {
     return (
@@ -38,7 +39,15 @@ const Hire = () => {
                     </div>
 
                     <div className="">
-                        <span>or contact via rgoel766@gmail.com</span>
+                        <span>
+                            or contact via{' '}
+                            <Link
+                                href="mailto:rgoel766@gmail.com"
+                                className="text-blue-500 hover:text-blue-400"
+                            >
+                                rgoel766@gmail.com
+                            </Link>
+                        </span>
                     </div>
                 </div>
             </div>
