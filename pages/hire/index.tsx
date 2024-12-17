@@ -13,9 +13,9 @@ const Hire = () => {
     return (
         <div className="bg-neutral-900 flex flex-col md:flex-row items-stretch md:pt-[100px] text-white min-h-screen">
             <title>Hire Ram Goel</title>
-            <div className="w-11/12 md:w-1/3 mx-auto pt-[50px] flex flex-col gap-4">
+            <div className="w-11/12 md:w-[40%] mx-auto pt-[50px] flex flex-col gap-4">
                 <h1 className="text-4xl font-bold">Hi, I&apos;m Ram</h1>
-                <p className="text-lg">
+                <p className="text-md">
                     Are you short on developers or want someone for a short-term
                     project? I&apos;m your guy. I can help you build your next
                     project or enhance your existing solution with AI
@@ -34,7 +34,7 @@ const Hire = () => {
                         className="flex items-center bg-green-800 hover:bg-green-700 cursor-pointer p-2 rounded-md w-fit px-4 gap-2"
                     >
                         <RiWhatsappLine size={20} />
-                        <span>Send me a whatsapp message</span>
+                        <span>Send whatsapp message</span>
                     </div>
 
                     <div className="">

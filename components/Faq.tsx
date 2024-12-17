@@ -10,7 +10,7 @@ const faqData = [
     },
     {
         question: 'What are my rates?',
-        answer: "I typically charge $10-15/hour (700-1000 INR) depending on the project complexity and requirements. For fixed-scope projects, I provide detailed estimates after understanding your requirements. I'm open to different engagement models including hourly, project-based, or retainer arrangements.",
+        answer: 'I do prefer fixed rate projects. So we both know the cost upfront. Still if you want to go with hourly rate, I typically charge $10-20/hour (800-1600 INR) depending on the project complexity and requirements.',
     },
     {
         question: 'When should you hire me?',
