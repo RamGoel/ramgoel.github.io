@@ -50,7 +50,7 @@ const AboutSection = () => {
         <div className="flex flex-col gap-2">
             <motion.p variants={childVariants}>
                 I&apos;m Ram Goel. I&apos;ve been in software development for{' '}
-                {moment().diff(moment('2021-01-01'), 'years')} years.
+                {moment().diff(moment('2022-01-01'), 'years')} years.
             </motion.p>
 
             <motion.p variants={childVariants}>
