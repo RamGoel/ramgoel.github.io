@@ -4,14 +4,20 @@ import { projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, HomeIcon } from 'lucide-react'
 import moment from 'moment'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import path from 'path'
 import { useEffect, useState } from 'react'
-import { RiYoutubeFill, RiYoutubeLine } from 'react-icons/ri'
+import {
+    RiBook3Line,
+    RiHome2Line,
+    RiYoutubeFill,
+    RiYoutubeLine,
+} from 'react-icons/ri'
+import { usePathname } from 'next/navigation'
 
 export default function Home({ posts }: { posts: any }) {
     return (
@@ -20,23 +26,24 @@ export default function Home({ posts }: { posts: any }) {
             variants={containerVariants}
             initial="hidden"
             animate="visible"
+            viewport={{ once: true }}
         >
             <Head>
-                <title>Ram Goel - GenAI and Full Stack Developer</title>
+                <title>Hi, I&apos;m Ram Goel</title>
             </Head>
             <CustomTooltip id="hover-tooltip" />
             <motion.main
                 variants={containerVariants}
-                className="py-[5vh] w-11/12 md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-8"
+                className="py-[5vh] w-11/12 md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
             >
                 <SocialsSection />
-                <Image
+                {/* <Image
                     src="/despo.png"
                     width={1000}
                     className="w-11/12 my-[-20px] rounded-lg"
                     height={1000}
                     alt="profile-image"
-                />
+                /> */}
                 <AboutSection />
                 <ProjectsSection />
                 <BlogSection posts={posts} />
@@ -48,19 +55,64 @@ export default function Home({ posts }: { posts: any }) {
 const AboutSection = () => {
     return (
         <div className="flex flex-col gap-2">
-            <motion.p variants={childVariants}>
-                I&apos;m Ram Goel. I&apos;ve been in software development for{' '}
-                {moment().diff(moment('2022-01-01'), 'years')} years.
-            </motion.p>
+            <h1 className="text-2xl font-bold">Hi, I&apos;m Ram Goel</h1>
+            <ul className="flex list-disc ml-4 flex-col gap-2">
+                <motion.li
+                    className="text-neutral-500"
+                    variants={childVariants}
+                >
+                    A full-stack engineer from India.
+                </motion.li>
+                <motion.li
+                    className="text-neutral-500"
+                    variants={childVariants}
+                >
+                    Building{' '}
+                    <Link
+                        href="https://updatly.ramgoel.com"
+                        target="_blank"
+                        className="underline text-white hover:text-yellow-200 transition-all"
+                    >
+                        Updatly
+                    </Link>{' '}
+                    (Ready-to-use Changelog & Feature suggestions)
+                </motion.li>
 
-            <motion.p variants={childVariants}>
-                A full-stack engineer from India, worked at few startups and did
-                some freelance projects.
-            </motion.p>
+                <motion.li
+                    className="text-neutral-500"
+                    variants={childVariants}
+                >
+                    Worked with few startups,{' '}
+                    <Link
+                        href="https://www.linkedin.com/in/ramgoel/details/experience/"
+                        target="_blank"
+                        className="underline text-white hover:text-yellow-200 transition-all"
+                    >
+                        learn more
+                    </Link>
+                </motion.li>
 
-            <motion.p variants={childVariants}>
-                Reach out if you want to find a way to work together!
-            </motion.p>
+                <motion.li
+                    variants={childVariants}
+                    className="text-neutral-500"
+                >
+                    make videos about frontend on{' '}
+                    <Link
+                        href="https://www.youtube.com/@ramgoel"
+                        target="_blank"
+                        className="underline text-white hover:text-yellow-200 transition-all"
+                    >
+                        YouTube
+                    </Link>
+                </motion.li>
+
+                <motion.li
+                    className="text-neutral-500"
+                    variants={childVariants}
+                >
+                    Reach out if you want to find a way to work together!
+                </motion.li>
+            </ul>
         </div>
     )
 }
@@ -74,14 +126,6 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
             {!hideTitle ? (
                 <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
                     <h3 className="text-xl font-bold">Side Projects</h3>
-                    <Link
-                        className="underline flex opacity-60 hover:opacity-100 items-center text-yellow-300"
-                        href={
-                            'https://www.linkedin.com/in/ramgoel/details/experience/'
-                        }
-                    >
-                        Work Experience <ArrowUpRight size={20} />
-                    </Link>
                 </div>
             ) : null}
             {projects.map((project, index) => (
@@ -143,8 +187,9 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
     )
 }
 
-const SocialsSection = () => {
+export const SocialsSection = () => {
     const [showAllProjects, setShowAllProjects] = useState(false)
+    const pathname = usePathname()
 
     useEffect(() => {
         const query = new URLSearchParams(window.location.search)
@@ -159,6 +204,20 @@ const SocialsSection = () => {
             className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
         >
             <div className="flex gap-6 items-center justify-center md:justify-start w-full">
+                <Link
+                    href="/"
+                    className={` p-2 text-sm rounded-md flex items-center gap-2 ${pathname === '/' ? 'bg-zinc-800' : ''}`}
+                >
+                    <HomeIcon size={17} /> Home
+                </Link>
+                <Link
+                    href="/blog"
+                    className={`p-2 text-sm mr-auto rounded-md flex items-center gap-2 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
+                >
+                    <RiBook3Line size={20} />
+                    <p className="text-sm">Blog</p>
+                </Link>
+
                 {socials.map((social) => (
                     <motion.div key={social.name} variants={childVariants}>
                         <Link
@@ -171,20 +230,12 @@ const SocialsSection = () => {
                         </Link>
                     </motion.div>
                 ))}
-                {showAllProjects && (
-                    <Link href="/landing" className="ml-auto hidden md:block">
-                        <div className="text-yellow-500 bg-yellow-800/30 text-sm rounded-full border-2 border-yellow-700/30 w-fit px-3 py-1 flex items-center gap-2">
-                            <ArrowUpRight size={18} /> see mobile apps & landing
-                            pages I built
-                        </div>
-                    </Link>
-                )}
             </div>
         </motion.div>
     )
 }
 
-const BlogSection = ({ posts }: { posts: any }) => {
+export const BlogSection = ({ posts }: { posts: any }) => {
     return (
         <motion.div variants={containerVariants}>
             <h3 className="text-xl font-bold">Blog</h3>
@@ -192,7 +243,7 @@ const BlogSection = ({ posts }: { posts: any }) => {
                 <div className="flex flex-col gap-2">
                     {posts.map((post: any) => (
                         <Link
-                            href={`/posts/${post.slug}`}
+                            href={`/blog/${post.slug}`}
                             key={post.slug}
                             className="flex justify-between hover:text-yellow-200 border-zinc-700 hover:border-zinc-500 border-dashed transition-all duration-300 w-full py-3"
                         >

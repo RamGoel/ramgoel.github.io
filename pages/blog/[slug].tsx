@@ -62,7 +62,7 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
                 />
                 <meta
                     property="og:url"
-                    content={`https://ramgoel.com/posts/${frontmatter?.slug}`}
+                    content={`https://ramgoel.com/blog/${frontmatter?.slug}`}
                 />
 
                 <meta name="twitter:title" content={`${frontmatter?.title}`} />
@@ -176,7 +176,7 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
                     <div className="flex flex-col gap-2">
                         {otherPosts.map((post: any) => (
                             <Link
-                                href={`/posts/${post.slug}`}
+                                href={`/blog/${post.slug}`}
                                 key={post.slug}
                                 className="border-b-[.5px] border-zinc-700 hover:border-zinc-500 border-dashed transition-all duration-300 w-full py-3"
                             >

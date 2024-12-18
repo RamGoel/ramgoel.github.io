@@ -44,17 +44,8 @@ export const projects: {
     active: boolean
 }[] = [
     {
-        id: '1',
-        title: 'ram/noterr',
-        date: '2024',
-        content: 'helps organize your internet.',
-        url: 'https://noterr.ramgoel.com/',
-        users: 20,
-        active: true,
-    },
-    {
         id: '2',
-        title: 'ram/updatly',
+        title: 'Updatly',
         date: '2024',
         content: 'interactive changelog for your SaaS.',
         url: 'https://updatly.ramgoel.com/',
@@ -62,8 +53,17 @@ export const projects: {
         active: true,
     },
     {
+        id: '1',
+        title: 'Noterr',
+        date: '2024',
+        content: 'helps organize your internet.',
+        url: 'https://noterr.ramgoel.com/',
+        users: 20,
+        active: true,
+    },
+    {
         id: '4',
-        title: 'ram/lemma',
+        title: 'LemmaUI',
         date: '2024',
         content: 'Convert JSON to HTML + Tailwind Code in seconds.',
         url: 'https://lemma-ui.vercel.app/',
@@ -72,7 +72,7 @@ export const projects: {
     },
     {
         id: '3',
-        title: 'ram/dumbel',
+        title: 'Dumbel',
         date: '2024',
         content: 'match with developers, connect with people, etc.',
         url: 'https://dumbel.vercel.app/',
@@ -81,7 +81,7 @@ export const projects: {
     },
     {
         id: '4',
-        title: 'ram/devtools',
+        title: 'DevAItools',
         date: '2024',
         content: 'ai dev tools directory',
         url: 'https://devtools-ai.vercel.app/',
