@@ -8,6 +8,8 @@ import moment from 'moment'
 import { Bricolage_Grotesque } from 'next/font/google'
 import Link from 'next/link'
 import { ArrowLeft, ChevronLeft } from 'lucide-react'
+import { usePathname, useSearchParams } from 'next/navigation'
+import router, { useRouter } from 'next/router'
 
 const font = Bricolage_Grotesque({ subsets: ['latin'] })
 
@@ -15,6 +17,7 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
     const otherPosts = posts.filter(
         (post: any) => post.title !== frontmatter.title
     )
+    const router = useRouter()
     return (
         <div className="bg-zinc-900 min-h-screen text-white">
             <Head>
@@ -89,12 +92,12 @@ export default function BlogPost({ frontmatter, content, posts }: any) {
                 }`}
             >
                 <div className="flex justify-between items-center py-4">
-                    <Link
-                        href="/"
+                    <button
+                        onClick={() => router.back()}
                         className="flex items-center opacity-60 hover:opacity-100 transition-all duration-300 gap-2"
                     >
                         <ChevronLeft size={18} /> Home
-                    </Link>
+                    </button>
                 </div>
                 <h1 className={`text-3xl ${font.className} font-semibold`}>
                     {frontmatter?.title}
@@ -201,7 +204,13 @@ export async function getStaticPaths() {
     return { paths, fallback: false }
 }
 
-export async function getStaticProps({ params }: any) {
+export async function getStaticProps({
+    params,
+    searchParams,
+}: {
+    params: any
+    searchParams: any
+}) {
     const postsDirectory = path.join(process.cwd(), 'posts')
     const filepath = path.join(postsDirectory, `${params.slug}.md`)
     const fileContents = fs.readFileSync(filepath, 'utf8')

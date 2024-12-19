@@ -4,19 +4,13 @@ import { projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
-import { ArrowUpRight, HomeIcon } from 'lucide-react'
+import { HomeIcon } from 'lucide-react'
 import moment from 'moment'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import path from 'path'
 import { useEffect, useState } from 'react'
-import {
-    RiBook3Line,
-    RiHome2Line,
-    RiYoutubeFill,
-    RiYoutubeLine,
-} from 'react-icons/ri'
+import { RiBook3Line, RiYoutubeLine } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
 
 export default function Home({ posts }: { posts: any }) {
@@ -37,13 +31,7 @@ export default function Home({ posts }: { posts: any }) {
                 className="py-[5vh] w-11/12 md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
             >
                 <SocialsSection />
-                {/* <Image
-                    src="/despo.png"
-                    width={1000}
-                    className="w-11/12 my-[-20px] rounded-lg"
-                    height={1000}
-                    alt="profile-image"
-                /> */}
+
                 <AboutSection />
                 <ProjectsSection />
                 <BlogSection posts={posts} />
@@ -118,6 +106,24 @@ const AboutSection = () => {
 }
 
 export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
+    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'lp'>(
+        'side'
+    )
+
+    useEffect(() => {
+        const query = new URLSearchParams(window.location.search)
+        const projectsType = query.get('pt')
+        if (projectsType) {
+            setProjectsType(projectsType as 'side' | 'rn' | 'lp')
+        } else {
+            setProjectsType('side')
+        }
+    }, [])
+
+    const projectsToRender = projects.filter(
+        (project) => project.type === projectsType
+    )
+
     return (
         <motion.ol
             variants={containerVariants}
@@ -125,10 +131,16 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
         >
             {!hideTitle ? (
                 <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
-                    <h3 className="text-xl font-bold">Side Projects</h3>
+                    <h3 className="text-xl font-bold">
+                        {projectsType === 'lp'
+                            ? 'Landing Pages'
+                            : projectsType === 'rn'
+                              ? 'Mobile Apps'
+                              : 'Side Projects'}
+                    </h3>
                 </div>
             ) : null}
-            {projects.map((project, index) => (
+            {projectsToRender.map((project, index) => (
                 <motion.li
                     key={project.id}
                     variants={childVariants}
@@ -170,9 +182,11 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                         {project.content}
                     </p>
                     <div className="hidden md:flex items-center w-fit gap-2">
-                        <p className="text-neutral-500 ml-auto text-right">
-                            {project.users} users
-                        </p>
+                        {project.users ? (
+                            <p className="text-neutral-500 ml-auto text-right">
+                                {project.users} users
+                            </p>
+                        ) : null}
                         {project.active && (
                             <div
                                 data-tooltip-id="hover-tooltip"
@@ -188,14 +202,18 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
 }
 
 export const SocialsSection = () => {
-    const [showAllProjects, setShowAllProjects] = useState(false)
+    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'lp'>(
+        'side'
+    )
     const pathname = usePathname()
 
     useEffect(() => {
         const query = new URLSearchParams(window.location.search)
-        const showAll = query.has('showAll')
-        if (showAll) {
-            setShowAllProjects(true)
+        const projectsType = query.get('pt')
+        if (projectsType) {
+            setProjectsType(projectsType as 'side' | 'rn' | 'lp')
+        } else {
+            setProjectsType('side')
         }
     }, [])
     return (
@@ -205,13 +223,13 @@ export const SocialsSection = () => {
         >
             <div className="flex gap-6 items-center justify-center md:justify-start w-full">
                 <Link
-                    href="/"
+                    href={`/?pt=${projectsType}`}
                     className={` p-2 text-sm rounded-md flex items-center gap-2 ${pathname === '/' ? 'bg-zinc-800' : ''}`}
                 >
                     <HomeIcon size={17} /> Home
                 </Link>
                 <Link
-                    href="/blog"
+                    href={`/blog?pt=${projectsType}`}
                     className={`p-2 text-sm mr-auto rounded-md flex items-center gap-2 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
                 >
                     <RiBook3Line size={20} />
