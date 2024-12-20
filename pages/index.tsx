@@ -86,7 +86,7 @@ const AboutSection = () => {
                 >
                     make videos about frontend on{' '}
                     <Link
-                        href="https://www.youtube.com/@ramgoel"
+                        href="https://www.youtube.com/@theRamGoel"
                         target="_blank"
                         className="underline text-white hover:text-yellow-200 transition-all"
                     >
