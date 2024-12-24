@@ -1,39 +1,98 @@
-import { landingPages } from '@/data/landing-pages'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-export const socials = [
+const LANDING_PAGES = [
     {
-        name: 'LinkedIn',
-        icon: FaLinkedin,
-        url: 'https://www.linkedin.com/in/ramgoel/',
+        slug: 'noterr',
+        title: 'Noterr',
+        description: 'Save & Organize you bookmarks like a pro',
+        type: 'landing-page',
+        link: 'https://noterr.ramgoel.com',
     },
     {
-        name: 'Github',
-        icon: FaGithub,
-        url: 'https://github.com/RamGoel',
+        slug: 'smallest',
+        title: 'SmallestAI (Inspired by SmallestAI)',
+        type: 'landing-page',
+        description: 'Cloned Landing Page for SmallestAI Web App',
+        link: '/landing/smallest',
     },
     {
-        name: 'Twitter',
-        icon: FaTwitter,
-        url: 'https://twitter.com/theramgoel',
+        slug: 'just-toys',
+        title: 'Just Toys',
+        type: 'landing-page',
+        description: 'Freelance Project for Kids Toys Store',
+        link: 'https://just-toys.vercel.app/',
     },
     {
-        name: 'Email',
-        icon: FaEnvelope,
-        url: 'mailto:ramgoel@gmail.com',
+        slug: 'loan-company',
+        title: 'Loan Company',
+        type: 'landing-page',
+        description: 'Freelance Project for Loan Agency',
+        link: 'https://loanuncle.com/',
+    },
+    {
+        slug: 'corona-landing',
+        title: 'Vaccine Website',
+        type: 'landing-page',
+        description: 'Freelance Project for Vaccine Company Website',
+        link: 'https://ramgoel.github.io/pinkBlueFreelance/',
+    },
+    {
+        slug: 'surplus-landing',
+        title: 'Surplus Landing Page',
+        type: 'landing-page',
+        link: 'https://surplusapp.in/',
+        description: 'Built duing my internship at Surplus App',
     },
 ]
 
-export const projects: {
-    id: number
-    title: string
-    date: string
-    content: string
-    url: string
-    users: number
-    active: boolean
-    type: 'side' | 'rn' | 'lp'
-}[] = [
+const MOBILE_APPS = [
+    {
+        slug: 'checkout-app',
+        title: 'Checkout App',
+        type: 'react-native',
+        description: 'A Flight Buddy Matching App (Freelance Project)',
+        link: 'https://drive.google.com/file/d/1_j_a_BFeHPhgCYSCdjJAZ3MTxgtxmuWe/view?usp=sharing',
+    },
+    {
+        slug: 'surplus-app',
+        title: 'Surplus App',
+        type: 'react-native',
+        description: 'Built Subscription Management & Billing in this App',
+        link: 'https://play.google.com/store/apps/details?id=in.surplusapp',
+    },
+    {
+        slug: 'farmer-app',
+        title: 'Goldenfarms App',
+        type: 'react-native',
+        description: 'Built News Feed, Weather & Shopping Feed in this App',
+        link: 'https://play.google.com/store/apps/details?id=com.goldenfarms&hl=en_IN',
+    },
+    {
+        slug: 'ecom-app',
+        title: 'E-commerce App',
+        type: 'react-native',
+        description: 'A E-commerce listing feed in React Native',
+        link: 'https://github.com/RamGoel/ecommerce',
+    },
+
+    {
+        slug: 'todo-app',
+        title: 'Todo App',
+        type: 'react-native',
+        description: 'A Todo App with Progress Bar built with React Native',
+        link: 'https://github.com/RamGoel/dimension-todo',
+    },
+
+    {
+        slug: 'rn-ui-components',
+        title: 'React Native UI Components',
+        type: 'react-native',
+        description: 'Some UI components for React Native',
+        link: 'https://github.com/RamGoel/rn-library',
+    },
+]
+
+const FULL_STACK_APPS = [
     {
         id: 1,
         title: 'Updatly',
@@ -84,13 +143,45 @@ export const projects: {
         active: false,
         type: 'side',
     },
+]
 
-    ...landingPages.map((page, index) => ({
+export const socials = [
+    {
+        name: 'LinkedIn',
+        icon: FaLinkedin,
+        url: 'https://www.linkedin.com/in/ramgoel/',
+    },
+    {
+        name: 'Github',
+        icon: FaGithub,
+        url: 'https://github.com/RamGoel',
+    },
+    {
+        name: 'Twitter',
+        icon: FaTwitter,
+        url: 'https://twitter.com/theramgoel',
+    },
+    {
+        name: 'Email',
+        icon: FaEnvelope,
+        url: 'mailto:ramgoel@gmail.com',
+    },
+]
+
+export const projects: {
+    id: number
+    title: string
+    date: string
+    content: string
+    url: string
+    users: number
+    active: boolean
+    type: 'side' | 'rn' | 'lp'
+}[] = [
+    ...FULL_STACK_APPS,
+    [...MOBILE_APPS, ...LANDING_PAGES].map((page, index) => ({
         ...page,
-        type: (page.type === 'react-native' ? 'rn' : 'lp') as
-            | 'side'
-            | 'rn'
-            | 'lp',
+        type: page.type === 'react-native' ? 'rn' : 'lp',
         id: index + 6,
         title: page.title,
         date: '2024',
@@ -98,5 +189,44 @@ export const projects: {
         url: page.link,
         users: 0,
         active: false,
-    })),
+    })) as any,
+]
+
+export const CONTRIBUTIONS = [
+    {
+        name: 'AsyncAPI/website',
+        time: '2024-12-01',
+        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
+        description: 'Conference archive page, and some design fixes.',
+        links: [
+            {
+                name: 'conference-website',
+                link: 'https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+author%3ARamGoel+',
+            },
+        ],
+    },
+    {
+        name: 'DiceDB/website',
+        time: '2024-02-01',
+        icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
+        description: 'Improved the Navbar UX, and fixed some broken links.',
+        links: [
+            {
+                name: 'dice-db',
+                link: 'https://github.com/DiceDB/dice/pull/1386',
+            },
+        ],
+    },
+    {
+        name: 'MojaGlobal/flint-ui',
+        time: '2024-02-01',
+        icon: 'https://avatars.githubusercontent.com/u/19564969?s=280&v=4',
+        description: 'Some UI fixes when I was getting started',
+        links: [
+            {
+                name: 'flint-ui',
+                link: 'https://github.com/moja-global/FLINT-UI/pulls?q=is%3Apr+author%3ARamGoel+is%3Aclosed',
+            },
+        ],
+    },
 ]

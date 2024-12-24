@@ -1,19 +1,20 @@
 import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
-import { projects, socials } from '@/utils/data'
+import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { HomeIcon } from 'lucide-react'
-import moment from 'moment'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
 import { useEffect, useState } from 'react'
-import { RiBook3Line, RiYoutubeLine } from 'react-icons/ri'
+import { RiBook3Line } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
+import moment from 'moment'
+import Image from 'next/image'
 
-export default function Home({ posts }: { posts: any }) {
+export default function Home() {
     return (
         <motion.section
             className={`bg-zinc-900 text-white min-h-screen`}
@@ -34,7 +35,7 @@ export default function Home({ posts }: { posts: any }) {
 
                 <AboutSection />
                 <ProjectsSection />
-                <BlogSection posts={posts} />
+                <ContributionsSection />
             </motion.main>
         </motion.section>
     )
@@ -49,7 +50,7 @@ const AboutSection = () => {
                     className="text-neutral-500"
                     variants={childVariants}
                 >
-                    A full-stack engineer from India.
+                    A full-stack engineer from India, learning about AI Agents
                 </motion.li>
                 <motion.li
                     className="text-neutral-500"
@@ -63,7 +64,7 @@ const AboutSection = () => {
                     >
                         Updatly
                     </Link>{' '}
-                    (Ready-to-use Changelog & Feature suggestions)
+                    (Ready-to-use Changelog for your SaaS)
                 </motion.li>
 
                 <motion.li
@@ -127,7 +128,7 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
     return (
         <motion.ol
             variants={containerVariants}
-            className="flex list-decimal flex-col gap-4"
+            className="flex list-decimal flex-col gap-3"
         >
             {!hideTitle ? (
                 <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
@@ -229,7 +230,7 @@ export const SocialsSection = () => {
                     <HomeIcon size={17} /> Home
                 </Link>
                 <Link
-                    href={`/blog?pt=${projectsType}`}
+                    href={`https://medium.com/@rgoel766`}
                     className={`p-2 text-sm mr-auto rounded-md flex items-center gap-2 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
                 >
                     <RiBook3Line size={20} />
@@ -253,63 +254,53 @@ export const SocialsSection = () => {
     )
 }
 
-export const BlogSection = ({ posts }: { posts: any }) => {
+const ContributionsSection = () => {
     return (
-        <motion.div variants={containerVariants}>
-            <h3 className="text-xl font-bold">Blog</h3>
-            {posts.length ? (
-                <div className="flex flex-col gap-2">
-                    {posts.map((post: any) => (
+        <motion.ol
+            variants={containerVariants}
+            className="flex list-decimal flex-col gap-3"
+        >
+            <h3 className="text-xl font-bold">Open Source Contributions</h3>
+
+            {CONTRIBUTIONS.map((contribution, index) => (
+                <motion.li
+                    key={contribution.name}
+                    variants={childVariants}
+                    className="flex flex-col w-full md:flex-row items-center gap-2"
+                >
+                    <div className="hidden md:flex items-center flex-1 gap-2">
+                        <Image
+                            src={contribution.icon}
+                            alt={contribution.name}
+                            width={20}
+                            height={20}
+                            className="rounded-full"
+                        />
                         <Link
-                            href={`/blog/${post.slug}`}
-                            key={post.slug}
-                            className="flex justify-between hover:text-yellow-200 border-zinc-700 hover:border-zinc-500 border-dashed transition-all duration-300 w-full py-3"
+                            href={contribution.links[0].link}
+                            className="underline hover:text-yellow-200 transition-all"
                         >
-                            <p>{post.title}</p>
-
-                            <div className="flex items-center gap-2">
-                                {post.youtube && (
-                                    <RiYoutubeLine
-                                        size={18}
-                                        data-tooltip-id="hover-tooltip"
-                                        data-tooltip-content="Related video available"
-                                        className="text-neutral-500"
-                                    />
-                                )}
-                                <p className="text-sm text-neutral-500">
-                                    {moment(post.date).format('DD MMM YYYY')}
-                                </p>
-                            </div>
+                            {contribution.name}
                         </Link>
-                    ))}
-                </div>
-            ) : null}
-        </motion.div>
+                        <p className="text-neutral-500 text-left">
+                            {contribution.description} (
+                            {moment(contribution.time).format('MMM YYYY')})
+                        </p>
+                    </div>
+                    <div className="flex md:hidden items-center w-full gap-2">
+                        <Link
+                            href={contribution.links[0].link}
+                            className="underline hover:text-yellow-200 transition-all"
+                        >
+                            {contribution.name} (
+                            {moment(contribution.time).format('MMM YYYY')})
+                        </Link>
+                    </div>
+                    <p className="block md:hidden w-full text-neutral-500 text-left">
+                        {contribution.description}
+                    </p>
+                </motion.li>
+            ))}
+        </motion.ol>
     )
-}
-
-export async function getStaticProps({ params }: { params: any }) {
-    const postsDirectory = path.join(process.cwd(), 'posts')
-    const filenames = fs.readdirSync(postsDirectory)
-
-    const posts = filenames.map((filename) => {
-        const filePath = path.join(postsDirectory, filename)
-        const fileContents = fs.readFileSync(filePath, 'utf8')
-        const { data, content } = matter(fileContents)
-
-        return {
-            slug: filename.replace('.md', ''),
-            title: data.title,
-            date: data.date,
-            content: content,
-            id: filename,
-            youtube: data.youtube,
-        }
-    })
-
-    return {
-        props: {
-            posts,
-        },
-    }
 }
