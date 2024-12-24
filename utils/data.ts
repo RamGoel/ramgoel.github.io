@@ -1,19 +1,12 @@
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-const LANDING_PAGES = [
+export const LANDING_PAGES = [
     {
         slug: 'noterr',
         title: 'Noterr',
         description: 'Save & Organize you bookmarks like a pro',
         type: 'landing-page',
         link: 'https://noterr.ramgoel.com',
-    },
-    {
-        slug: 'smallest',
-        title: 'SmallestAI (Inspired by SmallestAI)',
-        type: 'landing-page',
-        description: 'Cloned Landing Page for SmallestAI Web App',
-        link: '/landing/smallest',
     },
     {
         slug: 'just-toys',
@@ -168,28 +161,19 @@ export const socials = [
     },
 ]
 
-export const projects: {
-    id: number
-    title: string
-    date: string
-    content: string
-    url: string
-    users: number
-    active: boolean
-    type: 'side' | 'rn' | 'lp'
-}[] = [
+export const projects: any[] = [
     ...FULL_STACK_APPS,
-    [...MOBILE_APPS, ...LANDING_PAGES].map((page, index) => ({
+    ...[...MOBILE_APPS, ...LANDING_PAGES].map((page, index) => ({
         ...page,
         type: page.type === 'react-native' ? 'rn' : 'lp',
-        id: index + 6,
-        title: page.title,
+        id: FULL_STACK_APPS.length + index + 1,
+        title: page.title || '',
         date: '2024',
         content: page.description || '',
-        url: page.link,
+        url: page.link || '',
         users: 0,
         active: false,
-    })) as any,
+    })),
 ]
 
 export const CONTRIBUTIONS = [
