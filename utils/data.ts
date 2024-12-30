@@ -90,7 +90,7 @@ const FULL_STACK_APPS = [
         id: 1,
         title: 'Updatly',
         date: '2024',
-        content: 'interactive changelog for your SaaS.',
+        content: 'ready to use changelog for your SaaS.',
         url: 'https://updatly.ramgoel.com/',
         users: 10,
         active: true,
@@ -100,7 +100,7 @@ const FULL_STACK_APPS = [
         id: 2,
         title: 'Noterr',
         date: '2024',
-        content: 'helps organize your internet.',
+        content: 'save & organize your bookmarks like a pro.',
         url: 'https://noterr.ramgoel.com/',
         users: 20,
         active: true,
@@ -126,16 +126,6 @@ const FULL_STACK_APPS = [
         active: false,
         type: 'side',
     },
-    {
-        id: 5,
-        title: 'DevAItools',
-        date: '2024',
-        content: 'ai dev tools directory',
-        url: 'https://devtools-ai.vercel.app/',
-        users: 8,
-        active: false,
-        type: 'side',
-    },
 ]
 
 export const socials = [
@@ -153,11 +143,6 @@ export const socials = [
         name: 'Twitter',
         icon: FaTwitter,
         url: 'https://twitter.com/theramgoel',
-    },
-    {
-        name: 'Email',
-        icon: FaEnvelope,
-        url: 'mailto:ramgoel@gmail.com',
     },
 ]
 
@@ -178,26 +163,26 @@ export const projects: any[] = [
 
 export const CONTRIBUTIONS = [
     {
-        name: 'AsyncAPI/website',
-        time: '2024-12-01',
-        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
-        description: 'Conference archive page, and some design fixes.',
-        links: [
-            {
-                name: 'conference-website',
-                link: 'https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+author%3ARamGoel+',
-            },
-        ],
-    },
-    {
         name: 'DiceDB/website',
-        time: '2024-02-01',
+        time: '2024-12-01',
         icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
         description: 'Improved the Navbar UX, and fixed some broken links.',
         links: [
             {
                 name: 'dice-db',
                 link: 'https://github.com/DiceDB/dice/pull/1386',
+            },
+        ],
+    },
+    {
+        name: 'AsyncAPI/website',
+        time: '2024-02-01',
+        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
+        description: 'Conference archive page, and some design fixes.',
+        links: [
+            {
+                name: 'conference-website',
+                link: 'https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+author%3ARamGoel+',
             },
         ],
     },

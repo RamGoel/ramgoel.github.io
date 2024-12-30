@@ -2,17 +2,14 @@ import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
 import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
-import fs from 'fs'
-import matter from 'gray-matter'
-import { HomeIcon } from 'lucide-react'
+import { ArrowUpRight, HomeIcon } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
-import path from 'path'
 import { useEffect, useState } from 'react'
-import { RiBook3Line } from 'react-icons/ri'
 import { usePathname } from 'next/navigation'
 import moment from 'moment'
 import Image from 'next/image'
+import Loader from '@/components/Loader'
 
 export default function Home() {
     return (
@@ -50,21 +47,7 @@ const AboutSection = () => {
                     className="text-neutral-500"
                     variants={childVariants}
                 >
-                    A full-stack engineer from India, learning about AI Agents
-                </motion.li>
-                <motion.li
-                    className="text-neutral-500"
-                    variants={childVariants}
-                >
-                    Building{' '}
-                    <Link
-                        href="https://updatly.ramgoel.com"
-                        target="_blank"
-                        className="underline text-white hover:text-yellow-200 transition-all"
-                    >
-                        Updatly
-                    </Link>{' '}
-                    (Ready-to-use Changelog for your SaaS)
+                    A full-stack engineer from India.
                 </motion.li>
 
                 <motion.li
@@ -99,7 +82,7 @@ const AboutSection = () => {
                     className="text-neutral-500"
                     variants={childVariants}
                 >
-                    Reach out if you want to find a way to work together!
+                    Let&apos;s talk how we can work together!
                 </motion.li>
             </ul>
         </div>
@@ -231,12 +214,16 @@ export const SocialsSection = () => {
                 </Link>
                 <Link
                     href={`https://medium.com/@rgoel766`}
-                    className={`p-2 text-sm mr-auto rounded-md flex items-center gap-2 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
+                    className={`p-2 text-sm group  mr-auto rounded-md flex items-center gap-1 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
                 >
-                    <RiBook3Line size={20} />
-                    <p className="text-sm">Blog</p>
+                    <p className="text-sm group-hover:translate-x-[2px] duration-500 group-hover:translate-y-[-2px] transition-all">
+                        Blog
+                    </p>
+                    <ArrowUpRight
+                        size={17}
+                        className="group-hover:translate-x-[2px] duration-500 group-hover:translate-y-[-2px] transition-all"
+                    />
                 </Link>
-
                 {socials.map((social) => (
                     <motion.div key={social.name} variants={childVariants}>
                         <Link
@@ -248,7 +235,13 @@ export const SocialsSection = () => {
                             <social.icon size={20} />
                         </Link>
                     </motion.div>
-                ))}
+                ))}{' '}
+                <Link
+                    href="mailto:rgoel766@gmail.com"
+                    className="text-neutral-500 hover:text-white "
+                >
+                    rgoel766@gmail.com
+                </Link>
             </div>
         </motion.div>
     )

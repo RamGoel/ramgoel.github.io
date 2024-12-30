@@ -9,7 +9,6 @@ export default function Document() {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 />
-
                 <meta
                     name="title"
                     content="Ram Goel - GenAI and Full Stack Developer"
