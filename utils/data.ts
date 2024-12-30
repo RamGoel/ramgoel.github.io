@@ -97,6 +97,16 @@ const FULL_STACK_APPS = [
         type: 'side',
     },
     {
+        id: 3,
+        title: 'LemmaUI',
+        date: '2024',
+        content: 'Generate Code using Prompt/JSON using AI',
+        url: 'https://lemma-ui.vercel.app/',
+        users: 10,
+        active: false,
+        type: 'side',
+    },
+    {
         id: 2,
         title: 'Noterr',
         date: '2024',
@@ -106,16 +116,7 @@ const FULL_STACK_APPS = [
         active: true,
         type: 'side',
     },
-    {
-        id: 3,
-        title: 'LemmaUI',
-        date: '2024',
-        content: 'Convert JSON to HTML + Tailwind Code in seconds.',
-        url: 'https://lemma-ui.vercel.app/',
-        users: 10,
-        active: false,
-        type: 'side',
-    },
+
     {
         id: 4,
         title: 'Dumbel',
