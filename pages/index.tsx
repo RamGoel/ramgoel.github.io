@@ -2,7 +2,7 @@ import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
 import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, HomeIcon } from 'lucide-react'
+import { ArrowUpRight, HomeIcon, Mail } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -205,7 +205,7 @@ export const SocialsSection = () => {
             variants={childVariants}
             className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
         >
-            <div className="flex gap-6 items-center justify-center md:justify-start w-full">
+            <div className="flex gap-6 flex-wrap items-center justify-center md:justify-start w-full">
                 <Link
                     href={`/?pt=${projectsType}`}
                     className={` p-2 text-sm rounded-md flex items-center gap-2 ${pathname === '/' ? 'bg-zinc-800' : ''}`}
@@ -224,24 +224,40 @@ export const SocialsSection = () => {
                         className="group-hover:translate-x-[2px] duration-500 group-hover:translate-y-[-2px] transition-all"
                     />
                 </Link>
-                {socials.map((social) => (
-                    <motion.div key={social.name} variants={childVariants}>
+                <div className="flex items-center flex-1 gap-6 justify-end">
+                    {socials.map((social) => (
+                        <motion.div key={social.name} variants={childVariants}>
+                            <Link
+                                href={social.url}
+                                data-tooltip-id="hover-tooltip"
+                                data-tooltip-content={social.name}
+                                className="flex items-center gap-2 hover:scale-110 transition-all"
+                            >
+                                <social.icon size={20} />
+                            </Link>
+                        </motion.div>
+                    ))}{' '}
+                    <motion.div
+                        key={'email'}
+                        className="md:hidden"
+                        variants={childVariants}
+                    >
                         <Link
-                            href={social.url}
+                            href={'mailto:rgoel766@gmail.com'}
                             data-tooltip-id="hover-tooltip"
-                            data-tooltip-content={social.name}
+                            data-tooltip-content={'Email'}
                             className="flex items-center gap-2 hover:scale-110 transition-all"
                         >
-                            <social.icon size={20} />
+                            <Mail size={20} />
                         </Link>
                     </motion.div>
-                ))}{' '}
-                <Link
-                    href="mailto:rgoel766@gmail.com"
-                    className="text-neutral-500 hover:text-white "
-                >
-                    rgoel766@gmail.com
-                </Link>
+                    <Link
+                        href="mailto:rgoel766@gmail.com"
+                        className="text-neutral-500 hidden md:inline-flex hover:text-white "
+                    >
+                        rgoel766@gmail.com
+                    </Link>
+                </div>
             </div>
         </motion.div>
     )
