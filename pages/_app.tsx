@@ -1,9 +1,9 @@
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
-import { Bricolage_Grotesque, Inter } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
-const font = Bricolage_Grotesque({
+const font = Inter({
     subsets: ['latin'],
 })
 

@@ -2,14 +2,12 @@ import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
 import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, HomeIcon, Mail } from 'lucide-react'
+import { Mail } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { usePathname } from 'next/navigation'
 import moment from 'moment'
 import Image from 'next/image'
-import Loader from '@/components/Loader'
 
 export default function Home() {
     return (
@@ -26,11 +24,12 @@ export default function Home() {
             <CustomTooltip id="hover-tooltip" />
             <motion.main
                 variants={containerVariants}
-                className="py-[5vh] w-11/12 md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
+                className="py-[8vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
             >
-                <SocialsSection />
-
-                <AboutSection />
+                <div className="flex flex-col gap-2">
+                    <SocialsSection />
+                    <AboutSection />
+                </div>
                 <ProjectsSection />
                 <ContributionsSection />
             </motion.main>
@@ -40,20 +39,16 @@ export default function Home() {
 
 const AboutSection = () => {
     return (
-        <div className="flex flex-col gap-2">
-            <h1 className="text-2xl font-bold">Hi, I&apos;m Ram Goel</h1>
+        <motion.div
+            variants={childVariants(0.05)}
+            className="flex flex-col gap-2"
+        >
             <ul className="flex list-disc ml-4 flex-col gap-2">
-                <motion.li
-                    className="text-neutral-500"
-                    variants={childVariants}
-                >
-                    A full-stack engineer from India.
-                </motion.li>
+                <li className="text-neutral-500">
+                    I&apos;m a full-stack engineer from India.
+                </li>
 
-                <motion.li
-                    className="text-neutral-500"
-                    variants={childVariants}
-                >
+                <li className="text-neutral-500">
                     Worked with few startups,{' '}
                     <Link
                         href="https://www.linkedin.com/in/ramgoel/details/experience/"
@@ -62,12 +57,9 @@ const AboutSection = () => {
                     >
                         learn more
                     </Link>
-                </motion.li>
+                </li>
 
-                <motion.li
-                    variants={childVariants}
-                    className="text-neutral-500"
-                >
+                <li className="text-neutral-500">
                     make videos about frontend on{' '}
                     <Link
                         href="https://www.youtube.com/@theRamGoel"
@@ -76,20 +68,27 @@ const AboutSection = () => {
                     >
                         YouTube
                     </Link>
-                </motion.li>
+                </li>
+                <li className="text-neutral-500">
+                    write technical blogs on{' '}
+                    <Link
+                        href="https://medium.com/@rgoel766"
+                        target="_blank"
+                        className="underline text-white hover:text-yellow-200 transition-all"
+                    >
+                        Medium
+                    </Link>
+                </li>
 
-                <motion.li
-                    className="text-neutral-500"
-                    variants={childVariants}
-                >
+                <li className="text-neutral-500">
                     Let&apos;s talk how we can work together!
-                </motion.li>
+                </li>
             </ul>
-        </div>
+        </motion.div>
     )
 }
 
-export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
+const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
     const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'lp'>(
         'side'
     )
@@ -110,12 +109,12 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
 
     return (
         <motion.ol
-            variants={containerVariants}
+            variants={childVariants(0.1)}
             className="flex list-decimal flex-col gap-3"
         >
             {!hideTitle ? (
                 <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
-                    <h3 className="text-xl font-bold">
+                    <h3 className="text-lg font-semibold">
                         {projectsType === 'lp'
                             ? 'Landing Pages'
                             : projectsType === 'rn'
@@ -125,9 +124,8 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                 </div>
             ) : null}
             {projectsToRender.map((project, index) => (
-                <motion.li
+                <li
                     key={project.id}
-                    variants={childVariants}
                     className="flex flex-col w-full md:flex-row items-center gap-2"
                 >
                     <div className="hidden md:flex items-center flex-1 gap-2">
@@ -179,69 +177,34 @@ export const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                             ></div>
                         )}
                     </div>
-                </motion.li>
+                </li>
             ))}
         </motion.ol>
     )
 }
 
-export const SocialsSection = () => {
-    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'lp'>(
-        'side'
-    )
-    const pathname = usePathname()
-
-    useEffect(() => {
-        const query = new URLSearchParams(window.location.search)
-        const projectsType = query.get('pt')
-        if (projectsType) {
-            setProjectsType(projectsType as 'side' | 'rn' | 'lp')
-        } else {
-            setProjectsType('side')
-        }
-    }, [])
+const SocialsSection = () => {
     return (
         <motion.div
-            variants={childVariants}
+            variants={childVariants(0.1)}
             className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
         >
             <div className="flex gap-6 flex-wrap items-center justify-center md:justify-start w-full">
-                <Link
-                    href={`/?pt=${projectsType}`}
-                    className={` p-2 text-sm rounded-md flex items-center gap-2 ${pathname === '/' ? 'bg-zinc-800' : ''}`}
-                >
-                    <HomeIcon size={17} /> Home
-                </Link>
-                <Link
-                    href={`https://medium.com/@rgoel766`}
-                    className={`p-2 text-sm group  mr-auto rounded-md flex items-center gap-1 ml-[-10px] ${pathname === '/blog' ? 'bg-zinc-800' : ''}`}
-                >
-                    <p className="text-sm group-hover:translate-x-[2px] duration-500 group-hover:translate-y-[-2px] transition-all">
-                        Blog
-                    </p>
-                    <ArrowUpRight
-                        size={17}
-                        className="group-hover:translate-x-[2px] duration-500 group-hover:translate-y-[-2px] transition-all"
-                    />
-                </Link>
+                <h1 className="text-xl font-semibold">Hi, I&apos;m Ram Goel</h1>
+
                 <div className="flex items-center flex-1 gap-6 justify-end">
-                    {socials.map((social) => (
-                        <motion.div key={social.name} variants={childVariants}>
-                            <Link
-                                href={social.url}
-                                data-tooltip-id="hover-tooltip"
-                                data-tooltip-content={social.name}
-                                className="flex items-center gap-2 hover:scale-110 transition-all"
-                            >
-                                <social.icon size={20} />
-                            </Link>
-                        </motion.div>
+                    {socials.map((social, index) => (
+                        <Link
+                            key={social.name}
+                            href={social.url}
+                            data-tooltip-id="hover-tooltip"
+                            data-tooltip-content={social.name}
+                            className="flex items-center gap-2 hover:scale-110 transition-all"
+                        >
+                            <social.icon size={20} />
+                        </Link>
                     ))}{' '}
-                    <motion.div
-                        key={'email'}
-                        className="md:hidden"
-                        variants={childVariants}
-                    >
+                    <div key={'email'} className="md:hidden">
                         <Link
                             href={'mailto:rgoel766@gmail.com'}
                             data-tooltip-id="hover-tooltip"
@@ -250,7 +213,7 @@ export const SocialsSection = () => {
                         >
                             <Mail size={20} />
                         </Link>
-                    </motion.div>
+                    </div>
                     <Link
                         href="mailto:rgoel766@gmail.com"
                         className="text-neutral-500 hidden md:inline-flex hover:text-white "
@@ -266,15 +229,14 @@ export const SocialsSection = () => {
 const ContributionsSection = () => {
     return (
         <motion.ol
-            variants={containerVariants}
+            variants={childVariants(0.2)}
             className="flex list-decimal flex-col gap-3"
         >
-            <h3 className="text-xl font-bold">Open Source Contributions</h3>
+            <h3 className="text-lg font-semibold">Open Source Contributions</h3>
 
             {CONTRIBUTIONS.map((contribution, index) => (
-                <motion.li
+                <li
                     key={contribution.name}
-                    variants={childVariants}
                     className="flex flex-col w-full md:flex-row items-center gap-2"
                 >
                     <div className="hidden md:flex items-center flex-1 gap-2">
@@ -308,8 +270,20 @@ const ContributionsSection = () => {
                     <p className="block md:hidden w-full text-neutral-500 text-left">
                         {contribution.description}
                     </p>
-                </motion.li>
+                </li>
             ))}
         </motion.ol>
     )
+}
+
+export const getStaticProps = async () => {
+    const projects = await fetch('https://medium.com/@rgoel766')
+    const html = await projects.text()
+
+    console.log(html)
+    return {
+        props: {
+            projects: html,
+        },
+    }
 }
