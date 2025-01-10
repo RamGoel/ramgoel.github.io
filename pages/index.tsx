@@ -8,11 +8,14 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import moment from 'moment'
 import Image from 'next/image'
+import path from 'path'
+import fs from 'fs'
+import matter from 'gray-matter'
 
-export default function Home() {
+export default function Home({ blogs }: { blogs: any }) {
     return (
         <motion.section
-            className={`bg-zinc-900 text-white min-h-screen`}
+            className={`bg-zinc-900 font-mono text-white min-h-screen`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -24,14 +27,24 @@ export default function Home() {
             <CustomTooltip id="hover-tooltip" />
             <motion.main
                 variants={containerVariants}
-                className="py-[8vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
+                className="py-[5vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
             >
-                <div className="flex flex-col gap-2">
+                <motion.div
+                    variants={childVariants(0)}
+                    className="flex flex-col gap-2"
+                >
                     <SocialsSection />
                     <AboutSection />
-                </div>
-                <ProjectsSection />
-                <ContributionsSection />
+                </motion.div>
+                <motion.div variants={childVariants(0)}>
+                    <ProjectsSection />
+                </motion.div>
+                <motion.div variants={childVariants(0)}>
+                    <BlogsSection blogs={blogs} />
+                </motion.div>
+                <motion.div variants={childVariants(0)}>
+                    <ContributionsSection />
+                </motion.div>
             </motion.main>
         </motion.section>
     )
@@ -39,10 +52,7 @@ export default function Home() {
 
 const AboutSection = () => {
     return (
-        <motion.div
-            variants={childVariants(0.05)}
-            className="flex flex-col gap-2"
-        >
+        <div className="flex flex-col gap-2">
             <ul className="flex list-disc ml-4 flex-col gap-2">
                 <li className="text-neutral-500">
                     I&apos;m a full-stack engineer from India.
@@ -69,22 +79,12 @@ const AboutSection = () => {
                         YouTube
                     </Link>
                 </li>
-                <li className="text-neutral-500">
-                    write technical blogs on{' '}
-                    <Link
-                        href="https://medium.com/@rgoel766"
-                        target="_blank"
-                        className="underline text-white hover:text-yellow-200 transition-all"
-                    >
-                        Medium
-                    </Link>
-                </li>
 
                 <li className="text-neutral-500">
                     Let&apos;s talk how we can work together!
                 </li>
             </ul>
-        </motion.div>
+        </div>
     )
 }
 
@@ -108,10 +108,7 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
     )
 
     return (
-        <motion.ol
-            variants={childVariants(0.1)}
-            className="flex list-decimal flex-col gap-3"
-        >
+        <ol className="flex list-decimal flex-col gap-3">
             {!hideTitle ? (
                 <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
                     <h3 className="text-lg font-semibold">
@@ -179,16 +176,13 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                     </div>
                 </li>
             ))}
-        </motion.ol>
+        </ol>
     )
 }
 
 const SocialsSection = () => {
     return (
-        <motion.div
-            variants={childVariants(0.1)}
-            className="flex flex-col md:flex-row items-center my-1 justify-start gap-6"
-        >
+        <div className="flex flex-col md:flex-row items-center my-1 justify-start gap-6">
             <div className="flex gap-6 flex-wrap items-center justify-center md:justify-start w-full">
                 <h1 className="text-xl font-semibold">Hi, I&apos;m Ram Goel</h1>
 
@@ -222,16 +216,13 @@ const SocialsSection = () => {
                     </Link>
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }
 
 const ContributionsSection = () => {
     return (
-        <motion.ol
-            variants={childVariants(0.2)}
-            className="flex list-decimal flex-col gap-3"
-        >
+        <ol className="flex list-decimal flex-col gap-3">
             <h3 className="text-lg font-semibold">Open Source Contributions</h3>
 
             {CONTRIBUTIONS.map((contribution, index) => (
@@ -272,18 +263,46 @@ const ContributionsSection = () => {
                     </p>
                 </li>
             ))}
-        </motion.ol>
+        </ol>
     )
 }
 
+const BlogsSection = ({ blogs }: { blogs: any }) => {
+    console.log(blogs)
+    return (
+        <div className="flex flex-col gap-2">
+            <h3 className="text-lg font-semibold">Blogs</h3>
+            {blogs.map((blog: any) => (
+                <div
+                    key={blog.slug}
+                    className="flex items-center justify-between gap-2"
+                >
+                    <Link
+                        href={`/blog/${blog.slug}`}
+                        className="underline hover:text-yellow-200 transition-all"
+                    >
+                        {blog.title}
+                    </Link>
+                    <p className="text-neutral-500">{blog.date}</p>
+                </div>
+            ))}
+        </div>
+    )
+}
 export const getStaticProps = async () => {
-    const projects = await fetch('https://medium.com/@rgoel766')
-    const html = await projects.text()
+    const fileNames = fs.readdirSync(path.join(process.cwd(), 'blogs'))
+    const blogs = fileNames.map((fileName) => {
+        const filePath = path.join(process.cwd(), 'blogs', fileName)
+        const blog = fs.readFileSync(filePath, 'utf8')
+        const { data } = matter(blog)
+        return {
+            title: data.title,
+            date: moment(data.date).format('DD MMM, YYYY'),
+            slug: fileName,
+        }
+    })
 
-    console.log(html)
-    return {
-        props: {
-            projects: html,
-        },
-    }
+    console.log(blogs.sort((a, b) => moment(b.date).diff(moment(a.date))))
+
+    return { props: { blogs } }
 }

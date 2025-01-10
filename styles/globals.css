@@ -25,3 +25,78 @@
 body {
     font-family: 'nothing !important';
 }
+
+.custom-prose h1 {
+    font-size: 1.2rem !important;
+    line-height: 1.5 !important;
+    font-weight: 600 !important;
+    margin-top: 1rem !important;
+}
+
+.custom-prose p {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    margin: 0.5rem 0 !important;
+}
+
+.custom-prose a {
+    color: #000 !important;
+    text-decoration: underline !important;
+}
+
+.custom-prose ul {
+    list-style-type: disc !important;
+    margin-left: 1.5rem !important;
+}
+
+.custom-prose li {
+    margin-bottom: 0.5rem !important;
+}
+
+.custom-prose blockquote {
+    border-left: 2px solid #000 !important;
+    padding-left: 1rem !important;
+    margin-left: 0 !important;
+}
+
+.custom-prose code {
+    font-size: 0.875rem !important;
+    line-height: 1.5 !important;
+    font-weight: 400 !important;
+    padding: 0.25rem 0.5rem !important;
+    border-radius: 0.25rem !important;
+    white-space: pre-wrap !important;
+}
+
+.custom-prose pre {
+    background-color: rgb(0, 0, 0) !important;
+    padding: 1rem !important;
+    border-radius: 0.25rem !important;
+}
+
+.custom-prose table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    border: 1px solid #a2a2a2 !important;
+    width: fit-content !important;
+}
+
+.custom-prose th,
+.custom-prose td {
+    padding: 0.5rem !important;
+    border: 1px solid #000 !important;
+}
+
+.custom-prose th {
+    background-color: #f0f0f0 !important;
+}
+
+.custom-prose img {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.custom-prose br {
+    margin-bottom: 1rem !important;
+}
