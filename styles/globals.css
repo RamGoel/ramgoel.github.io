@@ -41,7 +41,7 @@ body {
 }
 
 .custom-prose a {
-    color: #000 !important;
+    color: yellowgreen !important;
     text-decoration: underline !important;
 }
 
@@ -64,9 +64,16 @@ body {
     font-size: 0.875rem !important;
     line-height: 1.5 !important;
     font-weight: 400 !important;
-    padding: 0.25rem 0.5rem !important;
+    padding: 0.1rem 0.2rem !important;
     border-radius: 0.25rem !important;
     white-space: pre-wrap !important;
+    background-color: rgb(59, 61, 61);
+    border-radius: 5px;
+}
+
+.custom-prose pre>code {
+    background-color: transparent;
+
 }
 
 .custom-prose pre {
