@@ -11,6 +11,27 @@ import Link from 'next/link'
 import { ArrowLeftIcon } from 'lucide-react'
 import { LINKEDIN_PROFILE_URL } from '@/utils/strings'
 
+export const metadata = {
+    title: 'Ram Goel - GenAI and Full Stack Developer',
+    description:
+        'I work on GenAI and full-stack development. Building Noterr to help organize the internet.',
+    images: [{ url: 'https://ramgoel.com/api/og?title=Ram Goel' }],
+    openGraph: {
+        title: 'Ram Goel - GenAI and Full Stack Developer',
+        description:
+            'I work on GenAI and full-stack development. Building Noterr to help organize the internet.',
+        images: [{ url: 'https://ramgoel.com/api/og?title=Ram Goel' }],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        creator: '@theramgoel',
+        title: 'Ram Goel - GenAI and Full Stack Developer',
+        description:
+            'I work on GenAI and full-stack development. Building Noterr to help organize the internet.',
+        images: [{ url: 'https://ramgoel.com/api/og?title=Ram Goel' }],
+    },
+}
+
 const BlogPage = ({
     blogString,
     blogData,
@@ -32,7 +53,7 @@ const BlogPage = ({
                 <meta property="og:description" content={blogData.content} />
                 <meta
                     property="og:image"
-                    content={`/api/og?title=${blogData.title}`}
+                    content={`https/api/og?title=${blogData.title}`}
                 />
             </Head>
             <motion.main
