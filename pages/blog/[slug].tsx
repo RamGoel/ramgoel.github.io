@@ -39,9 +39,6 @@ const BlogPage = ({
     blogString: any
     blogData: any
 }) => {
-    if (blogData.ignore) {
-        return <div>This blog is not available yet.</div>
-    }
     return (
         <motion.section
             className={`bg-zinc-900 text-white min-h-screen`}
@@ -109,13 +106,18 @@ export const getStaticProps = async ({
         'utf8'
     )
     const { content, data } = matter(thisBlog)
+
+    if (data.ignore) {
+        return {
+            notFound: true,
+        }
+    }
     return {
         props: {
             blogString: content,
             blogData: {
                 title: data.title,
                 date: moment(data.date).format('DD MMM, YYYY'),
-                ignore: data.ignore,
             },
         },
     }

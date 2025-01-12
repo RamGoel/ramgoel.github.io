@@ -291,23 +291,18 @@ const BlogsSection = ({ blogs }: { blogs: any }) => {
 }
 export const getStaticProps = async () => {
     const fileNames = fs.readdirSync(path.join(process.cwd(), 'blogs'))
-    const blogs = fileNames
-        .map((fileName) => {
-            const filePath = path.join(process.cwd(), 'blogs', fileName)
-            const blog = fs.readFileSync(filePath, 'utf8')
-            const { data } = matter(blog)
-            if (data.ignore) {
-                return null
-            }
-            return {
-                title: data.title,
-                date: moment(data.date).format('DD MMM, YYYY'),
-                slug: fileName,
-            }
-        })
-        .filter((blog) => blog !== null)
+    const blogs = fileNames.map((fileName) => {
+        const filePath = path.join(process.cwd(), 'blogs', fileName)
+        const blog = fs.readFileSync(filePath, 'utf8')
+        const { data } = matter(blog)
 
-    console.log(blogs.sort((a, b) => moment(b.date).diff(moment(a.date))))
+        return {
+            title: data.title,
+            date: moment(data.date).format('DD MMM, YYYY'),
+            slug: fileName,
+            ignore: data.ignore || false,
+        }
+    })
 
-    return { props: { blogs } }
+    return { props: { blogs: blogs.filter((blog) => !blog.ignore) } }
 }
