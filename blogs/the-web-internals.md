@@ -1,6 +1,7 @@
 ---
 title: The WebDev Internals
 date: 2025-01-11
+ignore: true
 ---
 
 For the longest time, I've been working on webdev but interestingly I never understood how everything worked under the hood, till the interview I recently faced which literally forced me to rethink if I am a good dev or not.
