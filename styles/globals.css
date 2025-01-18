@@ -17,13 +17,10 @@
     }
 }
 
-@font-face {
-    font-family: 'nothing';
-    src: url('/fonts/nothing.ttf');
-}
 
-body {
-    font-family: 'nothing !important';
+
+.custom-prose {
+    color: rgb(176, 175, 175);
 }
 
 .custom-prose h1 {
@@ -31,6 +28,7 @@ body {
     line-height: 1.5 !important;
     font-weight: 600 !important;
     margin-top: 1rem !important;
+    color: white;
 }
 
 .custom-prose p {

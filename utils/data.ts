@@ -1,87 +1,38 @@
+import { title } from 'process'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
-export const LANDING_PAGES = [
+const EXTENSIONS = [
+    {
+        slug: 'voicegpt',
+        title: 'VoiceGPT',
+        description: 'Type in ChatGPT using voice',
+        type: 'extension',
+        users: 25,
+        link: 'https://chromewebstore.google.com/detail/voicegpt/hdcddhkmdciaoighoehldcndonbkfkep?authuser=0&hl=en-GB',
+    },
     {
         slug: 'noterr',
         title: 'Noterr',
-        description: 'Save & Organize you bookmarks like a pro',
-        type: 'landing-page',
-        link: 'https://noterr.ramgoel.com',
+        description: 'Allows users to save anything on chrome',
+        users: 20,
+        type: 'extension',
+        link: 'https://chromewebstore.google.com/detail/noterr/apnacpplpojmjebmkbheghceclldfpba?authuser=0&hl=en-GB',
     },
     {
-        slug: 'just-toys',
-        title: 'Just Toys',
-        type: 'landing-page',
-        description: 'Freelance Project for Kids Toys Store',
-        link: 'https://just-toys.vercel.app/',
+        slug: 'cdnExtension',
+        title: 'cdnExtension',
+        description: 'find popular CDNs quickly',
+        type: 'extension',
+        users: 0,
+        link: 'https://addons.mozilla.org/en-US/firefox/addon/cdnextension/',
     },
     {
-        slug: 'loan-company',
-        title: 'Loan Company',
-        type: 'landing-page',
-        description: 'Freelance Project for Loan Agency',
-        link: 'https://loanuncle.com/',
-    },
-    {
-        slug: 'corona-landing',
-        title: 'Vaccine Website',
-        type: 'landing-page',
-        description: 'Freelance Project for Vaccine Company Website',
-        link: 'https://ramgoel.github.io/pinkBlueFreelance/',
-    },
-    {
-        slug: 'surplus-landing',
-        title: 'Surplus Landing Page',
-        type: 'landing-page',
-        link: 'https://surplusapp.in/',
-        description: 'Built duing my internship at Surplus App',
-    },
-]
-
-const MOBILE_APPS = [
-    {
-        slug: 'checkout-app',
-        title: 'Checkout App',
-        type: 'react-native',
-        description: 'A Flight Buddy Matching App (Freelance Project)',
-        link: 'https://drive.google.com/file/d/1_j_a_BFeHPhgCYSCdjJAZ3MTxgtxmuWe/view?usp=sharing',
-    },
-    {
-        slug: 'surplus-app',
-        title: 'Surplus App',
-        type: 'react-native',
-        description: 'Built Subscription Management & Billing in this App',
-        link: 'https://play.google.com/store/apps/details?id=in.surplusapp',
-    },
-    {
-        slug: 'farmer-app',
-        title: 'Goldenfarms App',
-        type: 'react-native',
-        description: 'Built News Feed, Weather & Shopping Feed in this App',
-        link: 'https://play.google.com/store/apps/details?id=com.goldenfarms&hl=en_IN',
-    },
-    {
-        slug: 'ecom-app',
-        title: 'E-commerce App',
-        type: 'react-native',
-        description: 'A E-commerce listing feed in React Native',
-        link: 'https://github.com/RamGoel/ecommerce',
-    },
-
-    {
-        slug: 'todo-app',
-        title: 'Todo App',
-        type: 'react-native',
-        description: 'A Todo App with Progress Bar built with React Native',
-        link: 'https://github.com/RamGoel/dimension-todo',
-    },
-
-    {
-        slug: 'rn-ui-components',
-        title: 'React Native UI Components',
-        type: 'react-native',
-        description: 'Some UI components for React Native',
-        link: 'https://github.com/RamGoel/rn-library',
+        slug: 'linkify',
+        title: 'Linkify',
+        description: 'save & organize links in your browser',
+        type: 'extension',
+        users: 0,
+        link: 'https://addons.mozilla.org/en-US/firefox/addon/linkify/',
     },
 ]
 
@@ -90,9 +41,9 @@ const FULL_STACK_APPS = [
         id: 1,
         title: 'Updatly',
         date: '2024',
-        content: 'ready to use changelog for your SaaS.',
+        content: 'ready to use changelog for your SaaS',
         url: 'https://updatly.ramgoel.com/',
-        users: 30,
+        users: 50,
         active: true,
         type: 'side',
     },
@@ -100,9 +51,9 @@ const FULL_STACK_APPS = [
         id: 2,
         title: 'Noterr',
         date: '2024',
-        content: 'save & organize your bookmarks like a pro.',
+        content: 'save & organize your bookmarks like a pro',
         url: 'https://noterr.ramgoel.com/',
-        users: 40,
+        users: 50,
         active: true,
         type: 'side',
     },
@@ -112,7 +63,7 @@ const FULL_STACK_APPS = [
         date: '2024',
         content: 'Generate Code using Prompt/JSON using AI',
         url: 'https://lemma-ui.vercel.app/',
-        users: 10,
+        users: 20,
         active: false,
         type: 'side',
     },
@@ -121,9 +72,9 @@ const FULL_STACK_APPS = [
         id: 4,
         title: 'Dumbel',
         date: '2024',
-        content: 'match with developers, connect with people, etc.',
+        content: 'match with developers, connect with people, etc',
         url: 'https://dumbel.vercel.app/',
-        users: 80,
+        users: 100,
         active: false,
         type: 'side',
     },
@@ -149,15 +100,15 @@ export const socials = [
 
 export const projects: any[] = [
     ...FULL_STACK_APPS,
-    ...[...MOBILE_APPS, ...LANDING_PAGES].map((page, index) => ({
+    ...EXTENSIONS.map((page, index) => ({
         ...page,
-        type: page.type === 'react-native' ? 'rn' : 'lp',
+        type: page.type === 'react-native' ? 'rn' : 'ext',
         id: FULL_STACK_APPS.length + index + 1,
         title: page.title || '',
         date: '2024',
         content: page.description || '',
         url: page.link || '',
-        users: 0,
+        users: page?.users || 0,
         active: false,
     })),
 ]

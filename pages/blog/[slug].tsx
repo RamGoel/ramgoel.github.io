@@ -60,7 +60,7 @@ const BlogPage = ({
                 variants={containerVariants}
                 className="py-[5vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
             >
-                <div className="flex flex-col font-mono gap-2">
+                <div className="flex flex-col gap-2">
                     <Link
                         href="/"
                         className="flex items-center gap-2 text-neutral-500"

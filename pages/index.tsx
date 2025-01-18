@@ -2,7 +2,7 @@ import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
 import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
-import { Mail } from 'lucide-react'
+import { ArrowUpRight, Mail } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -11,11 +11,12 @@ import Image from 'next/image'
 import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
+import CustomLink from '@/components/CustomLink'
 
 export default function Home({ blogs }: { blogs: any }) {
     return (
         <motion.section
-            className={`bg-zinc-900 font-mono text-white min-h-screen`}
+            className={`bg-zinc-900 text-white min-h-screen`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -57,27 +58,27 @@ const AboutSection = () => {
                 <li className="text-neutral-500">
                     I&apos;m a full-stack engineer from India.
                 </li>
-
+                <li className="text-neutral-500">
+                    Currently exploring GenAI and Python
+                </li>
                 <li className="text-neutral-500">
                     Worked with few startups,{' '}
-                    <Link
+                    <CustomLink
+                        extraClassName="pb-[2px]"
                         href="https://www.linkedin.com/in/ramgoel/details/experience/"
-                        target="_blank"
-                        className="underline text-white hover:text-yellow-200 transition-all"
                     >
-                        learn more
-                    </Link>
+                        read experience
+                    </CustomLink>
                 </li>
 
                 <li className="text-neutral-500">
-                    make videos about frontend on{' '}
-                    <Link
+                    love creating content on{' '}
+                    <CustomLink
+                        extraClassName="pb-[2px]"
                         href="https://www.youtube.com/@theRamGoel"
-                        target="_blank"
-                        className="underline text-white hover:text-yellow-200 transition-all"
                     >
-                        YouTube
-                    </Link>
+                        youtube
+                    </CustomLink>
                 </li>
 
                 <li className="text-neutral-500">
@@ -89,7 +90,7 @@ const AboutSection = () => {
 }
 
 const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
-    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'lp'>(
+    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'ext'>(
         'side'
     )
 
@@ -97,7 +98,7 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
         const query = new URLSearchParams(window.location.search)
         const projectsType = query.get('pt')
         if (projectsType) {
-            setProjectsType(projectsType as 'side' | 'rn' | 'lp')
+            setProjectsType(projectsType as 'side' | 'rn' | 'ext')
         } else {
             setProjectsType('side')
         }
@@ -109,32 +110,35 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
 
     return (
         <ol className="flex list-decimal flex-col gap-3">
-            {!hideTitle ? (
-                <div className="flex flex-col items-start md:flex-row md:items-center justify-between">
-                    <h3 className="text-lg font-semibold">
-                        {projectsType === 'lp'
-                            ? 'Landing Pages'
-                            : projectsType === 'rn'
-                              ? 'Mobile Apps'
-                              : 'Side Projects'}
-                    </h3>
-                </div>
-            ) : null}
+            <div className="flex items-center gap-2 mb-1">
+                <button
+                    onClick={() => setProjectsType('side')}
+                    className={`bg-neutral-800/40 border-neutral-800 border px-3 py-1 rounded-full w-fit text-xs ${
+                        projectsType === 'side' ? '' : 'opacity-50'
+                    }`}
+                >
+                    web apps
+                </button>
+                <button
+                    onClick={() => setProjectsType('ext')}
+                    className={`bg-neutral-800/40 border-neutral-800 border px-3 py-1 rounded-full w-fit text-xs ${
+                        projectsType === 'ext' ? '' : 'opacity-50'
+                    }`}
+                >
+                    plugins
+                </button>
+            </div>
             {projectsToRender.map((project, index) => (
                 <li
                     key={project.id}
                     className="flex flex-col w-full md:flex-row items-center gap-2"
                 >
                     <div className="hidden md:flex items-center flex-1 gap-2">
-                        <p className="">{index + 1}.</p>
-                        <Link
-                            href={project.url}
-                            className="underline hover:text-yellow-200 transition-all"
-                        >
+                        <CustomLink href={project.url}>
                             {project.title}
-                        </Link>
+                        </CustomLink>
                         <p className="text-neutral-500 text-left">
-                            {project.content}
+                            {'- ' + project.content}
                         </p>
                     </div>
                     <div className="flex md:hidden items-center w-full gap-2">
@@ -238,12 +242,9 @@ const ContributionsSection = () => {
                             height={20}
                             className="rounded-full"
                         />
-                        <Link
-                            href={contribution.links[0].link}
-                            className="underline hover:text-yellow-200 transition-all"
-                        >
+                        <CustomLink href={contribution.links[0].link}>
                             {contribution.name}
-                        </Link>
+                        </CustomLink>
                         <p className="text-neutral-500 text-left">
                             {contribution.description} (
                             {moment(contribution.time).format('MMM YYYY')})
@@ -271,18 +272,15 @@ const BlogsSection = ({ blogs }: { blogs: any }) => {
     console.log(blogs)
     return (
         <div className="flex flex-col gap-2">
-            <h3 className="text-lg font-semibold">Blogs</h3>
+            <h3 className="text-lg font-semibold">Writings</h3>
             {blogs.map((blog: any) => (
                 <div
                     key={blog.slug}
                     className="flex items-center justify-between gap-2"
                 >
-                    <Link
-                        href={`/blog/${blog.slug}`}
-                        className="underline hover:text-yellow-200 transition-all"
-                    >
+                    <CustomLink href={`/blog/${blog.slug}`}>
                         {blog.title}
-                    </Link>
+                    </CustomLink>
                     <p className="text-neutral-500">{blog.date}</p>
                 </div>
             ))}
