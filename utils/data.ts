@@ -80,6 +80,29 @@ const FULL_STACK_APPS = [
     },
 ]
 
+const FUN_PROJECTS = [
+    {
+        id: 1,
+        title: 'whatsapp',
+        date: '2024',
+        description: 'Built 100% using plain CSS',
+        link: 'https://ramgoel.com/copies/whatsapp/',
+        users: 0,
+        active: false,
+        type: 'fun',
+    },
+    {
+        id: 2,
+        title: 'ticketo',
+        date: '2024',
+        description: 'Telegram ticket reselling bot',
+        link: 'https://x.com/theramgoel/status/1709262222072180879',
+        users: 0,
+        active: false,
+        type: 'fun',
+    },
+]
+
 export const socials = [
     {
         name: 'LinkedIn',
@@ -100,9 +123,14 @@ export const socials = [
 
 export const projects: any[] = [
     ...FULL_STACK_APPS,
-    ...EXTENSIONS.map((page, index) => ({
+    ...[...EXTENSIONS, ...FUN_PROJECTS].map((page, index) => ({
         ...page,
-        type: page.type === 'react-native' ? 'rn' : 'ext',
+        type:
+            page.type === 'react-native'
+                ? 'rn'
+                : page.type === 'extension'
+                  ? 'ext'
+                  : 'fun',
         id: FULL_STACK_APPS.length + index + 1,
         title: page.title || '',
         date: '2024',

@@ -90,15 +90,15 @@ const AboutSection = () => {
 }
 
 const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
-    const [projectsType, setProjectsType] = useState<'side' | 'rn' | 'ext'>(
-        'side'
-    )
+    const [projectsType, setProjectsType] = useState<
+        'side' | 'rn' | 'ext' | 'fun'
+    >('side')
 
     useEffect(() => {
         const query = new URLSearchParams(window.location.search)
         const projectsType = query.get('pt')
         if (projectsType) {
-            setProjectsType(projectsType as 'side' | 'rn' | 'ext')
+            setProjectsType(projectsType as 'side' | 'rn' | 'ext' | 'fun')
         } else {
             setProjectsType('side')
         }
@@ -126,6 +126,14 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                     }`}
                 >
                     plugins
+                </button>
+                <button
+                    onClick={() => setProjectsType('fun')}
+                    className={`bg-neutral-800/40 border-neutral-800 border px-3 py-1 rounded-full w-fit text-xs ${
+                        projectsType === 'fun' ? '' : 'opacity-50'
+                    }`}
+                >
+                    fun
                 </button>
             </div>
             {projectsToRender.map((project, index) => (
@@ -289,20 +297,22 @@ const BlogsSection = ({ blogs }: { blogs: any }) => {
 }
 export const getStaticProps = async () => {
     const fileNames = fs.readdirSync(path.join(process.cwd(), 'blogs'))
-    const blogs = fileNames.map((fileName) => {
-        const filePath = path.join(process.cwd(), 'blogs', fileName)
-        const blog = fs.readFileSync(filePath, 'utf8')
-        const { data } = matter(blog)
+    const blogs = fileNames
+        .map((fileName) => {
+            const filePath = path.join(process.cwd(), 'blogs', fileName)
+            const blog = fs.readFileSync(filePath, 'utf8')
+            const { data } = matter(blog)
 
-        return {
-            title: data.title,
-            date: moment(data.date).format('DD MMM, YYYY'),
-            slug: fileName,
-            ignore: data.ignore || false,
-        }
-    }).sort((a, b) => {
-        return moment(b.date).diff(moment(a.date))
-    })
+            return {
+                title: data.title,
+                date: moment(data.date).format('DD MMM, YYYY'),
+                slug: fileName,
+                ignore: data.ignore || false,
+            }
+        })
+        .sort((a, b) => {
+            return moment(b.date).diff(moment(a.date))
+        })
 
     return { props: { blogs: blogs.filter((blog) => !blog.ignore) } }
 }
