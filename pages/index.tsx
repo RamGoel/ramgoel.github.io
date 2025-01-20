@@ -300,6 +300,8 @@ export const getStaticProps = async () => {
             slug: fileName,
             ignore: data.ignore || false,
         }
+    }).sort((a, b) => {
+        return moment(b.date).diff(moment(a.date))
     })
 
     return { props: { blogs: blogs.filter((blog) => !blog.ignore) } }
