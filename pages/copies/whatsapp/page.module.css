@@ -80,31 +80,30 @@
     width: 100%;
     display: flex;
     gap: 5px;
-    height: 94vh;
-    align-items: center;
-    justify-content: start;
+    flex-grow: 1;
 }
 
 /* Chat Layout */
 
 .chatLayout {
-    width: 100%;
+    flex-grow: 1;
     background-color: var(--foreground);
     border-top-left-radius: 20px;
-    height: 100%;
+    background-color: purple;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: start;
 }
 
 .chatView {
-    height: 100%;
     width: 28%;
-    padding: 20px;
+    padding: 20px 10px;
+    height: calc(100vh - 50px);
     padding-bottom: 0px;
     border-right: 1px solid rgba(255, 255, 255, 0.042);
     display: flex;
     flex-direction: column;
+    background-color: red;
     gap: 10px;
 }
 
@@ -185,11 +184,12 @@
 /* Chat List */
 
 .chatList {
-    max-height: 80%;
     display: flex;
+    background-color: blue;
     gap: 5px;
     flex-direction: column;
     overflow-y: auto;
+    flex-grow: 1;
 }
 
 .chatList::-webkit-scrollbar {
@@ -273,8 +273,7 @@
 .sidebar {
     display: flex;
     flex-direction: column;
-    flex: content;
-    height: 100%;
+    align-self: stretch;
     padding: 15px 0px;
     align-items: center;
     justify-content: space-between;

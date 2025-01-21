@@ -74,6 +74,17 @@ const FaqItem = ({
 
 const Faq = () => {
     const [defaultOpen, setDefaultOpen] = useState(faqData[2])
+    const [render, setRender] = useState(false)
+
+    async function getRandomQuestion() {
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+        setRender(true)
+    }
+    useEffect(() => {
+        getRandomQuestion()
+    }, [])
+
+    if (!render) return null
     return (
         <motion.div
             className=""
