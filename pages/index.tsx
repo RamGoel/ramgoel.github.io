@@ -72,7 +72,7 @@ const AboutSection = () => {
                 </li>
 
                 <li className="text-neutral-500">
-                    love creating content on{' '}
+                    talks about frontend on{' '}
                     <CustomLink
                         extraClassName="pb-[2px]"
                         href="https://www.youtube.com/@theRamGoel"
