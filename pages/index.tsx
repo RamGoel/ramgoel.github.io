@@ -71,7 +71,7 @@ const AboutSection = () => {
                     </CustomLink>
                 </li>
 
-                <li className="text-neutral-500">
+                {/* <li className="text-neutral-500">
                     talks about frontend on{' '}
                     <CustomLink
                         extraClassName="pb-[2px]"
@@ -79,7 +79,7 @@ const AboutSection = () => {
                     >
                         youtube
                     </CustomLink>
-                </li>
+                </li> */}
 
                 <li className="text-neutral-500">
                     Let&apos;s talk how we can work together!
