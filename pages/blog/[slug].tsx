@@ -26,13 +26,56 @@ const BlogPage = ({
             viewport={{ once: true }}
         >
             <Head>
-                <title>{blogData.title}</title>
-                <meta property="og:title" content={blogData.title} />
-                <meta property="og:description" content={blogData.content} />
+                <meta charSet="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <meta
+                    name="title"
+                    content={`${blogData.title} - Ram Goel`}
+                    data-rh="true"
+                />
+                <meta
+                    name="description"
+                    content={`${blogData.title} - Ram Goel`}
+                    data-rh="true"
+                />
+                <meta name="author" content="Ram Goel" />
+                <link rel="author" href="https://ramgoel.com" data-rh="true" />
+                <meta
+                    property="og:title"
+                    content={`${blogData.title} - Ram Goel`}
+                />
+                <meta
+                    property="og:description"
+                    content={`${blogData.title} - Ram Goel`}
+                />
                 <meta
                     property="og:image"
                     content={`https://ramgoel.com/api/og?title=${blogData.title}`}
                 />
+                <meta
+                    property="og:url"
+                    content={`https://ramgoel.com/blog/${blogData.slug}`}
+                />
+                <meta
+                    name="twitter:title"
+                    content={`${blogData.title} - Ram Goel`}
+                />
+                <meta
+                    name="twitter:description"
+                    content={`${blogData.title} - Ram Goel`}
+                />
+                <meta
+                    name="twitter:image"
+                    content={`https://ramgoel.com/api/og?title=${blogData.title}`}
+                />
+                <meta name="twitter:site" content="@theramgoel" />
+                <meta name="twitter:creator" content="@theramgoel" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="theme-color" content="#18181B" />
+                <meta property="og:site_name" content="Ram Goel" />
             </Head>
             <motion.main
                 variants={containerVariants}
