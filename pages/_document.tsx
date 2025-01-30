@@ -10,11 +10,6 @@ export default function Document() {
                     content="width=device-width, initial-scale=1.0"
                 />
                 <meta
-                    name="title"
-                    content="Ram Goel - GenAI and Full Stack Developer"
-                    data-rh="true"
-                />
-                <meta
                     name="description"
                     content="I work on GenAI and full-stack development. Building Noterr to help organize the internet."
                     data-rh="true"

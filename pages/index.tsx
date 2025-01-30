@@ -277,7 +277,6 @@ const ContributionsSection = () => {
 }
 
 const BlogsSection = ({ blogs }: { blogs: any }) => {
-    console.log(blogs)
     return (
         <div className="flex flex-col gap-2">
             <h3 className="text-lg font-semibold">Writings</h3>
