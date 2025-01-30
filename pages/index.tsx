@@ -306,7 +306,7 @@ export const getStaticProps = async () => {
             return {
                 title: data.title,
                 date: moment(data.date).format('DD MMM, YYYY'),
-                slug: fileName,
+                slug: fileName.replace('.md', ''),
                 ignore: data.ignore || false,
             }
         })

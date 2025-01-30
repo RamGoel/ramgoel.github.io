@@ -112,7 +112,9 @@ const BlogPage = ({
 export const getStaticPaths = async () => {
     const blogs = fs.readdirSync(path.join(process.cwd(), 'blogs'))
     return {
-        paths: blogs.map((blog) => ({ params: { slug: blog } })),
+        paths: blogs.map((blog) => ({
+            params: { slug: blog.replace('.md', '') },
+        })),
         fallback: false,
     }
 }
@@ -123,7 +125,7 @@ export const getStaticProps = async ({
     params: { slug: string }
 }) => {
     const thisBlog = fs.readFileSync(
-        path.join(process.cwd(), 'blogs', params.slug),
+        path.join(process.cwd(), 'blogs', `${params.slug}.md`),
         'utf8'
     )
     const { content, data } = matter(thisBlog)
