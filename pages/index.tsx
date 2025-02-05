@@ -2,10 +2,10 @@ import CustomTooltip from '@/components/custom-tooltip'
 import { childVariants, containerVariants } from '@/utils/animations'
 import { CONTRIBUTIONS, projects, socials } from '@/utils/data'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Mail } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, Pin } from 'lucide-react'
 import Head from 'next/head'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import moment from 'moment'
 import Image from 'next/image'
 import path from 'path'
@@ -13,41 +13,49 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import CustomLink from '@/components/CustomLink'
 
-export default function Home({ blogs }: { blogs: any }) {
+const OPEN_TO_WORK = true
+const AnimatedWrapper = ({
+    time,
+    children,
+}: {
+    time: number
+    children: ReactNode
+}) => {
     return (
-        <motion.section
-            className={`bg-zinc-900 text-white min-h-screen`}
-            variants={containerVariants}
+        <motion.div
+            variants={childVariants(time)}
             initial="hidden"
             animate="visible"
             viewport={{ once: true }}
+            className="flex flex-col gap-3"
         >
+            {children}
+        </motion.div>
+    )
+}
+export default function Home({ blogs }: { blogs: any }) {
+    return (
+        <section className={`bg-zinc-900 text-white min-h-screen`}>
             <Head>
                 <title>Hi, I&apos;m Ram Goel</title>
             </Head>
             <CustomTooltip id="hover-tooltip" />
-            <motion.main
-                variants={containerVariants}
-                className="py-[5vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
-            >
-                <motion.div
-                    variants={childVariants(0)}
-                    className="flex flex-col gap-2"
-                >
+            <main className="py-[5vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6">
+                <AnimatedWrapper time={0}>
                     <SocialsSection />
                     <AboutSection />
-                </motion.div>
-                <motion.div variants={childVariants(0)}>
+                </AnimatedWrapper>
+                <AnimatedWrapper time={0.2}>
                     <ProjectsSection />
-                </motion.div>
-                <motion.div variants={childVariants(0)}>
+                </AnimatedWrapper>
+                <AnimatedWrapper time={0.4}>
                     <BlogsSection blogs={blogs} />
-                </motion.div>
-                <motion.div variants={childVariants(0)}>
+                </AnimatedWrapper>
+                <AnimatedWrapper time={0.5}>
                     <ContributionsSection />
-                </motion.div>
-            </motion.main>
-        </motion.section>
+                </AnimatedWrapper>
+            </main>
+        </section>
     )
 }
 
@@ -56,10 +64,13 @@ const AboutSection = () => {
         <div className="flex flex-col gap-2">
             <ul className="flex list-disc ml-4 flex-col gap-2">
                 <li className="text-neutral-500">
-                    I&apos;m a full-stack engineer from India.
+                    full-stack engineer from{' '}
+                    <CustomLink href="https://en.wikipedia.org/wiki/Amroha">
+                        Amroha, India.
+                    </CustomLink>
                 </li>
                 <li className="text-neutral-500">
-                    Currently exploring GenAI and Python
+                    Currently exploring GenAI, and Web performance
                 </li>
                 <li className="text-neutral-500">
                     Worked with few startups,{' '}
@@ -71,18 +82,8 @@ const AboutSection = () => {
                     </CustomLink>
                 </li>
 
-                {/* <li className="text-neutral-500">
-                    talks about frontend on{' '}
-                    <CustomLink
-                        extraClassName="pb-[2px]"
-                        href="https://www.youtube.com/@theRamGoel"
-                    >
-                        youtube
-                    </CustomLink>
-                </li> */}
-
                 <li className="text-neutral-500">
-                    Let&apos;s talk how we can work together!
+                    looking for frontend/full-stack roles (JS stack)
                 </li>
             </ul>
         </div>
@@ -196,7 +197,14 @@ const SocialsSection = () => {
     return (
         <div className="flex flex-col md:flex-row items-center my-1 justify-start gap-6">
             <div className="flex gap-6 flex-wrap items-center justify-center md:justify-start w-full">
-                <h1 className="text-xl font-semibold">Hi, I&apos;m Ram Goel</h1>
+                <div className="flex items-center gap-2">
+                    <h1 className="text-2xl font-semibold">Ram Goel</h1>
+                    {OPEN_TO_WORK && (
+                        <div className="px-2 py-1 bg-yellow-200/30 text-yellow-200 border-2 border-yellow-200 rounded-full text-xs">
+                            Open to Work
+                        </div>
+                    )}
+                </div>
 
                 <div className="flex items-center flex-1 gap-6 justify-end">
                     {socials.map((social, index) => (

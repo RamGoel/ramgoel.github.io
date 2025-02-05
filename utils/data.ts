@@ -1,4 +1,3 @@
-import { title } from 'process'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const EXTENSIONS = [
@@ -9,14 +8,6 @@ const EXTENSIONS = [
         type: 'extension',
         users: 25,
         link: 'https://chromewebstore.google.com/detail/voicegpt/hdcddhkmdciaoighoehldcndonbkfkep?authuser=0&hl=en-GB',
-    },
-    {
-        slug: 'noterr',
-        title: 'Noterr',
-        description: 'Allows users to save anything on chrome',
-        users: 20,
-        type: 'extension',
-        link: 'https://chromewebstore.google.com/detail/noterr/apnacpplpojmjebmkbheghceclldfpba?authuser=0&hl=en-GB',
     },
     {
         slug: 'cdnExtension',
@@ -38,22 +29,22 @@ const EXTENSIONS = [
 
 const FULL_STACK_APPS = [
     {
-        id: 1,
-        title: 'Updatly',
-        date: '2024',
-        content: 'ready to use changelog for your SaaS',
-        url: 'https://updatly.ramgoel.com/',
-        users: 50,
-        active: true,
-        type: 'side',
-    },
-    {
         id: 2,
         title: 'Noterr',
         date: '2024',
         content: 'save & organize your bookmarks like a pro',
         url: 'https://noterr.ramgoel.com/',
         users: 50,
+        active: true,
+        type: 'side',
+    },
+    {
+        id: 1,
+        title: 'Updatly',
+        date: '2024',
+        content: 'ready to use changelog for your SaaS',
+        url: 'https://updatly.ramgoel.com/',
+        users: 35,
         active: true,
         type: 'side',
     },
@@ -81,6 +72,15 @@ const FULL_STACK_APPS = [
 ]
 
 const FUN_PROJECTS = [
+    {
+        id: 0,
+        title: 'uber grid question',
+        date: '2024',
+        description: 'question asked in uber interview',
+        link: 'https://codepen.io/ramgoel/pen/mybZMjw',
+        active: false,
+        type: 'fun',
+    },
     {
         id: 1,
         title: 'whatsapp',
