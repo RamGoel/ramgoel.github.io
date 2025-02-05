@@ -13,7 +13,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import CustomLink from '@/components/CustomLink'
 
-const OPEN_TO_WORK = true
+const OPEN_TO_WORK = false
 const AnimatedWrapper = ({
     time,
     children,
@@ -157,18 +157,8 @@ const ProjectsSection = ({ hideTitle }: { hideTitle?: boolean }) => {
                             className="underline hover:text-yellow-200 transition-all"
                         >
                             {project.title}
-                        </Link>
-
-                        <p className="text-neutral-500 ml-auto text-right">
-                            {project.users} users
-                        </p>
-                        {project.active && (
-                            <div
-                                data-tooltip-id="hover-tooltip"
-                                data-tooltip-content="Actively working on it"
-                                className="bg-green-500 w-2 h-2 animate-pulse rounded-full"
-                            ></div>
-                        )}
+                        </Link>{' '}
+                        <span>({project.users} users)</span>
                     </div>
                     <p className="block md:hidden w-full text-neutral-500 text-left">
                         {project.content}
@@ -291,7 +281,7 @@ const BlogsSection = ({ blogs }: { blogs: any }) => {
             {blogs.map((blog: any) => (
                 <div
                     key={blog.slug}
-                    className="flex items-center justify-between gap-2"
+                    className="flex flex-col md:flex-row md:items-center justify-between gap-2"
                 >
                     <CustomLink href={`/blog/${blog.slug}`}>
                         {blog.title}
