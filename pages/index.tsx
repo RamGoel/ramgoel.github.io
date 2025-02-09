@@ -64,13 +64,10 @@ const AboutSection = () => {
         <div className="flex flex-col gap-2">
             <ul className="flex list-disc ml-4 flex-col gap-2">
                 <li className="text-neutral-500">
-                    full-stack engineer from{' '}
+                    full-stack engineer based in{' '}
                     <CustomLink href="https://en.wikipedia.org/wiki/Amroha">
-                        Amroha, India.
+                        India
                     </CustomLink>
-                </li>
-                <li className="text-neutral-500">
-                    Currently exploring GenAI, and Web performance
                 </li>
                 <li className="text-neutral-500">
                     Worked with few startups,{' '}
@@ -78,12 +75,21 @@ const AboutSection = () => {
                         extraClassName="pb-[2px]"
                         href="https://www.linkedin.com/in/ramgoel/details/experience/"
                     >
-                        read experience
+                        learn more
                     </CustomLink>
+                </li>
+                <li className="text-neutral-500">
+                    Currently exploring GenAI, and Web performance
                 </li>
 
                 <li className="text-neutral-500">
-                    looking for frontend/full-stack roles (JS stack)
+                    I&apos;m open for full-stack roles,{' '}
+                    <CustomLink
+                        extraClassName="pb-[2px]"
+                        href="https://cal.com/ram-goel/15min"
+                    >
+                        book a call
+                    </CustomLink>
                 </li>
             </ul>
         </div>
