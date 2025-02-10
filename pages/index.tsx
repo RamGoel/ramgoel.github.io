@@ -81,14 +81,13 @@ const AboutSection = () => {
                 <li className="text-neutral-500">
                     Currently exploring GenAI, and Web performance
                 </li>
-
                 <li className="text-neutral-500">
-                    I&apos;m open for full-stack roles,{' '}
+                    talks about frontend on{' '}
                     <CustomLink
                         extraClassName="pb-[2px]"
-                        href="https://cal.com/ram-goel/15min"
+                        href="https://youtube.com/@theRamGoel"
                     >
-                        book a call
+                        YouTube
                     </CustomLink>
                 </li>
             </ul>
