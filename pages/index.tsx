@@ -64,10 +64,7 @@ const AboutSection = () => {
         <div className="flex flex-col gap-2">
             <ul className="flex list-disc ml-4 flex-col gap-2">
                 <li className="text-neutral-500">
-                    full-stack engineer based in{' '}
-                    <CustomLink href="https://en.wikipedia.org/wiki/Amroha">
-                        India
-                    </CustomLink>
+                    full-stack engineer based in India
                 </li>
                 <li className="text-neutral-500">
                     Worked with few startups,{' '}
