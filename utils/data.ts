@@ -1,4 +1,4 @@
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
 
 const EXTENSIONS = [
     {
@@ -50,22 +50,21 @@ const FULL_STACK_APPS = [
     },
     {
         id: 3,
-        title: 'LemmaUI',
+        title: 'DocsChat(AI)',
+        date: '2025',
+        content: 'A RAG Chatbot for your documentation',
+        url: '/docschat',
+        users: 0,
+        active: false,
+        type: 'side',
+    },
+    {
+        id: 4,
+        title: 'Lemma(AI)',
         date: '2024',
         content: 'Generate Code using Prompt/JSON using AI',
         url: 'https://lemma-ui.vercel.app/',
         users: 20,
-        active: false,
-        type: 'side',
-    },
-
-    {
-        id: 4,
-        title: 'Dumbel',
-        date: '2024',
-        content: 'match with developers, connect with people, etc',
-        url: 'https://dumbel.vercel.app/',
-        users: 100,
         active: false,
         type: 'side',
     },
