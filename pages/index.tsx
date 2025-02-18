@@ -67,13 +67,13 @@ const AboutSection = () => {
                     full-stack engineer based in India
                 </li>
                 <li className="text-neutral-500">
-                    Worked with few startups,{' '}
+                    Previously worked with ConchAI,{' '}
                     <CustomLink
                         extraClassName="pb-[2px]"
-                        href="https://www.linkedin.com/in/ramgoel/details/experience/"
+                        href="https://app.getconch.ai/release-notes"
                     >
-                        learn more
-                    </CustomLink>
+                        (see work)
+                    </CustomLink>, & Animall
                 </li>
                 <li className="text-neutral-500">
                     Currently exploring GenAI, and Web performance
