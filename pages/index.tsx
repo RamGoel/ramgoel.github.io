@@ -67,7 +67,7 @@ const AboutSection = () => {
                     full-stack engineer based in India
                 </li>
                 <li className="text-neutral-500">
-                    Previously worked with ConchAI,{' '}
+                    Previously worked with ConchAI{' '}
                     <CustomLink
                         extraClassName="pb-[2px]"
                         href="https://app.getconch.ai/release-notes"
