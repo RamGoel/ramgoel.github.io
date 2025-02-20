@@ -1,14 +1,11 @@
-import path from 'path'
-import React from 'react'
+import { containerVariants } from '@/utils/animations'
+import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
-import moment from 'moment'
-import { motion } from 'framer-motion'
-import { containerVariants } from '@/utils/animations'
-import Head from 'next/head'
 import md from 'markdown-it'
-import Link from 'next/link'
-import { ArrowLeftIcon } from 'lucide-react'
+import moment from 'moment'
+import Head from 'next/head'
+import path from 'path'
 
 const BlogPage = ({
     blogString,
@@ -19,7 +16,6 @@ const BlogPage = ({
 }) => {
     return (
         <motion.section
-            className={`bg-zinc-900 text-white min-h-screen`}
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -63,16 +59,10 @@ const BlogPage = ({
             </Head>
             <motion.main
                 variants={containerVariants}
-                className="py-[5vh] w-11/12 text-sm md:w-10/12 xl:w-[45%] mx-auto flex flex-col gap-6"
+                className="text-sm flex flex-col gap-6"
             >
                 <div className="flex flex-col gap-2">
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 text-neutral-500"
-                    >
-                        <ArrowLeftIcon className="w-4 h-4" /> All Blogs
-                    </Link>
-                    <h1 className="text-2xl font-bold">{blogData.title}</h1>
+                    <h1 className="text-2xl font-medium">{blogData.title}</h1>
                     <p className="text-neutral-500">
                         Posted on {blogData.date}
                     </p>

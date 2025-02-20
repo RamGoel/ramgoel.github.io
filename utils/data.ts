@@ -1,32 +1,3 @@
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'
-
-const EXTENSIONS = [
-    {
-        slug: 'voicegpt',
-        title: 'VoiceGPT',
-        description: 'Type in ChatGPT using voice',
-        type: 'extension',
-        users: 25,
-        link: 'https://chromewebstore.google.com/detail/voicegpt/hdcddhkmdciaoighoehldcndonbkfkep?authuser=0&hl=en-GB',
-    },
-    {
-        slug: 'cdnExtension',
-        title: 'cdnExtension',
-        description: 'find popular CDNs quickly',
-        type: 'extension',
-        users: 0,
-        link: 'https://addons.mozilla.org/en-US/firefox/addon/cdnextension/',
-    },
-    {
-        slug: 'linkify',
-        title: 'Linkify',
-        description: 'save & organize links in your browser',
-        type: 'extension',
-        users: 0,
-        link: 'https://addons.mozilla.org/en-US/firefox/addon/linkify/',
-    },
-]
-
 const FULL_STACK_APPS = [
     {
         id: 2,
@@ -68,77 +39,27 @@ const FULL_STACK_APPS = [
         active: false,
         type: 'side',
     },
+    // {
+    //     id: 5,
+    //     title: 'SustainGlobe',
+    //     date: '2024',
+    //     content: 'Do Tasks & Post about sustainable living (WebApp + PWA)',
+    //     url: 'https://github.com/RamGoel/sustaintheglobe-web',
+    //     users: 0,
+    //     active: false,
+    //     type: 'side',
+    // },
 ]
 
-const FUN_PROJECTS = [
-    {
-        id: 0,
-        title: 'uber grid question',
-        date: '2024',
-        description: 'question asked in uber interview',
-        link: 'https://codepen.io/ramgoel/pen/mybZMjw',
-        active: false,
-        type: 'fun',
-    },
-    {
-        id: 1,
-        title: 'whatsapp',
-        date: '2024',
-        description: 'Built 100% using plain CSS',
-        link: 'https://ramgoel.com/copies/whatsapp/',
-        users: 0,
-        active: false,
-        type: 'fun',
-    },
-    {
-        id: 2,
-        title: 'ticketo',
-        date: '2024',
-        description: 'Telegram ticket reselling bot',
-        link: 'https://x.com/theramgoel/status/1709262222072180879',
-        users: 0,
-        active: false,
-        type: 'fun',
-    },
-]
-
-export const socials = [
-    {
-        name: 'LinkedIn',
-        icon: FaLinkedin,
-        url: 'https://www.linkedin.com/in/ramgoel/',
-    },
-    {
-        name: 'Github',
-        icon: FaGithub,
-        url: 'https://github.com/RamGoel',
-    },
-    {
-        name: 'Twitter',
-        icon: FaTwitter,
-        url: 'https://twitter.com/theramgoel',
-    },
-]
-
-export const projects: any[] = [
-    ...FULL_STACK_APPS,
-    ...[...EXTENSIONS, ...FUN_PROJECTS].map((page, index) => ({
-        ...page,
-        type:
-            page.type === 'react-native'
-                ? 'rn'
-                : page.type === 'extension'
-                  ? 'ext'
-                  : 'fun',
-        id: FULL_STACK_APPS.length + index + 1,
-        title: page.title || '',
-        date: '2024',
-        content: page.description || '',
-        url: page.link || '',
-        users: page?.users || 0,
-        active: false,
-    })),
-]
+export const projects: {
+    id: number
+    title: string
+    date: string
+    content: string
+    url: string
+    users: number
+    active: boolean
+}[] = [...FULL_STACK_APPS]
 
 export const CONTRIBUTIONS = [
     {
