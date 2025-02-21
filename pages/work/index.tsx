@@ -46,7 +46,7 @@ const WorkPage = () => {
                 {CONTRIBUTIONS.map((item, index) => {
                     return (
                         <div key={item.name} className="flex flex-col gap-3">
-                            <div className="flex flex-col lg:flex-row lg:items-center gap-2">
+                            <div className="flex items-center gap-2">
                                 <p className="text-neutral-500 hidden lg:block">
                                     {index + 1}.{' '}
                                 </p>
