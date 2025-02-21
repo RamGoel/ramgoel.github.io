@@ -63,14 +63,33 @@ export const projects: {
 
 export const CONTRIBUTIONS = [
     {
-        name: 'DiceDB/website',
-        time: '2024-12-01',
+        name: 'DiceDB',
         icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
-        description: 'Improved the Navbar UX, and fixed some broken links.',
         links: [
             {
+                id: 1,
                 name: 'dice-db',
                 link: 'https://github.com/DiceDB/dice/pull/1386',
+                description:
+                    'Improved the Navbar UX, and fixed some broken links.',
+            },
+            {
+                id: 2,
+                name: 'dicedb/playground',
+                link: 'https://github.com/DiceDB/alloy/pull/89',
+                description: 'Improved the layout, moving commands to sidebar',
+            },
+        ],
+    },
+    {
+        name: 'StructuredLabs/preswald',
+        icon: 'https://avatars.githubusercontent.com/u/125618760?s=48&v=4',
+        links: [
+            {
+                id: 1,
+                name: 'dice-db',
+                link: 'https://github.com/StructuredLabs/preswald/pull/122',
+                description: 'Migrated docs from Mintlify to MkDocs',
             },
         ],
     },
@@ -78,23 +97,12 @@ export const CONTRIBUTIONS = [
         name: 'AsyncAPI/website',
         time: '2024-02-01',
         icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
-        description: 'Conference archive page, and some design fixes.',
         links: [
             {
+                id: 1,
+                description: 'Conference archive page, and some design fixes.',
                 name: 'conference-website',
-                link: 'https://github.com/asyncapi/conference-website/pulls?q=is%3Apr+author%3ARamGoel+',
-            },
-        ],
-    },
-    {
-        name: 'MojaGlobal/flint-ui',
-        time: '2024-02-01',
-        icon: 'https://avatars.githubusercontent.com/u/19564969?s=280&v=4',
-        description: 'Some UI fixes when I was getting started',
-        links: [
-            {
-                name: 'flint-ui',
-                link: 'https://github.com/moja-global/FLINT-UI/pulls?q=is%3Apr+author%3ARamGoel+is%3Aclosed',
+                link: 'https://github.com/asyncapi/conference-website/pull/265',
             },
         ],
     },

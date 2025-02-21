@@ -21,7 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 </div>
                 <div className="w-full h-[1px] lg:h-full lg:w-[1px] bg-gradient-to-r lg:bg-gradient-to-b from-neutral-800 to neutral-950" />
                 <div className="h-[100vh] overflow-auto  w-full">
-                    <div className="p-5 lg:p-10 lg:w-[70%] w-full">
+                    <div className="p-5 lg:p-10 lg:w-[50%] w-full">
                         <AnimatedWrapper time={0}>
                             <Component {...pageProps} />
                         </AnimatedWrapper>
