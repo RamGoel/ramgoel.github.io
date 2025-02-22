@@ -1,3 +1,16 @@
+import { FaReact } from 'react-icons/fa'
+import { RiNextjsLine, RiOpenaiLine, RiReactjsLine } from 'react-icons/ri'
+import {
+    SiExpress,
+    SiFramer,
+    SiJavascript,
+    SiMongodb,
+    SiPostgresql,
+    SiPrisma,
+    SiPython,
+    SiTailwindcss,
+    SiTypescript,
+} from 'react-icons/si'
 const FULL_STACK_APPS = [
     {
         id: 2,
@@ -105,5 +118,60 @@ export const CONTRIBUTIONS = [
                 link: 'https://github.com/asyncapi/conference-website/pull/265',
             },
         ],
+    },
+]
+
+export const SKILLS = [
+    {
+        name: 'Javascript',
+        icon: SiJavascript,
+    },
+    {
+        name: 'Typescript',
+        icon: SiTypescript,
+    },
+    {
+        name: 'Python',
+        icon: SiPython,
+    },
+    {
+        name: 'React.js',
+        icon: FaReact,
+    },
+    {
+        name: 'Next.js',
+        icon: RiNextjsLine,
+    },
+    {
+        name: 'React Native',
+        icon: RiReactjsLine,
+    },
+    {
+        name: 'Express.js',
+        icon: SiExpress,
+    },
+    {
+        name: 'MongoDB',
+        icon: SiMongodb,
+    },
+    {
+        name: 'Postgres',
+        icon: SiPostgresql,
+    },
+    {
+        name: 'Prisma',
+        icon: SiPrisma,
+    },
+    {
+        name: 'Tailwind',
+        icon: SiTailwindcss,
+    },
+    {
+        name: 'Framer Motion',
+        icon: SiFramer,
+    },
+    {
+        name: 'OpenAI, Gemini, Claude, Prompt Engineering',
+        icon: RiOpenaiLine,
     },
 ]

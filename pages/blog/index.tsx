@@ -10,7 +10,7 @@ const BlogPage = ({ blogs }: { blogs: any }) => {
             {blogs.map((blog: any) => (
                 <div
                     key={blog.slug}
-                    className="flex opacity-60 hover:opacity-100 text-sm flex-col md:flex-row md:items-center justify-between gap-2"
+                    className="flex opacity-60 hover:opacity-100 text-md flex-col md:flex-row md:items-center justify-between gap-2"
                 >
                     <CustomLink href={`/blog/${blog.slug}`}>
                         {blog.title}

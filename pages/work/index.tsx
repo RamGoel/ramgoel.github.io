@@ -5,8 +5,8 @@ import Link from 'next/link'
 
 const WorkPage = () => {
     return (
-        <div className="text-sm flex flex-col w-full lg:w-3/4 gap-4">
-            <p className="text-neutral-500">
+        <div className="text-md leading-loose flex flex-col gap-4">
+            <p className="text-neutral-400">
                 During these years, I was grateful that I&apos;ve got a chance
                 to work with amazing people and impactful projects, I also built
                 some side projects.
@@ -19,13 +19,13 @@ const WorkPage = () => {
                             key={item.id}
                             className="flex flex-col lg:flex-row lg:items-center gap-2"
                         >
-                            <p className="text-neutral-500 hidden lg:block">
+                            <p className="text-neutral-400 hidden lg:block">
                                 {index + 1}.{' '}
                             </p>
                             <CustomLink extraClassName="w-fit" href={item.url}>
                                 {item.title}
                             </CustomLink>
-                            <p className="text-neutral-500">{item.content}</p>
+                            <p className="text-neutral-400">{item.content}</p>
                         </div>
                     )
                 })}
@@ -33,7 +33,7 @@ const WorkPage = () => {
 
             <hr className="opacity-10 my-5 w-1/3" />
 
-            <p className="text-neutral-500">
+            <p className="text-neutral-400">
                 Like any other developer, I heavily rely on open source
                 projects, and I&apos;ve contributed to some open source projects
                 as well. <br />

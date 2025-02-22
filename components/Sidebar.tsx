@@ -31,7 +31,7 @@ const Sidebar = () => {
                     <Link
                         key={item.label}
                         href={item.href}
-                        className={`text-sm  hover:text-white ${pathname === item.href ? 'text-white' : 'text-neutral-400'}`}
+                        className={`text-md hover:text-white ${pathname === item.href ? 'text-white' : 'text-neutral-400'}`}
                     >
                         {item.label}
                     </Link>
