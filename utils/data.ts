@@ -11,113 +11,76 @@ import {
     SiTailwindcss,
     SiTypescript,
 } from 'react-icons/si'
-const FULL_STACK_APPS = [
+
+type Project = {
+    id: number
+    title: string
+    icon?: string
+    content: string
+    url: string
+    users?: number
+    stars?: string
+    type: string
+    github?: string
+}
+export const projects: Project[] = [
     {
         id: 2,
         title: 'Noterr',
-        date: '2024',
-        content: 'save & organize your bookmarks like a pro',
+        content:
+            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
         url: 'https://noterr.ramgoel.com/',
         users: 50,
-        active: true,
         type: 'side',
     },
     {
         id: 1,
         title: 'Updatly',
-        date: '2024',
-        content: 'ready to use changelog for your SaaS',
+        content:
+            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
         url: 'https://updatly.ramgoel.com/',
         users: 35,
-        active: true,
         type: 'side',
     },
     {
         id: 3,
-        title: 'DocsChat(AI)',
-        date: '2025',
-        content: 'A RAG Chatbot for your documentation',
+        title: 'DocsChatAI',
+        content:
+            'A open-source & ready-to-use RAG Chatbot which any company can use to talk with their documentation.',
         url: '/docschat',
         users: 0,
-        active: false,
         type: 'side',
+        github: 'https://github.com/RamGoel/DocsChat',
     },
     {
         id: 4,
-        title: 'Lemma(AI)',
-        date: '2024',
-        content: 'Generate Code using Prompt/JSON using AI',
+        title: 'LemmaAI',
+        content:
+            'A tool to generate Tailwind + HTML + FontAwesome Components using AI, built using Gemini-flash model',
         url: 'https://lemma-ui.vercel.app/',
         users: 20,
-        active: false,
         type: 'side',
+        github: 'https://github.com/RamGoel/lemmaUI',
     },
-    // {
-    //     id: 5,
-    //     title: 'SustainGlobe',
-    //     date: '2024',
-    //     content: 'Do Tasks & Post about sustainable living (WebApp + PWA)',
-    //     url: 'https://github.com/RamGoel/sustaintheglobe-web',
-    //     users: 0,
-    //     active: false,
-    //     type: 'side',
-    // },
-]
-
-export const projects: {
-    id: number
-    title: string
-    date: string
-    content: string
-    url: string
-    users: number
-    active: boolean
-}[] = [...FULL_STACK_APPS]
-
-export const CONTRIBUTIONS = [
     {
-        name: 'DiceDB',
+        id: 5,
         icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
-        links: [
-            {
-                id: 1,
-                name: 'dice-db',
-                link: 'https://github.com/DiceDB/dice/pull/1386',
-                description:
-                    'Improved the Navbar UX, and fixed some broken links.',
-            },
-            {
-                id: 2,
-                name: 'dicedb/playground',
-                link: 'https://github.com/DiceDB/alloy/pull/89',
-                description: 'Improved the layout, moving commands to sidebar',
-            },
-        ],
+        title: 'DiceDB',
+        content: 'Rebuilt the layout which improves the UserExperience',
+        url: 'https://github.com/DiceDB/alloy/pull/89',
+        stars: '7.7k+',
+        type: 'oss',
+        github: 'https://github.com/DiceDB',
     },
     {
-        name: 'StructuredLabs/preswald',
-        icon: 'https://avatars.githubusercontent.com/u/125618760?s=48&v=4',
-        links: [
-            {
-                id: 1,
-                name: 'dice-db',
-                link: 'https://github.com/StructuredLabs/preswald/pull/122',
-                description: 'Migrated docs from Mintlify to MkDocs',
-            },
-        ],
-    },
-    {
-        name: 'AsyncAPI/website',
-        time: '2024-02-01',
-        icon: 'https://avatars.githubusercontent.com/u/16401334?s=280&v=4',
-        links: [
-            {
-                id: 1,
-                description: 'Conference archive page, and some design fixes.',
-                name: 'conference-website',
-                link: 'https://github.com/asyncapi/conference-website/pull/265',
-            },
-        ],
+        id: 6,
+        icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
+        title: 'StructuredLabs/preswald',
+        content: 'Migrated documentation from Mintlify to MkDocs',
+        url: 'https://github.com/StructuredLabs/preswald/pull/122',
+        stars: '1k+',
+        type: 'oss',
+        github: 'https://github.com/StructuredLabs/preswald/',
     },
 ]
 
