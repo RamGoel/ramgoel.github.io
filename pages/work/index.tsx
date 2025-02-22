@@ -6,7 +6,7 @@ import { SiGithub } from 'react-icons/si'
 const WorkPage = () => {
     return (
         <div className="text-md leading-loose flex flex-col gap-4">
-            <div className="flex flex-col w-3/4 gap-6">
+            <div className="flex flex-col lg:w-3/4 gap-6">
                 {projects.map((item, index) => {
                     return (
                         <div key={item.id} className="flex gap-2 flex-col">
