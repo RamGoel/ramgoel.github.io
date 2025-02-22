@@ -1,10 +1,25 @@
 import CustomLink from '@/components/CustomLink'
 import { SKILLS } from '@/utils/data'
+import Link from 'next/link'
+import { FaGoogleDrive } from 'react-icons/fa'
 
 export default function Home() {
     return (
         <div className="flex flex-col gap-2 w-full min-[1800px]:w-[65%]">
-            <h1 className="text-2xl font-medium">Ram Goel</h1>
+            <div className="flex items-center justify-between">
+                <h1 className="text-2xl font-medium">Ram Goel</h1>
+                <Link
+                    target="_blank"
+                    href={
+                        'https://drive.google.com/file/d/1VwbJvVsIM1LS0DYq5353ZwiZMhd28nOX/view?usp=drive_link'
+                    }
+                >
+                    <button className="flex gap-2 border hover:border-neutral-500 transition-all hover:scale-105 px-3 py-1 border-neutral-600 rounded-full text-sm items-center">
+                        <FaGoogleDrive size={15} />
+                        <p>View Resume</p>
+                    </button>
+                </Link>
+            </div>
             <div className="flex flex-col text-justify  text-md leading-loose tracking-wide gap-5">
                 <p className="text-neutral-400">
                     I&apos;m a developer based in India. My interests lies
