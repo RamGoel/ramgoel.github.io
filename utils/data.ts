@@ -44,6 +44,16 @@ export const projects: Project[] = [
     },
     {
         id: 3,
+        title: 'Globetrotter Challenge',
+        content:
+            'A full-stack travel guessing game (built in 1 day using AI tools)',
+        url: 'https://tour-play.vercel.app/',
+        github: 'https://github.com/RamGoel/tour-play',
+        users: 0,
+        type: 'side',
+    },
+    {
+        id: 3,
         title: 'DocsChatAI',
         content:
             'A open-source & ready-to-use RAG Chatbot which any company can use to talk with their documentation.',
