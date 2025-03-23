@@ -1,35 +1,51 @@
 import CustomLink from '@/components/CustomLink'
-import { SKILLS } from '@/utils/data'
+import { projects, SKILLS } from '@/utils/data'
+import { Globe2 } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FaGoogleDrive } from 'react-icons/fa'
+import { SiGithub } from 'react-icons/si'
 
 export default function Home() {
     return (
         <div className="flex flex-col gap-2 w-full min-[1800px]:w-[65%]">
-            <div className="flex items-center justify-between">
-                <h1 className="text-2xl font-medium">Ram Goel</h1>
-                <Link
-                    target="_blank"
-                    href={
-                        'https://drive.google.com/file/d/1VwbJvVsIM1LS0DYq5353ZwiZMhd28nOX/view?usp=drive_link'
-                    }
-                >
-                    <button className="flex gap-2 border hover:border-neutral-500 transition-all hover:scale-105 px-3 py-1 border-neutral-600 rounded-full text-sm items-center">
-                        <FaGoogleDrive size={15} />
-                        <p>View Resume</p>
-                    </button>
-                </Link>
+            <div className="flex items-center gap-3">
+                <Image
+                    src="/ram.png"
+                    width={100}
+                    height={100}
+                    className="rounded-full"
+                    alt="ram"
+                />
+
+                <div className="flex flex-col gap-1">
+                    <h1 className="text-xl font-medium">Ram Goel</h1>
+                    <p className="text-neutral-400 text-sm mb-1">
+                        Software Engineer
+                    </p>
+                    <Link
+                        target="_blank"
+                        href={
+                            'https://drive.google.com/file/d/1VwbJvVsIM1LS0DYq5353ZwiZMhd28nOX/view?usp=drive_link'
+                        }
+                    >
+                        <button className="flex gap-2 border hover:border-neutral-500 transition-all hover:scale-105 px-3 py-1 border-neutral-600 rounded-full text-xs items-center">
+                            <FaGoogleDrive size={12} />
+                            <p>View Resume</p>
+                        </button>
+                    </Link>
+                </div>
             </div>
-            <div className="flex flex-col text-justify  text-md leading-loose tracking-wide gap-5">
+            <h1 className="mt-5 text-lg">About</h1>
+
+            <div className="flex flex-col text-justify text-sm leading-loose tracking-wide gap-5">
                 <p className="text-neutral-400">
-                    I&apos;m a developer based in India. My interests lies
-                    around GenAI, web development and solving actual problems
-                    using code. I&apos;ve built{' '}
+                    My interests lies around GenAI, web development and solving
+                    actual problems using code. I&apos;m building{' '}
                     <CustomLink href="https://noterr.ramgoel.com">
                         Noterr
                     </CustomLink>{' '}
-                    to help people collect information super easily from
-                    internet.
+                    - a universal bookmarking tool, on weekends :)
                 </p>
 
                 <p className="text-neutral-400">
@@ -52,7 +68,7 @@ export default function Home() {
                     </CustomLink>
                     ,{'  '}
                     <CustomLink href="https://x.com/theRamGoel">
-                        Twitter
+                        X
                     </CustomLink>{' '}
                     or{'  '}
                     <CustomLink href="https://youtube.com/@theRamGoel">
@@ -66,13 +82,65 @@ export default function Home() {
                     return (
                         <div
                             key={item.name}
-                            className="flex items-center text-sm hover:scale-[1.05] rounded-full transition-all cursor-pointer gap-2 px-3 py-1 border border-neutral-600"
+                            className="flex items-center text-xs opacity-70 hover:opacity-100 rounded-full transition-all cursor-pointer gap-2 px-3 py-1 border border-neutral-600"
                         >
-                            {item.icon ? <item.icon size={18} /> : null}
+                            {item.icon ? <item.icon size={14} /> : null}
                             <p>{item.name}</p>
                         </div>
                     )
                 })}
+            </div>
+
+            <h1 className="mt-5 text-lg">Work</h1>
+            <div className="text-md leading-loose flex flex-col gap-4">
+                <div className="flex flex-col lg:w-3/4 gap-6">
+                    {projects.map((item) => {
+                        return (
+                            <div key={item.id} className="flex gap-3 flex-col">
+                                <h3 className="text-sm">
+                                    {item.title}{' '}
+                                    {item.users
+                                        ? `(${item.users}+ users)`
+                                        : item.stars
+                                          ? `(${item.stars} stars)`
+                                          : ''}
+                                </h3>
+                                <p className="text-sm mt-[-7px] text-neutral-400">
+                                    {item.content}
+                                </p>
+
+                                <div className="flex gap-4 items-center">
+                                    {item.type === 'oss' ? (
+                                        <CustomLink href={item.url}>
+                                            <SiGithub size={15} />{' '}
+                                            <p className="text-sm">
+                                                #{item.url.split('/').at(-1)}
+                                            </p>
+                                        </CustomLink>
+                                    ) : null}
+                                    {item.github ? (
+                                        <CustomLink href={item.github}>
+                                            <SiGithub size={15} />{' '}
+                                            <p className="text-sm">View Repo</p>
+                                        </CustomLink>
+                                    ) : null}
+                                    {item.url && item.type !== 'oss' ? (
+                                        <CustomLink
+                                            href={
+                                                Array.isArray(item.url)
+                                                    ? item.url[0]
+                                                    : item.url
+                                            }
+                                        >
+                                            <Globe2 size={15} />{' '}
+                                            <p className="text-sm">Website</p>
+                                        </CustomLink>
+                                    ) : null}
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
