@@ -25,7 +25,7 @@ export default function Home() {
                 <div className="flex flex-col gap-1">
                     <h1 className="text-xl font-medium">Ram Goel</h1>
                     <p className="text-neutral-400 text-sm mb-1">
-                        Software Engineer
+                        Bangalore, India
                     </p>
                     <Link
                         target="_blank"
