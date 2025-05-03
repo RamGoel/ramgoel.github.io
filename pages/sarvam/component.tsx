@@ -45,7 +45,7 @@ const Sarvam = () => {
                     scrub: 2,
                     pin: true,
                     start: 'top top',
-                    end: '+=200%',
+                    end: '+=300%',
                 },
             })
 
@@ -80,7 +80,6 @@ const Sarvam = () => {
                 {
                     scale: 1.2,
                     opacity: 1,
-                    // rotate: 360,
                     duration: 4,
                     ease: 'power2.out',
                     stagger: {
@@ -99,7 +98,39 @@ const Sarvam = () => {
                         return Math.sin(angle) * 200
                     },
                 },
-                1 // Start after logo animation
+                1
+            )
+
+            // Slide chakra to left
+            .to('#chakra-container', {
+                x: -200,
+                duration: 2,
+                ease: 'power2.inOut'
+            }, 5)
+
+            // Reveal text
+            .to('#page4-text', {
+                x: -200,
+                display: 'flex',
+                opacity: 1,
+                duration: 2,
+                ease: 'power2.out'
+            }, 5.5)
+            
+            .fromTo(
+                '#page4-text li',
+                {
+                    opacity: 0,
+                    x: -100
+                },
+                {
+                    opacity: 1,
+                    x: 0,
+                    duration: 0.5,
+                    stagger: 0.1,
+                    ease: 'power2.out'
+                },
+                6
             )
 
             // Letters animation
@@ -173,24 +204,29 @@ const Sarvam = () => {
                 id="page4"
                 className="h-[100vh] w-screen flex justify-center items-center relative overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100"
             >
-                <div className="relative w-[800px] h-[800px] flex items-center justify-center">
-                    <Image
-                        ref={logoRef}
-                        src="/demo.svg"
-                        alt="demo"
-                        width={1000}
-                        height={1000}
-                        className="w-[200px] h-[200px] object-cover relative z-10"
-                    />
-                    {indianElements.map((symbol, index) => (
-                        <div
-                            key={index}
-                            ref={(el) => setSymbolRef(el, index)}
-                            className="absolute top-1/2 left-1/2 text-orange-500 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold"
-                        >
-                            {symbol}
-                        </div>
-                    ))}
+                <div className="w-[80vw] h-[800px] flex items-center justify-center">
+                    <div id="chakra-container" className="relative w-[800px] h-[800px] flex items-center justify-center">
+                        <Image
+                            ref={logoRef}
+                            src="/demo.svg"
+                            alt="demo"
+                            width={1000}
+                            height={1000}
+                            className="w-[200px] h-[200px] object-cover relative z-10"
+                        />
+                        {indianElements.map((symbol, index) => (
+                            <div
+                                key={index}
+                                ref={(el) => setSymbolRef(el, index)}
+                                className="absolute top-1/2 left-1/2 text-orange-500 transform -translate-x-1/2 -translate-y-1/2 text-4xl font-semibold"
+                            >
+                                {symbol}
+                            </div>
+                        ))}
+                    </div>
+                        <h1 id="page4-text" className="text-4xl hidden font-bold">
+                            #MultiLanguageSupport
+                        </h1>
                 </div>
             </div>
 
