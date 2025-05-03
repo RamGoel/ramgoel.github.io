@@ -1,5 +1,3 @@
-'use client'
-
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
@@ -128,7 +126,7 @@ export default function Sarvam() {
     }
 
     return (
-        <div className="bg-white">
+        <div className="bg-white min-w-screen h-screen">
             <nav
                 id="navbar"
                 className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-white to-transparent text-black"
@@ -146,32 +144,7 @@ export default function Sarvam() {
                                 />
                                 <span className="font-medium">Sarvam</span>
                             </div>
-                            <div className="hidden md:flex items-center gap-8">
-                                <a
-                                    href="#"
-                                    className="text-sm transition-colors duration-200"
-                                >
-                                    About
-                                </a>
-                                <a
-                                    href="#"
-                                    className="text-sm transition-colors duration-200"
-                                >
-                                    Services
-                                </a>
-                                <a
-                                    href="#"
-                                    className="text-sm transition-colors duration-200"
-                                >
-                                    Portfolio
-                                </a>
-                                <a
-                                    href="#"
-                                    className="text-sm transition-colors duration-200"
-                                >
-                                    Contact
-                                </a>
-                            </div>
+                         
                         </div>
                         <div className="flex items-center gap-4">
                             <button className="px-4 py-2 text-sm transition-colors duration-200">
