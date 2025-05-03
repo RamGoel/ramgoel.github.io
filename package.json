@@ -45,6 +45,7 @@
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/gsap": "^3.0.0",
     "@types/markdown-it": "^14.1.2"
   }
 }

@@ -1,7 +1,5 @@
-'use client'
-
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 
@@ -25,6 +23,8 @@ const Sarvam = () => {
     const logoRef = useRef<HTMLImageElement>(null)
 
     useEffect(() => {
+        if (typeof window === 'undefined') return
+        // Register GSAP plugins
         gsap.registerPlugin(ScrollTrigger)
         const ctx = gsap.context(() => {
             // Text scroll animation
