@@ -18,13 +18,12 @@ const indianElements = [
     'ॐ', // Sacred symbol (used in Hinduism, Sanskrit)
 ]
 
-gsap.registerPlugin(ScrollTrigger)
-
-export default function Sarvam() {
+const Sarvam = () => {
     const symbolRefs = useRef<(HTMLDivElement | null)[]>([])
     const logoRef = useRef<HTMLImageElement>(null)
 
     useEffect(() => {
+        gsap.registerPlugin(ScrollTrigger)
         const ctx = gsap.context(() => {
             // Text scroll animation
             gsap.to('#page3 h1', {
@@ -219,3 +218,5 @@ export default function Sarvam() {
         </div>
     )
 }
+
+export default Sarvam

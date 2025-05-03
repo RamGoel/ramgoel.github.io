@@ -71,14 +71,14 @@ export default function Home() {
                     <CustomLink href="https://github.com/RamGoel">
                         Github
                     </CustomLink>
-                    ,{'  '}
+                    ,{'  '} or{'  '}
                     <CustomLink href="https://x.com/theRamGoel">
                         X
                     </CustomLink>{' '}
-                    or{'  '}
+                    {/* or{'  '}
                     <CustomLink href="https://youtube.com/@theRamGoel">
                         Youtube
-                    </CustomLink>
+                    </CustomLink> */}
                 </p>
             </div>
 
