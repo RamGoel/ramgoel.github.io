@@ -11,7 +11,7 @@ const SarvamComponent = dynamic(() => import('./component'), {
 
 const SarvamPage = () => {
     return (
-        <div className="max-w-[95vw] h-screen bg-white flex items-center justify-center">
+        <div className="w-screen h-screen bg-white flex items-center justify-center">
             <SarvamComponent />
         </div>
     )
