@@ -162,7 +162,7 @@ export default function Sarvam() {
                 id="page3"
                 className="h-[100vh] flex items-center w-screen flex justify-center items-center"
             >
-                <div className="w-[80vw] mt-10 bg-gradient-to-br from-green-900 via-green-700 to-green-300 h-[75vh]">
+                <div className="w-[80vw] mt-10 bg-gradient-to-r from-orange-800 via-orange-600 to-orange-400 h-[75vh]">
                     <h1 className="text-[25vw] leading-[500px] mx-[40px] text-white font-bold whitespace-nowrap">
                         Representing a Billion Voices
                     </h1>
@@ -198,7 +198,7 @@ export default function Sarvam() {
                 id="page5"
                 className="h-[100vh] w-screen flex justify-center items-center"
             >
-                <div className="flex items-center justify-center w-[80vw] h-[80vh] bg-gradient-to-r from-orange-600 to-orange-400 mt-10 gap-4 text-black">
+                <div className="flex items-center justify-center w-[80vw] h-[80vh] bg-gradient-to-br from-green-900 via-green-700 to-green-300  mt-10 gap-4 text-black">
                     <div className="flex flex-col text-white gap-4">
                         <div className="flex">
                             {letters.map((letter, index) => (
