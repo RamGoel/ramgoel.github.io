@@ -1,3 +1,4 @@
+
 import AnimatedWrapper from '@/components/AnimatedWrapper'
 import CustomTooltip from '@/components/custom-tooltip'
 import '@/styles/globals.css'
