@@ -191,7 +191,7 @@ export default function SanjayPortfolio() {
                             >
                                 <Star className="text-[#1ABC9C]" size={16} />
                                 <span className="text-[#2C3E50] text-sm font-medium">
-                                    India's Top 1% Financial Advisor
+                                    India&apos;s Top 1% Financial Advisor
                                 </span>
                                 <div className="flex gap-1">
                                     {[...Array(5)].map((_, i) => (
@@ -226,8 +226,8 @@ export default function SanjayPortfolio() {
                                 variants={fadeInUp}
                                 className="text-xl lg:text-2xl text-[#2C3E50]/70 font-light leading-relaxed max-w-2xl"
                             >
-                                Join 5000+ successful investors who've multiplied their wealth with 
-                                <span className="font-semibold text-[#1ABC9C]"> Sanjay Kathuria's </span>
+                                Join 5000+ successful investors who&apos;ve multiplied their wealth with 
+                                <span className="font-semibold text-[#1ABC9C]"> Sanjay Kathuria&apos;s </span>
                                 proven strategies. From ₹1L to ₹1Cr+ journeys start here.
                             </motion.p>
 
