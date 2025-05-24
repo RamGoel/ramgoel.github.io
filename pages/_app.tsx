@@ -13,7 +13,7 @@ const font = DM_Sans({
 
 export default function App({ Component, pageProps }: AppProps) {
     const pathname = usePathname()
-    const pageRoutes = ['/sarvam']
+    const pageRoutes = ['/sarvam', '/sanjay']
     const isPageRoute = pageRoutes.includes(pathname)
     return (
         <main className={`${font.className} font-normal`}>
