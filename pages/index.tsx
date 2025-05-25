@@ -1,19 +1,88 @@
 import CustomLink from '@/components/CustomLink'
 import { projects } from '@/utils/data'
 import { motion } from 'framer-motion'
-import { ArrowDownRight, Globe2 } from 'lucide-react'
+import { ArrowDownRight, Globe2, Linkedin, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-import { FaGoogleDrive } from 'react-icons/fa'
+import { FaGoogleDrive, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiGithub } from 'react-icons/si'
+import { Fira_Code, Inter } from 'next/font/google'
+
+const font = Fira_Code({
+    subsets: ['latin'],
+    weight: ['400', '500', '600', '700'],
+})
+
+// Animation variants
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.1
+        }
+    }
+}
+
+const itemVariants = {
+    hidden: { 
+        opacity: 0, 
+        y: 20 
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+            duration: 0.5,
+            ease: "easeOut"
+        }
+    }
+}
+
+const projectContainerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+        opacity: 1,
+        transition: {
+            staggerChildren: 0.15,
+            delayChildren: 0.2
+        }
+    }
+}
+
+const projectItemVariants = {
+    hidden: { 
+        opacity: 0, 
+        y: 30,
+        scale: 0.95
+    },
+    visible: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            duration: 0.6,
+            ease: "easeOut"
+        }
+    }
+}
 
 export default function Home() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="flex flex-col gap-2 w-full min-[1800px]:w-[65%]">
-            <div className="flex items-center gap-3">
+        <motion.div
+            className={`flex flex-col gap-2 w-full min-[1800px]:w-[65%] ${font.className}`}
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <motion.div 
+                className="flex items-center gap-3"
+                variants={itemVariants}
+            >
                 <Image
                     src="/ram.png"
                     width={100}
@@ -39,85 +108,80 @@ export default function Home() {
                         </button>
                     </Link>
                 </div>
-            </div>
-            <h1 className="mt-5 text-lg">About</h1>
-
-            <div className="flex flex-col text-justify text-sm leading-loose tracking-wide gap-5">
-                <p className="text-neutral-400">
+            </motion.div>
+            
+            <motion.div 
+                className="flex flex-col text-justify my-4 text-sm leading-loose tracking-wide gap-3"
+                variants={containerVariants}
+            >
+                <motion.p 
+                    className="text-neutral-400"
+                    variants={itemVariants}
+                >
                     A Frontend Engineer, deeply passionate about GenAI. I&apos;m
                     building{' '}
                     <CustomLink href="https://noterr.ramgoel.com">
                         Noterr
                     </CustomLink>{' '}
                     - a universal bookmarking tool, on weekends :)
-                </p>
+                </motion.p>
 
-                <p className="text-neutral-400">
-                    Wrote my first line of code in 2019, spent my college doing
-                    internships, freelance projects, and attending/organizing
-                    developer events.{' '}
-                    <span className="text-neutral-300">
-                        Currently making &quot;building AI agents easier for
+                <motion.p 
+                    className="text-neutral-400"
+                    variants={itemVariants}
+                >
+                    Wrote my first line of code in 2019, <span className="text-neutral-300">
+                        Currently part of &quot;building AI agents easier for
                         everyone&quot;
                     </span>
-                </p>
+                </motion.p>
 
-                <p className="text-neutral-400">
+                <motion.p 
+                    className="text-neutral-400"
+                    variants={itemVariants}
+                >
                     you can find me on{' '}
                     <CustomLink href="https://linkedin.com/in/ramgoel/">
-                        Linkedin
+                        <FaLinkedin size={14} />  Linkedin
                     </CustomLink>
                     ,{'  '}
                     <CustomLink href="https://github.com/RamGoel">
-                        Github
+                        <SiGithub size={14} /> Github
                     </CustomLink>
-                    ,{'  '} or{'  '}
+                    ,{'  '}
                     <CustomLink href="https://x.com/theRamGoel">
-                        X
+                        <FaTwitter size={14} /> Twitter
                     </CustomLink>{' '}
-                    {/* or{'  '}
+                    or{'  '}
                     <CustomLink href="https://youtube.com/@theRamGoel">
-                        Youtube
-                    </CustomLink> */}
-                </p>
-            </div>
+                      <FaYoutube size={14} />  Youtube
+                    </CustomLink>
+                </motion.p>
+            </motion.div>
 
-            {/* <div className="flex items-center mt-5 gap-3 flex-wrap">
-                {SKILLS.map((item) => {
-                    return (
-                        <div
-                            key={item.name}
-                            className="flex items-center text-xs opacity-70 hover:opacity-100 rounded-full transition-all cursor-pointer gap-2 px-3 py-1 border border-neutral-600"
-                        >
-                            {item.icon ? <item.icon size={14} /> : null}
-                            <p>{item.name}</p>
-                        </div>
-                    )
-                })}
-            </div> */}
-
-            <h1
-                className={`border-b mt-5 mb-3 inline-flex text-sm items-center gap-1 border-neutral-800 border-dashed text-neutral-300 hover:text-yellow-200 transition-all cursor-pointer w-fit`}
-                onClick={() => setIsOpen(!isOpen)}
+            <motion.div 
+                className="flex items-center gap-4 my-4"
+                variants={itemVariants}
             >
-                See what I built <ArrowDownRight size={15} />{' '}
-            </h1>
+                <hr className="opacity-10 w-[2%] ml-auto" />
+                <p className="text-sm w-fit text-center">I built </p>
+                <hr className="opacity-10 flex-1" />
+            </motion.div>
+            
             <motion.div
-                initial={{ height: 0, opacity: 0 }}
-                animate={{
-                    height: isOpen ? 'auto' : 0,
-                    opacity: isOpen ? 1 : 0,
-                }}
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
+                variants={projectContainerVariants}
             >
                 <div className="text-md leading-loose flex flex-col gap-4">
-                    <div className="flex flex-col lg:w-3/4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {projects.map((item) => {
                             return (
-                                <div
+                                <motion.div
                                     key={item.id}
                                     className="flex gap-3 flex-col"
+                                    variants={projectItemVariants}
+                                    
                                 >
                                     <h3 className="text-sm">
                                         {item.title}{' '}
@@ -164,12 +228,12 @@ export default function Home() {
                                             </CustomLink>
                                         ) : null}
                                     </div>
-                                </div>
+                                </motion.div>
                             )
                         })}
                     </div>
                 </div>
             </motion.div>
-        </div>
+        </motion.div>
     )
 }
