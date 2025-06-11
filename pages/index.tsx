@@ -21,24 +21,24 @@ const containerVariants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.1,
-            delayChildren: 0.1
-        }
-    }
+            delayChildren: 0.1,
+        },
+    },
 }
 
 const itemVariants = {
-    hidden: { 
-        opacity: 0, 
-        y: 20 
+    hidden: {
+        opacity: 0,
+        y: 20,
     },
     visible: {
         opacity: 1,
         y: 0,
         transition: {
             duration: 0.5,
-            ease: "easeOut"
-        }
-    }
+            ease: 'easeOut',
+        },
+    },
 }
 
 const projectContainerVariants = {
@@ -47,16 +47,16 @@ const projectContainerVariants = {
         opacity: 1,
         transition: {
             staggerChildren: 0.15,
-            delayChildren: 0.2
-        }
-    }
+            delayChildren: 0.2,
+        },
+    },
 }
 
 const projectItemVariants = {
-    hidden: { 
-        opacity: 0, 
+    hidden: {
+        opacity: 0,
         y: 30,
-        scale: 0.95
+        scale: 0.95,
     },
     visible: {
         opacity: 1,
@@ -64,9 +64,9 @@ const projectItemVariants = {
         scale: 1,
         transition: {
             duration: 0.6,
-            ease: "easeOut"
-        }
-    }
+            ease: 'easeOut',
+        },
+    },
 }
 
 export default function Home() {
@@ -79,7 +79,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
         >
-            <motion.div 
+            <motion.div
                 className="flex items-center gap-3"
                 variants={itemVariants}
             >
@@ -94,7 +94,7 @@ export default function Home() {
                 <div className="flex flex-col gap-1">
                     <h1 className="text-xl font-medium">Ram Goel</h1>
                     <p className="text-neutral-400 text-sm mb-1">
-                        Bangalore, India
+                        Bengaluru, India
                     </p>
                     <Link
                         target="_blank"
@@ -109,57 +109,45 @@ export default function Home() {
                     </Link>
                 </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
                 className="flex flex-col text-justify my-4 text-sm leading-loose tracking-wide gap-3"
                 variants={containerVariants}
             >
-                <motion.p 
-                    className="text-neutral-400"
-                    variants={itemVariants}
-                >
+                <motion.p className="text-neutral-400" variants={itemVariants}>
                     A Frontend Engineer, deeply passionate about GenAI. I&apos;m
-                    building{' '}
-                    <CustomLink href="https://noterr.ramgoel.com">
-                        Noterr
+                    experimenting with{' '}
+                    <CustomLink href="https://slides-ai-two.vercel.app/">
+                        SlidesAI
                     </CustomLink>{' '}
-                    - a universal bookmarking tool, on weekends :)
+                    - a Prompt to PPT builder.
                 </motion.p>
 
-                <motion.p 
-                    className="text-neutral-400"
-                    variants={itemVariants}
-                >
-                    Wrote my first line of code in 2019, <span className="text-neutral-300">
+                <motion.p className="text-neutral-400" variants={itemVariants}>
+                    Wrote my first line of code in 2019,{' '}
+                    <span className="text-neutral-300">
                         Currently part of &quot;building AI agents easier for
                         everyone&quot;
                     </span>
                 </motion.p>
 
-                <motion.p 
-                    className="text-neutral-400"
-                    variants={itemVariants}
-                >
+                <motion.p className="text-neutral-400" variants={itemVariants}>
                     you can find me on{' '}
                     <CustomLink href="https://linkedin.com/in/ramgoel/">
-                        <FaLinkedin size={14} />  Linkedin
+                        <FaLinkedin size={14} /> Linkedin
                     </CustomLink>
                     ,{'  '}
                     <CustomLink href="https://github.com/RamGoel">
                         <SiGithub size={14} /> Github
                     </CustomLink>
-                    ,{'  '}
+                    , or{'  '}
                     <CustomLink href="https://x.com/theRamGoel">
                         <FaTwitter size={14} /> Twitter
                     </CustomLink>{' '}
-                    or{'  '}
-                    <CustomLink href="https://youtube.com/@theRamGoel">
-                      <FaYoutube size={14} />  Youtube
-                    </CustomLink>
                 </motion.p>
             </motion.div>
 
-            <motion.div 
+            <motion.div
                 className="flex items-center gap-4 my-4"
                 variants={itemVariants}
             >
@@ -167,21 +155,20 @@ export default function Home() {
                 <p className="text-sm w-fit text-center">I built </p>
                 <hr className="opacity-10 flex-1" />
             </motion.div>
-            
+
             <motion.div
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
                 variants={projectContainerVariants}
             >
                 <div className="text-md leading-loose flex flex-col gap-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         {projects.map((item) => {
                             return (
                                 <motion.div
                                     key={item.id}
-                                    className="flex gap-3 flex-col"
+                                    className="flex gap-3 flex-col cursor-pointer"
                                     variants={projectItemVariants}
-                                    
                                 >
                                     <h3 className="text-sm">
                                         {item.title}{' '}

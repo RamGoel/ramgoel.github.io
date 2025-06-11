@@ -22,8 +22,39 @@ type Project = {
     stars?: string
     type: string
     github?: string
+    in_progress?: boolean
 }
 export const projects: Project[] = [
+    {
+        id: 3,
+        title: 'SlidesAI',
+        in_progress: true,
+        content:
+            'Just a fun experiment to generate PPT slides using AI. Uses Sarvam-M as underlying LLM.',
+        url: 'https://slides-ai-two.vercel.app/',
+        users: 0,
+        type: 'side',
+    },
+    {
+        id: 5,
+        title: 'VoiceNextPI',
+        in_progress: true,
+        content:
+            'POC for a embedded AI support agent. Can be embedded in any website with 1 line script. Uses Gemini Flash.',
+        url: 'https://voice-next-pi.vercel.app/',
+        users: 0,
+        type: 'side',
+    },
+    {
+        id: 4,
+        title: 'LemmaAI',
+        content:
+            'A tool to generate Tailwind + HTML + FontAwesome Components using AI, built using Gemini-flash model',
+        url: 'https://lemma-ui.vercel.app/',
+        users: 20,
+        type: 'side',
+        github: 'https://github.com/RamGoel/lemmaUI',
+    },
     {
         id: 2,
         title: 'Noterr',
@@ -42,56 +73,6 @@ export const projects: Project[] = [
         users: 35,
         type: 'side',
     },
-    // {
-    //     id: 3,
-    //     title: 'Globetrotter Challenge',
-    //     content:
-    //         'A full-stack travel guessing game (built in 1 day using AI tools)',
-    //     url: 'https://tour-play.vercel.app/',
-    //     github: 'https://github.com/RamGoel/tour-play',
-    //     users: 0,
-    //     type: 'side',
-    // },
-    {
-        id: 3,
-        title: 'DocsChatAI',
-        content:
-            'A open-source & ready-to-use RAG Chatbot which any company can use to talk with their documentation.',
-        url: '/docschat',
-        users: 0,
-        type: 'side',
-        github: 'https://github.com/RamGoel/DocsChat',
-    },
-    {
-        id: 4,
-        title: 'LemmaAI',
-        content:
-            'A tool to generate Tailwind + HTML + FontAwesome Components using AI, built using Gemini-flash model',
-        url: 'https://lemma-ui.vercel.app/',
-        users: 20,
-        type: 'side',
-        github: 'https://github.com/RamGoel/lemmaUI',
-    },
-    // {
-    //     id: 5,
-    //     icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
-    //     title: 'DiceDB',
-    //     content: 'Rebuilt the layout which improves the UserExperience',
-    //     url: 'https://github.com/DiceDB/alloy/pull/89',
-    //     stars: '7.7k+',
-    //     type: 'oss',
-    //     github: 'https://github.com/DiceDB',
-    // },
-    // {
-    //     id: 6,
-    //     icon: 'https://avatars.githubusercontent.com/u/112580013?v=4',
-    //     title: 'StructuredLabs/preswald',
-    //     content: 'Migrated documentation from Mintlify to MkDocs',
-    //     url: 'https://github.com/StructuredLabs/preswald/pull/122',
-    //     stars: '1k+',
-    //     type: 'oss',
-    //     github: 'https://github.com/StructuredLabs/preswald/',
-    // },
 ]
 
 export const SKILLS = [

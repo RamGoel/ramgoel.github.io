@@ -26,7 +26,7 @@ export default function Document() {
                 />
                 <meta
                     property="og:image"
-                    content="https://ramgoel.com/api/og?title=Ram Goel"
+                    content="https://ramgoel.com/api/og?title=I build UIs and GenAI Wrappers"
                 />
                 <meta property="og:url" content="https://ramgoel.com" />
                 <meta

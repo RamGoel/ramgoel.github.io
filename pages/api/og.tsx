@@ -22,15 +22,16 @@ export default async function handler(req: NextRequest) {
                     justifyContent: 'center',
                     backgroundColor: 'white',
                     backgroundImage:
-                        'linear-gradient(to bottom right, #E0E7FF 25%, #ffffff 50%, #CFFAFE 75%)',
+                        'linear-gradient(to bottom right,rgb(39, 72, 179) 25%,rgb(14, 98, 255) 75%)',
                 }}
             >
                 <h1
                     style={{
-                        fontSize: '100px',
-                        fontFamily: 'SF Pro',
+                        fontSize: '130px',
+                        fontWeight: 'bold',
+                        fontFamily: 'Montserrat Bold, sans-serif',
                         background:
-                            'linear-gradient(to bottom right, #000000 21.66%, #78716c 86.47%)',
+                            'linear-gradient(to bottom right,rgb(242, 242, 242) 21.66%,rgb(255, 255, 255) 86.47%)',
                         backgroundClip: 'text',
                         color: 'transparent',
                         textAlign: 'center',
@@ -39,9 +40,6 @@ export default async function handler(req: NextRequest) {
                 >
                     {title}
                 </h1>
-                <p style={{ fontSize: '28px', fontFamily: 'SF Pro' }}>
-                    Ram Goel
-                </p>
             </div>
         ),
         {
