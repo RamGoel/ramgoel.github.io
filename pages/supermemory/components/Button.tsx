@@ -32,7 +32,7 @@ export default function Button({
                               ? '16px'
                               : '18px',
                 }}
-                className={`bg-[#21252a] text-white tracking-wide flex items-center gap-8 rounded-[16px] ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'} ${className}`}
+                className={`bg-[#21252a] hover:bg-[#21252a]/80 transition-all duration-300 text-white tracking-wide flex items-center gap-8 rounded-[16px] ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'} ${className}`}
             >
                 {text}
                 {showShortCut && (

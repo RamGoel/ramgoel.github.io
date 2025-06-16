@@ -87,7 +87,7 @@ export default function TechSection() {
                 />
 
                 {/* Carousel Container */}
-                <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
+                <div className="relative w-full pb-10 max-w-6xl mx-auto overflow-hidden">
                     <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-[#1c2027] via-[#1c2027]/80 to-transparent z-10 pointer-events-none" />
                     
                     <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-[#1c2027] via-[#1c2027]/80 to-transparent z-10 pointer-events-none" />
