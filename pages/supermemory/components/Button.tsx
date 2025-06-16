@@ -1,9 +1,13 @@
 export default function Button({
     size = 'md',
     showShortCut = false,
+    text = 'Get supermemory™',
+    className = '',
 }: {
     size?: 'sm' | 'md' | 'lg'
     showShortCut?: boolean
+    text?: string | React.ReactNode
+    className?: string
 }) {
     return (
         <div
@@ -28,9 +32,9 @@ export default function Button({
                               ? '16px'
                               : '18px',
                 }}
-                className={`bg-[#21252a] text-white flex items-center gap-8 rounded-[16px] ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'}`}
+                className={`bg-[#21252a] text-white tracking-wide flex items-center gap-8 rounded-[16px] ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'} ${className}`}
             >
-                Get supermemory™{' '}
+                {text}
                 {showShortCut && (
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

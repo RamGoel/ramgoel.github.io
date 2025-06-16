@@ -57,7 +57,7 @@ export default function TechSection() {
     const duplicatedCards = [...techCardsData, ...techCardsData]
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="min-h-[150vh] flex items-center justify-center">
             <div className="flex flex-col gap-10">
                 <Image
                     src={
