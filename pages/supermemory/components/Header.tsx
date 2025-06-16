@@ -1,17 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { Github, Twitter } from 'lucide-react'
 import Image from 'next/image'
 import Button from './Button'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const Header = () => {
+    const [isScrolled, setIsScrolled] = useState(false)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY
+            setIsScrolled(scrollPosition > 100)
+        }
+
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
     return (
-        <header
+        <motion.header
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ 
+                y: 0, 
+                opacity: 1,
+                width: isScrolled ? '70%' : '95%',
+                left: isScrolled ? '15%' : '2.5%'
+            }}
+            transition={{ 
+                duration: 0.8, 
+                ease: [0.25, 0.46, 0.45, 0.94],
+                delay: 1,
+                width: { duration: 0.5, ease: 'easeInOut' },
+                left: { duration: 0.5, ease: 'easeInOut' }
+            }}
             style={{
                 boxShadow:
                     '0 2px 20px #00000040,inset 0 0 0 4px #06060640,inset 0 4px 2px #54545440',
             }}
-            className={`bg-[#21252b] fixed top-6 bg-gray-900 flex items-center left-[2.5%] w-[95%]  right-0 z-50 border-[1px] rounded-[18px] border-[#383838] text-white px-[20px] min-h-[85px] p-[16px]`}
+            className={`bg-[#21252a] fixed top-6 flex items-center right-0 z-50 border-[1px] rounded-[18px] border-[#383838] text-white px-[20px] min-h-[85px] p-[16px]`}
         >
             <div className="w-full mx-auto flex items-center justify-between">
                 {/* Logo and Brand */}
@@ -23,13 +50,28 @@ const Header = () => {
                             width={39}
                             height={32}
                         />
-                        <Image
-                            src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06595_logo-navbag-long.svg"
-                            alt="supermemory"
-                            width={212}
-                            className="mt-2"
-                            height={24}
-                        />
+                        <AnimatePresence>
+                            {!isScrolled && (
+                                <motion.div
+                                    initial={{ opacity: 1, width: 212 }}
+                                    animate={{ opacity: 1, width: 212 }}
+                                    exit={{ 
+                                        opacity: 0, 
+                                        width: 0,
+                                        transition: { duration: 0.3, ease: 'easeInOut' }
+                                    }}
+                                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                                >
+                                    <Image
+                                        src="https://cdn.prod.website-files.com/6826235ef861ed9464b064c8/6826235ef861ed9464b06595_logo-navbag-long.svg"
+                                        alt="supermemory"
+                                        width={212}
+                                        className="mt-2"
+                                        height={24}
+                                    />
+                                </motion.div>
+                            )}
+                        </AnimatePresence>
                     </div>
 
                     {/* Navigation Links */}
@@ -95,7 +137,7 @@ const Header = () => {
                     Pricing
                 </Link>
             </nav>
-        </header>
+        </motion.header>
     )
 }
 
