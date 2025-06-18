@@ -75,57 +75,12 @@ export const projects: Project[] = [
     },
 ]
 
-export const SKILLS = [
+export const talks = [
     {
-        name: 'Javascript',
-        icon: SiJavascript,
-    },
-    {
-        name: 'Typescript',
-        icon: SiTypescript,
-    },
-    {
-        name: 'Python',
-        icon: SiPython,
-    },
-    {
-        name: 'React.js',
-        icon: FaReact,
-    },
-    {
-        name: 'Next.js',
-        icon: RiNextjsLine,
-    },
-    {
-        name: 'React Native',
-        icon: RiReactjsLine,
-    },
-    {
-        name: 'Express.js',
-        icon: SiExpress,
-    },
-    {
-        name: 'MongoDB',
-        icon: SiMongodb,
-    },
-    {
-        name: 'Postgres',
-        icon: SiPostgresql,
-    },
-    {
-        name: 'Prisma',
-        icon: SiPrisma,
-    },
-    {
-        name: 'Tailwind',
-        icon: SiTailwindcss,
-    },
-    {
-        name: 'Framer Motion',
-        icon: SiFramer,
-    },
-    {
-        name: 'OpenAI, Gemini, Claude, Prompt Engineering',
-        icon: RiOpenaiLine,
+        id: 1,
+        title: 'Building Voice Features in Web Apps',
+        content:
+            'I talk about how I used in-built voice features in web apps to build a voice agent.',
+        url: 'https://x.com/theramgoel/status/1923931456558202907',
     },
 ]

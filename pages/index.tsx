@@ -126,9 +126,12 @@ export default function Home() {
                 <motion.p className="text-neutral-400" variants={itemVariants}>
                     Wrote my first line of code in 2019,{' '}
                     <span className="text-neutral-300">
-                        Currently part of &quot;building AI agents easier for
-                        everyone&quot;
+                        Currently building Voice AI Agents
                     </span>
+                    , recently gave a talk on{' '}
+                    <CustomLink href="https://x.com/theramgoel/status/1923931456558202907">
+                        &quot;Building Voice Features in Web Apps&quot;
+                    </CustomLink>
                 </motion.p>
 
                 <motion.p className="text-neutral-400" variants={itemVariants}>
