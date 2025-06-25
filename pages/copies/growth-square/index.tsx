@@ -1,6 +1,11 @@
-import { DM_Sans, Instrument_Serif, Inter, Space_Grotesk } from 'next/font/google'
-import { motion } from 'framer-motion'
-import { useState, useEffect } from 'react'
+import {
+    DM_Sans,
+    Instrument_Serif,
+    Inter,
+    Space_Grotesk,
+} from 'next/font/google'
+import { useState, useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
 import Header from './components/Header'
 import heroImage from './media/background.png'
 import founders from './media/founders.png'
@@ -17,120 +22,335 @@ const serifFont = Instrument_Serif({
     subsets: ['latin'],
 })
 
-// Animation variants for slide-up effect with cascading motion
-const slideUpVariants = {
-    hidden: {
-        y: 100,
-        opacity: 0,
-    },
-    visible: (index: number) => ({
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 0.5,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            delay: index * 0.3, // Stagger the animations
-        },
-    }),
-    // Add a state for when subsequent items appear
-    pushed: (index: number) => ({
-        y: -20, // Slide up slightly when new items appear below
-        opacity: 1,
-        transition: {
-            duration: 0.3,
-            ease: [0.25, 0.46, 0.45, 0.94],
-            delay: (index + 1) * 0.3, // Trigger after the next item starts appearing
-        },
-    }),
-}
-
-// Animation variants for tooltip pop effect
-const tooltipVariants = {
-    hidden: {
-        scale: 0,
-        opacity: 0,
-        y: 20,
-    },
-    visible: {
-        scale: 1,
-        opacity: 1,
-        y: 0,
-        transition: {
-            type: 'spring',
-            stiffness: 400,
-            damping: 25,
-            duration: 0.6,
-        },
-    },
-}
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            delayChildren: 1.0, // Delay main text to appear after tooltips
-        },
-    },
-}
-
-// Container variants for tooltips (appears before main text)
-const tooltipContainerVariants = {
-    hidden: {},
-    visible: {
-        transition: {
-            staggerChildren: 0.2,
-            delayChildren: 0.2, // Start before main text
-        },
-    },
-}
-
 export default function GrowthSquare() {
-    const [currentIndex, setCurrentIndex] = useState(0)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const headerRef = useRef<HTMLDivElement>(null)
+    const heroImageRef = useRef<HTMLImageElement>(null)
+    const titleRef = useRef<HTMLHeadingElement>(null)
+    const brandWordRef = useRef<HTMLSpanElement>(null)
+    const subtitleRef = useRef<HTMLParagraphElement>(null)
+    const buttonRef = useRef<HTMLDivElement>(null)
+    const foundersRef = useRef<HTMLImageElement>(null)
+    const asSeenOnRef = useRef<HTMLParagraphElement>(null)
+    const logosContainerRef = useRef<HTMLDivElement>(null)
+    const logo1Ref = useRef<HTMLImageElement>(null)
+    const logo2Ref = useRef<HTMLImageElement>(null)
+    const logo3Ref = useRef<HTMLImageElement>(null)
+    const logo4Ref = useRef<HTMLImageElement>(null)
 
     useEffect(() => {
-        const timer1 = setTimeout(() => setCurrentIndex(1), 1300) // First text appears at 1s + 0.3s
-        const timer2 = setTimeout(() => setCurrentIndex(2), 1600) // Second text appears at 1s + 0.6s
-        const timer3 = setTimeout(() => setCurrentIndex(3), 1900) // Third text appears at 1s + 0.9s
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+        // Set initial states - everything hidden/positioned off-screen
+        gsap.set(
+            [
+                headerRef.current,
+                heroImageRef.current,
+                titleRef.current,
+                brandWordRef.current,
+                subtitleRef.current,
+                buttonRef.current,
+                asSeenOnRef.current,
+                logo1Ref.current,
+                logo2Ref.current,
+                logo3Ref.current,
+                logo4Ref.current,
+            ],
+            {
+                opacity: 0,
+                y: 50,
+            }
+        )
+
+
+        // Additional specific initial states
+        gsap.set(brandWordRef.current, { scale: 0.5, color: '#ffffff' })
+        gsap.set(foundersRef.current, { scale: 0.8, opacity: 0 })
+        gsap.set(
+            [
+                logo1Ref.current,
+                logo2Ref.current,
+                logo3Ref.current,
+                logo4Ref.current,
+            ],
+            {
+                y: 30,
+                rotation: -10,
+                scale: 0.8,
+            }
+        )
+
+        // Timeline Animation Story (5-6 seconds total)
+        tl
+            // Scene 1: Header appears (0-0.5s)
+            .to(headerRef.current, {
+                opacity: 1,
+                y: 0,
+                duration: 0.5,
+            })
+
+            // Scene 2: Hero background fades in (0.3-0.8s)
+            .to(
+                heroImageRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    ease: 'power2.out',
+                },
+                0.3
+            )
+
+            // Scene 3: Main title slides in (0.8-1.5s)
+            .to(
+                titleRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.7,
+                    ease: 'back.out(1.2)',
+                },
+                0.8
+            )
+
+            // Scene 4: "brand" word transforms with color change (1.2-2s)
+            .to(
+                brandWordRef.current,
+                {
+                    scale: 1,
+                    color: 'var(--primary-color)',
+                    duration: 0.8,
+                    ease: 'elastic.out(1, 0.5)',
+                    opacity: 1,
+                },
+                1.2
+            )
+
+            // Scene 5: Subtitle appears (1.8-2.3s)
+            .to(
+                subtitleRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                },
+                1.8
+            )
+
+            // Scene 6: Button bounces in (2.2-2.8s)
+            .to(
+                buttonRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.6,
+                    ease: 'bounce.out',
+                },
+                2.2
+            )
+
+            // Scene 7: Founders image slides in from right (2.5-3.2s)
+            .to(
+                foundersRef.current,
+                {
+                    opacity: 1,
+                    x: 0,
+                    scale: 1,
+                    duration: 0.7,
+                    ease: 'power2.out',
+                },
+                2.5
+            )
+
+            // Scene 8: "As seen on" text appears (3.5-4s)
+            .to(
+                asSeenOnRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                },
+                3.5
+            )
+
+            // Scene 9: Logos cascade in with rotation and scale (4-5.5s)
+            .to(
+                logo1Ref.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    rotation: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.5)',
+                },
+                4
+            )
+            .to(
+                logo2Ref.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    rotation: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.5)',
+                },
+                4.2
+            )
+            .to(
+                logo3Ref.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    rotation: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.5)',
+                },
+                4.4
+            )
+            .to(
+                logo4Ref.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    rotation: 0,
+                    scale: 1,
+                    duration: 0.4,
+                    ease: 'back.out(1.5)',
+                },
+                4.6
+            )
+
+            // Scene 10: Final flourish - subtle pulse on brand word (5.2-5.8s)
+            .to(
+                brandWordRef.current,
+                {
+                    scale: 1.05,
+                    duration: 0.3,
+                    yoyo: true,
+                    repeat: 1,
+                    ease: 'sine.inOut',
+                },
+                5.2
+            )
 
         return () => {
-            clearTimeout(timer1)
-            clearTimeout(timer2)
-            clearTimeout(timer3)
+            tl.kill()
         }
     }, [])
 
-    const getAnimationState = (itemIndex: number) => {
-        if (currentIndex <= itemIndex) return 'visible'
-        return 'pushed'
-    }
-
     return (
         <div
+            ref={containerRef}
             className={`${font.className} font-normal bg-black text-white h-screen`}
         >
-            <Header />
-            <div className="relative w-11/12 mx-auto flex items-center justify-center h-screen">
-                <div className='relative w-full my-auto '>
-                    <Image src={heroImage} alt="hero" width={1000} height={1000} className='w-full' />
-                    <div className='absolute top-0 left-0 w-full h-full p-10'>
-                        <h1 className={`${serifFont.className} text-white text-[90px] font-bold`}>Let's make you a <span className='text-[var(--primary-color)]'>brand</span></h1>
-                        <p className='text-white text-[24px] font-thin'>
-                        We help founders and CXOs unlock the power of <br /> their personal brands, one post at a time.
-                        </p>
-                        <div className='mt-8'>
-                            <Button size='md' text='Book a call' className={`!text-[24px] !bg-black border-[0px] ${serifFont.className}`} />
+            <div ref={headerRef}>
+                <Header />
+            </div>
+            <div className="w-11/12 mx-auto flex items-center justify-center h-screen">
+                <div className='w-full mt-[-100px]'>
+                    <div className="relative w-full my-auto">
+                        <Image
+                            ref={heroImageRef}
+                            src={heroImage}
+                            alt="hero"
+                            width={1000}
+                            height={1000}
+                            className="w-full"
+                        />
+                        <div className="absolute top-0 left-0 w-full h-full p-10">
+                            <h1
+                                ref={titleRef}
+                                className={`${serifFont.className} text-white text-[90px] font-bold`}
+                            >
+                                Let's make you a{' '}
+                                <span
+                                    ref={brandWordRef}
+                                    className="text-[var(--primary-color)]"
+                                >
+                                    brand
+                                </span>
+                            </h1>
+                            <p
+                                ref={subtitleRef}
+                                className="text-white text-[24px] font-thin"
+                            >
+                                We help founders and CXOs unlock the power of{' '}
+                                <br /> their personal brands, one post at a
+                                time.
+                            </p>
+                            <div ref={buttonRef} className="mt-8">
+                                <Button
+                                    size="md"
+                                    text="Book a call"
+                                    className={`!text-[24px] !bg-black border-[0px] ${serifFont.className}`}
+                                />
+                            </div>
                         </div>
+                        <Image
+                            ref={foundersRef}
+                            src={founders}
+                            alt="founders"
+                            className="absolute bottom-0 right-[5%] w-[40%]"
+                            width={1000}
+                            height={1000}
+                        />
                     </div>
-                    <Image src={founders} alt="founders" className="absolute bottom-0 right-0 w-[40%]" width={1000} height={1000} />
-                </div>
-                <div className='absolute bottom-[100px] left-0 w-full'>
-                    <div className='w-11/12 mx-auto flex items-center justify-center gap-10'>
-                        <p className={`${serifFont.className} text-white text-[24px] font-thin`}>As seen on</p>
-                        <div className='flex items-center gap-10'>
-                            <Image className='w-[100px] h-[100px] object-contain' src={'https://framerusercontent.com/images/aG6SPo5xNHsUXl1qARZrJqVUnFA.png'} alt="logo" width={300} height={300} />
-                            <Image className='w-[100px] h-[100px] object-contain' src={'https://framerusercontent.com/images/2NnV1v8OKwnAPFakup3ws29J8ac.png'} alt="logo" width={300} height={300} />
-                            <Image className='w-[100px] h-[100px] object-contain' src={'https://framerusercontent.com/images/w3QKKLE8zpeuDV5dhrEpALCViA.png?scale-down-to=512'} alt="logo" width={300} height={300} />
-                            <Image className='w-[100px] h-[100px] object-contain' src={'https://framerusercontent.com/images/SWbcRHz3hNixK3e0yJELV1LajOM.png'} alt="logo" width={300} height={300} />
+                    <div className="absolute bottom-[150px] left-0 w-full">
+                        <div className="w-11/12 mx-auto flex items-center justify-center gap-10">
+                            <p
+                                ref={asSeenOnRef}
+                                className={`${serifFont.className} text-white text-[24px] font-thin`}
+                            >
+                                As seen on
+                            </p>
+                            <div
+                                ref={logosContainerRef}
+                                className="flex items-center gap-10"
+                            >
+                                <Image
+                                    ref={logo1Ref}
+                                    className="w-[100px] h-[100px] object-contain"
+                                    src={
+                                        'https://framerusercontent.com/images/aG6SPo5xNHsUXl1qARZrJqVUnFA.png'
+                                    }
+                                    alt="logo"
+                                    width={300}
+                                    height={300}
+                                />
+                                <Image
+                                    ref={logo2Ref}
+                                    className="w-[100px] h-[100px] object-contain"
+                                    src={
+                                        'https://framerusercontent.com/images/2NnV1v8OKwnAPFakup3ws29J8ac.png'
+                                    }
+                                    alt="logo"
+                                    width={300}
+                                    height={300}
+                                />
+                                <Image
+                                    ref={logo3Ref}
+                                    className="w-[100px] h-[100px] object-contain"
+                                    src={
+                                        'https://framerusercontent.com/images/w3QKKLE8zpeuDV5dhrEpALCViA.png?scale-down-to=512'
+                                    }
+                                    alt="logo"
+                                    width={300}
+                                    height={300}
+                                />
+                                <Image
+                                    ref={logo4Ref}
+                                    className="w-[100px] h-[100px] object-contain"
+                                    src={
+                                        'https://framerusercontent.com/images/SWbcRHz3hNixK3e0yJELV1LajOM.png'
+                                    }
+                                    alt="logo"
+                                    width={300}
+                                    height={300}
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
