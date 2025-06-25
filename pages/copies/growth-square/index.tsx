@@ -39,6 +39,7 @@ export default function GrowthSquare() {
     const logo3Ref = useRef<HTMLImageElement>(null)
     const logo4Ref = useRef<HTMLImageElement>(null)
     const scrollTextRef = useRef<HTMLDivElement>(null)
+    const joinClubRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -57,6 +58,7 @@ export default function GrowthSquare() {
                 logo3Ref.current,
                 heroImageRef.current,
                 logo4Ref.current,
+                joinClubRef.current,
             ],
             {
                 opacity: 0,
@@ -65,7 +67,7 @@ export default function GrowthSquare() {
         )
 
         // Scroll text visible from start
-        gsap.set(scrollTextRef.current, { opacity: 1, y: 500 })
+        gsap.set(scrollTextRef.current, { opacity: 1, y: '50%' })
 
         // Additional specific initial states
         gsap.set(brandWordRef.current, { scale: 0.5, color: '#ffffff' })
@@ -177,6 +179,15 @@ export default function GrowthSquare() {
                     ease: 'bounce.out',
                 },
                 1.4
+            )
+
+            .to(
+                joinClubRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                },
+                1.6
             )
 
             // Scene 6: Founders image slides up from hero boundary
@@ -303,6 +314,53 @@ export default function GrowthSquare() {
                             className="w-full"
                         />
                         <div className="absolute top-0 left-0 w-full h-full p-10">
+                            <div
+                                ref={joinClubRef}
+                                className="mt-8 flex items-center gap-2"
+                            >
+                               
+                                <div className="flex items-center space-x-[-20px]">
+                                    <Image
+                                        src={
+                                            'https://framerusercontent.com/images/SVD1pUZI1FZ1GWoTVfuD2aMQwqs.png'
+                                        }
+                                        alt="logo"
+                                        width={100}
+                                        height={100}
+                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                    />
+                                    <Image
+                                        src={
+                                            'https://framerusercontent.com/images/jrN6G5PzxrTlasptLuwXZT1Iow8.png'
+                                        }
+                                        alt="logo"
+                                        width={100}
+                                        height={100}
+                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                    />
+                                    <Image
+                                        src={
+                                            'https://framerusercontent.com/images/dI2OIqGBWDxCOmjgWzF1yhOSo.png'
+                                        }
+                                        alt="logo"
+                                        width={100}
+                                        height={100}
+                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                    />
+                                    <Image
+                                        src={
+                                            'https://framerusercontent.com/images/zTodjkUAegp52Q8g20MJTkPB4aQ.jpg?scale-down-to=512'
+                                        }
+                                        alt="logo"
+                                        width={100}
+                                        height={100}
+                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                    />
+                                </div>
+                                <p className={`${serifFont.className} text-white text-[22px] font-thin`}>
+                                    trusted by top creators & founders
+                                </p>
+                            </div>
                             <h1
                                 ref={titleRef}
                                 className={`${serifFont.className} text-white text-[90px] font-bold`}
@@ -327,7 +385,8 @@ export default function GrowthSquare() {
                                 <Button
                                     size="md"
                                     text="Book a call"
-                                    className={`!text-[24px] !bg-black border-[0px] ${serifFont.className}`}
+                                    showShortCut
+                                    className={`!text-[24px] border-[0px] ${serifFont.className}`}
                                 />
                             </div>
                         </div>

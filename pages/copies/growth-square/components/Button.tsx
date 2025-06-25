@@ -23,7 +23,7 @@ export default function Button({
                               ? '14px'
                               : '16px',
                 }}
-                className={`bg-gradient-to-r from-[#21252a] border-[#383838] border-2 to-[#21252a]/80 rounded-tr-[16px] text-white rounded-bl-[16px] hover:bg-white/80 transition-all duration-300 tracking-wide flex items-center gap-8 ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'} ${className}`}
+                className={`bg-gradient-to-r from-[#151619] border-[#383838] border-2 to-[#151619]/80 rounded-tr-[16px] text-white rounded-bl-[16px] hover:bg-black transition-all duration-300 tracking-wide flex items-center gap-8 ${size === 'sm' ? 'py-[12px] px-[18px]' : size === 'md' ? 'py-[14px] px-[20px]' : 'py-[16px] px-[22px]'} ${className}`}
             >
                 {text}
                 {showShortCut && (
