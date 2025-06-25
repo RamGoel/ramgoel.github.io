@@ -287,7 +287,7 @@ export default function GrowthSquare() {
                 <h2
                     className={`${serifFont.className} text-white text-[30px] font-bold text-center leading-tight`}
                 >
-                    glad you're here! start scrolling...
+                    glad you&apos;re here! start scrolling...
                 </h2>
             </div>
 
@@ -307,7 +307,7 @@ export default function GrowthSquare() {
                                 ref={titleRef}
                                 className={`${serifFont.className} text-white text-[90px] font-bold`}
                             >
-                                Let's make you a{' '}
+                                Let&apos;s make you a{' '}
                                 <span
                                     ref={brandWordRef}
                                     className="text-[var(--primary-color)]"
