@@ -403,7 +403,7 @@ export default function GrowthSquare() {
                             height={1000}
                         />
                     </div>
-                    <div className="absolute bottom-[150px] left-0 w-full">
+                    <div className="absolute bottom-[120px] left-0 w-full">
                         <div className="w-11/12 mx-auto flex items-center justify-center gap-10">
                             <p
                                 ref={asSeenOnRef}
