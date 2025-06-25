@@ -321,7 +321,7 @@ export default function GrowthSquare() {
                                 ref={joinClubRef}
                                 className="mt-8 flex items-center gap-2"
                             >
-                                <div className="flex items-center space-x-[-20px]">
+                                <div className="flex items-center space-x-[-10px]">
                                     <Image
                                         src={
                                             'https://framerusercontent.com/images/SVD1pUZI1FZ1GWoTVfuD2aMQwqs.png'
@@ -329,7 +329,7 @@ export default function GrowthSquare() {
                                         alt="logo"
                                         width={100}
                                         height={100}
-                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                        className="w-[35px] h-[35px] object-cover rounded-full"
                                     />
                                     <Image
                                         src={
@@ -338,7 +338,7 @@ export default function GrowthSquare() {
                                         alt="logo"
                                         width={100}
                                         height={100}
-                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                        className="w-[35px] h-[35px] object-cover rounded-full"
                                     />
                                     <Image
                                         src={
@@ -347,7 +347,7 @@ export default function GrowthSquare() {
                                         alt="logo"
                                         width={100}
                                         height={100}
-                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                        className="w-[35px] h-[35px] object-cover rounded-full"
                                     />
                                     <Image
                                         src={
@@ -356,18 +356,18 @@ export default function GrowthSquare() {
                                         alt="logo"
                                         width={100}
                                         height={100}
-                                        className="w-[50px] h-[50px] object-cover rounded-full"
+                                        className="w-[35px] h-[35px] object-cover rounded-full"
                                     />
                                 </div>
                                 <p
-                                    className={`${serifFont.className} text-white text-[22px] font-thin`}
+                                    className={`${serifFont.className} text-white text-[18px] font-thin`}
                                 >
                                     trusted by top creators & founders
                                 </p>
                             </div>
                             <h1
                                 ref={titleRef}
-                                className={`${serifFont.className} text-white text-[90px] font-bold`}
+                                className={`${serifFont.className} text-white text-[80px] font-bold`}
                             >
                                 Let&apos;s make you a{' '}
                                 <span
@@ -379,7 +379,7 @@ export default function GrowthSquare() {
                             </h1>
                             <p
                                 ref={subtitleRef}
-                                className="text-white text-[24px] font-thin"
+                                className="text-white text-[18px] font-thin"
                             >
                                 We help founders and CXOs unlock the power of{' '}
                                 <br /> their personal brands, one post at a
@@ -390,7 +390,7 @@ export default function GrowthSquare() {
                                     size="md"
                                     text="Book a call"
                                     showShortCut
-                                    className={`!text-[24px] border-[0px] ${serifFont.className}`}
+                                    className={`!text-[20px] border-[0px] ${serifFont.className}`}
                                 />
                             </div>
                         </div>
@@ -407,7 +407,7 @@ export default function GrowthSquare() {
                         <div className="w-11/12 mx-auto flex items-center justify-center gap-10">
                             <p
                                 ref={asSeenOnRef}
-                                className={`${serifFont.className} text-white text-[24px] font-thin`}
+                                className={`${serifFont.className} text-white text-[20px] font-thin`}
                             >
                                 As seen on
                             </p>
