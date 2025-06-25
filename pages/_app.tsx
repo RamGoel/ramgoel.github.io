@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { DM_Sans } from 'next/font/google'
 import { usePathname } from 'next/navigation'
+import '@/pages/copies/growth-square/growth-square.css'
 
 const font = DM_Sans({
     weight: ['300', '400', '500'],
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
         '/copies/sarvam',
         '/copies/whatsapp',
         '/widget',
+        '/copies/growth-square',
     ]
     const isPageRoute = pageRoutes.includes(pathname)
     return (
