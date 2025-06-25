@@ -56,7 +56,6 @@ export default function GrowthSquare() {
                 logo1Ref.current,
                 logo2Ref.current,
                 logo3Ref.current,
-                heroImageRef.current,
                 logo4Ref.current,
                 joinClubRef.current,
             ],
@@ -65,6 +64,10 @@ export default function GrowthSquare() {
                 y: 50,
             }
         )
+
+        gsap.set(heroImageRef.current, {
+            y: 500,
+        })
 
         // Scroll text visible from start
         gsap.set(scrollTextRef.current, { opacity: 1, y: '50%' })
@@ -126,11 +129,20 @@ export default function GrowthSquare() {
             .to(
                 heroImageRef.current,
                 {
+                    y: 0,
+                    duration: 0.5,
+                },
+                0.8
+            )
+
+            .to(
+                joinClubRef.current,
+                {
                     opacity: 1,
                     y: 0,
                     duration: 0.5,
                 },
-                0.6
+                1.3
             )
 
             // Scene 2: Main title slides in
@@ -142,7 +154,7 @@ export default function GrowthSquare() {
                     duration: 0.7,
                     ease: 'back.out(1.2)',
                 },
-                0.8
+                1.8
             )
 
             // Scene 3: "brand" word transforms with color change
@@ -155,7 +167,7 @@ export default function GrowthSquare() {
                     ease: 'elastic.out(1, 0.5)',
                     opacity: 1,
                 },
-                1.0
+                2.5
             )
 
             // Scene 4: Subtitle appears
@@ -166,7 +178,7 @@ export default function GrowthSquare() {
                     y: 0,
                     duration: 0.5,
                 },
-                1.2
+                3.3
             )
 
             // Scene 5: Button bounces in
@@ -178,16 +190,7 @@ export default function GrowthSquare() {
                     duration: 0.6,
                     ease: 'bounce.out',
                 },
-                1.4
-            )
-
-            .to(
-                joinClubRef.current,
-                {
-                    opacity: 1,
-                    y: 0,
-                },
-                1.6
+                3.8
             )
 
             // Scene 6: Founders image slides up from hero boundary
@@ -198,7 +201,7 @@ export default function GrowthSquare() {
                     duration: 0.7,
                     ease: 'power2.out',
                 },
-                1.6
+                4.4
             )
 
             // Scene 7: "As seen on" text appears
@@ -209,7 +212,7 @@ export default function GrowthSquare() {
                     y: 0,
                     duration: 0.5,
                 },
-                1.8
+                5.1
             )
 
             // Scene 8: Logos cascade in with rotation and scale
@@ -223,7 +226,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                2.0
+                5.6
             )
             .to(
                 logo2Ref.current,
@@ -235,7 +238,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                2.2
+                6.0
             )
             .to(
                 logo3Ref.current,
@@ -247,7 +250,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                2.4
+                6.4
             )
             .to(
                 logo4Ref.current,
@@ -259,7 +262,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                2.6
+                6.8
             )
 
             // Scene 9: Final flourish - subtle pulse on brand word
@@ -272,7 +275,7 @@ export default function GrowthSquare() {
                     repeat: 1,
                     ease: 'sine.inOut',
                 },
-                2.8
+                7.2
             )
 
         return () => {
@@ -318,7 +321,6 @@ export default function GrowthSquare() {
                                 ref={joinClubRef}
                                 className="mt-8 flex items-center gap-2"
                             >
-                               
                                 <div className="flex items-center space-x-[-20px]">
                                     <Image
                                         src={
@@ -357,7 +359,9 @@ export default function GrowthSquare() {
                                         className="w-[50px] h-[50px] object-cover rounded-full"
                                     />
                                 </div>
-                                <p className={`${serifFont.className} text-white text-[22px] font-thin`}>
+                                <p
+                                    className={`${serifFont.className} text-white text-[22px] font-thin`}
+                                >
                                     trusted by top creators & founders
                                 </p>
                             </div>
