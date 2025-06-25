@@ -6,6 +6,7 @@ import {
 } from 'next/font/google'
 import { useState, useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Header from './components/Header'
 import heroImage from './media/background.png'
 import founders from './media/founders.png'
@@ -37,15 +38,15 @@ export default function GrowthSquare() {
     const logo2Ref = useRef<HTMLImageElement>(null)
     const logo3Ref = useRef<HTMLImageElement>(null)
     const logo4Ref = useRef<HTMLImageElement>(null)
+    const scrollTextRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
-        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+        gsap.registerPlugin(ScrollTrigger)
 
-        // Set initial states - everything hidden/positioned off-screen
+        // Set initial states - everything hidden except background and scroll text
         gsap.set(
             [
                 headerRef.current,
-                heroImageRef.current,
                 titleRef.current,
                 brandWordRef.current,
                 subtitleRef.current,
@@ -54,6 +55,7 @@ export default function GrowthSquare() {
                 logo1Ref.current,
                 logo2Ref.current,
                 logo3Ref.current,
+                heroImageRef.current,
                 logo4Ref.current,
             ],
             {
@@ -62,10 +64,12 @@ export default function GrowthSquare() {
             }
         )
 
+        // Scroll text visible from start
+        gsap.set(scrollTextRef.current, { opacity: 1, y: 500 })
 
         // Additional specific initial states
         gsap.set(brandWordRef.current, { scale: 0.5, color: '#ffffff' })
-        gsap.set(foundersRef.current, { scale: 0.8, opacity: 0 })
+        gsap.set(foundersRef.current, { y: 500 })
         gsap.set(
             [
                 logo1Ref.current,
@@ -80,28 +84,54 @@ export default function GrowthSquare() {
             }
         )
 
-        // Timeline Animation Story (5-6 seconds total)
-        tl
-            // Scene 1: Header appears (0-0.5s)
-            .to(headerRef.current, {
-                opacity: 1,
-                y: 0,
-                duration: 0.5,
-            })
+        // Scroll text fade out animation
+        gsap.to(scrollTextRef.current, {
+            opacity: 0,
+            y: -50,
+            duration: 1,
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top top',
+                end: '+=200',
+                scrub: 1,
+            },
+        })
 
-            // Scene 2: Hero background fades in (0.3-0.8s)
+        // Main timeline triggered by scroll
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: containerRef.current,
+                start: 'top top',
+                end: '+=2000',
+                scrub: 1,
+                pin: true,
+            },
+        })
+
+        // Timeline Animation Story (triggered by scroll)
+        tl
+            // Scene 1: Header appears
+            .to(
+                headerRef.current,
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                },
+                0.3
+            )
+
             .to(
                 heroImageRef.current,
                 {
                     opacity: 1,
                     y: 0,
                     duration: 0.5,
-                    ease: 'power2.out',
                 },
-                0.3
+                0.6
             )
 
-            // Scene 3: Main title slides in (0.8-1.5s)
+            // Scene 2: Main title slides in
             .to(
                 titleRef.current,
                 {
@@ -113,7 +143,7 @@ export default function GrowthSquare() {
                 0.8
             )
 
-            // Scene 4: "brand" word transforms with color change (1.2-2s)
+            // Scene 3: "brand" word transforms with color change
             .to(
                 brandWordRef.current,
                 {
@@ -123,10 +153,10 @@ export default function GrowthSquare() {
                     ease: 'elastic.out(1, 0.5)',
                     opacity: 1,
                 },
-                1.2
+                1.0
             )
 
-            // Scene 5: Subtitle appears (1.8-2.3s)
+            // Scene 4: Subtitle appears
             .to(
                 subtitleRef.current,
                 {
@@ -134,10 +164,10 @@ export default function GrowthSquare() {
                     y: 0,
                     duration: 0.5,
                 },
-                1.8
+                1.2
             )
 
-            // Scene 6: Button bounces in (2.2-2.8s)
+            // Scene 5: Button bounces in
             .to(
                 buttonRef.current,
                 {
@@ -146,23 +176,21 @@ export default function GrowthSquare() {
                     duration: 0.6,
                     ease: 'bounce.out',
                 },
-                2.2
+                1.4
             )
 
-            // Scene 7: Founders image slides in from right (2.5-3.2s)
+            // Scene 6: Founders image slides up from hero boundary
             .to(
                 foundersRef.current,
                 {
-                    opacity: 1,
-                    x: 0,
-                    scale: 1,
+                    y: 0,
                     duration: 0.7,
                     ease: 'power2.out',
                 },
-                2.5
+                1.6
             )
 
-            // Scene 8: "As seen on" text appears (3.5-4s)
+            // Scene 7: "As seen on" text appears
             .to(
                 asSeenOnRef.current,
                 {
@@ -170,10 +198,10 @@ export default function GrowthSquare() {
                     y: 0,
                     duration: 0.5,
                 },
-                3.5
+                1.8
             )
 
-            // Scene 9: Logos cascade in with rotation and scale (4-5.5s)
+            // Scene 8: Logos cascade in with rotation and scale
             .to(
                 logo1Ref.current,
                 {
@@ -184,7 +212,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                4
+                2.0
             )
             .to(
                 logo2Ref.current,
@@ -196,7 +224,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                4.2
+                2.2
             )
             .to(
                 logo3Ref.current,
@@ -208,7 +236,7 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                4.4
+                2.4
             )
             .to(
                 logo4Ref.current,
@@ -220,10 +248,10 @@ export default function GrowthSquare() {
                     duration: 0.4,
                     ease: 'back.out(1.5)',
                 },
-                4.6
+                2.6
             )
 
-            // Scene 10: Final flourish - subtle pulse on brand word (5.2-5.8s)
+            // Scene 9: Final flourish - subtle pulse on brand word
             .to(
                 brandWordRef.current,
                 {
@@ -233,10 +261,11 @@ export default function GrowthSquare() {
                     repeat: 1,
                     ease: 'sine.inOut',
                 },
-                5.2
+                2.8
             )
 
         return () => {
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
             tl.kill()
         }
     }, [])
@@ -244,14 +273,27 @@ export default function GrowthSquare() {
     return (
         <div
             ref={containerRef}
-            className={`${font.className} font-normal bg-black text-white h-screen`}
+            className={`${font.className} font-normal bg-black text-white h-screen relative overflow-hidden`}
         >
             <div ref={headerRef}>
                 <Header />
             </div>
+
+            {/* Scroll Text Overlay */}
+            <div
+                ref={scrollTextRef}
+                className="absolute inset-0 z-10 pointer-events-none"
+            >
+                <h2
+                    className={`${serifFont.className} text-white text-[30px] font-bold text-center leading-tight`}
+                >
+                    glad you're here! start scrolling...
+                </h2>
+            </div>
+
             <div className="w-11/12 mx-auto flex items-center justify-center h-screen">
-                <div className='w-full mt-[-100px]'>
-                    <div className="relative w-full my-auto">
+                <div className="w-full mt-[-100px]">
+                    <div className="relative w-full overflow-hidden my-auto">
                         <Image
                             ref={heroImageRef}
                             src={heroImage}

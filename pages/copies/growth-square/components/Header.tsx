@@ -6,6 +6,12 @@ import logo from '../media/logo.png'
 // import Button from './Button'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from './Button'
+import { Instrument_Serif } from 'next/font/google'
+
+const serifFont = Instrument_Serif({
+    weight: ['400'],
+    subsets: ['latin'],
+})
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false)
@@ -48,7 +54,7 @@ const Header = () => {
                             height={32}
                         />
                         <AnimatePresence>
-                            {!isScrolled && (
+                            {/* {!isScrolled && ( */}
                                 <motion.div
                                     initial={{ opacity: 1, width: 212 }}
                                     animate={{ opacity: 1, width: 212 }}
@@ -65,7 +71,7 @@ const Header = () => {
                                         ease: 'easeInOut',
                                     }}
                                 >
-                                    <span className="">
+                                    <span className={`${serifFont.className} text-[24px]`}>
                                         The
                                         <span className="text-[24px] mx-[2px] font-semibold text-[var(--primary-color)]">
                                             Growth
@@ -73,7 +79,7 @@ const Header = () => {
                                         Square
                                     </span>
                                 </motion.div>
-                            )}
+                            {/* )} */}
                         </AnimatePresence>
                     </div>
 
