@@ -115,20 +115,11 @@ export default function Home() {
                 variants={containerVariants}
             >
                 <motion.p className="text-neutral-400" variants={itemVariants}>
-                    A Frontend Engineer, deeply passionate about GenAI. I&apos;m
-                    experimenting with{' '}
-                    <CustomLink href="https://slides-ai-two.vercel.app/">
-                        SlidesAI
-                    </CustomLink>{' '}
-                    - a Prompt to PPT builder.
+                    A Frontend Engineer, deeply passionate about GenAI. 
                 </motion.p>
 
                 <motion.p className="text-neutral-400" variants={itemVariants}>
-                    Wrote my first line of code in 2019,{' '}
-                    <span className="text-neutral-300">
-                        Currently building Voice AI Agents
-                    </span>
-                    , recently gave a talk on{' '}
+                    Wrote my first line of code in 2019, recently gave a talk on{' '}
                     <CustomLink href="https://x.com/theramgoel/status/1923931456558202907">
                         &quot;Building Voice Features in Web Apps&quot;
                     </CustomLink>
@@ -143,10 +134,13 @@ export default function Home() {
                     <CustomLink href="https://github.com/RamGoel">
                         <SiGithub size={14} /> Github
                     </CustomLink>
-                    , or{'  '}
+                    ,{'  '}
                     <CustomLink href="https://x.com/theRamGoel">
                         <FaTwitter size={14} /> Twitter
-                    </CustomLink>{' '}
+                    </CustomLink>{' '} or{' '}
+                    <CustomLink href="https://youtube.com/@theramgoel">
+                        <FaYoutube size={14} /> Youtube
+                    </CustomLink>
                 </motion.p>
             </motion.div>
 

@@ -26,6 +26,24 @@ type Project = {
 }
 export const projects: Project[] = [
     {
+        id: 2,
+        title: 'Noterr',
+        content:
+            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
+        url: 'https://noterr.ramgoel.com/',
+        users: 90,
+        type: 'side',
+    },
+    {
+        id: 1,
+        title: 'Updatly',
+        content:
+            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
+        url: 'https://updatly.ramgoel.com/',
+        users: 50,
+        type: 'side',
+    },
+    {
         id: 3,
         title: 'SlidesAI',
         in_progress: true,
@@ -55,24 +73,7 @@ export const projects: Project[] = [
         type: 'side',
         github: 'https://github.com/RamGoel/lemmaUI',
     },
-    {
-        id: 2,
-        title: 'Noterr',
-        content:
-            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
-        url: 'https://noterr.ramgoel.com/',
-        users: 50,
-        type: 'side',
-    },
-    {
-        id: 1,
-        title: 'Updatly',
-        content:
-            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
-        url: 'https://updatly.ramgoel.com/',
-        users: 35,
-        type: 'side',
-    },
+   
 ]
 
 export const talks = [
