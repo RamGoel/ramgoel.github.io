@@ -1,21 +1,11 @@
 import CustomLink from '@/components/CustomLink'
-import { projects, workHighlights } from '@/utils/data'
+import { projects } from '@/utils/data'
 import { motion } from 'framer-motion'
-import {
-    ArrowDownRight,
-    Globe2,
-    Linkedin,
-    LocateIcon,
-    MapPin,
-    X,
-} from 'lucide-react'
+import { Globe2, MapPin } from 'lucide-react'
+import { Space_Grotesk } from 'next/font/google'
 import Image from 'next/image'
-import Link from 'next/link'
-import { useState } from 'react'
-import { FaGoogleDrive, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { FaLinkedin, FaTwitter } from 'react-icons/fa'
 import { SiGithub } from 'react-icons/si'
-import { Fira_Code, Inter, Space_Grotesk } from 'next/font/google'
-import { RiUserLocationLine } from 'react-icons/ri'
 
 const RichText = ({ text }: { text: string }) => {
     const parts = text.split(/(\[.*?\]\(.*?\))/)
@@ -36,7 +26,6 @@ const RichText = ({ text }: { text: string }) => {
         </>
     )
 }
-
 
 const font = Space_Grotesk({
     subsets: ['latin'],
@@ -119,21 +108,10 @@ export default function Home() {
                 />
 
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-xl font-medium">Hey, I'm Ram Goel</h1>
+                    <h1 className="text-xl font-medium">Hey, I&apos;m Ram Goel</h1>
                     <p className="text-neutral-400 flex items-center gap-1 text-sm mb-1">
                         <MapPin size={14} /> Bengaluru, India
                     </p>
-                    {/* <Link
-                        target="_blank"
-                        href={
-                            'https://drive.google.com/file/d/1VwbJvVsIM1LS0DYq5353ZwiZMhd28nOX/view?usp=drive_link'
-                        }
-                    >
-                        <button className="flex gap-2 border hover:border-neutral-500 transition-all hover:scale-105 px-3 py-1 border-neutral-600 rounded-full text-xs items-center">
-                            <FaGoogleDrive size={12} />
-                            <p>View Resume</p>
-                        </button>
-                    </Link> */}
                     <div className="flex gap-2 text-xs">
                         <CustomLink href="https://linkedin.com/in/ramgoel/">
                             <FaLinkedin size={14} /> Linkedin
@@ -146,11 +124,6 @@ export default function Home() {
                         <CustomLink href="https://x.com/theRamGoel">
                             <FaTwitter size={14} /> Twitter
                         </CustomLink>
-                        {/* /{' '}
-
-                        <CustomLink href="https://youtube.com/@theramgoel">
-                            <FaYoutube size={14} /> Youtube
-                        </CustomLink> */}
                     </div>
                 </div>
             </motion.div>
@@ -244,20 +217,7 @@ export default function Home() {
                 </div>
             </motion.div>
 
-            {/* <motion.ul
-                className="flex flex-col list-disc ml-4 text-justify text-sm leading-loose tracking-wide gap-3"
-                variants={containerVariants}
-            >
-                {workHighlights
-                    .sort((a, b) => Number(b.time) - Number(a.time))
-                    .map((item) => {
-                        return (
-                            <motion.li key={item.id} className='text-sm' variants={itemVariants}>
-                                <p className='text-neutral-400'><RichText text={item.content} /></p>
-                            </motion.li>
-                        )
-                    })}
-            </motion.ul> */}
+           
         </motion.div>
     )
 }
