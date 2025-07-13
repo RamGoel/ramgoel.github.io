@@ -26,15 +26,6 @@ type Project = {
 }
 export const projects: Project[] = [
     {
-        id: 2,
-        title: 'Noterr',
-        content:
-            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
-        url: 'https://noterr.ramgoel.com/',
-        users: 90,
-        type: 'side',
-    },
-    {
         id: 1,
         title: 'Updatly',
         content:
@@ -73,7 +64,15 @@ export const projects: Project[] = [
         type: 'side',
         github: 'https://github.com/RamGoel/lemmaUI',
     },
-   
+    {
+        id: 2,
+        title: 'Noterr',
+        content:
+            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
+        url: 'https://noterr.ramgoel.com/',
+        users: 90,
+        type: 'side',
+    },
 ]
 
 export const talks = [
@@ -83,5 +82,26 @@ export const talks = [
         content:
             'I talk about how I used in-built voice features in web apps to build a voice agent.',
         url: 'https://x.com/theramgoel/status/1923931456558202907',
+    },
+]
+
+export const workHighlights = [
+    {
+        id: 3,
+        time: '2023',
+        content:
+            'Built a package to validate PDF password in react-native during my internship at [Surplus](https://surplus.com)',
+    },
+    {
+        id: 2,
+        time: '2022',
+        content:
+            'Built websites for several college events, including [TEDx](https://github.com/tedx-abesec/tedx-2022), [HackHaven](https://hackhaven.gdgabesec.in/) that served 1000s of visitors.',
+    },
+    {
+        id: 1,
+        time: '2022',
+        content:
+            'Built a embedded widget UI for a AI shopping assistant during my internship at [Neyx](https://neyx.ai)',
     },
 ]
