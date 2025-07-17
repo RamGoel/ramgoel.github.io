@@ -1,4 +1,5 @@
 import CustomLink from '@/components/CustomLink'
+import { VapiWidget } from '@/components/VapiWidget'
 import fs from 'fs'
 import matter from 'gray-matter'
 import moment from 'moment'
@@ -18,6 +19,8 @@ const BlogPage = ({ blogs }: { blogs: any }) => {
                     <p className="text-neutral-500">{blog.date}</p>
                 </div>
             ))}
+
+            <VapiWidget />
         </div>
     )
 }
