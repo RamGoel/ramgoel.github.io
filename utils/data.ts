@@ -23,8 +23,19 @@ type Project = {
     type: string
     github?: string
     in_progress?: boolean
+    video?: string
 }
 export const projects: Project[] = [
+    {
+        id: 1,
+        title: 'MeetGraph',
+        content:
+            'It helps you convert your thoughts into diagrams in real time, just come, speak and boom you have your diagrams.',
+        url: 'https://ctrl-vibe.vercel.app/',
+        users: 0,
+        type: 'side',
+        video: 'https://x.com/theramgoel/status/1949402253376545146',
+    },
     {
         id: 1,
         title: 'Updatly',

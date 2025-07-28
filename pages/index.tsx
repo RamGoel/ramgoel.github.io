@@ -4,7 +4,8 @@ import { motion } from 'framer-motion'
 import { Globe2, MapPin } from 'lucide-react'
 import { Space_Grotesk } from 'next/font/google'
 import Image from 'next/image'
-import { FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
+import { RiYoutubeLine } from 'react-icons/ri'
 import { SiGithub } from 'react-icons/si'
 
 const RichText = ({ text }: { text: string }) => {
@@ -108,7 +109,9 @@ export default function Home() {
                 />
 
                 <div className="flex flex-col gap-2">
-                    <h1 className="text-xl font-medium">Hey, I&apos;m Ram Goel</h1>
+                    <h1 className="text-xl font-medium">
+                        Hey, I&apos;m Ram Goel
+                    </h1>
                     <p className="text-neutral-400 flex items-center gap-1 text-sm mb-1">
                         <MapPin size={14} /> Bengaluru, India
                     </p>
@@ -195,6 +198,7 @@ export default function Home() {
                                                 </p>
                                             </CustomLink>
                                         ) : null}
+                                      
                                         {item.url && item.type !== 'oss' ? (
                                             <CustomLink
                                                 href={
@@ -209,6 +213,14 @@ export default function Home() {
                                                 </p>
                                             </CustomLink>
                                         ) : null}
+                                          {item.video ? (
+                                            <CustomLink href={item.video}>
+                                                <RiYoutubeLine size={15} />{' '}
+                                                <p className="text-sm">
+                                                    Video
+                                                </p>
+                                            </CustomLink>
+                                        ) : null}
                                     </div>
                                 </motion.div>
                             )
@@ -216,8 +228,6 @@ export default function Home() {
                     </div>
                 </div>
             </motion.div>
-
-           
         </motion.div>
     )
 }
