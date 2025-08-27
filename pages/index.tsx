@@ -136,7 +136,7 @@ export default function Home() {
                 variants={containerVariants}
             >
                 <motion.p className="text-neutral-400" variants={itemVariants}>
-                    A Frontend Engineer, deeply passionate about GenAI. Wrote my
+                    Building UI interfaces at <CustomLink href="https://sarvam.ai">SarvamAI</CustomLink>, born & raised in Uttar Pradesh, India. Wrote my
                     first line of code in 2019, I occasionally contribute to
                     open source projects,{' '}
                     <CustomLink href="https://algora.io/profile/RamGoel">
@@ -150,7 +150,7 @@ export default function Home() {
                 variants={itemVariants}
             >
                 <hr className="opacity-10 w-[2%] ml-auto" />
-                <p className="text-sm w-fit text-center">Work Highlights </p>
+                <p className="text-sm w-fit text-center">Side Stuff I built </p>
                 <hr className="opacity-10 flex-1" />
             </motion.div>
 
