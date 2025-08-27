@@ -27,6 +27,17 @@ type Project = {
 }
 export const projects: Project[] = [
     {
+        id: 3,
+        title: 'Devro',
+        in_progress: true,
+        content:
+            'Perform actions on Slack, Notion, Calendar and Github from any app using voice commands, built using Groq, and Sarvam Speech APIs',
+        url: '',
+        users: 0,
+        video: 'https://x.com/theramgoel/status/1960756249672474801',
+        type: 'side',
+    },
+    {
         id: 1,
         title: 'MeetGraph',
         content:
@@ -45,16 +56,7 @@ export const projects: Project[] = [
         users: 50,
         type: 'side',
     },
-    {
-        id: 3,
-        title: 'SlidesAI',
-        in_progress: true,
-        content:
-            'Just a fun experiment to generate PPT slides using AI. Uses Sarvam-M as underlying LLM.',
-        url: 'https://slides-ai-two.vercel.app/',
-        users: 0,
-        type: 'side',
-    },
+  
     {
         id: 5,
         title: 'VoiceNextPI',
