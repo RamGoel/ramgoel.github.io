@@ -1,6 +1,3 @@
-import { twMerge } from 'tailwind-merge'
-import clsx from 'clsx'
-import { useState } from 'react'
 import Script from 'next/script'
 
 export default function Talks() {
