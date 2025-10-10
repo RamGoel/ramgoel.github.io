@@ -2,6 +2,11 @@ import Script from 'next/script'
 
 export default function Talks() {
     return (
-        <Script src="https://agent-widget-xi.vercel.app/api/65f42d31-78cb-47ed-9f2e-f8260440f63f/embed?env=staging" />
+       <div className='h-screen w-screen'>
+<div className='w-full h-full absolute bottom-0 right-0'>
+<atoms-widget assistant-id="68e7fbe9902dcd1149e4ced8"></atoms-widget><script src="https://unpkg.com/atoms-widget-core@latest/dist/embed/widget.umd.js"></script>
+
+</div>
+       </div>
     )
 }
