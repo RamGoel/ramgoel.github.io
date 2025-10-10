@@ -6,6 +6,7 @@ declare global {
     interface IntrinsicElements {
       'atoms-widget': {
         'assistant-id': string;
+        // add other attributes here
       };
     }
   }
