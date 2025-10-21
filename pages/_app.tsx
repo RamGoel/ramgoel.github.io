@@ -20,6 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
         '/copies/whatsapp',
         '/widget',
         '/copies/growth-square',
+        '/applicant-reviewer',
         '/copies/sarvam-v2',
     ]
     const isPageRoute = pageRoutes.includes(pathname)
