@@ -142,7 +142,7 @@ export default function Home() {
                                         className={`text-neutral-400 leading-loose text-sm`}
                                         variants={itemVariants}
                                     >
-                                        I&apos;m building frontends at
+                                        I&apos;m building frontends at {' '}
                                         <CustomLink href="https://sarvam.ai">
                                             sarvam
                                         </CustomLink>
