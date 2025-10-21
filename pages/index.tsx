@@ -142,7 +142,7 @@ export default function Home() {
                                         className={`text-neutral-400 leading-loose text-sm`}
                                         variants={itemVariants}
                                     >
-                                        I'm building frontends at{' '}
+                                        I&apos;m building frontends at
                                         <CustomLink href="https://sarvam.ai">
                                             sarvam
                                         </CustomLink>
@@ -161,7 +161,7 @@ export default function Home() {
                                     className=" list-disc flex flex-col ml-4 gap-3 text-neutral-400 text-sm"
                                 >
                                     <motion.li variants={itemVariants}>
-                                        I'm exploring embeddable agentic ai
+                                        I&apos;m exploring embeddable agentic ai
                                         these days
                                     </motion.li>
                                     <motion.li variants={itemVariants}>
