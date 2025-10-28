@@ -1016,27 +1016,13 @@ export default function ApplicantReviewer() {
 
                     {/* Resume Viewer - Compact */}
                     <div className="xl:col-span-2 bg-white/80 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-slate-200">
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-lg font-semibold text-slate-800">
-                                Resume
-                            </h2>
-                            {currentApplicant['Resume '] && (
-                                <a
-                                    href={currentApplicant['Resume ']}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center gap-1 text-blue-600 hover:text-blue-700 transition-colors text-sm"
-                                >
-                                    <ExternalLink className="w-4 h-4" />
-                                    <span className="hidden sm:inline">Open in New Tab</span>
-                                </a>
-                            )}
-                        </div>
+                       
 
                         <div className="h-[calc(100vh-200px)] bg-slate-50 rounded-lg border border-slate-200">
                             {currentApplicant['Resume '] ? (
                                 <iframe
-                                    src={currentApplicant['Resume ']}
+                                 
+                                    src={`https://drive.google.com/file/d/${currentApplicant['Resume '].split('?id=').pop()}/preview?embedded=true`}
                                     className="w-full h-full rounded-lg"
                                     title="Resume"
                                 />
