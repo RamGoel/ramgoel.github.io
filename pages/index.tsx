@@ -108,8 +108,8 @@ export default function Home() {
                             key="about-section"
                         >
                             <motion.div className="" variants={itemVariants}>
-                                <Image
-                                    src="https://pbs.twimg.com/profile_images/1942642393053855744/mtx6VZrm_400x400.jpg"
+                                <Image  
+                                    src={'/ramg.png'}
                                     width={120}
                                     height={120}
                                     className="rounded-full"
