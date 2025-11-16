@@ -52,7 +52,7 @@ export const projects: Project[] = [
         title: 'Updatly',
         content:
             'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
-        url: 'https://updatly.ramgoel.com/',
+        url: 'https://log-date.vercel.app/',
         users: 50,
         type: 'side',
     },
@@ -82,7 +82,7 @@ export const projects: Project[] = [
         title: 'Noterr',
         content:
             'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
-        url: 'https://noterr.ramgoel.com/',
+        url: 'https://noterr-app.vercel.app/',
         users: 90,
         type: 'side',
     },
