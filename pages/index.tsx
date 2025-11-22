@@ -221,7 +221,7 @@ export default function Home() {
                                             <SiGithub size={14} />
                                         </CustomLink>
                                         /{' '}
-                                        <CustomLink href="https://linkedin.com/in/theramgoel">
+                                        <CustomLink href="https://linkedin.com/in/ramgoel">
                                             <FaLinkedin size={14} />
                                         </CustomLink>
                                         /{' '}
