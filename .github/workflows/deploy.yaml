@@ -23,7 +23,7 @@ jobs:
       - run: npm install
 
       # Next.js static export build
-      - run: npm run build && npx next export
+      - run: npm run build
 
       # Upload the out folder as the artifact for GitHub Pages
       - uses: actions/upload-pages-artifact@v3
