@@ -288,7 +288,7 @@ export default function OnDeviceModels() {
                             </div>
                             <h3 className="text-lg font-medium text-zinc-300 mb-2">Start a conversation</h3>
                             <p className="text-sm text-zinc-500 leading-relaxed">
-                                Ask me anything and I'll respond using on-device AI. 
+                                Ask me anything and I&apos;ll respond using on-device AI. 
                                 All processing happens locally on your device.
                             </p>
                         </div>
