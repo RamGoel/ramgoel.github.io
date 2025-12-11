@@ -13,7 +13,7 @@ const CustomLink = ({
     return (
         <Link
             href={href}
-            className={`border-b inline-flex items-center gap-1.5 border-neutral-800 border-dashed text-neutral-300 hover:text-yellow-200 transition-all ${extraClassName}`}
+            className={`border-b inline-flex items-baseline gap-1 pb-px border-zinc-600 border-dashed text-zinc-400 hover:text-emerald-400 transition-all ${extraClassName}`}
         >
             {children}
         </Link>

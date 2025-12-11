@@ -1,6 +1,26 @@
 @tailwind base;
+@tailwind components;
 @tailwind utilities;
-@tailwind variants;
+
+:root {
+    --bg-primary: #fafafa;
+    --bg-secondary: #f5f5f5;
+    --text-primary: #171717;
+    --text-secondary: #525252;
+    --text-muted: #737373;
+    --border-color: #a3a3a3;
+    --accent: #059669;
+}
+
+.dark {
+    --bg-primary: #18181b;
+    --bg-secondary: #27272a;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --border-color: #3f3f46;
+    --accent: #34d399;
+}
 
 #agencyPage {
     scroll-behavior: smooth !important;

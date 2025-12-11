@@ -48,16 +48,6 @@ export const projects: Project[] = [
         video: 'https://x.com/theramgoel/status/1949402253376545146',
     },
     {
-        id: 1,
-        title: 'Updatly',
-        content:
-            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
-        url: 'https://log-date.vercel.app/',
-        users: 50,
-        type: 'side',
-    },
-  
-    {
         id: 5,
         title: 'VoiceNextPI',
         in_progress: true,
@@ -67,6 +57,16 @@ export const projects: Project[] = [
         users: 0,
         type: 'side',
     },
+    {
+        id: 1,
+        title: 'Updatly',
+        content:
+            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
+        url: 'https://log-date.vercel.app/',
+        users: 50,
+        type: 'side',
+    },
+  
     {
         id: 4,
         title: 'LemmaAI',
@@ -92,9 +92,14 @@ export const talks = [
     {
         id: 1,
         title: 'Building Voice Features in Web Apps',
-        content:
-            'I talk about how I used in-built voice features in web apps to build a voice agent.',
+        content: 'at React Play meetups',
         url: 'https://x.com/theramgoel/status/1923931456558202907',
+    },
+    {
+        id: 2,
+        title: 'Best Practices in Frontend Dev',
+        content: 'at Razorpay office',
+        url: 'https://x.com/ReactPlayIO/status/1969429955756114001',
     },
 ]
 
