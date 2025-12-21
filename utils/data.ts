@@ -31,7 +31,7 @@ export const projects: Project[] = [
         title: 'Devro',
         in_progress: true,
         content:
-            'Perform actions on Slack, Notion, Calendar and Github from any app using voice commands, built using Groq, and Sarvam Speech APIs',
+            'Control Slack, Notion, Calendar & Github using voice commands.',
         url: '',
         users: 0,
         video: 'https://x.com/theramgoel/status/1960756249672474801',
@@ -40,48 +40,26 @@ export const projects: Project[] = [
     {
         id: 1,
         title: 'MeetGraph',
-        content:
-            'It helps you convert your thoughts into diagrams in real time, just come, speak and boom you have your diagrams.',
+        content: 'Realtime Speech to explainer diagram/flowchart generation',
         url: 'https://ctrl-vibe.vercel.app/',
         users: 0,
         type: 'side',
         video: 'https://x.com/theramgoel/status/1949402253376545146',
     },
     {
-        id: 5,
-        title: 'VoiceNextPI',
-        in_progress: true,
-        content:
-            'POC for a embedded AI support agent. Can be embedded in any website with 1 line script. Uses Gemini Flash.',
-        url: 'https://voice-next-pi.vercel.app/',
-        users: 0,
-        type: 'side',
-    },
-    {
         id: 1,
         title: 'Updatly',
         content:
-            'A B2B SaaS application that allows SaaS Founders to setup changelogs (+ in-app updates) quickly for their apps.',
+            'Embedded Changelog/Release Notes widget for your website',
         url: 'https://log-date.vercel.app/',
         users: 50,
         type: 'side',
-    },
-  
-    {
-        id: 4,
-        title: 'LemmaAI',
-        content:
-            'A tool to generate Tailwind + HTML + FontAwesome Components using AI, built using Gemini-flash model',
-        url: 'https://lemma-ui.vercel.app/',
-        users: 20,
-        type: 'side',
-        github: 'https://github.com/RamGoel/lemmaUI',
     },
     {
         id: 2,
         title: 'Noterr',
         content:
-            'A browser extension & PWA that allows to save & acess anything from internet using simple shortcuts.',
+            'Bookmark anything from internet across devices',
         url: 'https://noterr-app.vercel.app/',
         users: 90,
         type: 'side',

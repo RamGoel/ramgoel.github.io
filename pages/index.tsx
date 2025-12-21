@@ -77,9 +77,7 @@ export default function Home() {
                 <CustomLink extraClassName='pb-1' href="https://x.com/theRamGoel">
                     <FaTwitter />
                 </CustomLink>
-                <CustomLink extraClassName='pb-1' href="https://youtube.com/@ramgoelyt">
-                    <FaYoutube />
-                                        </CustomLink>
+           
             </motion.div>
                             </motion.div>
 
@@ -133,102 +131,14 @@ export default function Home() {
                 />
                         </motion.div>
 
-            {/* Work Experience */}
+
+                            {/* Build/Speak in Public */}
             <motion.div
                 className={`${textBase} text-zinc-400`}
                 variants={itemVariants}
             >
                 <p className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}>
-                    Work
-                </p>
-                <ul className="space-y-3">
-                    <li>
-                        <span className="text-zinc-300">Sarvam</span>
-                        <span className="text-zinc-600"> — </span>
-                         AI voice agents in 11 Indian languages, small team, led multiple efforts.
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">Conch AI</span>
-                        <span className="text-zinc-600"> — </span>
-                        AI writing & study copilot SaaS, single engineer, led entire tech.
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">Animall</span>
-                        <span className="text-zinc-600"> — </span>
-                        web team handling 100K+ daily users, SEO optimization & survey automation.
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">Surplus</span>
-                        <span className="text-zinc-600"> — </span>
-                        built the React Native app for bill payments and subscription tracking
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">Simplifii Labs</span>
-                        <span className="text-zinc-600"> — </span>
-                        optimized performace & built automatic otp verification in RN app.
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">NeyX</span>
-                        <span className="text-zinc-600"> — </span>
-                        Integrated real-time chat with SocketIO and built the company website in React
-                    </li>
-                </ul>
-            </motion.div>
-
-            {/* Projects */}
-            <motion.div className={textBase} variants={itemVariants}>
-                <p className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}>
-                    Side Projects
-                </p>
-                <ul className="space-y-3 text-zinc-400">
-                    {projects.map((project) => (
-                        <li
-                            key={project.id + project.title}
-                            className="flex items-baseline gap-2"
-                        >
-                            <span className="text-zinc-300">
-                                {project.title}
-                            </span>
-                            {project.users ? (
-                                <>
-                                    <span className="text-zinc-600">—</span>
-                                    <span className="text-zinc-500">
-                                        {project.users}+ users
-                                    </span>
-                                </>
-                            ) : (
-                                <span className="text-zinc-600">
-                                    (experiment)
-                                </span>
-                            )}
-                            {project.url && (
-                                <CustomLink
-                                    href={
-                                        Array.isArray(project.url)
-                                            ? project.url[0]
-                                            : project.url
-                                    }
-                                >
-                                    <span>open</span>
-                                </CustomLink>
-                            )}
-                            {project.video && (
-                                <CustomLink href={project.video}>
-                                    <span>video</span>
-                                </CustomLink>
-                            )}
-                        </li>
-                    ))}
-                </ul>
-            </motion.div>
-
-            {/* Build in Public */}
-            <motion.div
-                className={`${textBase} text-zinc-400`}
-                variants={itemVariants}
-            >
-                <p className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}>
-                    Build in Public
+                    Build/Speak in Public
                 </p>
                 <ul className="space-y-3">
                     <li>
@@ -251,6 +161,91 @@ export default function Home() {
                     ))}
                 </ul>
             </motion.div>
+
+            {/* Work Experience */}
+            <motion.div
+                className={`${textBase} text-zinc-400`}
+                variants={itemVariants}
+            >
+                <p className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}>
+                    Work
+                </p>
+                <ul className="space-y-3">
+                    <li>
+                        <span className="text-zinc-300">Sarvam</span>
+                        <span className="text-zinc-600"> — </span>
+                         AI voice agents in 11+ languages, small team, led multiple efforts.
+                    </li>
+                    <li>
+                        <span className="text-zinc-300">Conch AI</span>
+                        <span className="text-zinc-600"> — </span>
+                        AI writing & study copilot SaaS, single engineer, led entire tech.
+                    </li>
+                    <li>
+                        <span className="text-zinc-300">Animall</span>
+                        <span className="text-zinc-600"> — </span>
+                        web team handling 100K+ daily users, SEO optimization & survey automation.
+                    </li>
+              
+                </ul>
+            </motion.div>
+
+            {/* Projects */}
+            <motion.div className={textBase} variants={itemVariants}>
+                <p className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}>
+                    Side Projects
+                </p>
+                <ul className="space-y-3 text-zinc-400">
+                    {projects.map((project) => (
+                        <li
+                            key={project.id + project.title}
+                            className="flex items-baseline gap-2"
+                        >
+                            <span className="text-zinc-300">
+                                {project.title}
+                            </span>
+                            {project.content && (
+                                <>
+                                    <span className="text-zinc-600">—</span>
+                                    <span className="text-zinc-500 line-clamp-1">
+                                        {project.content}
+                                    </span>
+                                </>
+                            )}
+                            {project.users ? (
+                                <>
+                                    <span className="text-zinc-600">—</span>
+                                    <span className="text-zinc-500">
+                                        {project.users}+ users
+                                    </span>
+                                </>
+                            ) : (
+                                <span className="text-zinc-600">
+                                    (experiment)
+                                </span>
+                            )}
+                            {project.url && (
+                                <CustomLink
+                                    href={
+                                        Array.isArray(project.url)
+                                            ? project.url[0]
+                                            : project.url
+                                    }
+                                >
+                                    <span>site</span>
+                                </CustomLink>
+                            )}
+                            {project.video && (
+                                <CustomLink href={project.video}>
+                                    <span>video</span>
+                                </CustomLink>
+                            )}
+                        </li>
+                    ))}
+                </ul>
+            </motion.div>
+
+        
 
          
         </motion.div>
