@@ -71,7 +71,7 @@ export default function WorkWithMe() {
                     <li>
                         <span className="text-zinc-300">App is slow</span>
                         <span className="text-zinc-600"> — </span>
-                        <span>I'll find why and help your team fix it.</span>
+                        <span>I&apos;ll find why and help your team fix it.</span>
                     </li>
                     <li>
                         <span className="text-zinc-300">
@@ -79,7 +79,7 @@ export default function WorkWithMe() {
                         </span>
                         <span className="text-zinc-600"> — </span>
                         <span>
-                            I'll help you plan and help your team ship it.
+                            I&apos;ll help you plan and help your team ship it.
                         </span>
                     </li>
                     <li>
@@ -87,7 +87,7 @@ export default function WorkWithMe() {
                             Non-tech founder, need guidance
                         </span>
                         <span className="text-zinc-600"> — </span>
-                        <span>I'll be your technical sounding board.</span>
+                        <span>I&apos;ll be your technical sounding board.</span>
                     </li>
                     <li>
                         <span className="text-zinc-300">
@@ -95,7 +95,7 @@ export default function WorkWithMe() {
                         </span>
                         <span className="text-zinc-600"> — </span>
                         <span>
-                            I'll show you what actually works for your use case.
+                            I&apos;ll show you what actually works for your use case.
                         </span>
                     </li>
                     <li>
@@ -104,7 +104,7 @@ export default function WorkWithMe() {
                         </span>
                         <span className="text-zinc-600"> — </span>
                         <span>
-                            I'll help your team automate the boring stuff.
+                            I&apos;ll help your team automate the boring stuff.
                         </span>
                     </li>
                 </ul>
