@@ -50,10 +50,30 @@ export default function WorkWithMe() {
 
             {/* Header */}
             <motion.div variants={itemVariants}>
-                <h1 className={`text-sm text-zinc-100 mb-2`}>Work With Me</h1>
+                <h1 className={`text-sm text-zinc-100 mb-2`}>Hire Me</h1>
                 <div className={`${textBase} inline-flex items-center gap-1.5`}>
                     <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
                     <span className="text-zinc-500">Booking for January</span>
+                </div>
+            </motion.div>
+
+            {/* Open For */}
+            <motion.div
+                className={`${textBase} text-zinc-400`}
+                variants={itemVariants}
+            >
+                <p
+                    className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}
+                >
+                    Open for
+                </p>
+                <div className="flex gap-2">
+                    <span className="px-2 py-1 bg-zinc-800 text-zinc-300 rounded">
+                        Consulting
+                    </span>
+                    <span className="px-2 py-1 bg-zinc-800 text-zinc-300 rounded">
+                        Freelance (one-off projects)
+                    </span>
                 </div>
             </motion.div>
 
