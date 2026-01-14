@@ -22,6 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         '/copies/growth-square',
         '/applicant-reviewer',
         '/copies/sarvam-v2',
+        '/copies/sarvam-team',
     ]
     const isPageRoute = pageRoutes.includes(pathname)
     return (
