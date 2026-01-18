@@ -91,9 +91,9 @@ export default function SarvamTeam() {
       imageRefs.current.forEach((ref, index) => {
         if (!ref) return;
         if (index === 0) {
-          gsap.set(ref, { opacity: 1, zIndex: 20 });
+          gsap.set(ref, { opacity: 1, scale: 1, zIndex: 20 });
         } else {
-          gsap.set(ref, { opacity: 0, zIndex: 20 + index });
+          gsap.set(ref, { opacity: 0, scale: 0, zIndex: 20 + index });
         }
       });
       
@@ -118,7 +118,7 @@ export default function SarvamTeam() {
 
       // Create ScrollTrigger for each image transition
       const vh = window.innerHeight;
-      const transitionPortion = 0.15; // Transition happens in first 15% of section
+      const transitionPortion = 0.5; // Transition happens in first 50% of section
       
       // Add snap effect - snap to exact member positions
       const snapPoints = Array.from({ length: totalMembers }, (_, i) => i / (totalMembers + 1));
@@ -129,9 +129,9 @@ export default function SarvamTeam() {
         end: 'bottom bottom',
         snap: {
           snapTo: snapPoints,
-          duration: { min: 0.3, max: 0.5 },
-          delay: 0,
-          ease: 'power1.out',
+          duration: { min: 0.5, max: 0.8 },
+          delay: 0.1,
+          ease: 'power2.inOut',
           inertia: false,
         }
       });
@@ -148,9 +148,10 @@ export default function SarvamTeam() {
         const transitionEnd = sectionStart + (vh * transitionPortion);
         
         if (imageRef) {
-          // New image fades in
+          // New image emerges from center on top of old image
           gsap.to(imageRef, {
             opacity: 1,
+            scale: 1,
             ease: 'none',
             immediateRender: false,
             scrollTrigger: {
@@ -162,16 +163,17 @@ export default function SarvamTeam() {
           });
         }
         
+        // Old image stays visible - new one covers it
+        // Only hide it after transition is complete
         if (prevImageRef) {
-          // Previous image fades out
           gsap.to(prevImageRef, {
             opacity: 0,
             ease: 'none',
             immediateRender: false,
             scrollTrigger: {
               trigger: containerRef.current,
-              start: `top+=${sectionStart} top`,
-              end: `top+=${transitionEnd} top`,
+              start: `top+=${transitionEnd} top`,
+              end: `top+=${transitionEnd + 10} top`,
               scrub: true,
             }
           });

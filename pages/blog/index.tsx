@@ -28,10 +28,17 @@ const BlogPage = ({ blogs }: { blogs: any }) => {
 export default BlogPage
 
 export const getStaticProps = async () => {
-    const fileNames = fs.readdirSync(path.join(process.cwd(), 'blogs'))
+    const blogsDir = path.join(process.cwd(), 'blogs')
+    
+    // Check if blogs directory exists
+    if (!fs.existsSync(blogsDir)) {
+        return { props: { blogs: [] } }
+    }
+    
+    const fileNames = fs.readdirSync(blogsDir)
     const blogs = fileNames
         .map((fileName) => {
-            const filePath = path.join(process.cwd(), 'blogs', fileName)
+            const filePath = path.join(blogsDir, fileName)
             const blog = fs.readFileSync(filePath, 'utf8')
             const { data } = matter(blog)
 

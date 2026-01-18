@@ -84,7 +84,17 @@ const BlogPage = ({
 }
 
 export const getStaticPaths = async () => {
-    const blogs = fs.readdirSync(path.join(process.cwd(), 'blogs'))
+    const blogsDir = path.join(process.cwd(), 'blogs')
+    
+    // Check if blogs directory exists
+    if (!fs.existsSync(blogsDir)) {
+        return {
+            paths: [],
+            fallback: false,
+        }
+    }
+    
+    const blogs = fs.readdirSync(blogsDir)
     return {
         paths: blogs.map((blog) => ({
             params: { slug: blog.replace('.md', '') },
@@ -98,10 +108,16 @@ export const getStaticProps = async ({
 }: {
     params: { slug: string }
 }) => {
-    const thisBlog = fs.readFileSync(
-        path.join(process.cwd(), 'blogs', `${params.slug}.md`),
-        'utf8'
-    )
+    const blogPath = path.join(process.cwd(), 'blogs', `${params.slug}.md`)
+    
+    // Check if blog file exists
+    if (!fs.existsSync(blogPath)) {
+        return {
+            notFound: true,
+        }
+    }
+    
+    const thisBlog = fs.readFileSync(blogPath, 'utf8')
     const { content, data } = matter(thisBlog)
 
     if (data.ignore) {
