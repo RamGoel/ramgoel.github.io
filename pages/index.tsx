@@ -381,8 +381,9 @@ export default function Home() {
         if (section === activeSection) return
         
         // Use View Transitions API if available
-        if (document.startViewTransition) {
-            document.startViewTransition(() => {
+        const doc = document as Document & { startViewTransition?: (callback: () => void) => void }
+        if (doc.startViewTransition) {
+            doc.startViewTransition(() => {
                 setActiveSection(section)
             })
         } else {
