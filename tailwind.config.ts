@@ -9,10 +9,14 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                mono: ['var(--font-mono)', 'monospace'],
+                display: ['var(--font-display)', 'system-ui', 'sans-serif'],
+            },
             animation: {
                 slide: 'slide 3.5s linear infinite',
             },
-
             keyframes: {
                 slide: {
                     '0%': { transform: 'translateY(100%)', opacity: '0.1' },

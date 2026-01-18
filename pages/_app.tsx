@@ -1,15 +1,30 @@
-import AnimatedWrapper from '@/components/AnimatedWrapper'
 import CustomTooltip from '@/components/custom-tooltip'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
-import { JetBrains_Mono } from 'next/font/google'
+import { Inter, JetBrains_Mono, Syne } from 'next/font/google'
 import { usePathname } from 'next/navigation'
 import '@/pages/copies/growth-square/growth-square.css'
 
-const font = JetBrains_Mono({
-    weight: ['300', '400', '500', '600'],
+// Primary font for body text - clean and readable
+const inter = Inter({
+    weight: ['400', '500', '600'],
     subsets: ['latin'],
+    variable: '--font-inter',
+})
+
+// Secondary font for code/accents
+const mono = JetBrains_Mono({
+    weight: ['400', '500'],
+    subsets: ['latin'],
+    variable: '--font-mono',
+})
+
+// Display font for navigation - stylish, artistic
+const syne = Syne({
+    weight: ['400', '500', '600'],
+    subsets: ['latin'],
+    variable: '--font-display',
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -26,19 +41,14 @@ export default function App({ Component, pageProps }: AppProps) {
     ]
     const isPageRoute = pageRoutes.includes(pathname)
     return (
-        <main className={`${font.className} font-normal`}>
+        <main className={`${inter.variable} ${mono.variable} ${syne.variable} font-sans`}>
             <title>Ram Goel</title>
             {isPageRoute ? (
                 <Component {...pageProps} />
             ) : (
                 <>
-                    <div className="flex flex-col lg:flex-row items-stretch bg-zinc-950 text-zinc-100 min-h-screen">
-                        <div className="w-full h-[1px] lg:h-full lg:w-[1px] bg-gradient-to-r lg:bg-gradient-to-b from-zinc-800 to-transparent" />
-                        <div className="h-[100vh] overflow-auto w-full">
-                            <div className="p-5 lg:p-10 lg:w-[50%] mx-auto w-full">
-                                <Component {...pageProps} />
-                            </div>
-                        </div>
+                    <div className="min-h-screen bg-white text-neutral-900">
+                        <Component {...pageProps} />
                     </div>
                     <CustomTooltip id="hover-tooltip" />
                     <Analytics />
