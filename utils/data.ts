@@ -130,7 +130,7 @@ export const miniProjects: Project[] = [
         id: 9,
         title: 'ReduTrap',
         content: 'Remove unused Bootstrap CSS to speed up your site',
-        url: 'https://ramgoel.github.io/lessTrap-bootstrap-reducer/',
+        url: 'https://github.com/RamGoel/reduTrap',
         github: 'https://github.com/RamGoel/reduTrap',
         type: 'mini',
     },

@@ -29,28 +29,14 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-/* Custom cursor */
+/* Custom cursor - CSS only */
 @media (pointer: fine) {
     * {
-        cursor: none !important;
+        cursor: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L14 7.5L7.5 9L6 14L1 1Z' fill='black' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, auto;
     }
     
-    .custom-cursor {
-        pointer-events: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        transition: transform 0.1s ease-out;
-    }
-    
-    .custom-cursor svg {
-        transition: width 0.12s ease-out, height 0.12s ease-out;
-    }
-    
-    .custom-cursor.hovering svg {
-        width: 20px;
-        height: 20px;
+    a, button {
+        cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L18 9L9 11L7 18L1 1Z' fill='black' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, pointer;
     }
 }
 

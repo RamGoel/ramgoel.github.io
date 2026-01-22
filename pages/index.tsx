@@ -2,7 +2,7 @@
 import { miniProjects, projects, talks } from '@/utils/data'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useState } from 'react'
 
 // Navigation sections
 const sections = ['About', 'Thoughts', 'Projects'] as const
@@ -20,68 +20,6 @@ const staggerItem = {
         opacity: 1,
         transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }
     },
-}
-
-// ============================================
-// Custom Cursor Component
-// ============================================
-
-function CustomCursor() {
-    const [position, setPosition] = useState({ x: -100, y: -100 })
-    const [isHovering, setIsHovering] = useState(false)
-
-    useEffect(() => {
-        // Check if device has fine pointer (mouse)
-        if (!window.matchMedia('(pointer: fine)').matches) return
-
-        const updatePosition = (e: MouseEvent) => {
-            setPosition({ x: e.clientX, y: e.clientY })
-        }
-
-        const handleMouseOver = (e: MouseEvent) => {
-            const target = e.target as HTMLElement
-            if (target.closest('a') || target.closest('button') || target.tagName === 'A' || target.tagName === 'BUTTON') {
-                setIsHovering(true)
-            } else {
-                setIsHovering(false)
-            }
-        }
-
-        window.addEventListener('mousemove', updatePosition)
-        document.addEventListener('mouseover', handleMouseOver)
-
-        return () => {
-            window.removeEventListener('mousemove', updatePosition)
-            document.removeEventListener('mouseover', handleMouseOver)
-        }
-    }, [])
-
-    // Don't render on touch devices
-    if (typeof window !== 'undefined' && !window.matchMedia('(pointer: fine)').matches) {
-        return null
-    }
-
-    return (
-        <div
-            className={`custom-cursor ${isHovering ? 'hovering' : ''}`}
-            style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-        >
-            <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <path
-                    d="M1 1L14 7.5L7.5 9L6 14L1 1Z"
-                    fill="black"
-                    stroke="white"
-                    strokeWidth="0.5"
-                />
-            </svg>
-        </div>
-    )
 }
 
 // ============================================
@@ -405,9 +343,7 @@ export default function Home() {
     }
 
     return (
-        <>
-            <CustomCursor />
-            <div className="flex flex-col lg:flex-row min-h-screen">
+        <div className="flex flex-col lg:flex-row min-h-screen">
                 {/* Sidebar */}
                 <Sidebar 
                     activeSection={activeSection} 
@@ -423,12 +359,11 @@ export default function Home() {
                 <main className="flex-1 p-6 lg:p-12 lg:pl-16 lg:max-w-2xl [view-transition-name:content]">
                     {renderContent()}
                 </main>
-            </div>
 
             {/* Last Updated */}
             <div className="fixed bottom-4 left-4 text-xs text-neutral-400 hidden lg:block font-display">
                 Last updated: Jan 2026
             </div>
-        </>
+        </div>
     )
 }
