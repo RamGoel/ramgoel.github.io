@@ -182,6 +182,17 @@ function ThoughtsSection() {
                 <ul className="space-y-4 text-sm">
                     <li>
                         <a
+                            href="https://medium.com/@ram_41763/paginating-everything-tables-dropdowns-and-api-calls-f55c16215848?postPublishedType=initial"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="slide-underline text-neutral-900"
+                        >
+                            The Pagination Architecture
+                        </a>
+                        <span className="text-neutral-500"> — that works at scale</span>
+                    </li>
+                    <li>
+                        <a
                             href="https://dev.to/ramgoel/multiple-environments-in-frontend-applications-2k07"
                             target="_blank"
                             rel="noopener noreferrer"

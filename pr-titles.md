@@ -1,0 +1,606 @@
+- **feat: use in-app audio interface** | 2026-02-28 | sarvamai/arya-web | #373
+- **Update regex to include additional symbols for TTS** | 2026-02-26 | sarvamai/arya-web | #364
+- **voice-mode ui changes** | 2026-02-24 | sarvamai/arya-web | #352
+- **Refactor endpoint validation to use prefixes** | 2026-02-24 | sarvamai/arya-web | #349
+- **feat: use token auth fo STT and TTS** | 2026-02-24 | sarvamai/arya-web | #348
+- **feat: change api key var name** | 2026-02-23 | sarvamai/arya-web | #347
+- **feat: verify token with public key** | 2026-02-23 | sarvamai/arya-web | #346
+- **feat: add indus-proxy route** | 2026-02-23 | sarvamai/arya-web | #342
+- **Launch change** | 2026-02-23 | sarvamai/sarvam-api-store | #222
+- **Remove shadcn** | 2026-02-23 | sarvamai/sarvam-api-store | #221
+- **Indus dark mode** | 2026-02-22 | sarvamai/arya-web | #339
+- **feat: tts speed improvements** | 2026-02-19 | sarvamai/arya-web | #328
+- **Upcoming chat** | 2026-02-19 | sarvamai/sarvam-api-store | #220
+- **Add AI Chat feature to fallback flags and configuration** | 2026-02-18 | sarvamai/sarvam-api-store | #219
+- **feat: voice mode rate limiting** | 2026-02-17 | sarvamai/arya-web | #307
+- **Some UX improvements** | 2026-02-17 | sarvamai/arya-web | #306
+- **Rate limiting & direct transcription** | 2026-02-17 | sarvamai/arya-web | #293
+- **fix: voice transcription using batch** | 2026-02-16 | sarvamai/arya-web | #281
+- **feat: voice mode ui changes** | 2026-02-16 | sarvamai/arya-web | #279
+- **Prompt upload changes** | 2026-02-15 | sarvamai/sarvam-authoring-ui | #1917
+- **feat: voice mode in bg** | 2026-02-13 | sarvamai/arya-web | #261
+- **Enhance UserOrgIDEmailComponent to allow 'sarvam-admin' email address…** | 2026-02-11 | sarvamai/v2v-log-ui | #160
+- **Add models in chatinput** | 2026-02-11 | sarvamai/sarvam-tatva | #35
+- **Remove posthog proxy** | 2026-02-10 | sarvamai/sarvam-api-store | #205
+- **Staging** | 2026-02-09 | sarvamai/sarvam-authoring-ui | #1901
+- **fix: limit** | 2026-02-09 | sarvamai/sarvam-authoring-ui | #1900
+- **feat: add Twilio support to connections** | 2026-02-09 | sarvamai/sarvam-authoring-ui | #1898
+- **Tatva UI migration** | 2026-02-07 | sarvamai/sarvam-api-store | #200
+- **vision and sarvam audio changes** | 2026-02-07 | sarvamai/sarvam-api-store | #198
+- **fix: release widget issues** | 2026-02-07 | sarvamai/sarvam-api-store | #197
+- **Fix login loop & whitelist paste logic** | 2026-02-06 | sarvamai/sarvam-authoring-ui | #1896
+- **Indus Integration** | 2026-02-05 | sarvamai/sarvam-api-store | #192
+- **feat: enhance organization handling and loading states in AppLayout a…** | 2026-02-04 | sarvamai/sarvam-authoring-ui | #1892
+- **Update resource limits and requests for client authentication module …** | 2026-02-04 | sarvamai/apps-apis-gitops | #2050
+- **homepage content using feature flags** | 2026-02-03 | sarvamai/sarvam-api-store | #186
+- **refactor: Simplify organization access verification logic** | 2026-02-03 | sarvamai/v2v-log-api | #90
+- **feat: enhance PostHog integration with fallback flags and proxy path …** | 2026-02-01 | sarvamai/sarvam-api-store | #185
+- **security: origin validation for dubbing and agents** | 2026-02-01 | sarvamai/sarvam-api-store | #183
+- **feat: releases modal** | 2026-01-31 | sarvamai/sarvam-api-store | #182
+- **fix: handle RefreshTokenError in AppLayout to force re-login** | 2026-01-31 | sarvamai/sarvam-authoring-ui | #1883
+- **Remaining posthog flags** | 2026-01-31 | sarvamai/sarvam-api-store | #180
+- **feat: add Pulse channel support in connections** | 2026-01-31 | sarvamai/sarvam-authoring-ui | #1879
+- **feat: add PostHog API key to secrets and configuration** | 2026-01-29 | sarvamai/sarvam-azure-common-gitops | #1243
+- **refactor: streamline Text-to-Speech component with remote config inte…** | 2026-01-29 | sarvamai/sarvam-api-store | #175
+- **Perf improvements** | 2026-01-29 | sarvamai/sarvam-api-store | #174
+- **New home and UI fixes** | 2026-01-28 | sarvamai/sarvam-api-store | #170
+- **Add TLS secret configuration for Sarvam Tatva in values.yaml** | 2026-01-27 | sarvamai/sarvam-helm-charts | #108
+- **Https try** | 2026-01-27 | sarvamai/sarvam-helm-charts | #107
+- **Add sarvam-tatva helm charts** | 2026-01-27 | sarvamai/sarvam-helm-charts | #105
+- **Remove tatva from common gitops** | 2026-01-27 | sarvamai/sarvam-azure-common-gitops | #1232
+- **Refactor UserOrgIDEmailComponent to simplify email domain validation.…** | 2026-01-27 | sarvamai/v2v-log-ui | #159
+- **refactor: improve layout and transition handling in components** | 2026-01-26 | sarvamai/sarvam-api-store | #168
+- **feat: implement favorite speakers functionality in TextToSpeech compo…** | 2026-01-26 | sarvamai/sarvam-api-store | #167
+- **refactor: remove v2v-web-ui secrets and deployment configurations** | 2026-01-24 | sarvamai/sarvam-azure-common-gitops | #1224
+- **refactor: update user information display in AppSidebar and improve a…** | 2026-01-24 | sarvamai/sarvam-authoring-ui | #1865
+- **fix: update PREVENT_SIGNUP flag value to False in Flagsmith configura…** | 2026-01-24 | sarvamai/sarvam-azure-common-gitops | #1222
+- **Add target_branch for sarvam-tatva** | 2026-01-23 | sarvamai/sarvam-azure-common-gitops | #1221
+- **Fix usage refresh** | 2026-01-23 | sarvamai/sarvam-api-store | #165
+- **refactor: enhance layout and metadata for improved SEO and user exper…** | 2026-01-23 | sarvamai/sarvam-api-store | #164
+- **refactor: update UI components across billing, chat, pricing, and usa…** | 2026-01-22 | sarvamai/sarvam-api-store | #163
+- **Mobile Version** | 2026-01-22 | sarvamai/sarvam-api-store | #162
+- **feat: enable expressive mode for whatsapp** | 2026-01-22 | sarvamai/sarvam-authoring-ui | #1854
+- **New home page** | 2026-01-22 | sarvamai/sarvam-api-store | #161
+- **fix: update display name for Sarvam Pro model to include (Old) suffix** | 2026-01-22 | sarvamai/sarvam-authoring-ui | #1852
+- **Transcript and CallStatus** | 2026-01-21 | ram-sarvam/conv-ai-typescript-sdk | #1
+- **Some UI changes** | 2026-01-21 | sarvamai/sarvam-api-store | #160
+- **Agents integration** | 2026-01-19 | sarvamai/sarvam-api-store | #155
+- **feat: enhance Chat and SpeechToText components with code modal integr…** | 2026-01-18 | sarvamai/sarvam-api-store | #152
+- **Fix UI issues 2** | 2026-01-16 | sarvamai/sarvam-api-store | #151
+- **Add tatva_domain_name variable and output; configure ingress for tatv…** | 2026-01-16 | sarvamai/sarvam-azure-common-gitops | #1151
+- **More ux improvements** | 2026-01-16 | sarvamai/sarvam-api-store | #150
+- **misc ui improvements and billing updates** | 2026-01-16 | sarvamai/sarvam-api-store | #149
+- **feat: implement RBAC checks for account switching in AppSidebar** | 2026-01-15 | sarvamai/sarvam-authoring-ui | #1838
+- **Support page** | 2026-01-14 | sarvamai/sarvam-api-store | #148
+- **Ux fixes** | 2026-01-14 | sarvamai/sarvam-api-store | #147
+- **Stt revamp** | 2026-01-13 | sarvamai/sarvam-api-store | #145
+- **Revert "Translate section revamp"** | 2026-01-12 | sarvamai/sarvam-api-store | #144
+- **Sidebar changes** | 2026-01-11 | sarvamai/sarvam-api-store | #141
+- **Chat changes** | 2026-01-11 | sarvamai/sarvam-api-store | #140
+- **feat: tokens changes** | 2026-01-07 | sarvamai/sarvam-tatva | #31
+- **Change fg tokens** | 2026-01-07 | sarvamai/sarvam-tatva | #29
+- **Switch accounts** | 2026-01-07 | sarvamai/client-auth | #26
+- **feat: remove model hardcoding** | 2026-01-06 | sarvamai/sarvam-authoring-ui | #1817
+- **fix: empty message and tool rendering issue** | 2026-01-06 | sarvamai/sarvam-authoring-ui | #1816
+- **feat: temprature setting on UI** | 2026-01-05 | sarvamai/sarvam-authoring-ui | #1814
+- **File upload component** | 2026-01-05 | sarvamai/sarvam-tatva | #28
+- **Figma system** | 2026-01-05 | sarvamai/sarvam-tatva | #27
+- **Chat input and docs updates** | 2026-01-04 | sarvamai/sarvam-tatva | #26
+- **Progress and loader** | 2026-01-03 | sarvamai/sarvam-tatva | #25
+- **fix: kb upload double indexing issue** | 2026-01-01 | sarvamai/sarvam-authoring-ui | #1808
+- **Props cleanup and remove Stack** | 2026-01-01 | sarvamai/sarvam-tatva | #22
+- **Other components** | 2026-01-01 | sarvamai/sarvam-tatva | #21
+- **feat: dark mode changes** | 2026-01-01 | sarvamai/sarvam-tatva | #20
+- **feat: non-design components changes** | 2025-12-31 | sarvamai/sarvam-tatva | #19
+- **feat: menu and select changes** | 2025-12-31 | sarvamai/sarvam-tatva | #18
+- **Switch component** | 2025-12-31 | sarvamai/sarvam-tatva | #17
+- **feat: input and checkbox components** | 2025-12-31 | sarvamai/sarvam-tatva | #16
+- **feat: change icon library** | 2025-12-30 | sarvamai/sarvam-tatva | #15
+- **Fix inconsistencies** | 2025-12-30 | sarvamai/sarvam-tatva | #14
+- **Figma Design Tokens & Text Button** | 2025-12-30 | sarvamai/sarvam-tatva | #13
+- **Add Breadcrumb, Filter, KeyValue** | 2025-12-29 | sarvamai/sarvam-tatva | #12
+- **fix: numbers pagination** | 2025-12-26 | sarvamai/sarvam-authoring-ui | #1798
+- **Remove shared folder from project** | 2025-12-24 | sarvamai/sarvam-authoring-ui | #1797
+- **feat: tools revamp** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1794
+- **feat: use tatva for variables** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1789
+- **feat: revamp variables section** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1788
+- **Slack notification post build** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1784
+- **fix: telephony node** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1783
+- **feat: switch accounts ui** | 2025-12-23 | sarvamai/sarvam-authoring-ui | #1782
+- **Deploy changes** | 2025-12-22 | sarvamai/sarvam-tatva | #9
+- **Phone numbers tatva** | 2025-12-22 | sarvamai/sarvam-authoring-ui | #1775
+- **Use Tatva for Embed & Test Agent** | 2025-12-21 | sarvamai/sarvam-authoring-ui | #1773
+- **Update agent revamp tatva** | 2025-12-21 | sarvamai/sarvam-authoring-ui | #1772
+- **fix: sidebar and phone number issue** | 2025-12-19 | sarvamai/sarvam-authoring-ui | #1765
+- **Update agent UI updates** | 2025-12-19 | sarvamai/sarvam-tatva | #5
+- **Update agent revamp tatva** | 2025-12-19 | sarvamai/sarvam-authoring-ui | #1762
+- **Settings Revamp** | 2025-12-19 | sarvamai/sarvam-authoring-ui | #1761
+- **fix: remove repetitive div** | 2025-12-18 | sarvamai/sarvam-authoring-ui | #1758
+- **fix: manual action** | 2025-12-18 | sarvamai/sarvam-authoring-ui | #1757
+- **feat: add manual trigger in tagging** | 2025-12-18 | sarvamai/sarvam-authoring-ui | #1756
+- **Fix login layout shift** | 2025-12-18 | sarvamai/sarvam-login-ui | #5
+- **Update agent use tatva** | 2025-12-18 | sarvamai/sarvam-authoring-ui | #1752
+- **fix: ui issues** | 2025-12-17 | sarvamai/sarvam-authoring-ui | #1751
+- **fix: revert button sizing change** | 2025-12-17 | sarvamai/sarvam-authoring-ui | #1749
+- **feat: kb pagination** | 2025-12-16 | sarvamai/sarvam-authoring-ui | #1737
+- **New design system** | 2025-12-16 | sarvamai/sarvam-tatva | #2
+- **use sarvam ui components** | 2025-12-14 | sarvamai/sarvam-authoring-ui | #1734
+- **fix: call logs issue** | 2025-12-12 | sarvamai/sarvam-authoring-ui | #1733
+- **fix: next vulnerablity** | 2025-12-12 | sarvamai/sarvam-authoring-ui | #1731
+- **Design tokens sort** | 2025-12-12 | sarvamai/sarvam-authoring-ui | #1730
+- **Meta creds** | 2025-12-11 | sarvamai/apps-apis-gitops | #1869
+- **fix: test change** | 2025-12-11 | sarvamai/sarvam-authoring-ui | #1720
+- **feat: change intial message** | 2025-12-11 | sarvamai/sarvam-authoring-ui | #1718
+- **feat: form and file upload** | 2025-12-11 | sarvamai/sarvam-authoring-ui | #1715
+- **Expressive mode & Initial Message Translations** | 2025-12-11 | sarvamai/sarvam-authoring-ui | #1714
+- **fix: agents search empty state** | 2025-12-11 | sarvamai/sarvam-authoring-ui | #1710
+- **Voice studio revamp** | 2025-12-10 | sarvamai/sarvam-authoring-ui | #1707
+- **Revamp My Agents & KB** | 2025-12-10 | sarvamai/sarvam-authoring-ui | #1704
+- **Shareable demo links** | 2025-12-09 | om-sarvam/bot-or-not-earth-summit | #2
+- **Agent nodes alignments** | 2025-12-09 | sarvamai/sarvam-authoring-ui | #1702
+- **Shareable links** | 2025-12-08 | sarvamai/sarvam-authoring-ui | #1700
+- **fix: embed interaction type** | 2025-12-08 | sarvamai/sarvam-authoring-ui | #1696
+- **fix: change embed url** | 2025-12-07 | sarvamai/sarvam-authoring-ui | #1694
+- **Fix blank screen issue** | 2025-12-04 | sarvamai/sarvam-authoring-ui | #1682
+- **Refactor my agents** | 2025-12-04 | sarvamai/sarvam-authoring-ui | #1675
+- **fix: remove runtime cors** | 2025-12-04 | sarvamai/apps-apis-gitops | #1851
+- **feat: remove cors from runtime service** | 2025-12-03 | sarvamai/apps-apis-gitops | #1845
+- **feat: remove cors from staging runtime service** | 2025-12-03 | sarvamai/sarvam-azure-common-gitops | #951
+- **Agent experience** | 2025-12-02 | om-sarvam/bot-or-not-earth-summit | #1
+- **Output type changes** | 2025-12-02 | sarvamai/sarvam-authoring-ui | #1669
+- **feat: polling for enhance api** | 2025-12-02 | sarvamai/sarvam-authoring-ui | #1667
+- **Replace tatva components** | 2025-12-02 | sarvamai/sarvam-authoring-ui | #1665
+- **Add Modify Test Cases Mixpanel Events** | 2025-12-02 | sarvamai/sarvam-authoring-ui | #1664
+- **Revamp embed page** | 2025-12-02 | sarvamai/sarvam-authoring-ui | #1663
+- **Earth Summit Demo ** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1662
+- **feat: change bg noise flag** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1660
+- **Add cursor rules** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1659
+- **Shared sheet** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1658
+- **Shared Components - Dropdown (multi, client, server side) & Empty State** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1655
+- **feat: remove old embed agent code** | 2025-12-01 | sarvamai/sarvam-authoring-ui | #1654
+- **Shared Components - File Upload & Sheet** | 2025-11-28 | sarvamai/sarvam-authoring-ui | #1652
+- **Shared Components - Navbar & Avatar** | 2025-11-28 | sarvamai/sarvam-authoring-ui | #1651
+- **Shared Component - Tabs** | 2025-11-28 | sarvamai/sarvam-authoring-ui | #1650
+- **Shared dropdown** | 2025-11-27 | sarvamai/sarvam-authoring-ui | #1646
+- **Shared Card Component - Remove RichCard** | 2025-11-27 | sarvamai/sarvam-authoring-ui | #1645
+- **Shared Components - Toggle & Dialog** | 2025-11-27 | sarvamai/sarvam-authoring-ui | #1644
+- **feat: convert org and email to lowercase before submitting** | 2025-11-26 | sarvamai/client-auth | #25
+- **feat: background sound integration** | 2025-11-25 | sarvamai/sarvam-authoring-ui | #1636
+- **feat: add output mode setting** | 2025-11-24 | sarvamai/sarvam-authoring-ui | #1633
+- **feat: add output mode setting** | 2025-11-24 | sarvamai/sarvam-authoring-ui | #1632
+- **Run & Modify Sub Test Cases** | 2025-11-24 | sarvamai/sarvam-authoring-ui | #1631
+- **fix: filter active users** | 2025-11-24 | sarvamai/sarvam-authoring-ui | #1629
+- **Fix firebase logic** | 2025-11-24 | sarvamai/sarvam-authoring-ui | #1628
+- **feat: add .md support for kb upload** | 2025-11-21 | sarvamai/sarvam-authoring-ui | #1624
+- **Add settings copy and fix memory input issue** | 2025-11-21 | sarvamai/sarvam-authoring-ui | #1623
+- **fix active users issue** | 2025-11-21 | sarvamai/sarvam-authoring-ui | #1621
+- **Text Integration ** | 2025-11-20 | sarvamai/samvaad-agent-testing | #2
+- **feat: refactor code** | 2025-11-20 | sarvamai/samvaad-agent-testing | #1
+- **fix: kb upload file name overflow** | 2025-11-20 | sarvamai/sarvam-authoring-ui | #1617
+- **fix: remove extra packages** | 2025-11-19 | sarvamai/sarvam-authoring-ui | #1613
+- **Update agent back fix** | 2025-11-19 | sarvamai/sarvam-authoring-ui | #1609
+- ** remove intial message hardcoding in playground v2** | 2025-11-18 | sarvamai/sarvam-authoring-ui | #1608
+- **fix: dropdown issue** | 2025-11-18 | sarvamai/sarvam-authoring-ui | #1605
+- **Add mixpanel app info** | 2025-11-18 | sarvamai/sarvam-authoring-ui | #1602
+- **feat: use zipy patch for lags** | 2025-11-17 | sarvamai/sarvam-authoring-ui | #1601
+- **fix: new chat icons** | 2025-11-17 | sarvamai/sarvam-authoring-ui | #1598
+- **fix: tool message and focus input** | 2025-11-15 | sarvamai/sarvam-authoring-ui | #1596
+- **feat: put delete behind ff** | 2025-11-14 | sarvamai/sarvam-authoring-ui | #1593
+- **fix: voice enabled logic** | 2025-11-14 | sarvamai/sarvam-authoring-ui | #1592
+- **fix: update ars mixpanel events** | 2025-11-13 | sarvamai/sarvam-authoring-ui | #1585
+- **Revert "Fix playground v2"** | 2025-11-12 | sarvamai/sarvam-authoring-ui | #1575
+- **Fix playground v2** | 2025-11-12 | sarvamai/sarvam-authoring-ui | #1574
+- **feat: organize components** | 2025-11-07 | sarvamai/sarvam-authoring-ui | #1565
+- **Revert "feat: whitelist localhost for runtime"** | 2025-11-05 | sarvamai/sarvam-azure-common-gitops | #799
+- **feat: whitelist localhost for runtime** | 2025-11-05 | sarvamai/sarvam-azure-common-gitops | #797
+- **feat: cancel debounce on page unload** | 2025-11-05 | sarvamai/sarvam-authoring-ui | #1560
+- **Fix code/UI issues** | 2025-11-04 | sarvamai/sarvam-authoring-ui | #1555
+- **Regression revamp** | 2025-11-02 | sarvamai/sarvam-authoring-ui | #1542
+- **Switch node branch** | 2025-11-01 | sarvamai/sarvam-authoring-ui | #1539
+- **Playground v2** | 2025-10-30 | sarvamai/sarvam-authoring-ui | #1527
+- **fix: workflow bugs** | 2025-10-29 | sarvamai/sarvam-authoring-ui | #1524
+- **Tool operations on frontend** | 2025-10-29 | sarvamai/sarvam-authoring-ui | #1523
+- **feat: user identifier changes** | 2025-10-28 | sarvamai/sarvam-authoring-ui | #1517
+- **feat: registry changes** | 2025-10-28 | sarvamai/sarvam-authoring-ui | #1515
+- **Feature Flags & Mixpanel proxy** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1513
+- **fix: build and workflow** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1511
+- **feat: prod release changes** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1510
+- **Optimize changes [DO NOT MERGE]** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1509
+- **Revert "fix: remove mixpanel proxy"** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1508
+- **fix: remove mixpanel proxy** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1507
+- **fix: cloudbuild** | 2025-10-27 | sarvamai/agent-docs | #9
+- **Stage old** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1505
+- **Staging release** | 2025-10-27 | sarvamai/sarvam-authoring-ui | #1504
+- **fix: on fly variable fix** | 2025-10-26 | sarvamai/sarvam-authoring-ui | #1496
+- **feat: add cursor rules** | 2025-10-24 | sarvamai/sarvam-authoring-ui | #1495
+- **feat: single prompt templates** | 2025-10-24 | sarvamai/sarvam-authoring-ui | #1494
+- **fix: default version select change** | 2025-10-24 | sarvamai/sarvam-authoring-ui | #1492
+- **fix: change region in cloudbuild** | 2025-10-24 | sarvamai/sarvam-authoring-ui | #1491
+- **feat: change registry** | 2025-10-23 | sarvamai/sarvam-authoring-ui | #1488
+- **Proxy mixpanel for browser support** | 2025-10-22 | sarvamai/sarvam-authoring-ui | #1486
+- **Playground v2** | 2025-10-22 | sarvamai/sarvam-authoring-ui | #1485
+- **feat: refactor enable_features** | 2025-10-21 | sarvamai/sarvam-authoring-ui | #1484
+- **fix: variable edit** | 2025-10-17 | sarvamai/sarvam-authoring-ui | #1481
+- **fix: whatsapp load issue** | 2025-10-17 | sarvamai/sarvam-authoring-ui | #1476
+- **fix: change endpoints api** | 2025-10-16 | sarvamai/sarvam-authoring-ui | #1475
+- **Hide few features for new spec** | 2025-10-16 | sarvamai/sarvam-authoring-ui | #1474
+- **Limit meta mapping & empty init message for whatsapp** | 2025-10-16 | sarvamai/sarvam-authoring-ui | #1472
+- **refactor: header label logic** | 2025-10-16 | sarvamai/sarvam-authoring-ui | #1469
+- **fix: evals filter bug** | 2025-10-15 | sarvamai/sarvam-authoring-ui | #1465
+- **feat: add localhost in kb service cors** | 2025-10-14 | sarvamai/sarvam-azure-common-gitops | #688
+- **fix: ui and copy changes** | 2025-10-14 | sarvamai/sarvam-authoring-ui | #1457
+- **hotfix: trim login creds** | 2025-10-14 | sarvamai/client-auth | #23
+- **Fix tools issue** | 2025-10-13 | sarvamai/sarvam-authoring-ui | #1455
+- **tools logic change & meta phone number selection** | 2025-10-13 | sarvamai/sarvam-authoring-ui | #1452
+- **feat: add validations in evals** | 2025-10-09 | sarvamai/sarvam-authoring-ui | #1442
+- **Provider smartflo** | 2025-10-09 | sarvamai/sarvam-authoring-ui | #1436
+- **Remove embed hardcoding & add mixpanel** | 2025-10-09 | sarvamai/sarvam-authoring-ui | #1434
+- **feat: add trying link** | 2025-10-08 | sarvamai/sarvam-authoring-ui | #1433
+- **Embed feature flag** | 2025-10-08 | sarvamai/sarvam-authoring-ui | #1431
+- **fix: crash on number change** | 2025-10-06 | sarvamai/sarvam-authoring-ui | #1427
+- **feat: optimize connect numbers sheet** | 2025-10-06 | sarvamai/sarvam-authoring-ui | #1426
+- **IWAI changes** | 2025-10-06 | sarvamai/sarvam-authoring-ui | #1422
+- **feat: allow multiple messages** | 2025-10-04 | sarvamai/sarvam-authoring-ui | #1419
+- **fix: filter sanskrit and assamese from languages** | 2025-10-04 | sarvamai/sarvam-authoring-ui | #1418
+- **Revert "feat: multiple messages setting"** | 2025-10-03 | sarvamai/sarvam-authoring-ui | #1417
+- **feat: add variable** | 2025-10-03 | sarvamai/sarvam-azure-common-gitops | #598
+- **fix: remove pratham form yaml file** | 2025-10-03 | sarvamai/sarvam-azure-common-gitops | #593
+- **feat: add sarvam api key for GFF** | 2025-10-03 | sarvamai/sarvam-azure-common-gitops | #592
+- **API key and Policy UI fixes** | 2025-10-02 | sarvamai/sarvam-authoring-ui | #1415
+- **Fix flags** | 2025-09-30 | sarvamai/sarvam-authoring-ui | #1414
+- **Tool errors** | 2025-09-30 | sarvamai/sarvam-authoring-ui | #1412
+- **Agent spec 2.0** | 2025-09-29 | sarvamai/sarvam-authoring-ui | #1402
+- **feat: change sso name** | 2025-09-29 | sarvamai/auth-service | #46
+- **fix: remove sidebar close from navbar** | 2025-09-29 | sarvamai/sarvam-authoring-ui | #1401
+- **feat: selective run and edit sub test-cases** | 2025-09-27 | sarvamai/sarvam-authoring-ui | #1399
+- **fix: webps to pngs** | 2025-09-26 | sarvamai/sarvam-authoring-ui | #1397
+- **fix: rename iwai** | 2025-09-26 | sarvamai/sarvam-authoring-ui | #1395
+- **fix: test cases and table select** | 2025-09-26 | sarvamai/sarvam-authoring-ui | #1393
+- **open docs link in new tab, vulnerablity fix** | 2025-09-26 | sarvamai/sarvam-authoring-ui | #1392
+- **Agent spec 2** | 2025-09-26 | sarvamai/sarvam-authoring-ui | #1391
+- **hotfix: connection issue** | 2025-09-25 | sarvamai/sarvam-authoring-ui | #1389
+- **feat: connect and send message** | 2025-09-25 | sarvamai/sarvam-authoring-ui | #1388
+- **fix: IWAI connection issues** | 2025-09-25 | sarvamai/sarvam-authoring-ui | #1385
+- **New agent spec** | 2025-09-25 | sarvamai/sarvam-authoring-ui | #1382
+- **white bg on platform** | 2025-09-25 | sarvamai/sarvam-authoring-ui | #1381
+- **Fix extensions** | 2025-09-24 | sarvamai/sarvam-authoring-ui | #1380
+- **feat: buffer and ping pong for IWAI** | 2025-09-24 | sarvamai/sarvam-authoring-ui | #1378
+- **Fix empty message** | 2025-09-22 | sarvamai/sarvam-authoring-ui | #1374
+- **feat: update stat numbers** | 2025-09-22 | sarvamai/sarvam-authoring-ui | #1373
+- **widget name validation to check tool names** | 2025-09-22 | sarvamai/sarvam-authoring-ui | #1370
+- **improve_ai ux issues** | 2025-09-22 | sarvamai/sarvam-authoring-ui | #1369
+- **fix: deploy empty screen** | 2025-09-20 | sarvamai/sarvam-authoring-ui | #1365
+- **Fix prod issues** | 2025-09-19 | sarvamai/sarvam-authoring-ui | #1363
+- **fix: ui issues** | 2025-09-19 | sarvamai/sarvam-authoring-ui | #1362
+- **fix: new state prompt issue** | 2025-09-19 | sarvamai/sarvam-authoring-ui | #1361
+- **feat: revert messages on backend** | 2025-09-18 | sarvamai/sarvam-authoring-ui | #1356
+- **Agent Insights fixes** | 2025-09-18 | sarvamai/sarvam-authoring-ui | #1355
+- **feat: Deploy UX Changes** | 2025-09-17 | sarvamai/sarvam-authoring-ui | #1352
+- **fix: agent insights changes** | 2025-09-16 | sarvamai/sarvam-authoring-ui | #1351
+- **feat: multiple messages setting** | 2025-09-16 | sarvamai/sarvam-authoring-ui | #1350
+- **feat: multiple messages setting** | 2025-09-16 | sarvamai/sarvam-authoring-ui | #1349
+- **feat: mixpanel events** | 2025-09-15 | sarvamai/sarvam-authoring-ui | #1346
+- **feat: migrate dialog component to shared** | 2025-09-15 | sarvamai/sarvam-authoring-ui | #1344
+- **Deploy UX Revamp** | 2025-09-15 | sarvamai/sarvam-authoring-ui | #1342
+- **Fix lag issues** | 2025-09-13 | sarvamai/sarvam-authoring-ui | #1341
+- **Fix smart schedule time** | 2025-09-13 | sarvamai/sarvam-authoring-ui | #1339
+- **feat: post call eval** | 2025-09-12 | sarvamai/sarvam-authoring-ui | #1338
+- **fix: show chat error detail** | 2025-09-12 | sarvamai/sarvam-authoring-ui | #1335
+- **Deploy Revamp + Improve AI V2 + Workflow Orchestration + Chameleon Tours** | 2025-09-11 | sarvamai/sarvam-authoring-ui | #1329
+- **Automated Regression Suite** | 2025-09-10 | sarvamai/sarvam-authoring-ui | #1325
+- **feat: evals regression suite** | 2025-09-08 | sarvamai/sarvam-authoring-ui | #1320
+- **Kunal/post call eval** | 2025-09-08 | sarvamai/sarvam-authoring-ui | #1319
+- **feat: evals regression suite** | 2025-09-05 | sarvamai/sarvam-authoring-ui | #1317
+- **fix: remove logger concept** | 2025-09-04 | sarvamai/sarvam-authoring-ui | #1313
+- **hotfix: evals error** | 2025-09-03 | sarvamai/sarvam-authoring-ui | #1311
+- **fix: typo** | 2025-09-03 | sarvamai/sarvam-authoring-ui | #1310
+- **Improve ai v2** | 2025-09-03 | sarvamai/sarvam-authoring-ui | #1304
+- **fix: hide language_switch for WA apps** | 2025-09-02 | sarvamai/sarvam-authoring-ui | #1300
+- **fix: evals code** | 2025-09-02 | sarvamai/sarvam-authoring-ui | #1293
+- **Enable proactive** | 2025-09-01 | sarvamai/sarvam-authoring-ui | #1292
+- **Smart staggered retries** | 2025-09-01 | sarvamai/sarvam-authoring-ui | #1291
+- **added calls allowed between validation as well** | 2025-09-01 | sarvamai/sarvam-authoring-ui | #1290
+- **fix: type errors** | 2025-09-01 | sarvamai/sarvam-authoring-ui | #1288
+- **fix: eval url and params** | 2025-09-01 | sarvamai/sarvam-authoring-ui | #1282
+- **fix: endpoint issue** | 2025-08-30 | sarvamai/sarvam-authoring-ui | #1277
+- **feat: revert zipy change** | 2025-08-29 | sarvamai/sarvam-authoring-ui | #1275
+- **fix: duplicate prop** | 2025-08-29 | sarvamai/sarvam-authoring-ui | #1274
+- **fix: live version in phone numbers** | 2025-08-29 | sarvamai/sarvam-authoring-ui | #1271
+- **feat: remove graph layout shift** | 2025-08-29 | sarvamai/sarvam-authoring-ui | #1270
+- **feat: undo variable check changes** | 2025-08-28 | sarvamai/sarvam-authoring-ui | #1265
+- **fix: new state and all variables issue** | 2025-08-28 | sarvamai/sarvam-authoring-ui | #1263
+- **feat: variable check and re-render fix** | 2025-08-28 | sarvamai/sarvam-authoring-ui | #1261
+- **Features tour changes** | 2025-08-28 | sarvamai/sarvam-authoring-ui | #1260
+- **feat: prompt sidebar changes** | 2025-08-28 | sarvamai/sarvam-authoring-ui | #1259
+- **fix: upgrade lint** | 2025-08-27 | sarvamai/sarvam-authoring-ui | #1256
+- **Features Tour Implementation** | 2025-08-26 | sarvamai/sarvam-authoring-ui | #1255
+- **Dedicated changes sidebar** | 2025-08-26 | sarvamai/sarvam-authoring-ui | #1254
+- **fix: idfc client id** | 2025-08-26 | sarvamai/apps-apis-gitops | #1607
+- **Features tour** | 2025-08-25 | sarvamai/sarvam-authoring-ui | #1253
+- **feat: hide initial_message for whatsapp** | 2025-08-25 | sarvamai/sarvam-authoring-ui | #1250
+- **Fix build time** | 2025-08-23 | sarvamai/sarvam-authoring-ui | #1249
+- **Fix lagging** | 2025-08-23 | sarvamai/sarvam-authoring-ui | #1247
+- **fix: pass name as fallback & ui changes** | 2025-08-22 | sarvamai/sarvam-authoring-ui | #1244
+- **Auto start client auth** | 2025-08-21 | sarvamai/sarvam-authoring-ui | #1241
+- **fix: media download issue** | 2025-08-21 | sarvamai/sarvam-authoring-ui | #1240
+- **Migrate more components to tatva** | 2025-08-20 | sarvamai/sarvam-authoring-ui | #1238
+- **fix: widgets image reference** | 2025-08-20 | sarvamai/sarvam-authoring-ui | #1237
+- **fix: remove model name dependency** | 2025-08-20 | sarvamai/sarvam-authoring-ui | #1236
+- **Idfc auth** | 2025-08-20 | sarvamai/client-auth | #22
+- **fix: docs link** | 2025-08-19 | sarvamai/sarvam-authoring-ui | #1234
+- **Fix UI issues & Improve AI fonts** | 2025-08-19 | sarvamai/sarvam-authoring-ui | #1231
+- **Remove extra media files** | 2025-08-19 | sarvamai/sarvam-authoring-ui | #1230
+- **fix: generic table sorting** | 2025-08-14 | sarvamai/sarvam-authoring-ui | #1226
+- **Save improve ai changes in local form** | 2025-08-14 | sarvamai/sarvam-authoring-ui | #1223
+- **fix: update ts** | 2025-08-13 | sarvamai/sarvam-authoring-ui | #1220
+- **Rename bot and interruption show** | 2025-08-13 | sarvamai/sarvam-authoring-ui | #1218
+- **Proactive suggestions ** | 2025-08-13 | sarvamai/sarvam-authoring-ui | #1217
+- **Speaker Pace Limits** | 2025-08-12 | sarvamai/sarvam-authoring-ui | #1213
+- **feat: show pitch and volume for sarvam voices** | 2025-08-07 | sarvamai/sarvam-authoring-ui | #1198
+- **fix: remove logs and errors** | 2025-08-07 | sarvamai/sarvam-authoring-ui | #1197
+- **feat: polling & minor changes fix ** | 2025-08-07 | sarvamai/sarvam-authoring-ui | #1196
+- **feat: improve with ai improvements** | 2025-08-06 | sarvamai/sarvam-authoring-ui | #1185
+- **hotfix: remove validation api call** | 2025-08-05 | sarvamai/sarvam-authoring-ui | #1182
+- **fix: styling of accept button** | 2025-08-05 | sarvamai/sarvam-authoring-ui | #1179
+- **feat: azure creds for prod** | 2025-08-05 | sarvamai/apps-apis-gitops | #1563
+- **Improve ai changes** | 2025-08-05 | sarvamai/sarvam-authoring-ui | #1178
+- **fix: events data and apply logic** | 2025-08-05 | sarvamai/sarvam-authoring-ui | #1174
+- **Fix authoring service import** | 2025-08-05 | sarvamai/sarvam-app-authoring-service | #405
+- **feat: update package** | 2025-08-04 | sarvamai/sarvam-authoring-ui | #1171
+- **Widget Changes** | 2025-08-01 | sarvamai/sarvam-authoring-ui | #1159
+- **Monitor Changes** | 2025-08-01 | sarvamai/sarvam-authoring-ui | #1154
+- **feat: update comment** | 2025-08-01 | sarvamai/sarvam-authoring-ui | #1153
+- **Widget flag** | 2025-07-31 | sarvamai/sarvam-authoring-ui | #1147
+- **feat: msft login creds** | 2025-07-29 | sarvamai/apps-apis-gitops | #1543
+- **Improve with ai** | 2025-07-28 | sarvamai/sarvam-authoring-ui | #1136
+- **fix: update authoring ts** | 2025-07-28 | sarvamai/sarvam-authoring-ui | #1135
+- **feat: qa alters in env** | 2025-07-28 | sarvamai/client-auth | #19
+- **feat: change model descriptions and hide interruptions** | 2025-07-25 | sarvamai/sarvam-authoring-ui | #1128
+- **Tata tele as provider in deployments** | 2025-07-25 | sarvamai/sarvam-authoring-ui | #1127
+- **feat: legacy peer deps on isntall** | 2025-07-25 | sarvamai/sarvam-authoring-ui | #1121
+- **feat: exclude health endpoint from auth** | 2025-07-24 | sarvamai/sarvam-authoring-ui | #1118
+- **feat: limit methods** | 2025-07-24 | sarvamai/client-auth | #18
+- **feat: limit methods access** | 2025-07-24 | sarvamai/sarvam-authoring-ui | #1116
+- **feat: upgrade next to 15** | 2025-07-24 | sarvamai/client-auth | #17
+- **feat: integrate sarvam-tatva** | 2025-07-23 | sarvamai/sarvam-authoring-ui | #1113
+- **Upgrade to Next 15** | 2025-07-22 | sarvamai/sarvam-authoring-ui | #1110
+- **fix: meta phone number id issue** | 2025-07-21 | sarvamai/sarvam-authoring-ui | #1106
+- **feat: meta creds** | 2025-07-19 | sarvamai/apps-apis-gitops | #1521
+- **feat: meta embedded signup flow** | 2025-07-19 | sarvamai/sarvam-authoring-ui | #1103
+- **Embedded signup** | 2025-07-19 | sarvamai/sarvam-authoring-ui | #1101
+- **Fix embed** | 2025-07-17 | sarvamai/sarvam-authoring-ui | #1098
+- **Audio download route** | 2025-07-16 | sarvamai/sarvam-authoring-ui | #1097
+- **fix: script params** | 2025-07-16 | sarvamai/sarvam-authoring-ui | #1096
+- **Ram/refactor** | 2025-07-16 | ram-sarvam/AgentWidget | #3
+- **Ram/refactor** | 2025-07-16 | om-sarvam/AgentWidget | #4
+- **feat: implement SimpleVoiceWidget for mobile variant and remove Mobil…** | 2025-07-16 | ram-sarvam/AgentWidget | #2
+- **Fix version refetch** | 2025-07-15 | sarvamai/sarvam-authoring-ui | #1091
+- **tailwind removed & mobile variant** | 2025-07-15 | ram-sarvam/AgentWidget | #1
+- **fix: state reference logic** | 2025-07-12 | sarvamai/sarvam-authoring-ui | #1085
+- **feat: focus chat input on restart convo** | 2025-07-11 | sarvamai/sarvam-authoring-ui | #1082
+- **Revert "Audio download route"** | 2025-07-11 | sarvamai/sarvam-authoring-ui | #1080
+- **Audio download route** | 2025-07-11 | sarvamai/sarvam-authoring-ui | #1079
+- **feat: allow agent widget for cors** | 2025-07-11 | sarvamai/apps-apis-gitops | #1506
+- **feat: meta phone numbers dropdown** | 2025-07-10 | sarvamai/sarvam-authoring-ui | #1074
+- **fix: single prompt tool issues** | 2025-07-10 | sarvamai/sarvam-authoring-ui | #1073
+- **Single Prompt changes** | 2025-07-09 | sarvamai/sarvam-authoring-ui | #1070
+- **[AP-1799] Smart scheduler new UI** | 2025-07-09 | sarvamai/sarvam-authoring-ui | #1069
+- **feat: tool verify and qa id changes** | 2025-07-09 | sarvamai/sarvam-authoring-ui | #1068
+- **Qa replica** | 2025-07-09 | sarvamai/sarvam-authoring-ui | #1066
+- **feat: display schema changes** | 2025-07-08 | sarvamai/sarvam-authoring-ui | #1053
+- **Revert "fix: comment waba id changes"** | 2025-07-08 | sarvamai/sarvam-authoring-ui | #1048
+- **feat: break down my-agents** | 2025-07-08 | sarvamai/sarvam-authoring-ui | #1047
+- **fix: ui spacing and opacity issues** | 2025-07-08 | sarvamai/sarvam-authoring-ui | #1046
+- **feat: varad suggested changes for smart scheduler** | 2025-07-07 | sarvamai/sarvam-authoring-ui | #1042
+- **fix: comment waba id changes** | 2025-07-07 | sarvamai/sarvam-authoring-ui | #1041
+- **fix: model name in whatsapp** | 2025-07-07 | sarvamai/sarvam-authoring-ui | #1039
+- **feat: hide variable mapping if already record present** | 2025-07-07 | sarvamai/sarvam-authoring-ui | #1038
+- **fix: analytics tabs access issue** | 2025-07-07 | sarvamai/sarvam-authoring-ui | #1037
+- **feat: analytics tabs reorder and download naming fix** | 2025-07-04 | sarvamai/sarvam-authoring-ui | #1032
+- **feat: add waba id field in meta connections** | 2025-07-04 | sarvamai/sarvam-authoring-ui | #1030
+- **fix: all permission edge case** | 2025-07-04 | sarvamai/sarvam-authoring-ui | #1027
+- **fix: single state save issues** | 2025-07-03 | sarvamai/sarvam-authoring-ui | #1026
+- **feat: limit delay in nudge to 300** | 2025-07-02 | sarvamai/sarvam-authoring-ui | #1024
+- **feat: smart scheduler changes** | 2025-07-02 | sarvamai/sarvam-authoring-ui | #1021
+- **fix: single state issues** | 2025-07-02 | sarvamai/sarvam-authoring-ui | #1020
+- **feat: paginated phone numbers** | 2025-07-01 | sarvamai/sarvam-authoring-ui | #1018
+- **fix: route redirecting logic** | 2025-07-01 | sarvamai/sarvam-authoring-ui | #1015
+- **Cleanup qa** | 2025-06-30 | sarvamai/sarvam-authoring-ui | #1011
+- **fix: revert multi select changes** | 2025-06-28 | sarvamai/sarvam-authoring-ui | #1007
+- **fix: remove default permission overwrite** | 2025-06-27 | sarvamai/sarvam-authoring-ui | #1005
+- **fix: permission override issue** | 2025-06-27 | sarvamai/sarvam-authoring-ui | #1003
+- **Qa sync stage** | 2025-06-27 | sarvamai/sarvam-authoring-ui | #1001
+- **Fix icon display for WhatsApp agents** | 2025-06-26 | sarvamai/sarvam-authoring-ui | #995
+- **[AP-1771] Deploy Revamp** | 2025-06-26 | sarvamai/sarvam-authoring-ui | #994
+- **Left align agents type** | 2025-06-26 | sarvamai/sarvam-authoring-ui | #993
+- **feat: allow to download route permissions** | 2025-06-25 | sarvamai/sarvam-authoring-ui | #989
+- **Nudge and call timeout** | 2025-06-25 | sarvamai/sarvam-authoring-ui | #988
+- **feat: multi-select overflow and permission delete** | 2025-06-25 | sarvamai/sarvam-authoring-ui | #986
+- **Sync qa** | 2025-06-20 | sarvamai/sarvam-authoring-ui | #974
+- **feat: Deploy revamp** | 2025-06-20 | sarvamai/sarvam-authoring-ui | #973
+- **Sync staging** | 2025-06-19 | sarvamai/sarvam-authoring-ui | #972
+- **feat: update readme** | 2025-06-19 | sarvamai/sarvam-authoring-ui | #969
+- **feat: use API for permissions** | 2025-06-19 | sarvamai/sarvam-authoring-ui | #968
+- **feat: firebase admin creds in env** | 2025-06-18 | sarvamai/apps-apis-gitops | #1427
+- **feat: admin panel fixes** | 2025-06-18 | sarvamai/sarvam-authoring-ui | #966
+- **fix: min delay as 3 in nudge** | 2025-06-18 | sarvamai/sarvam-authoring-ui | #965
+- **feat: copilot mode** | 2025-06-18 | ram-sarvam/slides-ai | #2
+- **feat: allow to change images** | 2025-06-17 | ram-sarvam/slides-ai | #1
+- **fix: remove initial message limit from FE** | 2025-06-17 | sarvamai/sarvam-authoring-ui | #963
+- **feat: yesterday preset in date input** | 2025-06-16 | sarvamai/sarvam-authoring-ui | #961
+- **feat: in-app experience POC** | 2025-06-15 | sarvamai/sarvam-authoring-ui | #959
+- **Revert "feat: max call durations setting"** | 2025-06-13 | sarvamai/sarvam-authoring-ui | #957
+- **feat: nudge message fields on frontend** | 2025-06-13 | sarvamai/sarvam-authoring-ui | #956
+- **fix: date selector ui fixes** | 2025-06-13 | sarvamai/sarvam-authoring-ui | #954
+- **feat: max call durations setting** | 2025-06-13 | sarvamai/sarvam-authoring-ui | #948
+- **feat: admin panel updates** | 2025-06-12 | sarvamai/sarvam-authoring-ui | #947
+- **fix: remove prompt copy/paste cleaning** | 2025-06-10 | sarvamai/sarvam-authoring-ui | #944
+- **[AP-1765] fix: preserve mentions when copy/paste prompts** | 2025-06-10 | sarvamai/sarvam-authoring-ui | #943
+- **UIDAI Logging** | 2025-06-10 | sarvamai/client-auth | #16
+- **[AP-1763] feat: single prompt agent** | 2025-06-10 | sarvamai/sarvam-authoring-ui | #938
+- **feat: new date picker ui** | 2025-06-06 | sarvamai/sarvam-authoring-ui | #933
+- **fix: user apis integration** | 2025-06-06 | sarvamai/sarvam-authoring-ui | #930
+- **fix: exclude transcript editor from default overwrite** | 2025-06-05 | sarvamai/sarvam-authoring-ui | #924
+- **feat: Admin panel fixes** | 2025-06-05 | sarvamai/sarvam-authoring-ui | #923
+- **feat: remove zipy from api-store** | 2025-06-05 | sarvamai/sarvam-api-store | #56
+- **feat: add 3 people for access and fix apis** | 2025-06-03 | sarvamai/sarvam-authoring-ui | #916
+- **Sync staging** | 2025-06-02 | sarvamai/sarvam-authoring-ui | #915
+- **feat: show tooltip on hover dropdown** | 2025-05-30 | sarvamai/sarvam-authoring-ui | #910
+- **[AP-1755] field validation & paginated cohorts in campaign flow** | 2025-05-30 | sarvamai/sarvam-authoring-ui | #909
+- **[AP-1754] feat: searchable cohort dropdown** | 2025-05-30 | sarvamai/sarvam-authoring-ui | #908
+- **hotfix: create campaign button** | 2025-05-30 | sarvamai/sarvam-authoring-ui | #905
+- **fix: review errors style in side sheet** | 2025-05-29 | sarvamai/sarvam-authoring-ui | #903
+- **fix: ui issues** | 2025-05-29 | sarvamai/sarvam-authoring-ui | #902
+- **fix: add plus svg** | 2025-05-29 | sarvamai/sarvam-authoring-ui | #901
+- **feat: few changes and remove events** | 2025-05-29 | sarvamai/sarvam-authoring-ui | #899
+- **feat: download invoice** | 2025-05-29 | sarvamai/sarvam-api-store | #54
+- **Pr review fixes** | 2025-05-29 | sarvamai/sarvam-authoring-ui | #898
+- **feat: auth service for creators** | 2025-05-28 | sarvamai/sarvam-authoring-ui | #895
+- **feat: show endpoints for meta and haptik** | 2025-05-28 | sarvamai/sarvam-authoring-ui | #894
+- **feat: some more features/fixes ** | 2025-05-27 | sarvamai/sarvam-authoring-ui | #893
+- **feat: new empty screens design** | 2025-05-27 | sarvamai/sarvam-authoring-ui | #891
+- **feat: empty states** | 2025-05-27 | sarvamai/sarvam-authoring-ui | #890
+- **[AP-1748] New Create Agent Flow** | 2025-05-26 | sarvamai/sarvam-authoring-ui | #889
+- **feat: my-agents pagination & live app fix** | 2025-05-23 | sarvamai/sarvam-authoring-ui | #881
+- **feat: new tags design** | 2025-05-22 | sarvamai/sarvam-authoring-ui | #873
+- **hotfix: variables click issue** | 2025-05-22 | sarvamai/sarvam-authoring-ui | #872
+- **feat: sanitize before validate and update** | 2025-05-21 | sarvamai/sarvam-authoring-ui | #868
+- **feat: remove instruction validation** | 2025-05-21 | sarvamai/sarvam-authoring-ui | #867
+- **New Node UI Improvements** | 2025-05-20 | sarvamai/sarvam-authoring-ui | #862
+- **Staging fixes** | 2025-05-20 | sarvamai/sarvam-authoring-ui | #861
+- **feat: prod changes** | 2025-05-19 | sarvamai/sarvam-authoring-ui | #855
+- **feat: new design for nodes** | 2025-05-19 | sarvamai/sarvam-authoring-ui | #854
+- **feat: hide ai suggestions** | 2025-05-19 | sarvamai/sarvam-authoring-ui | #853
+- **feat: cherry pick other features** | 2025-05-19 | sarvamai/sarvam-authoring-ui | #852
+- **feat: improve inline variable/state creation** | 2025-05-16 | sarvamai/sarvam-authoring-ui | #849
+- **feat: add state by dragging** | 2025-05-16 | sarvamai/sarvam-authoring-ui | #845
+- **fix: initial state logic** | 2025-05-16 | sarvamai/sarvam-authoring-ui | #844
+- **feat: blog component** | 2025-05-16 | sarvamai/sarvam-external-playground-ui | #9
+- **Prod Release** | 2025-05-15 | sarvamai/sarvam-authoring-ui | #838
+- **feat: call logs pagination** | 2025-05-15 | sarvamai/sarvam-authoring-ui | #836
+- **fix: agents sync issue** | 2025-05-15 | sarvamai/sarvam-authoring-ui | #835
+- **Staging conflict resolve** | 2025-05-14 | sarvamai/sarvam-authoring-ui | #834
+- **feat: new date picker component** | 2025-05-14 | sarvamai/sarvam-authoring-ui | #833
+- **feat: analytics changes** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #831
+- **feat: improve variable check logic, and fix update agent overflow** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #827
+- **Interaction powered Overview tab for wa and v2v** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #824
+- **feat: round off speaker pace** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #823
+- **Overview tab wa and v2v** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #822
+- **Overview Tab and Analytics Changes** | 2025-05-13 | sarvamai/sarvam-authoring-ui | #821
+- **feat: analytics changes** | 2025-05-12 | sarvamai/sarvam-authoring-ui | #817
+- **feat: new auth design** | 2025-05-10 | sarvamai/client-auth | #14
+- **feat: autoset variables if null** | 2025-05-09 | sarvamai/sarvam-authoring-ui | #814
+- **fix: test cases and pagination bugs** | 2025-05-09 | sarvamai/sarvam-authoring-ui | #813
+- **feat: Improve variable selection logic** | 2025-05-09 | sarvamai/sarvam-authoring-ui | #811
+- **feat: call logs pagination** | 2025-05-08 | sarvamai/sarvam-authoring-ui | #808
+- **feat: allow cloning old version while committing** | 2025-05-08 | sarvamai/sarvam-app-authoring-service | #248
+- **feat: enfore used variables selection** | 2025-05-07 | sarvamai/sarvam-authoring-ui | #803
+- **feat: variables sheet to modal** | 2025-05-07 | sarvamai/sarvam-authoring-ui | #802
+- **feat: design suggested improvements** | 2025-05-06 | sarvamai/sarvam-authoring-ui | #793
+- **feat: centralize API calls** | 2025-05-05 | sarvamai/sarvam-authoring-ui | #789
+- **[AP-1695] Some UI Fixes and Improvements** | 2025-05-05 | sarvamai/sarvam-authoring-ui | #788
+- **feat: change authoring-ui probe url** | 2025-05-02 | sarvamai/apps-apis-gitops | #1204
+- **[AP-1685] Cohort Modal and Drag Drop fix** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #783
+- **[AP-1694] feat: query pagination** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #782
+- **feat: new agent card** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #781
+- **[AP-1693] UI fixes & Performance Improvements** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #780
+- **[AP-1691] fix: refetch issue on campaigns** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #779
+- **[AP-1692] feat: add caching in tables** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #778
+- **feat: remove extra files** | 2025-05-02 | sarvamai/sarvam-authoring-ui | #777
+- **fix: search cursor going to end** | 2025-04-30 | sarvamai/sarvam-authoring-ui | #773
+- **don't throw 404 if no connections** | 2025-04-30 | sarvamai/sarvam-app-authoring-service | #240
+- **[AP-1619] fix: state exists issue** | 2025-04-30 | sarvamai/sarvam-authoring-ui | #767
+- **fix: schedules download** | 2025-04-30 | sarvamai/sarvam-authoring-ui | #763
+- **feat: added stringify on objects** | 2025-04-30 | sarvamai/sarvam-authoring-ui | #762
+- **fix: refactor schedules download logic** | 2025-04-30 | sarvamai/sarvam-authoring-ui | #759
+- **fix: export and version commit issue** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #757
+- **[AP-1681] fix version commit issue** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #755
+- **feat: handle file name, and percentage issue** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #754
+- **fix: phone number connection issue** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #753
+- **feat: add campaign id on schedules page** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #751
+- **hotfix: speech issue** | 2025-04-29 | sarvamai/sarvam-authoring-ui | #750
+- **Hotfix/analytics overflow** | 2025-04-28 | sarvamai/sarvam-authoring-ui | #748
+- **[AP-1646] dropdown hover tooltip** | 2025-04-28 | sarvamai/sarvam-authoring-ui | #743
+- **feat: analytics download progress** | 2025-04-28 | sarvamai/sarvam-authoring-ui | #742
+- **show `failure_reason` for whatsapp also, fix JSON in chat messages** | 2025-04-27 | sarvamai/sarvam-authoring-ui | #740
+- **feat: add new data in analytics** | 2025-04-27 | sarvamai/sarvam-authoring-ui | #739
+- **[AP-1604] Call Logs Pagination** | 2025-04-24 | sarvamai/sarvam-app-scheduling-service | #62
+- **[AP-1639] Return summary with outbounds** | 2025-04-24 | sarvamai/sarvam-app-scheduling-service | #61
+- **Fast navigation of update-agent** | 2025-04-24 | sarvamai/sarvam-authoring-ui | #727
+- **[AP-1592] Faster Update Agent Navigation** | 2025-04-24 | sarvamai/sarvam-authoring-ui | #726
+- **[AP-1451] feat: error popup on chat fail** | 2025-04-24 | sarvamai/sarvam-authoring-ui | #725
+- **[AP-1625] fix speakers dropdown issue** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #719
+- **[AP-1592] feat: optimize update-agent navigation** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #718
+- **[AP-1592] feat: optimize update-agent navigation** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #717
+- **[AP-1603] feat: my-agents pagination** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #714
+- **[AP-1595] fix: remove console err from sarvam-service** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #713
+- **[AP-1433] Fix Log Analyser URL identifier issue** | 2025-04-23 | sarvamai/sarvam-authoring-ui | #712
+- **[AP-1409] feat: don't throw 404 if no connections** | 2025-04-22 | sarvamai/sarvam-app-authoring-service | #227
+- **[AP-1615] fix: default avatar issue zipy** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #708
+- **[AP-1608] fix: form submit on copy KB id issue** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #707
+- **[AP-1612] fix: app_version issue on schedules** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #705
+- **Revert "[AP-1612] fix: app_version issue on schedules"** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #704
+- **[AP-1612] fix: app_version issue on schedules** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #703
+- **[AP-1609] fix: clone app live tag issue** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #702
+- **[AP-1605] feat: dropdown scroll pagination** | 2025-04-22 | sarvamai/sarvam-authoring-ui | #701
+- **hotfix: download schedule behind feature flag** | 2025-04-21 | sarvamai/sarvam-authoring-ui | #697
+- **[AP-1601] feat: centralized logging util** | 2025-04-21 | sarvamai/sarvam-authoring-ui | #694
+- **[AP-1594] Fix irrelevant API calls** | 2025-04-21 | sarvamai/sarvam-authoring-ui | #692
+- **feat: some ui improvements and bug fixes** | 2025-04-19 | sarvamai/sarvam-authoring-ui | #687
+- **Staging Fixes** | 2025-04-19 | sarvamai/sarvam-authoring-ui | #686
+- **resolve staging conflict** | 2025-04-19 | sarvamai/sarvam-authoring-ui | #685
+- **fix: campaign default values** | 2025-04-18 | sarvamai/sarvam-authoring-ui | #683
+- **feat: ASR stream** | 2025-04-18 | sarvamai/experts | #283
+- **[AP-1449] whatsapp telemetry campaign changes** | 2025-04-18 | sarvamai/sarvam-authoring-ui | #679
+- **fix: tts issue** | 2025-04-17 | sarvamai/experts | #278
+- **[AP-1553] feat: simplify prompt editor instructions** | 2025-04-17 | sarvamai/sarvam-authoring-ui | #676
+- **feat: full message height** | 2025-04-16 | sarvamai/experts | #271
+- **[AP-1508] centralize API calls** | 2025-04-14 | sarvamai/sarvam-authoring-ui | #667
+- **[AP-1515] Disable Pause Campaign from UI** | 2025-04-14 | sarvamai/sarvam-authoring-ui | #665
+- **[AP-1509] feat: add react scan on localhost** | 2025-04-14 | sarvamai/sarvam-authoring-ui | #662
+- **feat: optimize images and campaign name limit** | 2025-04-11 | sarvamai/sarvam-authoring-ui | #655
+- **fix: dropdown issue and ui alignments** | 2025-04-11 | sarvamai/sarvam-authoring-ui | #653
+- **fix: dropdown border issue** | 2025-04-11 | sarvamai/sarvam-authoring-ui | #652
+- **feat: ui fixes/improvements** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #651
+- **[AP-1492] feat: use link instead of router push** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #650
+- **merge main to staging** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #648
+- **chore: merge qa into staging** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #646
+- **feat: feature flag for bg noise tts** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #645
+- **[AP-1490] feat: step wise campaign flow** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #644
+- **[AP-1480] New Campaign Flow** | 2025-04-10 | sarvamai/sarvam-authoring-ui | #642
+- **[AP-1449] feat: whatsapp campaign changes** | 2025-04-09 | sarvamai/sarvam-authoring-ui | #636
+- **fix: speaker default value issue** | 2025-04-07 | sarvamai/sarvam-authoring-ui | #629
+- **[AP-1430] feat: skeleton loader** | 2025-04-07 | sarvamai/sarvam-authoring-ui | #621
+- **[AP-1335] feat: background noise for TTS** | 2025-04-07 | sarvamai/sarvam-authoring-ui | #620
+- **hotfix: wrap org in analytics provider** | 2025-04-05 | sarvamai/sarvam-authoring-ui | #613
+- **fix: next config issue** | 2025-04-04 | sarvamai/sarvam-authoring-ui | #611
+- **[AP-1429] fix: new state content issue** | 2025-04-04 | sarvamai/sarvam-authoring-ui | #604
+- **[AP-1408] cleanup: duplicate/unused folders** | 2025-04-04 | sarvamai/sarvam-authoring-ui | #601
+- **[AP-1427] feat: format code and sort imports** | 2025-04-04 | sarvamai/sarvam-authoring-ui | #598
+- **[AP-1420] feat: comment sentry code** | 2025-04-03 | sarvamai/sarvam-authoring-ui | #593
+- **[AP-1419] feat: move analytics provider to monitor** | 2025-04-03 | sarvamai/sarvam-authoring-ui | #590
+- **[AP-1388] fix: state delete issue** | 2025-04-02 | sarvamai/sarvam-authoring-ui | #580
+- **feat: remove default value in dropdown** | 2025-04-02 | sarvamai/sarvam-authoring-ui | #575
+- **feat: clear storage on logout** | 2025-04-02 | sarvamai/sarvam-authoring-ui | #572
+- **fix: speaker dropdown issue in settings** | 2025-04-01 | sarvamai/sarvam-authoring-ui | #567
+- **fix: agent redirect issue** | 2025-04-01 | sarvamai/sarvam-authoring-ui | #565
+- **fix: mention modal hiding on _** | 2025-04-01 | sarvamai/sarvam-authoring-ui | #564
+- **feat: text animation on agent build** | 2025-03-31 | sarvamai/sarvam-authoring-ui | #560
+- **feat: use zustand for isLive navigation** | 2025-03-30 | sarvamai/sarvam-authoring-ui | #558
+- **feat: disable tota v7 medium** | 2025-03-29 | sarvamai/sarvam-authoring-ui | #555
+- **hotfix: feedback category api and typo** | 2025-03-28 | sarvamai/sarvam-authoring-ui | #554
+- **Mention Icons, Live Tag, Campaign Data and UI Improvements** | 2025-03-26 | sarvamai/sarvam-authoring-ui | #546
+- **[AP-1050] feat: new icons design for mentions** | 2025-03-26 | sarvamai/sarvam-authoring-ui | #545
+- **[AP-1366] Fix Dialog Zippy Error** | 2025-03-26 | sarvamai/sarvam-authoring-ui | #544
+- **[AP-1366] Use Dialog Title inside Dialog** | 2025-03-25 | sarvamai/sarvam-authoring-ui | #540
+- **[AP-1319] More Campaign Details** | 2025-03-25 | sarvamai/sarvam-authoring-ui | #539
+- **[AP-1290] feat: error boundary component** | 2025-03-25 | sarvamai/sarvam-authoring-ui | #538
+- **[AP-1357] feat: show live tag and live filter for agents** | 2025-03-25 | sarvamai/sarvam-authoring-ui | #536
+- **fix: app not found** | 2025-03-21 | sarvamai/sarvam-authoring-ui | #525
+- **[AP-1327] feat: copy buttons for agent and KB id** | 2025-03-20 | sarvamai/sarvam-authoring-ui | #521
+- **feat: dropdown search and fix KB search** | 2025-03-20 | sarvamai/sarvam-authoring-ui | #515
+- **[AP-1273] fix: tabs sync issue on app change** | 2025-03-18 | sarvamai/sarvam-authoring-ui | #497
+- **[AP-1289] fix: app id blank issue** | 2025-03-18 | sarvamai/sarvam-authoring-ui | #496
+- **[AP-1302] feat: copy url of specific interaction** | 2025-03-18 | sarvamai/sarvam-authoring-ui | #495
+- **[AP-1302] feat: copy specific interaction URL** | 2025-03-18 | sarvamai/sarvam-authoring-ui | #494
+- **[AP-1289] fix: blank screen if no app id** | 2025-03-17 | sarvamai/sarvam-authoring-ui | #493
