@@ -182,7 +182,7 @@ function ThoughtsSection() {
                 <ul className="space-y-4 text-sm">
                     <li>
                         <a
-                            href="https://medium.com/@ram_41763/paginating-everything-tables-dropdowns-and-api-calls-f55c16215848?postPublishedType=initial"
+                            href="https://medium.com/p/781298957e8f?postPublishedType=initial"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="slide-underline text-neutral-900"
