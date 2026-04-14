@@ -1,3 +1,14 @@
+/* @sarvam/tatva setup */
+/* =============================================================================
+ * Sarvam UI (Tatva) Design System - Tailwind v3 Setup
+ * 
+ * This imports:
+ *   - styles.css: Design tokens, CSS variables, base styles
+ * 
+ * Note: Also configure tailwind.config.js with the preset (see docs)
+ * ============================================================================= */
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,6 +38,41 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+/* View Transitions - Page switch with blur */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root) {
+    animation: fade-out-blur 0.25s ease-out forwards;
+}
+
+::view-transition-new(root) {
+    animation: fade-in-blur 0.25s ease-out forwards;
+}
+
+@keyframes fade-out-blur {
+    from {
+        opacity: 1;
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        filter: blur(8px);
+    }
+}
+
+@keyframes fade-in-blur {
+    from {
+        opacity: 0;
+        filter: blur(8px);
+    }
+    to {
+        opacity: 1;
+        filter: blur(0);
+    }
 }
 
 /* Custom cursor - CSS only */
