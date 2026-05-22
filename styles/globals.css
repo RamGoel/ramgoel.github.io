@@ -40,39 +40,19 @@ html {
     text-rendering: optimizeLegibility;
 }
 
-/* View Transitions - Page switch with blur */
+/* View Transitions - Only content area animates, sidebar stays stable */
 @view-transition {
     navigation: auto;
 }
 
-::view-transition-old(root) {
-    animation: fade-out-blur 0.25s ease-out forwards;
-}
-
+::view-transition-old(root),
 ::view-transition-new(root) {
-    animation: fade-in-blur 0.25s ease-out forwards;
+    animation: none;
 }
 
-@keyframes fade-out-blur {
-    from {
-        opacity: 1;
-        filter: blur(0);
-    }
-    to {
-        opacity: 0;
-        filter: blur(8px);
-    }
-}
-
-@keyframes fade-in-blur {
-    from {
-        opacity: 0;
-        filter: blur(8px);
-    }
-    to {
-        opacity: 1;
-        filter: blur(0);
-    }
+::view-transition-old(nav),
+::view-transition-new(nav) {
+    animation: none;
 }
 
 /* Custom cursor - CSS only */
@@ -84,6 +64,7 @@ html {
     a, button {
         cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L18 9L9 11L7 18L1 1Z' fill='black' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, pointer;
     }
+
 }
 
 /* Sliding underline link */
