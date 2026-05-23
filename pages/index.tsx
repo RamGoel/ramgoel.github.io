@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { talks, projects, miniProjects } from '@/utils/data'
+import { talks, projects } from '@/utils/data'
 import { useState, useCallback, useEffect } from 'react'
 
 const staggerContainer = {
@@ -68,7 +68,7 @@ function AboutSection({ onViewWork, onPhotoClick }: { onViewWork: () => void; on
                     <button
                         key={src}
                         onClick={() => onPhotoClick(src)}
-                        className="group relative hover:z-10 transition-all duration-200 hover:scale-105"
+                        className={`group relative hover:z-10 transition-all duration-200 hover:scale-105 ${i === 2 ? 'hidden lg:block' : ''}`}
                         style={{
                             zIndex: photos.length - i,
                             transform: [
@@ -162,6 +162,45 @@ function WorkSection({ onBack }: { onBack: () => void }) {
                 Back
             </button>
 
+            {/* Side Projects */}
+            <div className="space-y-3">
+                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I&apos;ve Built</h3>
+                <ul className="space-y-4 text-sm">
+                    {projects.map((project) => {
+                        const projectUrl = Array.isArray(project.url) ? project.url[0] : (project.video || project.url)
+                        return (
+                            <li key={project.id + project.title}>
+                                <a href={projectUrl} target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    {project.title}
+                                </a>
+                                {project.content && <span className="text-neutral-500"> — {project.content}</span>}
+                            </li>
+                        )
+                    })}
+                </ul>
+            </div>
+
+            {/* Open Source */}
+            <div className="space-y-3">
+                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Open Source</h3>
+                <ul className="space-y-4 text-sm">
+                    <li>
+                        <a href="https://github.com/DiceDB/dice/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                            DiceDB
+                        </a>
+                        <span className="text-neutral-500"> — navbar styling and broken links fix</span>
+                    </li>
+                    <li>
+                        <a href="https://github.com/asyncapi/website/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                            AsyncAPI
+                        </a>
+                        <span className="text-neutral-500"> — UI fixes for logo sizing and responsive images</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div className="border-t border-neutral-100" />
+
             {/* Talks */}
             <div className="space-y-3">
                 <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Talks</h3>
@@ -202,61 +241,6 @@ function WorkSection({ onBack }: { onBack: () => void }) {
                 </ul>
             </div>
 
-            <div className="border-t border-neutral-100" />
-
-            {/* Side Projects */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Side Projects</h3>
-                <ul className="space-y-4 text-sm">
-                    {projects.map((project) => {
-                        const projectUrl = Array.isArray(project.url) ? project.url[0] : (project.video || project.url)
-                        return (
-                            <li key={project.id + project.title}>
-                                <a href={projectUrl} target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                                    {project.title}
-                                </a>
-                                {project.content && <span className="text-neutral-500"> — {project.content}</span>}
-                            </li>
-                        )
-                    })}
-                </ul>
-            </div>
-
-            {/* Open Source */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Open Source</h3>
-                <ul className="space-y-4 text-sm">
-                    <li>
-                        <a href="https://github.com/DiceDB/dice/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            DiceDB
-                        </a>
-                        <span className="text-neutral-500"> — navbar styling and broken links fix</span>
-                    </li>
-                    <li>
-                        <a href="https://github.com/asyncapi/website/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            AsyncAPI
-                        </a>
-                        <span className="text-neutral-500"> — UI fixes for logo sizing and responsive images</span>
-                    </li>
-                </ul>
-            </div>
-
-            {/* Mini Projects */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
-                    Mini Projects <span className="normal-case tracking-normal">— curiosity stuff</span>
-                </h3>
-                <ul className="space-y-4 text-sm">
-                    {miniProjects.map((project) => (
-                        <li key={project.id + project.title}>
-                            <a href={project.url} target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                                {project.title}
-                            </a>
-                            {project.content && <span className="text-neutral-500"> — {project.content}</span>}
-                        </li>
-                    ))}
-                </ul>
-            </div>
         </motion.div>
     )
 }
@@ -271,30 +255,29 @@ export default function Home() {
             <div className="h-screen overflow-hidden relative">
                 {/* About pane — centered, fixed in place */}
                 <div
-                    className="absolute inset-0 flex justify-center items-start pt-12 transition-all duration-500 ease-[cubic-bezier(0.25,0.4,0.25,1)] overflow-y-auto"
+                    className="absolute inset-0 flex justify-center items-start pt-6 lg:pt-12 transition-all duration-500 ease-[cubic-bezier(0.25,0.4,0.25,1)] overflow-y-auto"
                     style={{
                         opacity: showWork ? 0.3 : 1,
                         filter: showWork ? 'blur(3px)' : 'none',
-                        transform: showWork ? 'translateX(-400px) scale(0.97)' : 'translateX(0) scale(1)',
+                        transform: showWork ? (typeof window !== 'undefined' && window.innerWidth < 1024 ? 'translateX(-100%) scale(1)' : 'translateX(-400px) scale(0.97)') : 'translateX(0) scale(1)',
                         pointerEvents: showWork ? 'none' : 'auto',
                     }}
                 >
-                    <div className="w-full max-w-xl px-6 py-8 lg:py-16">
+                    <div className="w-full max-w-xl px-5 lg:px-6 py-6 lg:py-16">
                         <AboutSection onViewWork={() => setShowWork(true)} onPhotoClick={setLightboxSrc} />
                     </div>
                 </div>
 
                 {/* Work pane — slides in from right */}
                 <div
-                    className="absolute top-0 right-0 h-full overflow-y-auto flex justify-center transition-all duration-500 ease-[cubic-bezier(0.25,0.4,0.25,1)]"
+                    className="absolute top-0 right-0 h-full overflow-y-auto flex justify-center transition-all duration-500 ease-[cubic-bezier(0.25,0.4,0.25,1)] w-full lg:w-[60%]"
                     style={{
-                        width: '60%',
                         transform: showWork ? 'translateX(0)' : 'translateX(100%)',
                         opacity: showWork ? 1 : 0,
                         pointerEvents: showWork ? 'auto' : 'none',
                     }}
                 >
-                    <div className="w-full max-w-xl px-6 py-8 lg:py-16">
+                    <div className="w-full max-w-xl px-5 lg:px-6 py-6 lg:py-16">
                         {showWork && <WorkSection onBack={() => setShowWork(false)} />}
                         <div className="h-32" />
                     </div>
