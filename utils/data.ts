@@ -64,6 +64,13 @@ export const projects: Project[] = [
         users: 90,
         type: 'side',
     },
+    {
+        id: 4,
+        title: 'Design Vault',
+        content: 'Save design inspiration from the web into a moodboard',
+        url: 'https://github.com/RamGoel/design-saver',
+        type: 'side',
+    },
 ]
 
 export const miniProjects: Project[] = [
