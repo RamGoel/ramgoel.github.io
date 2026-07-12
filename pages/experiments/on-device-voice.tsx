@@ -446,8 +446,7 @@ export default function OnDeviceVoiceAgentPage() {
         phase === 'thinking'
 
     // System prompt can be edited/applied while listening — apply stops the mic first.
-    const systemPromptDisabled =
-        controlsDisabled || phase === 'thinking' || phase === 'downloading'
+    const systemPromptDisabled = controlsDisabled || phase === 'thinking'
 
     return (
         <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white text-neutral-900">
