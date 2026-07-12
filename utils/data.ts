@@ -12,6 +12,13 @@ type Project = {
 
 export const projects: Project[] = [
     {
+        id: 6,
+        title: 'On-Device Voice',
+        content: 'Offline-first voice agent (mic → model → speech)',
+        url: '/experiments/on-device-voice',
+        type: 'side',
+    },
+    {
         id: 5,
         title: 'On-Device Chat',
         content: 'Chat with Chrome’s on-device Prompt API',
@@ -56,13 +63,6 @@ export const projects: Project[] = [
         users: 90,
         type: 'side',
     },
-    {
-        id: 4,
-        title: 'Design Vault',
-        content: 'Save design inspiration from the web into a moodboard',
-        url: 'https://github.com/RamGoel/design-saver',
-        type: 'side',
-    },
 ]
 
 export const talks = [
@@ -83,9 +83,9 @@ export const talks = [
 export const blogs = [
     {
         id: 1,
-        title: 'Dump all your company PRs in one command',
+        title: 'Turn PRs into a work update',
         content: 'gh search → work update',
-        slug: 'dump-company-prs',
+        slug: 'turn-prs-into-work-update',
     },
     {
         id: 2,

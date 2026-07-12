@@ -187,46 +187,6 @@ function WorkSection({ onBack }: { onBack: () => void }) {
 
             <div className="border-t border-neutral-100" />
 
-            {/* Hire */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Hire</h3>
-                <ul className="space-y-4 text-sm">
-                    <li>
-                        <a href="/work" className="slide-underline text-neutral-900">
-                            Work with me
-                        </a>
-                        <span className="text-neutral-500"> — consulting & freelance</span>
-                    </li>
-                </ul>
-            </div>
-
-            {/* UI studies */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">UI studies</h3>
-                <ul className="space-y-4 text-sm">
-                    <li>
-                        <a href="/work/supermemory" className="slide-underline text-neutral-900">
-                            Supermemory
-                        </a>
-                        <span className="text-neutral-500"> — dark product marketing site</span>
-                    </li>
-                    <li>
-                        <a href="/work/whatsapp" className="slide-underline text-neutral-900">
-                            WhatsApp
-                        </a>
-                        <span className="text-neutral-500"> — web chat UI recreation</span>
-                    </li>
-                    <li>
-                        <a href="/work/growth-square" className="slide-underline text-neutral-900">
-                            Growth Square
-                        </a>
-                        <span className="text-neutral-500"> — agency-style landing page</span>
-                    </li>
-                </ul>
-            </div>
-
-            <div className="border-t border-neutral-100" />
-
             {/* Talks */}
             <div className="space-y-3">
                 <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Talks</h3>

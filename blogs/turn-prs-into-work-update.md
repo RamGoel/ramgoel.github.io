@@ -1,5 +1,5 @@
 ---
-title: Dump all your company PRs in one command
+title: Turn PRs into a work update
 date: 2026-07-12
 ---
 
