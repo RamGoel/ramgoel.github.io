@@ -1,185 +1,120 @@
 'use client'
-import CustomLink from '@/components/CustomLink'
 import { motion } from 'framer-motion'
-import { JetBrains_Mono } from 'next/font/google'
 import Link from 'next/link'
-import { HiArrowLeft } from 'react-icons/hi'
 
-const mono = JetBrains_Mono({
-    subsets: ['latin'],
-    weight: ['400'],
-})
-
-const textBase = 'text-xs'
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-        opacity: 1,
-        transition: { staggerChildren: 0.05, delayChildren: 0.1 },
-    },
+const staggerContainer = {
+    animate: {
+        transition: { staggerChildren: 0.05, delayChildren: 0.1 }
+    }
 }
 
-const itemVariants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
+const staggerItem = {
+    initial: { opacity: 0 },
+    animate: {
         opacity: 1,
-        y: 0,
-        transition: { duration: 0.4, ease: 'easeOut' },
+        transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }
     },
 }
 
 export default function WorkWithMe() {
     return (
-        <motion.div
-            className={`flex flex-col gap-6 w-full ${mono.className}`}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-        >
-            {/* Back */}
-            <motion.div variants={itemVariants}>
-                <Link
-                    href="/"
-                    className={`${textBase} text-zinc-500 hover:text-zinc-300 transition-colors inline-flex items-center gap-1`}
-                >
-                    <HiArrowLeft className="w-3 h-3" />
-                    back
-                </Link>
-            </motion.div>
-
-            {/* Header */}
-            <motion.div variants={itemVariants}>
-                <h1 className={`text-sm text-zinc-100 mb-2`}>Hire Me</h1>
-                <div className={`${textBase} inline-flex items-center gap-1.5`}>
-                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                    <span className="text-zinc-500">Booking for January</span>
-                </div>
-            </motion.div>
-
-            {/* Open For */}
+        <div className="min-h-screen flex justify-center">
+            <div className="w-full max-w-2xl px-5 lg:px-6 py-6 lg:py-16">
             <motion.div
-                className={`${textBase} text-zinc-400`}
-                variants={itemVariants}
+                variants={staggerContainer}
+                initial="initial"
+                animate="animate"
+                className="space-y-10"
             >
-                <p
-                    className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-2`}
-                >
-                    Open for
-                </p>
-                <div className="flex gap-2">
-                    <span className="px-2 py-1 bg-zinc-800 text-zinc-300 rounded">
-                        Consulting
-                    </span>
-                    <span className="px-2 py-1 bg-zinc-800 text-zinc-300 rounded">
-                        Freelance (one-off projects)
-                    </span>
-                </div>
-            </motion.div>
-
-            {/* I can help if... */}
-            <motion.div
-                className={`${textBase} text-zinc-400`}
-                variants={itemVariants}
-            >
-                <p
-                    className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-3`}
-                >
-                    I can help if
-                </p>
-                <ul className="space-y-3">
-                    <li>
-                        <span className="text-zinc-300">App is slow</span>
-                        <span className="text-zinc-600"> — </span>
-                        <span>I&apos;ll find why and help your team fix it.</span>
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">
-                            Feature idea, no roadmap
-                        </span>
-                        <span className="text-zinc-600"> — </span>
-                        <span>
-                            I&apos;ll help you plan and help your team ship it.
-                        </span>
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">
-                            Non-tech founder, need guidance
-                        </span>
-                        <span className="text-zinc-600"> — </span>
-                        <span>I&apos;ll be your technical sounding board.</span>
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">
-                            Want to use AI but unsure how
-                        </span>
-                        <span className="text-zinc-600"> — </span>
-                        <span>
-                            I&apos;ll show you what actually works for your use case.
-                        </span>
-                    </li>
-                    <li>
-                        <span className="text-zinc-300">
-                            Manual work eating your time
-                        </span>
-                        <span className="text-zinc-600"> — </span>
-                        <span>
-                            I&apos;ll help your team automate the boring stuff.
-                        </span>
-                    </li>
-                </ul>
-            </motion.div>
-
-            {/* Background */}
-            <motion.div
-                className={`${textBase} text-zinc-400`}
-                variants={itemVariants}
-            >
-                <p
-                    className={`text-zinc-500 ${textBase} uppercase tracking-wider mb-3`}
-                >
-                    Background
-                </p>
-                <ul className="space-y-3">
-                    <li>
-                        Frontend Engineer at{' '}
-                        <CustomLink href="https://sarvam.ai">
-                            SarvamAI
-                        </CustomLink>
-                    </li>
-                    <li>
-                        Previously full-stack at{' '}
-                        <CustomLink href="https://getconch.ai/">
-                            Conch AI
-                        </CustomLink>{' '}
-                        (acquired)
-                    </li>
-                    <li>5+ years shipping React/Next.js</li>
-                </ul>
-            </motion.div>
-
-            {/* CTA */}
-            <motion.div variants={itemVariants} className="space-y-3">
-                <div className="flex gap-3">
-                    <a
-                        href="mailto:rgoel766@gmail.com?subject=Let's%20Talk"
-                        className={`${textBase} px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-100 rounded transition-colors`}
+                <motion.div variants={staggerItem}>
+                    <Link
+                        href="/"
+                        className="group flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
                     >
-                        Email me
-                    </a>
-                    <a
-                        href="https://cal.com/ramgoel"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`${textBase} px-4 py-2 border border-zinc-700 hover:border-zinc-600 text-zinc-300 rounded transition-colors`}
-                    >
-                        Book a call
-                    </a>
-                </div>
-                <p className={`${textBase} text-zinc-600`}>
-                    Email first for context. I reply within 12h.
-                </p>
+                        <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                        Back
+                    </Link>
+                </motion.div>
+
+                <motion.div variants={staggerItem} className="space-y-3">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Open for</h3>
+                    <p className="text-sm text-neutral-600">
+                        Consulting · Freelance (one-off projects)
+                    </p>
+                </motion.div>
+
+                <motion.div variants={staggerItem} className="space-y-3">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">I can help if</h3>
+                    <ul className="space-y-4 text-sm">
+                        <li>
+                            <span className="text-neutral-900">App is slow</span>
+                            <span className="text-neutral-500"> — I&apos;ll find why and help fix it.</span>
+                        </li>
+                        <li>
+                            <span className="text-neutral-900">Feature idea, no roadmap</span>
+                            <span className="text-neutral-500"> — I&apos;ll help you plan and help ship it.</span>
+                        </li>
+                        <li>
+                            <span className="text-neutral-900">Non-tech founder, need guidance</span>
+                            <span className="text-neutral-500"> — I&apos;ll be your technical sounding board.</span>
+                        </li>
+                        <li>
+                            <span className="text-neutral-900">Want to use AI but unsure how</span>
+                            <span className="text-neutral-500"> — I&apos;ll show you what actually works for your use case.</span>
+                        </li>
+                        <li>
+                            <span className="text-neutral-900">Manual work eating your time</span>
+                            <span className="text-neutral-500"> — I&apos;ll help you automate the boring stuff.</span>
+                        </li>
+                    </ul>
+                </motion.div>
+
+                <div className="border-t border-neutral-100" />
+
+                <motion.div variants={staggerItem} className="space-y-3">
+                    <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Background</h3>
+                    <ul className="space-y-4 text-sm">
+                        <li>
+                            Frontend Engineer at{' '}
+                            <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                Sarvam AI
+                            </a>
+                        </li>
+                        <li>
+                            Previously full-stack at{' '}
+                            <a href="https://getconch.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                Conch AI
+                            </a>
+                            <span className="text-neutral-500"> — acquired</span>
+                        </li>
+                        <li className="text-neutral-600">5+ years shipping React/Next.js</li>
+                    </ul>
+                </motion.div>
+
+                <motion.div variants={staggerItem} className="space-y-3">
+                    <div className="flex items-center gap-3">
+                        <a
+                            href="mailto:rgoel766@gmail.com?subject=Let's%20Talk"
+                            className="group flex items-center gap-1.5 text-xs bg-neutral-900 text-white px-3 py-2 rounded-lg hover:bg-neutral-800 transition-colors duration-200"
+                        >
+                            Send me an emal
+                            <svg className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                        </a>
+                        <a
+                            href="https://cal.com/ramgoel"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-neutral-500 hover:text-neutral-900 transition-colors duration-200 px-3 py-2"
+                        >
+                            Book a call
+                        </a>
+                    </div>
+                    <p className="text-sm text-neutral-500">
+                        Email first for context. I reply within 12h.
+                    </p>
+                </motion.div>
             </motion.div>
-        </motion.div>
+            </div>
+        </div>
     )
 }

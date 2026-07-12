@@ -27,6 +27,13 @@ type Project = {
 }
 export const projects: Project[] = [
     {
+        id: 5,
+        title: 'On-Device Chat',
+        content: 'Chat with Chrome’s on-device Prompt API',
+        url: '/experiments/on-device-models',
+        type: 'side',
+    },
+    {
         id: 3,
         title: 'Devro',
         in_progress: true,
@@ -155,6 +162,27 @@ export const talks = [
         title: 'Best Practices in Frontend Dev',
         content: 'at Razorpay office',
         url: 'https://x.com/ReactPlayIO/status/1969429955756114001',
+    },
+]
+
+export const blogs = [
+    {
+        id: 1,
+        title: 'The Journey of Building Noterr',
+        content: 'lessons from shipping a bookmarking app',
+        slug: 'journey-of-noterr',
+    },
+    {
+        id: 2,
+        title: 'Light and Dark Mode in React Native',
+        content: 'theme setup with Zustand',
+        slug: 'react-native-theme',
+    },
+    {
+        id: 3,
+        title: 'Script to accept all invites on Linkedin',
+        content: 'a quick browser console trick',
+        slug: 'automate-linkedin',
     },
 ]
 

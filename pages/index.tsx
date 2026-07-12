@@ -1,7 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import { talks, projects } from '@/utils/data'
+import { talks, projects, blogs } from '@/utils/data'
 import { useState, useCallback, useEffect } from 'react'
 
 const staggerContainer = {
@@ -95,7 +95,7 @@ function AboutSection({ onViewWork, onPhotoClick }: { onViewWork: () => void; on
                         <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
                             Sarvam AI
                         </a>
-                        , where I work on frontend platform engineering and the voice agents product — design system, SDKs, and real-time voice interfaces with streaming, multimodality, & complexity.
+                        , where I work on frontend platform engineering and the voice agents product — design system, SDKs, and real-time voice interfaces that actually get things done.
                     </p>
                     <p className="text-neutral-600 leading-loose">
                         Before Sarvam, I was the sole engineer at{' '}
@@ -109,7 +109,7 @@ function AboutSection({ onViewWork, onPhotoClick }: { onViewWork: () => void; on
                         {' '}for 100K+ daily users.
                     </p>
                     <p className="text-neutral-600 leading-loose">
-                        I enjoy the details — animations that feel right, components that are nice to use, interfaces that don&apos;t get in the way. Outside work, I speak at conferences, travel when I can, and build random stuff on weekends. Been writing code since 2019.
+                        I enjoy talking about frontend, ai x design, on-device models & dev workflows. Outside work, I speak at conferences, travel when I can, and build random stuff on weekends. Been writing code since 2019.
                     </p>
                     <p className="text-neutral-600 leading-loose">
                         <a href="https://github.com/RamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
@@ -168,34 +168,20 @@ function WorkSection({ onBack }: { onBack: () => void }) {
                 <ul className="space-y-4 text-sm">
                     {projects.map((project) => {
                         const projectUrl = Array.isArray(project.url) ? project.url[0] : (project.video || project.url)
+                        const isExternal = projectUrl.startsWith('http')
                         return (
                             <li key={project.id + project.title}>
-                                <a href={projectUrl} target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                <a
+                                    href={projectUrl}
+                                    {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                                    className="slide-underline text-neutral-900"
+                                >
                                     {project.title}
                                 </a>
                                 {project.content && <span className="text-neutral-500"> — {project.content}</span>}
                             </li>
                         )
                     })}
-                </ul>
-            </div>
-
-            {/* Open Source */}
-            <div className="space-y-3">
-                <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Open Source</h3>
-                <ul className="space-y-4 text-sm">
-                    <li>
-                        <a href="https://github.com/DiceDB/dice/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            DiceDB
-                        </a>
-                        <span className="text-neutral-500"> — navbar styling and broken links fix</span>
-                    </li>
-                    <li>
-                        <a href="https://github.com/asyncapi/website/pulls?q=author%3ARamGoel+is%3Amerged+" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            AsyncAPI
-                        </a>
-                        <span className="text-neutral-500"> — UI fixes for logo sizing and responsive images</span>
-                    </li>
                 </ul>
             </div>
 
@@ -220,25 +206,18 @@ function WorkSection({ onBack }: { onBack: () => void }) {
             <div className="space-y-3">
                 <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Blogs</h3>
                 <ul className="space-y-4 text-sm">
-                    <li>
-                        <a href="https://medium.com/p/781298957e8f?postPublishedType=initial" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            The Pagination Architecture
-                        </a>
-                        <span className="text-neutral-500"> — that works at scale</span>
-                    </li>
-                    <li>
-                        <a href="https://dev.to/ramgoel/multiple-environments-in-frontend-applications-2k07" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            Multiple Environments in Frontend Applications
-                        </a>
-                        <span className="text-neutral-500"> — using env-cmd</span>
-                    </li>
-                    <li>
-                        <a href="https://medium.com/@rgoel766/importance-of-og-title-and-twitter-title-tags-for-link-previews-9c303a667b9e" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                            OG Title and Twitter Title Tags
-                        </a>
-                        <span className="text-neutral-500"> — for link previews</span>
-                    </li>
+                    {blogs.map((blog) => (
+                        <li key={blog.id}>
+                            <a href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900">
+                                {blog.title}
+                            </a>
+                            <span className="text-neutral-500"> — {blog.content}</span>
+                        </li>
+                    ))}
                 </ul>
+                <a href="/blog" className="inline-block text-xs text-neutral-400 hover:text-neutral-900 transition-colors duration-200 pt-1">
+                    View all →
+                </a>
             </div>
 
         </motion.div>
