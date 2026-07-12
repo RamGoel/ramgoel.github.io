@@ -155,14 +155,17 @@ export function useOnDeviceChat() {
     }, [messages, phase])
 
     const getAIResponse = useCallback(async (userMessage: string) => {
-        conversationHistory.current.push({ role: 'user', content: userMessage })
-
+        // Pass prior turns only — then prompt() adds the new user message.
+        // Including it in both places duplicates the turn and weakens the system prompt.
         const session = await window.LanguageModel.create({
             initialPrompts: conversationHistory.current,
         })
 
         const response = await session.prompt(userMessage)
-        conversationHistory.current.push({ role: 'assistant', content: response })
+        conversationHistory.current.push(
+            { role: 'user', content: userMessage },
+            { role: 'assistant', content: response }
+        )
         return response
     }, [])
 

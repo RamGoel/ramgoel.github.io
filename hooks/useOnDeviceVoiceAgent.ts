@@ -78,6 +78,14 @@ No lists, markdown, bullet points, or stage directions.
 If the user switches to Hindi, reply in Hindi; otherwise stay in English.
 Prefer concrete answers over hedging. If you do not know something, say so simply.`
 
+/** Always appended — not editable in the UI. */
+const ALWAYS_ON_SYSTEM_RULE = 'Never use emojis in your responses.'
+
+function buildSystemPrompt(userPrompt: string) {
+    const base = userPrompt.trim() || DEFAULT_SYSTEM_PROMPT
+    return `${base}\n\n${ALWAYS_ON_SYSTEM_RULE}`
+}
+
 export const DEFAULT_GREETING =
     'Hey — I am running entirely on your device. Ask me anything.'
 
@@ -345,21 +353,30 @@ export function useOnDeviceVoiceAgent() {
         []
     )
 
+    const createSession = useCallback(async (prompt = systemPromptRef.current) => {
+        const userPrompt = prompt.trim() || DEFAULT_SYSTEM_PROMPT
+        systemPromptRef.current = userPrompt
+        const system = buildSystemPrompt(userPrompt)
+        const session = await window.LanguageModel.create({
+            initialPrompts: [{ role: 'system', content: system }],
+        })
+        sessionRef.current = session
+        conversationHistory.current = [{ role: 'system', content: system }]
+        return session
+    }, [])
+
     const getAIResponse = useCallback(async (userMessage: string) => {
         conversationHistory.current.push({ role: 'user', content: userMessage })
 
         let session = sessionRef.current
         if (!session) {
-            session = await window.LanguageModel.create({
-                initialPrompts: [{ role: 'system', content: systemPromptRef.current }],
-            })
-            sessionRef.current = session
+            session = await createSession()
         }
 
         const response = await session.prompt(userMessage)
         conversationHistory.current.push({ role: 'assistant', content: response })
         return response
-    }, [])
+    }, [createSession])
 
     const processTranscript = useCallback(
         async (transcript: string) => {
@@ -576,6 +593,18 @@ export function useOnDeviceVoiceAgent() {
         setConversationStarted(true)
         conversationStartedRef.current = true
 
+        // Bake in whatever is currently in the system prompt field (Apply optional).
+        try {
+            await createSession(systemPromptRef.current)
+        } catch (err) {
+            const message = err instanceof Error ? err.message : 'Unknown error'
+            setError(`Failed to apply system prompt: ${message}`)
+            setConversationStarted(false)
+            conversationStartedRef.current = false
+            setPhase('idle')
+            return
+        }
+
         const greetingText = greetingRef.current.trim() || DEFAULT_GREETING
         setTurns([{ id: uid(), role: 'assistant', content: greetingText }])
         conversationHistory.current.push({ role: 'assistant', content: greetingText })
@@ -586,7 +615,7 @@ export function useOnDeviceVoiceAgent() {
         setTimeout(() => {
             if (phaseRef.current === 'idle') void startListeningRef.current?.()
         }, 60)
-    }, [speak, startListening])
+    }, [createSession, speak, startListening])
 
     const startOrListen = useCallback(async () => {
         if (phaseRef.current === 'speaking') {
@@ -619,8 +648,11 @@ export function useOnDeviceVoiceAgent() {
             setError(null)
             setDownloadProgress(0)
 
+            const userPrompt = systemPromptRef.current.trim() || DEFAULT_SYSTEM_PROMPT
+            systemPromptRef.current = userPrompt
+            const system = buildSystemPrompt(userPrompt)
             const session = await window.LanguageModel.create({
-                initialPrompts: [{ role: 'system', content: systemPromptRef.current }],
+                initialPrompts: [{ role: 'system', content: system }],
                 monitor(m) {
                     m.addEventListener('downloadprogress', (e) => {
                         setDownloadProgress(Math.round(e.loaded * 100))
@@ -629,7 +661,7 @@ export function useOnDeviceVoiceAgent() {
             })
 
             sessionRef.current = session
-            conversationHistory.current = [{ role: 'system', content: systemPromptRef.current }]
+            conversationHistory.current = [{ role: 'system', content: system }]
             setDownloadProgress(null)
             setPhase('idle')
         } catch (err) {
@@ -690,37 +722,43 @@ export function useOnDeviceVoiceAgent() {
         setError(null)
         setConversationStarted(false)
         conversationStartedRef.current = false
-        conversationHistory.current = [{ role: 'system', content: systemPromptRef.current }]
         sessionRef.current = null
         setPhase('idle')
-        void window.LanguageModel.create({
-            initialPrompts: [{ role: 'system', content: systemPromptRef.current }],
+        void createSession().catch(() => {
+            // Will recreate lazily on next prompt
         })
-            .then((session) => {
-                sessionRef.current = session
-            })
-            .catch(() => {
-                // Will recreate lazily on next prompt
-            })
-    }, [stopListening, stopSpeaking])
+    }, [createSession, stopListening, stopSpeaking])
 
-    const applySystemPrompt = useCallback(async () => {
-        if (phaseRef.current === 'thinking' || phaseRef.current === 'speaking' || phaseRef.current === 'listening') {
-            return
-        }
-        const prompt = systemPromptRef.current.trim() || DEFAULT_SYSTEM_PROMPT
-        systemPromptRef.current = prompt
-        setSystemPrompt(prompt)
-        conversationHistory.current = [{ role: 'system', content: prompt }]
-        try {
-            const session = await window.LanguageModel.create({
-                initialPrompts: [{ role: 'system', content: prompt }],
-            })
-            sessionRef.current = session
-        } catch {
-            sessionRef.current = null
-        }
-    }, [])
+    const applySystemPrompt = useCallback(
+        async (nextPrompt?: string) => {
+            if (phaseRef.current === 'thinking' || phaseRef.current === 'downloading') {
+                return
+            }
+
+            // Listening auto-resumes, so stop first — otherwise Apply never lands.
+            stopListening()
+            stopSpeaking()
+
+            const prompt = (nextPrompt ?? systemPromptRef.current).trim() || DEFAULT_SYSTEM_PROMPT
+            systemPromptRef.current = prompt
+            setSystemPrompt(prompt)
+            setTurns([])
+            setInterimTranscript('')
+            setConversationStarted(false)
+            conversationStartedRef.current = false
+            setError(null)
+            setPhase('idle')
+
+            try {
+                await createSession(prompt)
+            } catch (err) {
+                sessionRef.current = null
+                const message = err instanceof Error ? err.message : 'Unknown error'
+                setError(`Failed to apply system prompt: ${message}`)
+            }
+        },
+        [createSession, stopListening, stopSpeaking]
+    )
 
     const statusLabel = useMemo(
         () => statusLabelFor(phase, downloadProgress),

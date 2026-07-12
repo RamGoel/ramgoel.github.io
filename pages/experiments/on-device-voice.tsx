@@ -47,6 +47,7 @@ function VoiceControls({
     greeting,
     systemPrompt,
     disabled,
+    applyDisabled,
     onLanguageChange,
     onPaceChange,
     onGreetingChange,
@@ -58,11 +59,12 @@ function VoiceControls({
     greeting: string
     systemPrompt: string
     disabled: boolean
+    applyDisabled: boolean
     onLanguageChange: (code: string) => void
     onPaceChange: (value: number) => void
     onGreetingChange: (value: string) => void
     onSystemPromptChange: (value: string) => void
-    onApplySystemPrompt: () => void
+    onApplySystemPrompt: (prompt: string) => void
 }) {
     return (
         <div className="space-y-4">
@@ -115,7 +117,7 @@ function VoiceControls({
                 <span className={fieldLabelClassName()}>System prompt</span>
                 <textarea
                     value={systemPrompt}
-                    disabled={disabled}
+                    disabled={applyDisabled}
                     onChange={(e) => onSystemPromptChange(e.target.value)}
                     rows={5}
                     className={textareaClassName()}
@@ -123,8 +125,8 @@ function VoiceControls({
                 />
                 <button
                     type="button"
-                    disabled={disabled}
-                    onClick={onApplySystemPrompt}
+                    disabled={applyDisabled}
+                    onClick={() => onApplySystemPrompt(systemPrompt)}
                     className="text-[11px] text-neutral-500 hover:text-neutral-900 disabled:opacity-40 transition-colors"
                 >
                     Apply to model session
@@ -438,7 +440,14 @@ export default function OnDeviceVoiceAgentPage() {
         phase === 'error'
 
     const editingDisabled =
-        phase === 'listening' || phase === 'speaking' || phase === 'thinking'
+        controlsDisabled ||
+        phase === 'listening' ||
+        phase === 'speaking' ||
+        phase === 'thinking'
+
+    // System prompt can be edited/applied while listening — apply stops the mic first.
+    const systemPromptDisabled =
+        controlsDisabled || phase === 'thinking' || phase === 'downloading'
 
     return (
         <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white text-neutral-900">
@@ -462,11 +471,12 @@ export default function OnDeviceVoiceAgentPage() {
                         greeting={greeting}
                         systemPrompt={systemPrompt}
                         disabled={editingDisabled}
+                        applyDisabled={systemPromptDisabled}
                         onLanguageChange={setLanguage}
                         onPaceChange={setPace}
                         onGreetingChange={setGreeting}
                         onSystemPromptChange={setSystemPrompt}
-                        onApplySystemPrompt={() => void applySystemPrompt()}
+                        onApplySystemPrompt={(prompt) => void applySystemPrompt(prompt)}
                     />
 
                     <StatusBar
