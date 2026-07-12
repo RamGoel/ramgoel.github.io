@@ -1,3 +1,4 @@
+import { PageMeta } from '@/components/PageMeta'
 import React, { useState } from 'react'
 import styles from './page.module.css'
 import {
@@ -113,13 +114,21 @@ const MESSAGES: Message[] = [
 ]
 const WhatsappScreen = () => {
     return (
-        <div className={styles.outerContainer}>
-            <Topbar />
-            <div className={styles.innerContainer}>
-                <Sidebar />
-                <Layout />
+        <>
+            <PageMeta
+                title="WhatsApp"
+                description="Web chat UI recreation study."
+                path="/work/whatsapp"
+                ogSlug="whatsapp"
+            />
+            <div className={styles.outerContainer}>
+                <Topbar />
+                <div className={styles.innerContainer}>
+                    <Sidebar />
+                    <Layout />
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,12 +1,11 @@
+import { PageMeta } from '@/components/PageMeta'
 import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
 import md from 'markdown-it'
 import moment from 'moment'
-import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
-import { absoluteUrl, ogImageUrl } from '@/utils/site'
 
 const ease = [0.25, 0.4, 0.25, 1] as const
 
@@ -24,27 +23,15 @@ const BlogPage = ({
         typographer: true,
     }).render(blogString)
 
-    const pageTitle = `${blogData.title} - Ram Goel`
-    const pageUrl = absoluteUrl(`/blog/${blogData.slug}`)
-    const imageUrl = ogImageUrl(blogData.slug)
-
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-                <meta name="description" content={pageTitle} data-rh="true" />
-                <meta property="og:title" content={pageTitle} />
-                <meta property="og:description" content={pageTitle} />
-                <meta property="og:image" content={imageUrl} />
-                <meta property="og:image:width" content="1200" />
-                <meta property="og:image:height" content="630" />
-                <meta property="og:url" content={pageUrl} />
-                <meta property="og:type" content="article" />
-                <meta name="twitter:title" content={pageTitle} />
-                <meta name="twitter:description" content={pageTitle} />
-                <meta name="twitter:image" content={imageUrl} />
-                <meta name="twitter:card" content="summary_large_image" />
-            </Head>
+            <PageMeta
+                title={blogData.title}
+                description={blogData.title}
+                path={`/blog/${blogData.slug}`}
+                ogSlug={blogData.slug}
+                type="article"
+            />
 
             <div className="min-h-screen flex justify-center">
                 <div className="w-full max-w-2xl px-5 lg:px-6 py-6 lg:py-16">

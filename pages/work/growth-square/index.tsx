@@ -1,3 +1,4 @@
+import { PageMeta } from '@/components/PageMeta'
 import {
     DM_Sans,
     Instrument_Serif,
@@ -285,7 +286,14 @@ export default function GrowthSquare() {
     }, [])
 
     return (
-        <div
+        <>
+            <PageMeta
+                title="Growth Square"
+                description="Agency-style landing page UI study."
+                path="/work/growth-square"
+                ogSlug="growth-square"
+            />
+            <div
             ref={containerRef}
             className={`${font.className} font-normal bg-black text-white h-screen relative overflow-hidden`}
         >
@@ -461,5 +469,6 @@ export default function GrowthSquare() {
                 </div>
             </div>
         </div>
+        </>
     )
 }

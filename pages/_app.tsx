@@ -38,7 +38,6 @@ export default function App({ Component, pageProps }: AppProps) {
     const isPageRoute = pageRoutes.includes(pathname)
     return (
         <main className={`${inter.variable} ${mono.variable} ${syne.variable} font-sans`}>
-            <title>Ram Goel</title>
             {isPageRoute ? (
                 <Component {...pageProps} />
             ) : (

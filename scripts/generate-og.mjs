@@ -127,13 +127,11 @@ async function main() {
 
     console.log('Generating OG images → public/og/')
 
-    await writePng(
-        'default.png',
-        "Hey, I'm Ram",
-        DEFAULT_SUBTITLE
-    )
+    await writePng('default.png', "Hey, I'm Ram", DEFAULT_SUBTITLE)
 
-    const experiments = [
+    const pages = [
+        { slug: 'blog', title: 'Writing', subtitle: 'Blog' },
+        { slug: 'work', title: 'UI studies', subtitle: 'Work' },
         {
             slug: 'on-device-voice',
             title: 'On-device voice',
@@ -144,10 +142,25 @@ async function main() {
             title: 'On-device chat',
             subtitle: 'Experiment',
         },
+        {
+            slug: 'supermemory',
+            title: 'Supermemory',
+            subtitle: 'UI study',
+        },
+        {
+            slug: 'whatsapp',
+            title: 'WhatsApp',
+            subtitle: 'UI study',
+        },
+        {
+            slug: 'growth-square',
+            title: 'Growth Square',
+            subtitle: 'UI study',
+        },
     ]
 
-    for (const experiment of experiments) {
-        await writePng(`${experiment.slug}.png`, experiment.title, experiment.subtitle)
+    for (const page of pages) {
+        await writePng(`${page.slug}.png`, page.title, page.subtitle)
     }
 
     for (const blog of listBlogs()) {

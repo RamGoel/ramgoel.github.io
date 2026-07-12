@@ -1,4 +1,5 @@
 'use client'
+import { PageMeta } from '@/components/PageMeta'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
@@ -36,7 +37,14 @@ const uiStudies = [
 
 export default function WorkPage() {
     return (
-        <div className="min-h-screen flex justify-center">
+        <>
+            <PageMeta
+                title="UI studies"
+                description="UI recreations and landing-page studies."
+                path="/work"
+                ogSlug="work"
+            />
+            <div className="min-h-screen flex justify-center">
             <div className="w-full max-w-3xl px-5 lg:px-6 py-6 lg:py-16">
                 <motion.div
                     variants={staggerContainer}
@@ -187,5 +195,6 @@ export default function WorkPage() {
                 </motion.div>
             </div>
         </div>
+        </>
     )
 }

@@ -1,4 +1,5 @@
 'use client'
+import { PageMeta } from '@/components/PageMeta'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -232,6 +233,13 @@ export default function Home() {
 
     return (
         <>
+            <PageMeta
+                title="Ram Goel — Frontend Engineer"
+                description="Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents."
+                path="/"
+                ogSlug="default"
+                appendSiteName={false}
+            />
             <div className="h-screen overflow-hidden relative">
                 {/* About pane — centered, fixed in place */}
                 <div

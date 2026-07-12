@@ -1,3 +1,4 @@
+import { PageMeta } from '@/components/PageMeta'
 import { motion } from 'framer-motion'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -27,7 +28,14 @@ type Blog = {
 
 const BlogPage = ({ blogs }: { blogs: Blog[] }) => {
     return (
-        <div className="min-h-screen flex justify-center">
+        <>
+            <PageMeta
+                title="Writing"
+                description="Notes on frontend, shipping, and building things."
+                path="/blog"
+                ogSlug="blog"
+            />
+            <div className="min-h-screen flex justify-center">
             <div className="w-full max-w-2xl px-5 lg:px-6 py-6 lg:py-16">
                 <motion.div
                     variants={staggerContainer}
@@ -80,6 +88,7 @@ const BlogPage = ({ blogs }: { blogs: Blog[] }) => {
                 </motion.div>
             </div>
         </div>
+        </>
     )
 }
 

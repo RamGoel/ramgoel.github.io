@@ -1,4 +1,5 @@
 'use client'
+import { PageMeta } from '@/components/PageMeta'
 import { Space_Grotesk } from 'next/font/google'
 import Header from './components/Header'
 import Hero from './components/Hero'
@@ -15,7 +16,14 @@ const font = Space_Grotesk({
 
 export default function Supermemory() {
     return (
-        <div className={` ${font.className}`}>
+        <>
+            <PageMeta
+                title="Supermemory"
+                description="Dark product marketing site UI study."
+                path="/work/supermemory"
+                ogSlug="supermemory"
+            />
+            <div className={` ${font.className}`}>
             <div className="bg-[#1c2027] min-h-screen px-7 py-6">
                 <Header />
                 <div className="h-screen">
@@ -50,5 +58,6 @@ export default function Supermemory() {
             </div>
             <Footer />
         </div>
+        </>
     )
 }
