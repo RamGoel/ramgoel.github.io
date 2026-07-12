@@ -1,10 +1,9 @@
-import CustomTooltip from '@/components/custom-tooltip'
 import '@/styles/globals.css'
 import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { Inter, JetBrains_Mono, Syne } from 'next/font/google'
 import { usePathname } from 'next/navigation'
-import '@/pages/copies/growth-square/growth-square.css'
+import '@/pages/work/growth-square/growth-square.css'
 
 // Primary font for body text - clean and readable
 const inter = Inter({
@@ -30,14 +29,11 @@ const syne = Syne({
 export default function App({ Component, pageProps }: AppProps) {
     const pathname = usePathname()
     const pageRoutes = [
-        '/copies/supermemory',
-        '/copies/sarvam',
-        '/copies/whatsapp',
+        '/work/supermemory',
+        '/work/whatsapp',
         '/widget',
-        '/copies/growth-square',
+        '/work/growth-square',
         '/applicant-reviewer',
-        '/copies/sarvam-v2',
-        '/copies/sarvam-team',
     ]
     const isPageRoute = pageRoutes.includes(pathname)
     return (
@@ -50,7 +46,6 @@ export default function App({ Component, pageProps }: AppProps) {
                     <div className="min-h-screen bg-white text-neutral-900">
                         <Component {...pageProps} />
                     </div>
-                    <CustomTooltip id="hover-tooltip" />
                     <Analytics />
                 </>
             )}
