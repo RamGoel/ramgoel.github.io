@@ -6,6 +6,7 @@ import moment from 'moment'
 import Head from 'next/head'
 import Link from 'next/link'
 import path from 'path'
+import { absoluteUrl, ogImageUrl } from '@/utils/site'
 
 const ease = [0.25, 0.4, 0.25, 1] as const
 
@@ -23,43 +24,26 @@ const BlogPage = ({
         typographer: true,
     }).render(blogString)
 
+    const pageTitle = `${blogData.title} - Ram Goel`
+    const pageUrl = absoluteUrl(`/blog/${blogData.slug}`)
+    const imageUrl = ogImageUrl(blogData.slug)
+
     return (
         <>
             <Head>
-                <title>{`${blogData.title} - Ram Goel`}</title>
-                <meta
-                    name="description"
-                    content={`${blogData.title} - Ram Goel`}
-                    data-rh="true"
-                />
-                <meta
-                    property="og:title"
-                    content={`${blogData.title} - Ram Goel`}
-                />
-                <meta
-                    property="og:description"
-                    content={`${blogData.title} - Ram Goel`}
-                />
-                <meta
-                    property="og:image"
-                    content={`https://ramgoel.github.io/api/og?title=${encodeURIComponent(blogData.title)}`}
-                />
-                <meta
-                    property="og:url"
-                    content={`https://ramgoel.github.io/blog/${blogData.slug}`}
-                />
-                <meta
-                    name="twitter:title"
-                    content={`${blogData.title} - Ram Goel`}
-                />
-                <meta
-                    name="twitter:description"
-                    content={`${blogData.title} - Ram Goel`}
-                />
-                <meta
-                    name="twitter:image"
-                    content={`https://ramgoel.github.io/api/og?title=${encodeURIComponent(blogData.title)}`}
-                />
+                <title>{pageTitle}</title>
+                <meta name="description" content={pageTitle} data-rh="true" />
+                <meta property="og:title" content={pageTitle} />
+                <meta property="og:description" content={pageTitle} />
+                <meta property="og:image" content={imageUrl} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content={pageUrl} />
+                <meta property="og:type" content="article" />
+                <meta name="twitter:title" content={pageTitle} />
+                <meta name="twitter:description" content={pageTitle} />
+                <meta name="twitter:image" content={imageUrl} />
+                <meta name="twitter:card" content="summary_large_image" />
             </Head>
 
             <div className="min-h-screen flex justify-center">

@@ -1,5 +1,6 @@
 'use client'
 
+import { PageMeta } from '@/components/PageMeta'
 import { ChatMessage, ChatPhase, useOnDeviceChat } from '@/hooks/useOnDeviceChat'
 import Link from 'next/link'
 import { FormEvent, KeyboardEvent, RefObject } from 'react'
@@ -355,7 +356,14 @@ export default function OnDeviceModels() {
     } = useOnDeviceChat()
 
     return (
-        <div className="flex flex-col h-screen max-w-2xl mx-auto px-5 lg:px-6">
+        <>
+            <PageMeta
+                title="On-device chat"
+                description="Chat with Chrome’s on-device Prompt API — nothing leaves your machine."
+                path="/experiments/on-device-models"
+                ogSlug="on-device-models"
+            />
+            <div className="flex flex-col h-screen max-w-2xl mx-auto px-5 lg:px-6">
             <header className="flex-shrink-0 pt-6 pb-4 space-y-4 border-b border-neutral-100">
                 <BackLink />
                 <ChatHeader
@@ -405,5 +413,6 @@ export default function OnDeviceModels() {
                 onKeyDown={handleKeyDown}
             />
         </div>
+        </>
     )
 }

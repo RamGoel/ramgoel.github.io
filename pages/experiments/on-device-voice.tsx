@@ -1,5 +1,6 @@
 'use client'
 
+import { PageMeta } from '@/components/PageMeta'
 import {
     useOnDeviceVoiceAgent,
     VOICE_LANGUAGES,
@@ -449,7 +450,14 @@ export default function OnDeviceVoiceAgentPage() {
     const systemPromptDisabled = controlsDisabled || phase === 'thinking'
 
     return (
-        <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white text-neutral-900">
+        <>
+            <PageMeta
+                title="On-device voice"
+                description="Offline-first voice agent — mic to on-device model to speech, fully in the browser."
+                path="/experiments/on-device-voice"
+                ogSlug="on-device-voice"
+            />
+            <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white text-neutral-900">
             {/* Config — left */}
             <aside className="w-full lg:w-[360px] xl:w-[400px] flex-shrink-0 border-b lg:border-b-0 lg:border-r border-neutral-100 flex flex-col max-h-[42vh] lg:max-h-none overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <div className="p-5 lg:p-8 space-y-6 flex-1">
@@ -548,5 +556,6 @@ export default function OnDeviceVoiceAgentPage() {
                 </div>
             </main>
         </div>
+        </>
     )
 }

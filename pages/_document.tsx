@@ -1,4 +1,10 @@
 import { Head, Html, Main, NextScript } from 'next/document'
+import { absoluteUrl, ogImageUrl, SITE_URL } from '@/utils/site'
+
+const DEFAULT_TITLE = 'Ram Goel — Frontend Engineer'
+const DEFAULT_DESCRIPTION =
+    'Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents.'
+const DEFAULT_OG_IMAGE = ogImageUrl('default')
 
 export default function Document() {
     return (
@@ -11,41 +17,26 @@ export default function Document() {
                 />
                 <meta
                     name="description"
-                    content="Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents."
+                    content={DEFAULT_DESCRIPTION}
                     data-rh="true"
                 />
                 <meta name="author" content="Ram Goel" />
-                <link rel="author" href="https://ramgoel.github.io" data-rh="true" />
-                <meta
-                    property="og:title"
-                    content="Ram Goel — Frontend Engineer"
-                />
-                <meta
-                    property="og:description"
-                    content="Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents."
-                />
-                <meta
-                    property="og:image"
-                    content="https://ramgoel.github.io/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
-                />
-                <meta property="og:url" content="https://ramgoel.github.io" />
-                <meta
-                    name="twitter:title"
-                    content="Ram Goel — Frontend Engineer"
-                />
-                <meta
-                    name="twitter:description"
-                    content="Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents."
-                />
-                <meta
-                    name="twitter:image"
-                    content="https://ramgoel.github.io/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
-                />
+                <link rel="author" href={SITE_URL} data-rh="true" />
+                <meta property="og:title" content={DEFAULT_TITLE} />
+                <meta property="og:description" content={DEFAULT_DESCRIPTION} />
+                <meta property="og:image" content={DEFAULT_OG_IMAGE} />
+                <meta property="og:image:width" content="1200" />
+                <meta property="og:image:height" content="630" />
+                <meta property="og:url" content={absoluteUrl('/')} />
+                <meta property="og:type" content="website" />
+                <meta property="og:site_name" content="Ram Goel" />
+                <meta name="twitter:title" content={DEFAULT_TITLE} />
+                <meta name="twitter:description" content={DEFAULT_DESCRIPTION} />
+                <meta name="twitter:image" content={DEFAULT_OG_IMAGE} />
                 <meta name="twitter:site" content="@theramgoel" />
                 <meta name="twitter:creator" content="@theramgoel" />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="theme-color" content="#fafafa" />
-                <meta property="og:site_name" content="Ram Goel" />
             </Head>
             <body className="">
                 <Main />
