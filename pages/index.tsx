@@ -1,6 +1,7 @@
 'use client'
 import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import { talks, projects, blogs } from '@/utils/data'
 import { useState, useCallback, useEffect } from 'react'
 
@@ -208,16 +209,16 @@ function WorkSection({ onBack }: { onBack: () => void }) {
                 <ul className="space-y-4 text-sm">
                     {blogs.map((blog) => (
                         <li key={blog.id}>
-                            <a href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900">
+                            <Link href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900">
                                 {blog.title}
-                            </a>
+                            </Link>
                             <span className="text-neutral-500"> — {blog.content}</span>
                         </li>
                     ))}
                 </ul>
-                <a href="/blog" className="inline-block text-xs text-neutral-400 hover:text-neutral-900 transition-colors duration-200 pt-1">
+                <Link href="/blog" className="inline-block text-xs text-neutral-400 hover:text-neutral-900 transition-colors duration-200 pt-1">
                     View all →
-                </a>
+                </Link>
             </div>
 
         </motion.div>
