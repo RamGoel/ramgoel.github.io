@@ -3,7 +3,7 @@ title: The Journey of Building Noterr
 date: 2025-01-30
 ---
 
-I started building [Noterr](https://noterr.ramgoel.com) last year and still iterating on it. I learned a lot of things, and I'm glad I did it. I'll be sharing the journey of building Noterr, and the lessons I learned along the way.
+I started building [Noterr](https://noterr-app.vercel.app/) last year and still iterating on it. I learned a lot of things, and I'm glad I did it. I'll be sharing the journey of building Noterr, and the lessons I learned along the way.
 
 # The Idea
 
@@ -43,6 +43,6 @@ The USP of Noterr I think right now is the ease, Just press `Ctrl + Q` and save 
 
 Hint could be that the web app not going to be much important from now on. Chrome extension is the main focus now.
 
-Soon you'll be able to tackle this problem, and save anything from anywhere. Sign up for the announcement [here](https://noterr.ramgoel.com).
+Soon you'll be able to tackle this problem, and save anything from anywhere. Sign up for the announcement [here](https://noterr-app.vercel.app/).
 
 I hope you enjoyed reading this, and I'll be sharing more about Noterr in future. Want to chat about anything? reach me at [Twitter](https://x.com/ramgoel).

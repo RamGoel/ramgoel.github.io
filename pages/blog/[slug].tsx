@@ -42,11 +42,11 @@ const BlogPage = ({
                 />
                 <meta
                     property="og:image"
-                    content={`https://ramgoel.com/api/og?title=${encodeURIComponent(blogData.title)}`}
+                    content={`https://ramgoel.github.io/api/og?title=${encodeURIComponent(blogData.title)}`}
                 />
                 <meta
                     property="og:url"
-                    content={`https://ramgoel.com/blog/${blogData.slug}`}
+                    content={`https://ramgoel.github.io/blog/${blogData.slug}`}
                 />
                 <meta
                     name="twitter:title"
@@ -58,7 +58,7 @@ const BlogPage = ({
                 />
                 <meta
                     name="twitter:image"
-                    content={`https://ramgoel.com/api/og?title=${encodeURIComponent(blogData.title)}`}
+                    content={`https://ramgoel.github.io/api/og?title=${encodeURIComponent(blogData.title)}`}
                 />
             </Head>
 

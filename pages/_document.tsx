@@ -15,7 +15,7 @@ export default function Document() {
                     data-rh="true"
                 />
                 <meta name="author" content="Ram Goel" />
-                <link rel="author" href="https://ramgoel.com" data-rh="true" />
+                <link rel="author" href="https://ramgoel.github.io" data-rh="true" />
                 <meta
                     property="og:title"
                     content="Ram Goel — Frontend Engineer"
@@ -26,9 +26,9 @@ export default function Document() {
                 />
                 <meta
                     property="og:image"
-                    content="https://ramgoel.com/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
+                    content="https://ramgoel.github.io/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
                 />
-                <meta property="og:url" content="https://ramgoel.com" />
+                <meta property="og:url" content="https://ramgoel.github.io" />
                 <meta
                     name="twitter:title"
                     content="Ram Goel — Frontend Engineer"
@@ -39,7 +39,7 @@ export default function Document() {
                 />
                 <meta
                     name="twitter:image"
-                    content="https://ramgoel.com/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
+                    content="https://ramgoel.github.io/api/og?title=Frontend%20engineer%20building%20design%20systems%20%26%20voice%20agents"
                 />
                 <meta name="twitter:site" content="@theramgoel" />
                 <meta name="twitter:creator" content="@theramgoel" />

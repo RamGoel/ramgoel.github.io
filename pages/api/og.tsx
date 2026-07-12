@@ -127,7 +127,7 @@ export default async function handler(req: NextRequest) {
                             letterSpacing: '0.01em',
                         }}
                     >
-                        ramgoel.com
+                        ramgoel.github.io
                     </span>
                     <span style={{ fontSize: 16, color: '#a3a3a3' }}>{subtitle}</span>
                 </div>
