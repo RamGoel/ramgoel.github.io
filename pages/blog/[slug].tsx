@@ -42,7 +42,7 @@ const BlogPage = ({
                         className="space-y-8"
                     >
                         <Link
-                            href="/blog"
+                            href="/"
                             className="group inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
                         >
                             <svg
