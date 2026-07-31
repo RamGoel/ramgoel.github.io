@@ -400,11 +400,11 @@ html {
         grid-template-columns: 1fr 1fr;
         gap: 0.875rem;
         padding: 0.5rem;
-        /* ~512px CSS per image → 1024px physical on 2x displays */
-        width: min(100vw - 2rem, 64rem);
-        max-width: min(100vw - 2rem, 64rem);
-        margin-left: calc((100% - min(100vw - 2rem, 64rem)) / 2);
-        margin-right: calc((100% - min(100vw - 2rem, 64rem)) / 2);
+        /* HQ sources (~2.5–3k) can display wider on retina */
+        width: min(100vw - 2rem, 80rem);
+        max-width: min(100vw - 2rem, 80rem);
+        margin-left: calc((100% - min(100vw - 2rem, 80rem)) / 2);
+        margin-right: calc((100% - min(100vw - 2rem, 80rem)) / 2);
     }
 }
 
@@ -418,16 +418,14 @@ html {
     display: block;
     width: 100%;
     max-width: 100%;
+    aspect-ratio: 16 / 9;
     height: auto;
+    object-fit: cover;
+    object-position: top left;
     border-radius: 0.5rem;
     border: 1px solid #e5e5e5;
     background: #fff;
     image-rendering: auto;
-}
-
-.blog-prose .blog-compare img.blog-compare-now {
-    box-sizing: content-box;
-    padding-bottom: 5px;
 }
 
 .blog-prose .blog-compare figcaption {

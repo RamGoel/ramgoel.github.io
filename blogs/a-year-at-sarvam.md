@@ -42,7 +42,7 @@ what i didn't expect was how much room there'd be to work past the UI. at sarvam
 
 # still here
 
-sixteen months in, still at sarvam. none of what's above was a solo run — designers, product, fellow engineers, the people who sat in the messy middle with the ideas and the tradeoffs. i just got to be in that room and ship with them.
+it's 16 months since, still proudly at sarvam. none of what's above was a solo run — designers, product, fellow engineers, the people who sat in the messy middle with the ideas and the tradeoffs. i just got to be in that room and ship with them.
 
 the thing we've been shaping for a while is finally out with people. if you haven't tried it yet, visit [indus.sarvam.ai](https://indus.sarvam.ai) — and if something feels like it could be better, tell us. we're always welcoming feedback.
 
