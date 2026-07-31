@@ -82,6 +82,12 @@ export const talks = [
 
 export const blogs = [
     {
+        id: 5,
+        title: '16 months at Sarvam',
+        content: 'from a cold email to shipping on indus',
+        slug: 'a-year-at-sarvam',
+    },
+    {
         id: 1,
         title: 'Turn PRs into a work update',
         content: 'gh search → work update',

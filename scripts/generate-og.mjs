@@ -130,6 +130,7 @@ async function main() {
     await writePng('default.png', "Hey, I'm Ram", DEFAULT_SUBTITLE)
 
     const pages = [
+        { slug: 'blog', title: 'Writing', subtitle: 'Blog' },
         { slug: 'work', title: 'UI studies', subtitle: 'Work' },
         {
             slug: 'on-device-voice',
