@@ -25,7 +25,7 @@ then the high tides.
 
 feb 2026 — india ai summit in delhi. 14 releases in 14 days. not just voice agents either — product surfaces, platform bits, whatever had to be live for that week. compressed timeline, lots of parallel threads, somehow it landed at bharat mandapam.
 
-july 2026 — epoch, our flagship conference. we opened what we'd been building to everyone — voice agents and the rest of the stack, live on [indus.sarvam.ai](https://indus.sarvam.ai). till then a lot of it was closed; now anyone can show up and use it. we rebuilt how people create voice agents, bringing creation time from a few days down to under 10 minutes — genie in the loop, simpler authoring, deploy paths that don't need a tour guide. the then/now below is that jump.
+july 2026 — epoch, our flagship conference. we opened what we'd been building to everyone — voice agents and the rest of the stack, live on [indus.sarvam.ai](https://indus.sarvam.ai). till then a lot of it was invite only; now anyone can show up and use it. we rebuilt how people create voice agents, bringing creation time from a few days down to under 10 minutes — genie in the loop, simpler authoring, deploy paths that don't need a tour guide. the then/now below is that jump.
 
 what i didn't expect was how much room there'd be to work past the UI. at sarvam i got to sit with authentication, deployments, feature flags, partial rollouts — the stuff that decides whether a release actually reaches the right people.
 
