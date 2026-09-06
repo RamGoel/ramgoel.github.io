@@ -159,9 +159,9 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                             </div>
                         </motion.div>
 
-                        {/* Things I've Built */}
+                        {/* Things I&apos;ve Built */}
                         <motion.div variants={staggerItem} className="space-y-3 w-full">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I've Built</h3>
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I&apos;ve Built</h3>
                             <div className="grid grid-cols-2 gap-3">
                                 {projects.slice(0, 4).map((project, i) => {
                                     const img = i === 0 ? `/project-1.gif` : i === 1 ? `/project-2.gif` : i === 2 ? `/project-3.gif` : i === 3 ? `/project-4.gif` : `/project-${i + 1}.png`
