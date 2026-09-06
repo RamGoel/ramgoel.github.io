@@ -1,5 +1,6 @@
 import { PageMeta } from '@/components/PageMeta'
 import { motion, AnimatePresence } from 'framer-motion'
+import { FileText } from 'lucide-react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Image from 'next/image'
@@ -115,7 +116,13 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
 
                         {/* About */}
                         <motion.div variants={staggerItem} className="space-y-5">
-                            <h1 className="text-xl font-semibold text-neutral-900">Ram Goel</h1>
+                            <div className="flex items-center justify-between">
+                                <h1 className="text-xl font-semibold text-neutral-900">Ram Goel</h1>
+                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 transition-colors duration-200">
+                                    <FileText size={14} />
+                                    Resume
+                                </a>
+                            </div>
                             <div className="space-y-4 text-sm">
                                 <p className="text-neutral-600 leading-loose">
                                     Currently at{' '}
