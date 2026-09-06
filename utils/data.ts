@@ -13,16 +13,30 @@ type Project = {
 export const projects: Project[] = [
     {
         id: 6,
-        title: 'On-Device Voice',
-        content: 'Offline-first voice agent (mic → model → speech)',
+        title: 'In-App Deployment for Voice Agents',
+        content: 'Built the in-app SDK and embeds for embedding Sarvam voice agents into mobile apps and websites',
         url: '/experiments/on-device-voice',
         type: 'side',
     },
     {
         id: 5,
-        title: 'On-Device Chat',
-        content: 'Chat with Chrome’s on-device Prompt API',
+        title: 'Genie — Agent Builder',
+        content: 'A no-code agent builder to create, configure, and deploy voice agents — brought creation time down from days to under 10 minutes',
         url: '/experiments/on-device-models',
+        type: 'side',
+    },
+    {
+        id: 3,
+        title: 'Sarvam Code — VS Code Extension',
+        content: 'Built a VS Code extension that brought a Cursor-like AI coding experience to Sarvam Code, making it easy to switch from Cursor',
+        url: 'https://x.com/theramgoel/status/1960756249672474801',
+        type: 'side',
+    },
+    {
+        id: 4,
+        title: 'Tatva — Design System',
+        content: 'Design system used across 5+ products at Sarvam, with an MCP server so agents like Claude and Cursor adhere to it',
+        url: '',
         type: 'side',
     },
     {
@@ -77,6 +91,18 @@ export const talks = [
         title: 'Best Practices in Frontend Dev',
         content: 'at Razorpay office',
         url: 'https://x.com/ReactPlayIO/status/1969429955756114001',
+    },
+    {
+        id: 3,
+        title: 'Sarvam BuildIn Hours',
+        content: '12-hour hackathon with 100 builders',
+        url: 'https://x.com/theramgoel/status/2085723231273783470',
+    },
+    {
+        id: 4,
+        title: 'Sarvam Epoch Buildathon',
+        content: 'mentored builders at the hackathon',
+        url: 'https://x.com/theramgoel/status/2085723231273783470',
     },
 ]
 

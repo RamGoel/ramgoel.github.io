@@ -7,6 +7,7 @@ import Link from 'next/link'
 import moment from 'moment'
 import path from 'path'
 import { talks, projects } from '@/utils/data'
+import Card from '@/components/Card'
 import { useState, useCallback, useEffect } from 'react'
 
 type Blog = {
@@ -53,12 +54,13 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
         >
             <motion.img
                 src={src}
-                alt="Ram Goel"
+                alt="Preview"
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 transition={{ duration: 0.2, ease }}
-                className="max-w-[45vw] max-h-[45vh] object-contain rounded-lg"
+                className="object-contain rounded-lg"
+                style={{ maxWidth: 'calc(100vw - 200px)', maxHeight: 'calc(100vh - 200px)' }}
                 onClick={(e) => e.stopPropagation()}
             />
         </motion.div>
@@ -83,10 +85,10 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                     variants={staggerContainer}
                     initial="initial"
                     animate="animate"
-                    className="w-full px-5 lg:px-[100px] py-6 lg:py-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16"
+                    className="w-full max-w-2xl px-5 py-6 lg:py-16 flex flex-col items-center"
                 >
                     {/* Left column */}
-                    <div className="space-y-10">
+                    <div className="space-y-10 w-full">
                         {/* Photos */}
                         <motion.div variants={staggerItem} className="flex -space-x-3">
                             {photos.map((src, i) => (
@@ -105,7 +107,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                     }}
                                 >
                                     <div className="w-28 h-28 rounded-md overflow-hidden shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
-                                        <Image src={src} alt="Ram Goel" width={112} height={112} className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-300" />
+                                        <Image src={src} alt="Ram Goel" width={112} height={112} className="w-full h-full object-cover object-top transition-all duration-300" />
                                     </div>
                                 </button>
                             ))}
@@ -150,6 +152,25 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                             </div>
                         </motion.div>
 
+                        {/* Things I've Built */}
+                        <motion.div variants={staggerItem} className="space-y-3 w-full">
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I've Built</h3>
+                            <div className="grid grid-cols-2 gap-3">
+                                {projects.slice(0, 4).map((project, i) => {
+                                    const img = i === 0 ? `/project-1.gif` : i === 1 ? `/project-2.gif` : i === 2 ? `/project-3.gif` : i === 3 ? `/project-4.gif` : `/project-${i + 1}.png`
+                                    return (
+                                        <Card
+                                            key={project.id + project.title}
+                                            image={img}
+                                            title={project.title}
+                                            description={project.content}
+                                            onClick={() => setLightboxSrc(img)}
+                                        />
+                                    )
+                                })}
+                            </div>
+                        </motion.div>
+
                         {/* Blogs */}
                         <motion.div variants={staggerItem} className="space-y-3">
                             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Blogs</h3>
@@ -166,48 +187,24 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                 ))}
                             </ul>
                         </motion.div>
-                    </div>
-
-                    {/* Right column */}
-                    <div className="space-y-10 lg:border-l lg:border-dashed lg:border-neutral-200/40 lg:pl-16">
-                        {/* Side Projects */}
-                        <motion.div variants={staggerItem} className="space-y-3">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I&apos;ve Built</h3>
-                            <ul className="space-y-4 text-sm">
-                                {projects.map((project) => {
-                                    const projectUrl = Array.isArray(project.url) ? project.url[0] : (project.video || project.url)
-                                    const isExternal = projectUrl.startsWith('http')
-                                    return (
-                                        <li key={project.id + project.title}>
-                                            <a
-                                                href={projectUrl}
-                                                {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                                                className="slide-underline text-neutral-900"
-                                            >
-                                                {project.title}
-                                            </a>
-                                            {project.content && <span className="text-neutral-500"> — {project.content}</span>}
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </motion.div>
 
                         {/* Talks */}
-                        <motion.div variants={staggerItem} className="space-y-3">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Talks</h3>
-                            <ul className="space-y-4 text-sm">
-                                {talks.map((talk) => (
-                                    <li key={talk.id}>
-                                        <a href={talk.url} target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
-                                            {talk.title}
-                                        </a>
-                                        <span className="text-neutral-500"> — {talk.content}</span>
-                                    </li>
+                        <motion.div variants={staggerItem} className="space-y-3 w-full">
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Community</h3>
+                            <div className="grid grid-cols-2 gap-3">
+                                {[...talks].reverse().map((talk, i) => (
+                                    <Card
+                                        key={talk.id}
+                                        image={`/talk-${talks.length - i}.png`}
+                                        title={talk.title}
+                                        description={talk.content}
+                                        onClick={() => setLightboxSrc(`/talk-${talks.length - i}.png`)}
+                                    />
                                 ))}
-                            </ul>
+                            </div>
                         </motion.div>
                     </div>
+
                 </motion.div>
             </div>
             <AnimatePresence>
