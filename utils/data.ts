@@ -7,7 +7,6 @@ type Project = {
     type: string
     group: 'sarvam' | 'conch' | 'personal'
     github?: string
-    in_progress?: boolean
     video?: string
     preview?: string
 }
@@ -109,7 +108,6 @@ export const projects: Project[] = [
     {
         id: 11,
         title: 'Devro — voice control for Slack, Notion & more',
-        in_progress: true,
         content: '',
         url: 'https://x.com/theramgoel/status/1960756249672474801',
         video: 'https://x.com/theramgoel/status/1960756249672474801',

@@ -99,22 +99,39 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                 >
                     {/* Left column */}
                     <div className="space-y-10 w-full">
-                        {/* Photos — personal + community, block-resolve cycle */}
-                        <motion.div variants={staggerItem} className="flex gap-3">
-                            <BlockResolvePhotos
-                                photos={photos}
-                                onSelect={setLightboxSrc}
-                                alt="Ram Goel"
-                            />
-                            <BlockResolvePhotos
-                                photos={communityPhotos}
-                                onSelect={setLightboxSrc}
-                                alt="Community"
-                                objectPosition="object-center"
-                                className="h-44 aspect-video"
-                                width={313}
-                                height={176}
-                            />
+                        {/* Now + photos */}
+                        <motion.div variants={staggerItem} className="space-y-3">
+                            <div
+                                role="status"
+                                className="flex w-fit items-center gap-2.5 rounded-md border border-emerald-200/80 bg-emerald-50 px-2.5 py-1.5 text-sm dark:border-emerald-500/30 dark:bg-emerald-500/10"
+                            >
+                                <span className="relative flex h-1.5 w-1.5 shrink-0">
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
+                                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
+                                </span>
+                                <span className="shrink-0 font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
+                                    currently
+                                </span>
+                                <p className="text-emerald-950 dark:text-emerald-50/90 leading-snug">
+                                    I&apos;m up to automating launch videos via AI &amp; code
+                                </p>
+                            </div>
+                            <div className="flex gap-3">
+                                <BlockResolvePhotos
+                                    photos={photos}
+                                    onSelect={setLightboxSrc}
+                                    alt="Ram Goel"
+                                />
+                                <BlockResolvePhotos
+                                    photos={communityPhotos}
+                                    onSelect={setLightboxSrc}
+                                    alt="Community"
+                                    objectPosition="object-center"
+                                    className="h-44 aspect-video"
+                                    width={313}
+                                    height={176}
+                                />
+                            </div>
                         </motion.div>
 
                         {/* About */}
@@ -200,16 +217,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                                     >
                                                         <div className="relative ml-[6px] mt-2 space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
                                                             {items.map((project) => {
-                                                                const label = (
-                                                                    <>
-                                                                        {project.title}
-                                                                        {project.in_progress && (
-                                                                            <span className="ml-2 text-[10px] font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
-                                                                                WIP
-                                                                            </span>
-                                                                        )}
-                                                                    </>
-                                                                )
+                                                                const label = project.title
 
                                                                 const branch = (
                                                                     <svg
