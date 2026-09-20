@@ -3,11 +3,11 @@ import { useCallback, useRef } from 'react'
 import { flushSync } from 'react-dom'
 import { useTheme } from './ThemeProvider'
 
-/** Match BlockResolvePhotos: w-44 (176px) / 6 tiles ≈ 29.3px */
-const TILE_PX = 176 / 6
-const DURATION_MS = 780
-/** Cap keyframes so a fine grid stays smooth */
-const MAX_FRAMES = 120
+const STRIP_PX = 30
+const ZOOM_INSET_PX = 15
+const ZOOM_OUT_MS = 480
+const FLIP_MS = 1400
+const ZOOM_IN_MS = 480
 
 function prefersReducedMotion() {
     return window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -26,121 +26,235 @@ function getViewTransitionDoc(): ViewTransitionDoc | null {
     return document as ViewTransitionDoc
 }
 
-function gridForViewport(width: number, height: number) {
-    const cols = Math.max(1, Math.round(width / TILE_PX))
-    const rows = Math.max(1, Math.round(height / TILE_PX))
-    return { cols, rows }
-}
+type Pt = [number, number]
 
-/** Build a CSS clip-path that shows the first `count` tiles (by order). */
-function blockClipPath(
-    order: number[],
-    count: number,
-    cols: number,
-    rows: number,
+/** Polygon for one ╲ diagonal band (constant x+y). */
+function diagonalBandPoints(
+    index: number,
+    stripStep: number,
     width: number,
     height: number,
-) {
-    if (count <= 0) return 'inset(100%)'
+): Pt[] | null {
+    const a = index * stripStep
+    const b = (index + 1) * stripStep
 
-    const bw = width / cols
-    const bh = height / rows
-    const parts: string[] = []
-
-    for (let i = 0; i < count; i++) {
-        const idx = order[i]
-        const col = idx % cols
-        const row = Math.floor(idx / cols)
-        const x = col * bw
-        const y = row * bh
-        parts.push(`M${x} ${y}h${bw}v${bh}h${-bw}z`)
+    const pts: Pt[] = []
+    const push = (x: number, y: number) => {
+        const u = x + y
+        if (u >= a - 0.5 && u <= b + 0.5) pts.push([x, y])
     }
 
-    return `path('${parts.join(' ')}')`
+    for (const [x, y] of [
+        [0, 0],
+        [width, 0],
+        [width, height],
+        [0, height],
+    ] as Pt[]) {
+        const u = x + y
+        if (u >= a && u <= b) pts.push([x, y])
+    }
+
+    for (const t of [a, b]) {
+        if (t >= 0 && t <= width) push(t, 0)
+        if (t - height >= 0 && t - height <= width) push(t - height, height)
+        if (t >= 0 && t <= height) push(0, t)
+        if (t - width >= 0 && t - width <= height) push(width, t - width)
+    }
+
+    const key = (p: Pt) => `${Math.round(p[0] * 10)},${Math.round(p[1] * 10)}`
+    const unique = [...new Map(pts.map((p) => [key(p), p])).values()]
+    if (unique.length < 3) return null
+
+    const cx = unique.reduce((s, p) => s + p[0], 0) / unique.length
+    const cy = unique.reduce((s, p) => s + p[1], 0) / unique.length
+    unique.sort(
+        (p, q) => Math.atan2(p[1] - cy, p[0] - cx) - Math.atan2(q[1] - cy, q[0] - cx),
+    )
+    return unique
 }
 
-/** Tile indices sorted by distance from the click point (center of each tile). */
-function tileOrderFromPoint(
-    x: number,
-    y: number,
-    cols: number,
-    rows: number,
+function stripsClipPath(
+    visible: boolean[],
+    stripStep: number,
     width: number,
     height: number,
 ) {
-    const bw = width / cols
-    const bh = height / rows
-    const tiles = Array.from({ length: cols * rows }, (_, i) => {
-        const col = i % cols
-        const row = Math.floor(i / cols)
-        const cx = col * bw + bw / 2
-        const cy = row * bh + bh / 2
-        const dist = (cx - x) ** 2 + (cy - y) ** 2
-        return { i, dist }
-    })
-    tiles.sort((a, b) => a.dist - b.dist)
-    return tiles.map((t) => t.i)
+    const parts: string[] = []
+    for (let i = 0; i < visible.length; i++) {
+        if (!visible[i]) continue
+        const pts = diagonalBandPoints(i, stripStep, width, height)
+        if (!pts) continue
+        const [first, ...rest] = pts
+        parts.push(
+            `M${first[0]} ${first[1]}` + rest.map(([x, y]) => `L${x} ${y}`).join('') + 'Z',
+        )
+    }
+    return parts.length ? `path('${parts.join(' ')}')` : 'inset(100%)'
+}
+
+function stripFrame(
+    count: number,
+    stripStep: number,
+    width: number,
+    height: number,
+    flippedCount: number,
+    role: 'old' | 'new',
+) {
+    const visible = Array.from({ length: count }, (_, i) =>
+        role === 'old' ? i >= flippedCount : i < flippedCount,
+    )
+    return {
+        clipPath: stripsClipPath(visible, stripStep, width, height),
+    }
+}
+
+function animatePseudo(
+    root: HTMLElement,
+    keyframes: Keyframe[],
+    options: KeyframeAnimationOptions & { pseudoElement: string },
+) {
+    const anim = root.animate(keyframes, { fill: 'forwards', ...options })
+    return anim.finished.catch(() => undefined)
+}
+
+async function runStripFlipTransition(toggleTheme: () => void) {
+    const doc = getViewTransitionDoc()
+    if (!doc) {
+        toggleTheme()
+        return
+    }
+
+    const width = window.innerWidth
+    const height = window.innerHeight
+    const stripStep = STRIP_PX * Math.SQRT2
+    const count = Math.max(1, Math.ceil((width + height) / stripStep))
+    const root = document.documentElement
+    const zoomScale = 1 - (ZOOM_INSET_PX * 2) / Math.min(width, height)
+
+    root.classList.add('theme-strip-flipping')
+
+    try {
+        const transition = doc.startViewTransition(() => {
+            flushSync(() => {
+                toggleTheme()
+            })
+        })
+
+        await transition.ready
+
+        const oldFull = stripFrame(count, stripStep, width, height, 0, 'old')
+        const newHidden = stripFrame(count, stripStep, width, height, 0, 'new')
+        const oldGone = stripFrame(count, stripStep, width, height, count, 'old')
+        const newFull = stripFrame(count, stripStep, width, height, count, 'new')
+
+        // 1. Zoom out
+        await Promise.all([
+            animatePseudo(root, [oldFull, oldFull], {
+                duration: ZOOM_OUT_MS,
+                easing: 'linear',
+                pseudoElement: '::view-transition-old(root)',
+            }),
+            animatePseudo(root, [newHidden, newHidden], {
+                duration: ZOOM_OUT_MS,
+                easing: 'linear',
+                pseudoElement: '::view-transition-new(root)',
+            }),
+            animatePseudo(
+                root,
+                [{ transform: 'scale(1)' }, { transform: `scale(${zoomScale})` }],
+                {
+                    duration: ZOOM_OUT_MS,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    pseudoElement: '::view-transition-group(root)',
+                },
+            ),
+        ])
+
+        // 2. Flip diagonal strips one-by-one
+        const flipFrames = Array.from({ length: count + 1 }, (_, f) => f)
+        await Promise.all([
+            animatePseudo(
+                root,
+                flipFrames.map((f) => stripFrame(count, stripStep, width, height, f, 'old')),
+                {
+                    duration: FLIP_MS,
+                    easing: 'linear',
+                    pseudoElement: '::view-transition-old(root)',
+                },
+            ),
+            animatePseudo(
+                root,
+                flipFrames.map((f) => stripFrame(count, stripStep, width, height, f, 'new')),
+                {
+                    duration: FLIP_MS,
+                    easing: 'linear',
+                    pseudoElement: '::view-transition-new(root)',
+                },
+            ),
+            animatePseudo(
+                root,
+                [{ transform: `scale(${zoomScale})` }, { transform: `scale(${zoomScale})` }],
+                {
+                    duration: FLIP_MS,
+                    easing: 'linear',
+                    pseudoElement: '::view-transition-group(root)',
+                },
+            ),
+        ])
+
+        // 3. Zoom in
+        await Promise.all([
+            animatePseudo(root, [oldGone, oldGone], {
+                duration: ZOOM_IN_MS,
+                easing: 'linear',
+                pseudoElement: '::view-transition-old(root)',
+            }),
+            animatePseudo(root, [newFull, newFull], {
+                duration: ZOOM_IN_MS,
+                easing: 'linear',
+                pseudoElement: '::view-transition-new(root)',
+            }),
+            animatePseudo(
+                root,
+                [{ transform: `scale(${zoomScale})` }, { transform: 'scale(1)' }],
+                {
+                    duration: ZOOM_IN_MS,
+                    easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+                    pseudoElement: '::view-transition-group(root)',
+                },
+            ),
+        ])
+
+        await transition.finished
+    } finally {
+        root.classList.remove('theme-strip-flipping')
+    }
 }
 
 export default function ThemeToggle({ className = '' }: { className?: string }) {
     const { theme, toggleTheme, mounted } = useTheme()
-    const btnRef = useRef<HTMLButtonElement>(null)
+    const busyRef = useRef(false)
 
     const onToggle = useCallback(async () => {
-        const doc = getViewTransitionDoc()
-        if (!doc || prefersReducedMotion()) {
+        if (busyRef.current) return
+
+        if (prefersReducedMotion()) {
             toggleTheme()
             return
         }
 
-        const btn = btnRef.current
-        const rect = btn?.getBoundingClientRect()
-        const x = rect ? rect.left + rect.width / 2 : window.innerWidth - 40
-        const y = rect ? rect.top + rect.height / 2 : 40
-        const width = window.innerWidth
-        const height = window.innerHeight
-        const { cols, rows } = gridForViewport(width, height)
-        const order = tileOrderFromPoint(x, y, cols, rows, width, height)
-        const total = cols * rows
-        const frameCount = Math.min(MAX_FRAMES, total)
-
-        const root = document.documentElement
-        root.classList.add('theme-transitioning')
-
+        busyRef.current = true
         try {
-            const transition = doc.startViewTransition(() => {
-                flushSync(() => {
-                    toggleTheme()
-                })
-            })
-
-            await transition.ready
-
-            const frames = Array.from({ length: frameCount + 1 }, (_, f) => {
-                const count = Math.round((f / frameCount) * total)
-                return {
-                    clipPath: blockClipPath(order, count, cols, rows, width, height),
-                }
-            })
-
-            document.documentElement.animate(frames, {
-                duration: DURATION_MS,
-                easing: `steps(${frameCount}, end)`,
-                fill: 'both',
-                pseudoElement: '::view-transition-new(root)',
-            })
-
-            await transition.finished
+            await runStripFlipTransition(toggleTheme)
         } catch {
-            // Theme may already have flipped inside the transition callback
+            toggleTheme()
         } finally {
-            root.classList.remove('theme-transitioning')
+            busyRef.current = false
         }
     }, [toggleTheme])
 
     return (
         <button
-            ref={btnRef}
             type="button"
             onClick={onToggle}
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}

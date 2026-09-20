@@ -32,6 +32,7 @@ export default function BlockResolvePhotos({
     const [nextIndex, setNextIndex] = useState(1 % Math.max(photos.length, 1))
     const [resolving, setResolving] = useState(false)
     const [reduceMotion, setReduceMotion] = useState(false)
+    const [themePaused, setThemePaused] = useState(false)
 
     useEffect(() => {
         const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -41,13 +42,32 @@ export default function BlockResolvePhotos({
         return () => mq.removeEventListener('change', onChange)
     }, [])
 
+    // Pause while theme strip-flip is running
+    useEffect(() => {
+        const root = document.documentElement
+        const sync = () => {
+            setThemePaused(root.classList.contains('theme-strip-flipping'))
+        }
+        sync()
+        const obs = new MutationObserver(sync)
+        obs.observe(root, { attributes: true, attributeFilter: ['class'] })
+        return () => obs.disconnect()
+    }, [])
+
     const finishResolve = useCallback(() => {
         setIndex(nextIndex)
         setResolving(false)
     }, [nextIndex])
 
+    // Settle mid-resolve when theme switch starts
     useEffect(() => {
-        if (photos.length < 2) return
+        if (themePaused && resolving) {
+            finishResolve()
+        }
+    }, [themePaused, resolving, finishResolve])
+
+    useEffect(() => {
+        if (photos.length < 2 || themePaused) return
 
         const tick = () => {
             const upcoming = (index + 1) % photos.length
@@ -63,13 +83,13 @@ export default function BlockResolvePhotos({
 
         const hold = window.setTimeout(tick, HOLD_MS)
         return () => window.clearTimeout(hold)
-    }, [index, photos.length, reduceMotion])
+    }, [index, photos.length, reduceMotion, themePaused])
 
     useEffect(() => {
-        if (!resolving) return
+        if (!resolving || themePaused) return
         const done = window.setTimeout(finishResolve, RESOLVE_MS)
         return () => window.clearTimeout(done)
-    }, [resolving, finishResolve])
+    }, [resolving, finishResolve, themePaused])
 
     const current = photos[index]
     const next = photos[nextIndex]

@@ -60,23 +60,34 @@ html.dark {
     animation: none;
 }
 
-/* Theme toggle — block reveal via View Transitions snapshots */
-html.theme-transitioning::view-transition-old(root),
-html.theme-transitioning::view-transition-new(root) {
+/* Theme toggle — strip flip via View Transitions */
+html.theme-strip-flipping::view-transition-old(root),
+html.theme-strip-flipping::view-transition-new(root) {
     animation: none;
     mix-blend-mode: normal;
+    transform-origin: center center;
 }
 
-html.theme-transitioning::view-transition-old(root) {
+html.theme-strip-flipping::view-transition-old(root) {
     z-index: 1;
 }
 
-html.theme-transitioning::view-transition-new(root) {
+html.theme-strip-flipping::view-transition-new(root) {
     z-index: 2;
 }
 
-html.theme-transitioning::view-transition-group(root) {
-    animation-duration: 0.78s;
+html.theme-strip-flipping::view-transition-group(root) {
+    animation: none;
+    transform-origin: center center;
+}
+
+html.theme-strip-flipping,
+html.theme-strip-flipping body {
+    overflow: hidden !important;
+}
+
+html.theme-strip-flipping .animate-block-resolve {
+    animation-play-state: paused !important;
 }
 
 /* Custom cursor - CSS only */
@@ -160,30 +171,27 @@ html.theme-transitioning::view-transition-group(root) {
     }
 }
 
-/* Custom scrollbar - light theme */
-::-webkit-scrollbar {
-    width: 8px;
+/* Hide scrollbars so they don't steal width and shift view transitions */
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent;
+html::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
-::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 4px;
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.dark ::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.15);
-}
-
-.dark ::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.25);
+body::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
 }
 
 /* Selection color */
