@@ -120,7 +120,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                         {/* About */}
                         <motion.div variants={staggerItem} className="space-y-5">
                             <div className="flex items-center justify-between">
-                                <h1 className="text-xl font-normal text-neutral-900 dark:text-neutral-100">Hi, I'm Ram Goel</h1>
+                                <h1 className="text-xl font-normal text-neutral-900 dark:text-neutral-100">Hi, I&apos;m Ram Goel</h1>
                                 <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300 transition-colors duration-200">
                                     <FileText size={14} />
                                     Resume
