@@ -62,7 +62,7 @@ function diagonalBandPoints(
     }
 
     const key = (p: Pt) => `${Math.round(p[0] * 10)},${Math.round(p[1] * 10)}`
-    const unique = [...new Map(pts.map((p) => [key(p), p])).values()]
+    const unique = Array.from(new Map(pts.map((p) => [key(p), p])).values())
     if (unique.length < 3) return null
 
     const cx = unique.reduce((s, p) => s + p[0], 0) / unique.length
