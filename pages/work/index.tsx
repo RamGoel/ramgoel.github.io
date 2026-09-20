@@ -55,7 +55,7 @@ export default function WorkPage() {
                     <motion.div variants={staggerItem}>
                         <Link
                             href="/"
-                            className="group flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
+                            className="group flex items-center gap-1 text-sm text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200"
                         >
                             <svg
                                 className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-0.5"
@@ -71,50 +71,50 @@ export default function WorkPage() {
                     </motion.div>
 
                     <motion.div variants={staggerItem} className="space-y-3">
-                        <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                        <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                             Open for
                         </h3>
-                        <p className="text-sm text-neutral-600">
+                        <p className="text-sm text-neutral-600 dark:text-neutral-400">
                             Consulting · Freelance (one-off projects)
                         </p>
                     </motion.div>
 
                     <motion.div variants={staggerItem} className="space-y-3">
-                        <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                        <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                             I can help if
                         </h3>
                         <ul className="space-y-4 text-sm">
                             <li>
-                                <span className="text-neutral-900">App is slow</span>
-                                <span className="text-neutral-500"> — I&apos;ll find why and help fix it.</span>
+                                <span className="text-neutral-900 dark:text-neutral-100">App is slow</span>
+                                <span className="text-neutral-500 dark:text-neutral-400"> — I&apos;ll find why and help fix it.</span>
                             </li>
                             <li>
-                                <span className="text-neutral-900">Feature idea, no roadmap</span>
-                                <span className="text-neutral-500"> — I&apos;ll help you plan and help ship it.</span>
+                                <span className="text-neutral-900 dark:text-neutral-100">Feature idea, no roadmap</span>
+                                <span className="text-neutral-500 dark:text-neutral-400"> — I&apos;ll help you plan and help ship it.</span>
                             </li>
                             <li>
-                                <span className="text-neutral-900">Non-tech founder, need guidance</span>
-                                <span className="text-neutral-500"> — I&apos;ll be your technical sounding board.</span>
+                                <span className="text-neutral-900 dark:text-neutral-100">Non-tech founder, need guidance</span>
+                                <span className="text-neutral-500 dark:text-neutral-400"> — I&apos;ll be your technical sounding board.</span>
                             </li>
                             <li>
-                                <span className="text-neutral-900">Want to use AI but unsure how</span>
-                                <span className="text-neutral-500"> — I&apos;ll show you what actually works for your use case.</span>
+                                <span className="text-neutral-900 dark:text-neutral-100">Want to use AI but unsure how</span>
+                                <span className="text-neutral-500 dark:text-neutral-400"> — I&apos;ll show you what actually works for your use case.</span>
                             </li>
                             <li>
-                                <span className="text-neutral-900">Manual work eating your time</span>
-                                <span className="text-neutral-500"> — I&apos;ll help you automate the boring stuff.</span>
+                                <span className="text-neutral-900 dark:text-neutral-100">Manual work eating your time</span>
+                                <span className="text-neutral-500 dark:text-neutral-400"> — I&apos;ll help you automate the boring stuff.</span>
                             </li>
                         </ul>
                     </motion.div>
 
-                    <div className="border-t border-neutral-100" />
+                    <div className="border-t border-neutral-100 dark:border-neutral-800" />
 
                     <motion.div
                         variants={staggerItem}
                         className="grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-8"
                     >
                         <div className="space-y-3">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                                 Background
                             </h3>
                             <ul className="space-y-4 text-sm">
@@ -124,7 +124,7 @@ export default function WorkPage() {
                                         href="https://sarvam.ai"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="slide-underline text-neutral-900"
+                                        className="slide-underline text-neutral-900 dark:text-neutral-100"
                                     >
                                         Sarvam AI
                                     </a>
@@ -135,27 +135,27 @@ export default function WorkPage() {
                                         href="https://getconch.ai"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="slide-underline text-neutral-900"
+                                        className="slide-underline text-neutral-900 dark:text-neutral-100"
                                     >
                                         Conch AI
                                     </a>
-                                    <span className="text-neutral-500"> — acquired</span>
+                                    <span className="text-neutral-500 dark:text-neutral-400"> — acquired</span>
                                 </li>
-                                <li className="text-neutral-600">5+ years shipping React/Next.js</li>
+                                <li className="text-neutral-600 dark:text-neutral-400">5+ years shipping React/Next.js</li>
                             </ul>
                         </div>
 
                         <div className="space-y-3">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                                 UI studies
                             </h3>
                             <ul className="space-y-4 text-sm">
                                 {uiStudies.map((study) => (
                                     <li key={study.href}>
-                                        <Link href={study.href} className="slide-underline text-neutral-900">
+                                        <Link href={study.href} className="slide-underline text-neutral-900 dark:text-neutral-100">
                                             {study.name}
                                         </Link>
-                                        <span className="text-neutral-500"> — {study.content}</span>
+                                        <span className="text-neutral-500 dark:text-neutral-400"> — {study.content}</span>
                                     </li>
                                 ))}
                             </ul>
@@ -166,7 +166,7 @@ export default function WorkPage() {
                         <div className="flex items-center gap-3">
                             <a
                                 href="mailto:rgoel766@gmail.com?subject=Let's%20Talk"
-                                className="group flex items-center gap-1.5 text-xs bg-neutral-900 text-white px-3 py-2 rounded-lg hover:bg-neutral-800 transition-colors duration-200"
+                                className="group flex items-center gap-1.5 text-xs bg-neutral-900 text-white px-3 py-2 rounded-lg hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300 transition-colors duration-200"
                             >
                                 Email me
                                 <svg
@@ -183,12 +183,12 @@ export default function WorkPage() {
                                 href="https://cal.com/ramgoel"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-xs text-neutral-500 hover:text-neutral-900 transition-colors duration-200 px-3 py-2"
+                                className="text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200 px-3 py-2"
                             >
                                 Book a call
                             </a>
                         </div>
-                        <p className="text-sm text-neutral-500">
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400">
                             Email first for context. I reply within 12h.
                         </p>
                     </motion.div>

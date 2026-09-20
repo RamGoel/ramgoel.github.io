@@ -38,6 +38,11 @@ html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    color-scheme: light;
+}
+
+html.dark {
+    color-scheme: dark;
 }
 
 /* View Transitions - Only content area animates, sidebar stays stable */
@@ -55,6 +60,25 @@ html {
     animation: none;
 }
 
+/* Theme toggle — block reveal via View Transitions snapshots */
+html.theme-transitioning::view-transition-old(root),
+html.theme-transitioning::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+html.theme-transitioning::view-transition-old(root) {
+    z-index: 1;
+}
+
+html.theme-transitioning::view-transition-new(root) {
+    z-index: 2;
+}
+
+html.theme-transitioning::view-transition-group(root) {
+    animation-duration: 0.78s;
+}
+
 /* Custom cursor - CSS only */
 @media (pointer: fine) {
     * {
@@ -65,6 +89,14 @@ html {
         cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L18 9L9 11L7 18L1 1Z' fill='black' stroke='white' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, pointer;
     }
 
+    .dark * {
+        cursor: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L14 7.5L7.5 9L6 14L1 1Z' fill='white' stroke='black' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, auto;
+    }
+
+    .dark a,
+    .dark button {
+        cursor: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L18 9L9 11L7 18L1 1Z' fill='white' stroke='black' stroke-width='0.5'/%3E%3C/svg%3E") 1 1, pointer;
+    }
 }
 
 /* Sliding underline link */
@@ -85,6 +117,10 @@ html {
     transform-origin: left;
 }
 
+.dark .slide-underline::after {
+    background: #52525b;
+}
+
 .slide-underline:hover::after {
     background: currentColor;
     animation: slide-in 0.5s ease forwards;
@@ -98,6 +134,29 @@ html {
     100% {
         transform: scaleX(1);
         transform-origin: left;
+    }
+}
+
+/* Block-resolve photo cycle — tiles appear 1-by-1 */
+@keyframes block-resolve {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-block-resolve {
+    animation-name: block-resolve;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-block-resolve {
+        animation: none;
+        opacity: 1;
     }
 }
 
@@ -119,9 +178,21 @@ html {
     background: rgba(0, 0, 0, 0.2);
 }
 
+.dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
 /* Selection color */
 ::selection {
     background: rgba(0, 0, 0, 0.1);
+}
+
+.dark ::selection {
+    background: rgba(255, 255, 255, 0.15);
 }
 
 /* View Transitions */
@@ -263,11 +334,15 @@ html {
     margin-bottom: 1rem !important;
 }
 
-/* Light-theme blog article styles */
+/* Blog article styles */
 .blog-prose {
     color: #525252;
     font-size: 0.875rem;
     line-height: 1.8;
+}
+
+.dark .blog-prose {
+    color: #a1a1aa;
 }
 
 .blog-prose h1 {
@@ -295,6 +370,12 @@ html {
     margin-bottom: 0.5rem;
 }
 
+.dark .blog-prose h1,
+.dark .blog-prose h2,
+.dark .blog-prose h3 {
+    color: #fafafa;
+}
+
 .blog-prose p {
     margin-bottom: 1rem;
 }
@@ -308,6 +389,15 @@ html {
 
 .blog-prose a:hover {
     text-decoration-color: #171717;
+}
+
+.dark .blog-prose a {
+    color: #fafafa;
+    text-decoration-color: #52525b;
+}
+
+.dark .blog-prose a:hover {
+    text-decoration-color: #fafafa;
 }
 
 .blog-prose ul {
@@ -338,6 +428,11 @@ html {
     color: #737373;
 }
 
+.dark .blog-prose blockquote {
+    border-left-color: #3f3f46;
+    color: #a1a1aa;
+}
+
 .blog-prose :not(pre) > code {
     font-family: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 0.8125rem;
@@ -346,6 +441,11 @@ html {
     padding: 0.15rem 0.4rem;
     border-radius: 0.25rem;
     white-space: nowrap;
+}
+
+.dark .blog-prose :not(pre) > code {
+    background: #27272a;
+    color: #e4e4e7;
 }
 
 .blog-prose pre {

@@ -12,7 +12,7 @@ export default function Card({ image, title, description, href, onClick }: CardP
     const content = (
         <div
             onClick={onClick}
-            className={`group relative border border-dashed border-neutral-300/50 rounded-lg bg-transparent transition-all duration-300 hover:border-neutral-400 hover:shadow-sm overflow-hidden ${onClick ? 'cursor-pointer' : ''}`}
+            className={`group relative border border-dashed border-neutral-300/50 rounded-lg bg-transparent transition-all duration-300 hover:border-neutral-400 hover:shadow-sm overflow-hidden dark:border-neutral-700/60 dark:hover:border-neutral-500 ${onClick ? 'cursor-pointer' : ''}`}
         >
             <div className="w-full aspect-video">
                 {image.endsWith('.gif') ? (

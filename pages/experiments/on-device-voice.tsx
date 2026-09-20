@@ -14,7 +14,7 @@ function BackLink() {
     return (
         <Link
             href="/"
-            className="group inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
+            className="group inline-flex items-center gap-1 text-sm text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200"
         >
             <svg
                 className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-0.5"
@@ -31,15 +31,15 @@ function BackLink() {
 }
 
 function selectClassName() {
-    return 'w-full text-xs bg-white border border-neutral-200 rounded-lg px-2.5 py-2 text-neutral-700 focus:outline-none focus:border-neutral-400'
+    return 'w-full text-xs bg-white dark:bg-zinc-950 border border-neutral-200 dark:border-neutral-700 rounded-lg px-2.5 py-2 text-neutral-700 dark:text-neutral-300 focus:outline-none focus:border-neutral-400'
 }
 
 function fieldLabelClassName() {
-    return 'text-[11px] font-mono uppercase tracking-wider text-neutral-400'
+    return 'text-[11px] font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500'
 }
 
 function textareaClassName() {
-    return 'w-full text-xs bg-white border border-neutral-200 rounded-lg px-2.5 py-2 text-neutral-700 focus:outline-none focus:border-neutral-400 resize-y min-h-[64px] leading-relaxed'
+    return 'w-full text-xs bg-white dark:bg-zinc-950 border border-neutral-200 dark:border-neutral-700 rounded-lg px-2.5 py-2 text-neutral-700 dark:text-neutral-300 focus:outline-none focus:border-neutral-400 resize-y min-h-[64px] leading-relaxed'
 }
 
 function VoiceControls({
@@ -88,7 +88,7 @@ function VoiceControls({
             <label className="space-y-1.5 block">
                 <div className="flex items-center justify-between gap-2">
                     <span className={fieldLabelClassName()}>Pace</span>
-                    <span className="text-[11px] text-neutral-400 tabular-nums">{pace.toFixed(2)}x</span>
+                    <span className="text-[11px] text-neutral-400 dark:text-neutral-500 tabular-nums">{pace.toFixed(2)}x</span>
                 </div>
                 <input
                     type="range"
@@ -128,7 +128,7 @@ function VoiceControls({
                     type="button"
                     disabled={applyDisabled}
                     onClick={() => onApplySystemPrompt(systemPrompt)}
-                    className="text-[11px] text-neutral-500 hover:text-neutral-900 disabled:opacity-40 transition-colors"
+                    className="text-[11px] text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:opacity-40 transition-colors"
                 >
                     Apply to model session
                 </button>
@@ -164,16 +164,16 @@ function StatusBar({
 
     return (
         <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs text-neutral-500">
+            <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
                 <span className={`w-1.5 h-1.5 rounded-full ${statusDot}`} />
                 <span>{statusLabel}</span>
             </div>
             {localStt && phase === 'idle' && (
-                <p className="text-[11px] text-neutral-400">On-device speech recognition requested</p>
+                <p className="text-[11px] text-neutral-400 dark:text-neutral-500">On-device speech recognition requested</p>
             )}
             {phase === 'downloading' && downloadProgress !== null && (
                 <div
-                    className="h-1 w-full bg-neutral-100 rounded-full overflow-hidden"
+                    className="h-1 w-full bg-neutral-100 dark:bg-zinc-800 rounded-full overflow-hidden"
                     role="progressbar"
                     aria-valuenow={downloadProgress}
                     aria-valuemin={0}
@@ -258,11 +258,11 @@ function TurnList({
     if (!conversationStarted && turns.length === 0 && !interimTranscript) {
         return (
             <div className="h-full flex flex-col justify-center gap-4">
-                <p className="text-sm text-neutral-600 leading-relaxed">
+                <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                     Press the mic to start. The agent greets you first, then listens — speech in,
                     on-device model, speech out.
                 </p>
-                <ul className="text-sm text-neutral-500 space-y-2">
+                <ul className="text-sm text-neutral-500 dark:text-neutral-400 space-y-2">
                     <li>1. Agent speaks a short greeting</li>
                     <li>2. You hold to talk</li>
                     <li>3. Model replies on-device, then speaks</li>
@@ -289,12 +289,12 @@ function TurnList({
                             turn.role === 'user'
                                 ? 'bg-neutral-900 text-white px-3.5 py-2.5 rounded-2xl rounded-br-md'
                                 : turn.role === 'system'
-                                  ? 'text-neutral-500 text-xs text-center max-w-md'
-                                  : 'text-neutral-700'
+                                  ? 'text-neutral-500 dark:text-neutral-400 dark:text-neutral-500 text-xs text-center max-w-md'
+                                  : 'text-neutral-700 dark:text-neutral-300'
                         }`}
                     >
                         {turn.role === 'assistant' && (
-                            <span className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                            <span className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-1.5">
                                 Agent
                             </span>
                         )}
@@ -304,7 +304,7 @@ function TurnList({
             ))}
             {interimTranscript && (
                 <div className="flex justify-end">
-                    <p className="max-w-[90%] text-sm text-neutral-400 italic">{interimTranscript}</p>
+                    <p className="max-w-[90%] text-sm text-neutral-400 dark:text-neutral-500 italic">{interimTranscript}</p>
                 </div>
             )}
             {phase === 'thinking' && <TypingIndicator />}
@@ -369,7 +369,7 @@ function MicButton({
                     ? 'bg-rose-600 text-white hover:bg-rose-700'
                     : speaking
                       ? 'bg-amber-500 text-white hover:bg-amber-600'
-                      : 'bg-neutral-900 text-white hover:bg-neutral-800'
+                      : 'bg-neutral-900 text-white hover:bg-neutral-800 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300'
             }`}
             style={
                 listening
@@ -457,17 +457,17 @@ export default function OnDeviceVoiceAgentPage() {
                 path="/experiments/on-device-voice"
                 ogSlug="on-device-voice"
             />
-            <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white text-neutral-900">
+            <div className="h-screen w-screen overflow-hidden flex flex-col lg:flex-row bg-white dark:bg-zinc-950 text-neutral-900 dark:text-neutral-100">
             {/* Config — left */}
-            <aside className="w-full lg:w-[360px] xl:w-[400px] flex-shrink-0 border-b lg:border-b-0 lg:border-r border-neutral-100 flex flex-col max-h-[42vh] lg:max-h-none overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+            <aside className="w-full lg:w-[360px] xl:w-[400px] flex-shrink-0 border-b lg:border-b-0 lg:border-r border-neutral-100 dark:border-neutral-800 flex flex-col max-h-[42vh] lg:max-h-none overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                 <div className="p-5 lg:p-8 space-y-6 flex-1">
                     <BackLink />
 
                     <div className="space-y-1">
-                        <h1 className="text-xl font-semibold text-neutral-900 tracking-tight">
+                        <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight">
                             On-device voice
                         </h1>
-                        <p className="text-sm text-neutral-500 leading-relaxed">
+                        <p className="text-sm text-neutral-500 dark:text-neutral-400 leading-relaxed">
                             Mic → speech → Prompt API → speech
                         </p>
                     </div>
@@ -502,12 +502,12 @@ export default function OnDeviceVoiceAgentPage() {
                     )}
                 </div>
 
-                <div className="p-5 lg:p-8 pt-4 border-t border-neutral-100 mt-auto space-y-3">
+                <div className="p-5 lg:p-8 pt-4 border-t border-neutral-100 dark:border-neutral-800 mt-auto space-y-3">
                     {phase === 'speaking' && (
                         <button
                             type="button"
                             onClick={() => stopSpeaking()}
-                            className="w-full text-xs text-neutral-500 hover:text-neutral-900 transition-colors text-center"
+                            className="w-full text-xs text-neutral-500 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors text-center"
                         >
                             Stop speaking
                         </button>
@@ -529,16 +529,16 @@ export default function OnDeviceVoiceAgentPage() {
             </aside>
 
             {/* Chat — right */}
-            <main className="flex-1 min-w-0 min-h-0 flex flex-col bg-neutral-50/60">
-                <div className="flex-shrink-0 px-5 lg:px-10 py-4 border-b border-neutral-100 bg-white/80 flex items-center justify-between gap-3">
-                    <h2 className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+            <main className="flex-1 min-w-0 min-h-0 flex flex-col bg-neutral-50 dark:bg-zinc-900/60">
+                <div className="flex-shrink-0 px-5 lg:px-10 py-4 border-b border-neutral-100 dark:border-neutral-800 bg-white/80 dark:bg-zinc-950/80 flex items-center justify-between gap-3">
+                    <h2 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                         Conversation
                     </h2>
                     <button
                         type="button"
                         onClick={clearSession}
                         disabled={!conversationStarted || phase === 'thinking'}
-                        className="text-xs text-neutral-400 hover:text-neutral-900 disabled:opacity-30 transition-colors duration-200"
+                        className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:opacity-30 transition-colors duration-200"
                     >
                         Clear
                     </button>

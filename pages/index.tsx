@@ -1,14 +1,13 @@
 import { PageMeta } from '@/components/PageMeta'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FileText } from 'lucide-react'
+import { FileText, ChevronRight } from 'lucide-react'
 import fs from 'fs'
 import matter from 'gray-matter'
-import Image from 'next/image'
 import Link from 'next/link'
 import moment from 'moment'
 import path from 'path'
-import { talks, projects } from '@/utils/data'
-import Card from '@/components/Card'
+import { projects, projectGroups } from '@/utils/data'
+import BlockResolvePhotos from '@/components/BlockResolvePhotos'
 import { useState, useCallback, useEffect } from 'react'
 
 type Blog = {
@@ -32,6 +31,7 @@ const staggerItem = {
 }
 
 const photos = ['/ram-1.png', '/ram-3.png', '/ram-4.png', '/ram-5.png']
+const communityPhotos = ['/talk-1.png', '/talk-2.png', '/talk-3.png', '/talk-4.png']
 
 const ease = [0.25, 0.4, 0.25, 1]
 
@@ -71,6 +71,15 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
 export default function Home({ blogs = [] }: { blogs: Blog[] }) {
     const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
     const closeLightbox = useCallback(() => setLightboxSrc(null), [])
+    const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
+        sarvam: true,
+        conch: false,
+        personal: false,
+    })
+
+    const toggleGroup = (id: string) => {
+        setOpenGroups((prev) => ({ ...prev, [id]: !prev[id] }))
+    }
 
     return (
         <>
@@ -90,69 +99,63 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                 >
                     {/* Left column */}
                     <div className="space-y-10 w-full">
-                        {/* Photos */}
-                        <motion.div variants={staggerItem} className="flex -space-x-3">
-                            {photos.map((src, i) => (
-                                <button
-                                    key={src}
-                                    onClick={() => setLightboxSrc(src)}
-                                    className={`group relative hover:z-10 transition-all duration-200 hover:scale-105 ${i === 2 ? 'hidden lg:block' : ''}`}
-                                    style={{
-                                        zIndex: photos.length - i,
-                                        transform: [
-                                            'rotate(-5deg)',
-                                            'rotate(3deg) translateY(4px)',
-                                            'rotate(-1deg) translateY(-3px)',
-                                            'rotate(6deg) translateY(2px)',
-                                        ][i],
-                                    }}
-                                >
-                                    <div className="w-28 h-28 rounded-md overflow-hidden shadow-sm transition-all duration-300 group-hover:shadow-lg group-hover:-translate-y-1">
-                                        <Image src={src} alt="Ram Goel" width={112} height={112} className="w-full h-full object-cover object-top transition-all duration-300" />
-                                    </div>
-                                </button>
-                            ))}
+                        {/* Photos — personal + community, block-resolve cycle */}
+                        <motion.div variants={staggerItem} className="flex gap-3">
+                            <BlockResolvePhotos
+                                photos={photos}
+                                onSelect={setLightboxSrc}
+                                alt="Ram Goel"
+                            />
+                            <BlockResolvePhotos
+                                photos={communityPhotos}
+                                onSelect={setLightboxSrc}
+                                alt="Community"
+                                objectPosition="object-center"
+                                className="h-44 aspect-video"
+                                width={313}
+                                height={176}
+                            />
                         </motion.div>
 
                         {/* About */}
                         <motion.div variants={staggerItem} className="space-y-5">
                             <div className="flex items-center justify-between">
-                                <h1 className="text-xl font-semibold text-neutral-900">Ram Goel</h1>
-                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 transition-colors duration-200">
+                                <h1 className="text-xl font-normal text-neutral-900 dark:text-neutral-100">Hi, I'm Ram Goel</h1>
+                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300 transition-colors duration-200">
                                     <FileText size={14} />
                                     Resume
                                 </a>
                             </div>
                             <div className="space-y-4 text-sm">
-                                <p className="text-neutral-600 leading-loose">
+                                <p className="text-neutral-600 dark:text-neutral-400 leading-loose">
                                     Currently at{' '}
-                                    <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Sarvam AI
                                     </a>
                                     {' '}on frontend platform and voice agents. Previously sole engineer at{' '}
-                                    <a href="https://getconch.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    <a href="https://getconch.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Conch AI
                                     </a>
                                     {' '}(acquired), and SEO/performance at{' '}
-                                    <a href="https://animall.in" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    <a href="https://animall.in" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Animall
                                     </a>
                                     {' '}for 100K+ daily users. Into frontend, AI × design, and on-device models — I speak at conferences and ship weekend projects. Coding since 2019.
                                 </p>
-                                <p className="text-neutral-600 leading-loose">
-                                    <a href="https://github.com/RamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                <p className="text-neutral-600 dark:text-neutral-400 leading-loose">
+                                    <a href="https://github.com/RamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         GitHub
                                     </a>
                                     {' '}&middot;{' '}
-                                    <a href="https://x.com/theRamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    <a href="https://x.com/theRamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Twitter
                                     </a>
                                     {' '}&middot;{' '}
-                                    <a href="https://linkedin.com/in/ramgoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900">
+                                    <a href="https://linkedin.com/in/ramgoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         LinkedIn
                                     </a>
                                     {' '}&middot;{' '}
-                                    <a href="mailto:rgoel766@gmail.com" className="slide-underline text-neutral-900">
+                                    <a href="mailto:rgoel766@gmail.com" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Email
                                     </a>
                                 </p>
@@ -160,19 +163,116 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                         </motion.div>
 
                         {/* Things I&apos;ve Built */}
-                        <motion.div variants={staggerItem} className="space-y-3 w-full">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Things I&apos;ve Built</h3>
-                            <div className="grid grid-cols-2 gap-3">
-                                {projects.slice(0, 4).map((project, i) => {
-                                    const img = i === 0 ? `/project-1.gif` : i === 1 ? `/project-2.gif` : i === 2 ? `/project-3.gif` : i === 3 ? `/project-4.gif` : `/project-${i + 1}.png`
+                        <motion.div variants={staggerItem} className="space-y-3">
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Things I&apos;ve Built</h3>
+                            <div className="space-y-2">
+                                {projectGroups.map((group) => {
+                                    const items = projects.filter((p) => p.group === group.id)
+                                    const open = openGroups[group.id]
+
                                     return (
-                                        <Card
-                                            key={project.id + project.title}
-                                            image={img}
-                                            title={project.title}
-                                            description={project.content}
-                                            onClick={() => setLightboxSrc(img)}
-                                        />
+                                        <div key={group.id}>
+                                            <button
+                                                type="button"
+                                                onClick={() => toggleGroup(group.id)}
+                                                className="group flex items-center gap-1.5 text-sm text-neutral-900 dark:text-neutral-100"
+                                                aria-expanded={open}
+                                            >
+                                                <ChevronRight
+                                                    size={14}
+                                                    className={`text-neutral-400 dark:text-neutral-500 transition-transform duration-200 ease-out ${open ? 'rotate-90' : ''}`}
+                                                />
+                                                <span className="slide-underline">{group.label}</span>
+                                                <span className="text-xs text-neutral-400 dark:text-neutral-500 tabular-nums">
+                                                    {items.length}
+                                                </span>
+                                            </button>
+
+                                            <AnimatePresence initial={false}>
+                                                {open && (
+                                                    <motion.ul
+                                                        key={group.id}
+                                                        initial={{ height: 0, opacity: 0 }}
+                                                        animate={{ height: 'auto', opacity: 1 }}
+                                                        exit={{ height: 0, opacity: 0 }}
+                                                        transition={{ duration: 0.22, ease: [0.25, 0.4, 0.25, 1] }}
+                                                        className="overflow-hidden"
+                                                    >
+                                                        <div className="relative ml-[6px] mt-2 space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
+                                                            {items.map((project) => {
+                                                                const label = (
+                                                                    <>
+                                                                        {project.title}
+                                                                        {project.in_progress && (
+                                                                            <span className="ml-2 text-[10px] font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
+                                                                                WIP
+                                                                            </span>
+                                                                        )}
+                                                                    </>
+                                                                )
+
+                                                                const branch = (
+                                                                    <svg
+                                                                        aria-hidden
+                                                                        viewBox="0 0 20 16"
+                                                                        className="pointer-events-none absolute -left-5 top-0 h-4 w-5 overflow-visible text-neutral-300 dark:text-neutral-600"
+                                                                    >
+                                                                        <path
+                                                                            d="M 0.5 0 C 0.5 11, 2 13, 18 13"
+                                                                            fill="none"
+                                                                            stroke="currentColor"
+                                                                            strokeWidth="1"
+                                                                            strokeDasharray="1.5 2.5"
+                                                                            strokeLinecap="round"
+                                                                        />
+                                                                    </svg>
+                                                                )
+
+                                                                if (project.preview) {
+                                                                    return (
+                                                                        <li key={project.id + project.title} className="relative">
+                                                                            {branch}
+                                                                            <button
+                                                                                type="button"
+                                                                                onClick={() => setLightboxSrc(project.preview!)}
+                                                                                className="slide-underline text-left text-sm text-neutral-900 dark:text-neutral-100"
+                                                                            >
+                                                                                {label}
+                                                                            </button>
+                                                                        </li>
+                                                                    )
+                                                                }
+
+                                                                if (project.url) {
+                                                                    const external = project.url.startsWith('http')
+                                                                    return (
+                                                                        <li key={project.id + project.title} className="relative">
+                                                                            {branch}
+                                                                            <a
+                                                                                href={project.url}
+                                                                                {...(external
+                                                                                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                                                                                    : {})}
+                                                                                className="slide-underline text-sm text-neutral-900 dark:text-neutral-100"
+                                                                            >
+                                                                                {label}
+                                                                            </a>
+                                                                        </li>
+                                                                    )
+                                                                }
+
+                                                                return (
+                                                                    <li key={project.id + project.title} className="relative">
+                                                                        {branch}
+                                                                        <p className="text-sm text-neutral-900 dark:text-neutral-100">{label}</p>
+                                                                    </li>
+                                                                )
+                                                            })}
+                                                        </div>
+                                                    </motion.ul>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
                                     )
                                 })}
                             </div>
@@ -180,35 +280,19 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
 
                         {/* Blogs */}
                         <motion.div variants={staggerItem} className="space-y-3">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Blogs</h3>
+                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Blogs</h3>
                             <ul className="space-y-4 text-sm">
                                 {blogs.map((blog) => (
                                     <li key={blog.slug} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
-                                        <Link href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900">
+                                        <Link href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900 dark:text-neutral-100">
                                             {blog.title}
                                         </Link>
-                                        <span className="text-neutral-400 shrink-0 text-xs sm:text-sm">
+                                        <span className="text-neutral-400 dark:text-neutral-500 shrink-0 text-xs sm:text-sm">
                                             {blog.date}
                                         </span>
                                     </li>
                                 ))}
                             </ul>
-                        </motion.div>
-
-                        {/* Talks */}
-                        <motion.div variants={staggerItem} className="space-y-3 w-full">
-                            <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400">Community</h3>
-                            <div className="grid grid-cols-2 gap-3">
-                                {[...talks].reverse().map((talk, i) => (
-                                    <Card
-                                        key={talk.id}
-                                        image={`/talk-${talks.length - i}.png`}
-                                        title={talk.title}
-                                        description={talk.content}
-                                        onClick={() => setLightboxSrc(`/talk-${talks.length - i}.png`)}
-                                    />
-                                ))}
-                            </div>
                         </motion.div>
                     </div>
 

@@ -43,7 +43,7 @@ const BlogPage = ({
                     >
                         <Link
                             href="/"
-                            className="group inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
+                            className="group inline-flex items-center gap-1 text-sm text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200"
                         >
                             <svg
                                 className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-0.5"
@@ -58,10 +58,10 @@ const BlogPage = ({
                         </Link>
 
                         <header className="space-y-2">
-                            <h1 className="text-xl font-semibold text-neutral-900 tracking-tight">
+                            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight">
                                 {blogData.title}
                             </h1>
-                            <p className="text-sm text-neutral-500">{blogData.date}</p>
+                            <p className="text-sm text-neutral-500 dark:text-neutral-400">{blogData.date}</p>
                         </header>
 
                         <div

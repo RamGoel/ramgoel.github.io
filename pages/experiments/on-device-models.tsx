@@ -9,7 +9,7 @@ function BackLink() {
     return (
         <Link
             href="/"
-            className="group inline-flex items-center gap-1 text-sm text-neutral-400 hover:text-neutral-900 transition-colors duration-200"
+            className="group inline-flex items-center gap-1 text-sm text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors duration-200"
         >
             <svg
                 className="w-3.5 h-3.5 transition-transform duration-200 group-hover:-translate-x-0.5"
@@ -37,10 +37,10 @@ function ChatHeader({
     return (
         <div className="flex items-start justify-between gap-4">
             <div className="space-y-1 min-w-0">
-                <h1 className="text-xl font-semibold text-neutral-900 tracking-tight">
+                <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100 tracking-tight">
                     On-device chat
                 </h1>
-                <p className="text-sm text-neutral-500">
+                <p className="text-sm text-neutral-500 dark:text-neutral-400">
                     Chrome Prompt API · nothing leaves your machine
                 </p>
             </div>
@@ -49,7 +49,7 @@ function ChatHeader({
                     type="button"
                     onClick={onClear}
                     disabled={phase === 'thinking'}
-                    className="text-xs text-neutral-400 hover:text-neutral-900 disabled:opacity-40 transition-colors duration-200 shrink-0 pt-1"
+                    className="text-xs text-neutral-400 dark:text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 disabled:opacity-40 transition-colors duration-200 shrink-0 pt-1"
                 >
                     Clear
                 </button>
@@ -76,14 +76,14 @@ function StatusBar({
 
     return (
         <div className="space-y-2">
-            <div className="flex items-center gap-2 text-xs text-neutral-500">
+            <div className="flex items-center gap-2 text-xs text-neutral-500 dark:text-neutral-400">
                 <span className={`w-1.5 h-1.5 rounded-full ${statusDot}`} />
                 <span>{statusLabel}</span>
             </div>
 
             {phase === 'downloading' && downloadProgress !== null && (
                 <div
-                    className="h-1 w-full bg-neutral-100 rounded-full overflow-hidden"
+                    className="h-1 w-full bg-neutral-100 dark:bg-zinc-800 rounded-full overflow-hidden"
                     role="progressbar"
                     aria-valuenow={downloadProgress}
                     aria-valuemin={0}
@@ -151,14 +151,14 @@ function EmptyState({
 }) {
     return (
         <div className="h-full flex flex-col justify-center gap-8">
-            <p className="text-sm text-neutral-600 leading-relaxed">
+            <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
                 Ask anything. Replies stay on this device — useful for private drafts, quick
                 explanations, and offline-friendly experiments.
             </p>
 
             {canChat && (
                 <div className="space-y-3">
-                    <p className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                    <p className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">
                         Try asking
                     </p>
                     <ul className="space-y-2">
@@ -167,10 +167,10 @@ function EmptyState({
                                 <button
                                     type="button"
                                     onClick={() => onSuggestion(suggestion)}
-                                    className="group w-full text-left text-sm text-neutral-900 slide-underline py-1"
+                                    className="group w-full text-left text-sm text-neutral-900 dark:text-neutral-100 slide-underline py-1"
                                 >
                                     {suggestion}
-                                    <span className="ml-2 text-neutral-300 group-hover:text-neutral-500 transition-colors">
+                                    <span className="ml-2 text-neutral-300 dark:text-neutral-400 group-hover:text-neutral-500 transition-colors">
                                         →
                                     </span>
                                 </button>
@@ -181,7 +181,7 @@ function EmptyState({
             )}
 
             {!canChat && !error && (
-                <p className="text-sm text-neutral-400">Setting things up…</p>
+                <p className="text-sm text-neutral-400 dark:text-neutral-500">Setting things up…</p>
             )}
         </div>
     )
@@ -203,12 +203,12 @@ function MessageBubble({ message }: { message: ChatMessage }) {
                     message.role === 'user'
                         ? 'bg-neutral-900 text-white px-3.5 py-2.5 rounded-2xl rounded-br-md'
                         : message.role === 'system'
-                          ? 'text-neutral-500 text-xs text-center max-w-md'
-                          : 'text-neutral-700'
+                          ? 'text-neutral-500 dark:text-neutral-400 dark:text-neutral-500 text-xs text-center max-w-md'
+                          : 'text-neutral-700 dark:text-neutral-300'
                 }`}
             >
                 {message.role === 'assistant' && (
-                    <span className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 mb-1.5">
+                    <span className="block text-[10px] font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500 mb-1.5">
                         Assistant
                     </span>
                 )}
@@ -274,8 +274,8 @@ function ChatComposer({
     onKeyDown: (e: KeyboardEvent<HTMLTextAreaElement>) => void
 }) {
     return (
-        <form onSubmit={onSubmit} className="flex-shrink-0 pb-6 pt-2 border-t border-neutral-100">
-            <div className="flex items-end gap-2 rounded-xl border border-neutral-200 bg-white focus-within:border-neutral-400 transition-colors duration-200 p-2">
+        <form onSubmit={onSubmit} className="flex-shrink-0 pb-6 pt-2 border-t border-neutral-100 dark:border-neutral-800">
+            <div className="flex items-end gap-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-white dark:bg-zinc-950 focus-within:border-neutral-400 transition-colors duration-200 p-2">
                 <textarea
                     ref={inputRef}
                     value={input}
@@ -285,13 +285,13 @@ function ChatComposer({
                     disabled={!canChat}
                     rows={1}
                     aria-label="Message"
-                    className="flex-1 resize-none bg-transparent px-2 py-2 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed max-h-40 leading-relaxed"
+                    className="flex-1 resize-none bg-transparent px-2 py-2 text-sm text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed max-h-40 leading-relaxed"
                 />
                 <button
                     type="submit"
                     disabled={!canChat || isBusy || !input.trim()}
                     aria-label="Send message"
-                    className="shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 disabled:bg-neutral-200 disabled:text-neutral-400 transition-colors duration-200 active:scale-[0.97]"
+                    className="shrink-0 flex items-center justify-center w-9 h-9 rounded-lg bg-neutral-900 text-white hover:bg-neutral-800 dark:hover:bg-neutral-300 disabled:bg-neutral-200 disabled:text-neutral-400 transition-colors duration-200 active:scale-[0.97] dark:text-neutral-900 dark:bg-neutral-100"
                 >
                     {phase === 'thinking' ? (
                         <svg className="animate-spin h-4 w-4" fill="none" viewBox="0 0 24 24" aria-hidden>
@@ -327,7 +327,7 @@ function ChatComposer({
                     )}
                 </button>
             </div>
-            <p className="mt-2 text-[11px] text-neutral-400">
+            <p className="mt-2 text-[11px] text-neutral-400 dark:text-neutral-500">
                 Enter to send · Shift+Enter for a new line
             </p>
         </form>
@@ -364,7 +364,7 @@ export default function OnDeviceModels() {
                 ogSlug="on-device-models"
             />
             <div className="flex flex-col h-screen max-w-2xl mx-auto px-5 lg:px-6">
-            <header className="flex-shrink-0 pt-6 pb-4 space-y-4 border-b border-neutral-100">
+            <header className="flex-shrink-0 pt-6 pb-4 space-y-4 border-b border-neutral-100 dark:border-neutral-800">
                 <BackLink />
                 <ChatHeader
                     hasMessages={messages.length > 0}

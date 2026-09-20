@@ -5,78 +5,149 @@ type Project = {
     url: string
     users?: number
     type: string
+    group: 'sarvam' | 'conch' | 'personal'
     github?: string
     in_progress?: boolean
     video?: string
+    preview?: string
 }
 
 export const projects: Project[] = [
     {
         id: 6,
-        title: 'In-App Deployment for Voice Agents',
-        content: 'Built the in-app SDK and embeds for embedding Sarvam voice agents into mobile apps and websites',
+        title: 'In-App SDK & embeds for Sarvam voice agents',
+        content: '',
         url: '/experiments/on-device-voice',
         type: 'side',
+        group: 'sarvam',
+        preview: '/project-1.gif',
     },
     {
         id: 5,
-        title: 'Genie — Agent Builder',
-        content: 'A no-code agent builder to create, configure, and deploy voice agents — brought creation time down from days to under 10 minutes',
+        title: 'Genie — NL → voice agent configs with live testing',
+        content: '',
         url: '/experiments/on-device-models',
         type: 'side',
+        group: 'sarvam',
+        preview: '/project-2.gif',
     },
     {
         id: 3,
-        title: 'Sarvam Code — VS Code Extension',
-        content: 'Built a VS Code extension that brought a Cursor-like AI coding experience to Sarvam Code, making it easy to switch from Cursor',
+        title: 'Sarvam Code — Cursor-like AI coding in VS Code',
+        content: '',
         url: 'https://x.com/theramgoel/status/1960756249672474801',
         type: 'side',
+        group: 'sarvam',
+        preview: '/project-3.gif',
     },
     {
         id: 4,
-        title: 'Tatva — Design System',
-        content: 'Design system used across 5+ products at Sarvam, with an MCP server so agents like Claude and Cursor adhere to it',
+        title: 'Tatva — design system + MCP across 5+ products',
+        content: '',
         url: '',
         type: 'side',
+        group: 'sarvam',
+        preview: '/project-4.gif',
     },
     {
-        id: 3,
-        title: 'Devro',
-        in_progress: true,
-        content:
-            'Control Slack, Notion, Calendar & Github using voice commands.',
+        id: 17,
+        title: 'AI Copilot for learning workflows',
+        content: '',
         url: '',
-        users: 0,
-        video: 'https://x.com/theramgoel/status/1960756249672474801',
         type: 'side',
+        group: 'conch',
+    },
+    {
+        id: 19,
+        title: 'Document → Mindmap generation',
+        content: '',
+        url: '',
+        type: 'side',
+        group: 'conch',
+    },
+    {
+        id: 20,
+        title: 'Citation Library for research',
+        content: '',
+        url: '',
+        type: 'side',
+        group: 'conch',
+    },
+    {
+        id: 18,
+        title: 'Credit billing system — +10% paid conversions',
+        content: '',
+        url: '',
+        type: 'side',
+        group: 'conch',
+    },
+    {
+        id: 21,
+        title: 'E2E tests, Sentry & domain LLM fine-tuning',
+        content: '',
+        url: '',
+        type: 'side',
+        group: 'conch',
+    },
+    {
+        id: 22,
+        title: 'Web perf — WebP, SSG & render optimizations',
+        content: '',
+        url: '',
+        type: 'side',
+        group: 'conch',
     },
     {
         id: 1,
-        title: 'MeetGraph',
-        content: 'Realtime Speech to diagram/flowchart generation',
-        url: 'https://ctrl-vibe.vercel.app/',
-        users: 0,
+        title: 'MeetGraph — realtime speech to diagrams',
+        content: '',
+        url: 'https://x.com/theramgoel/status/1949402253376545146',
         type: 'side',
+        group: 'personal',
         video: 'https://x.com/theramgoel/status/1949402253376545146',
     },
     {
-        id: 1,
-        title: 'Updatly',
-        content:
-            'Embedded Changelog/Release Notes widget for your website',
-        url: 'https://log-date.vercel.app/',
-        users: 50,
+        id: 11,
+        title: 'Devro — voice control for Slack, Notion & more',
+        in_progress: true,
+        content: '',
+        url: 'https://x.com/theramgoel/status/1960756249672474801',
+        video: 'https://x.com/theramgoel/status/1960756249672474801',
         type: 'side',
+        group: 'personal',
     },
     {
         id: 2,
-        title: 'Noterr',
-        content:
-            'Bookmark anything from internet across devices',
+        title: 'Noterr — cross-device bookmarks with sync',
+        content: '',
         url: 'https://noterr-app.vercel.app/',
         users: 90,
         type: 'side',
+        group: 'personal',
     },
+    {
+        id: 9,
+        title: 'Updatly — embeddable changelog widget',
+        content: '',
+        url: 'https://log-date.vercel.app/',
+        users: 50,
+        type: 'side',
+        group: 'personal',
+    },
+    {
+        id: 10,
+        title: 'Design Vault — save web design inspiration',
+        content: '',
+        url: 'https://github.com/RamGoel/design-saver',
+        type: 'side',
+        group: 'personal',
+    },
+]
+
+export const projectGroups: { id: Project['group']; label: string }[] = [
+    { id: 'sarvam', label: 'Sarvam' },
+    { id: 'conch', label: 'Conch' },
+    { id: 'personal', label: 'Personal' },
 ]
 
 export const talks = [
