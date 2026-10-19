@@ -227,6 +227,15 @@ async function runStripFlipTransition(toggleTheme: () => void) {
 
         await transition.finished
     } finally {
+        // Cancel any filled animations to avoid stalling the next transition's clip-path repaints
+        document
+            .getAnimations()
+            .filter(
+                (anim) =>
+                    anim.effect instanceof KeyframeEffect &&
+                    anim.effect.pseudoElement?.startsWith('::view-transition'),
+            )
+            .forEach((anim) => anim.cancel())
         root.classList.remove('theme-strip-flipping')
     }
 }
