@@ -123,13 +123,13 @@ html.theme-strip-flipping .animate-block-resolve {
     left: 0;
     width: 100%;
     height: 1px;
-    background: #d4d4d4;
+    background: #d4d4d491;
     transition: background 1s ease, transform 1s ease;
     transform-origin: left;
 }
 
 .dark .slide-underline::after {
-    background: #52525b;
+    background: #52525b56;
 }
 
 .slide-underline:hover::after {

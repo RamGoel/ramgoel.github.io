@@ -159,11 +159,15 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                             <ul className="relative ml-[6px] space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
                                 {workProjects.map((project) => {
                                     const label = project.title
+                                    const external = project.url?.startsWith('http')
 
-                                    if (project.preview) {
-                                        return (
-                                            <li key={project.id + project.title} className="relative">
-                                                <Branch />
+                                    return (
+                                        <li
+                                            key={project.id + project.title}
+                                            className="relative flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4"
+                                        >
+                                            <Branch />
+                                            {project.preview ? (
                                                 <button
                                                     type="button"
                                                     data-tooltip-id="project-preview"
@@ -177,15 +181,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                                 >
                                                     {label}
                                                 </button>
-                                            </li>
-                                        )
-                                    }
-
-                                    if (project.url) {
-                                        const external = project.url.startsWith('http')
-                                        return (
-                                            <li key={project.id + project.title} className="relative">
-                                                <Branch />
+                                            ) : project.url ? (
                                                 <a
                                                     href={project.url}
                                                     {...(external
@@ -195,14 +191,12 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                                 >
                                                     {label}
                                                 </a>
-                                            </li>
-                                        )
-                                    }
-
-                                    return (
-                                        <li key={project.id + project.title} className="relative">
-                                            <Branch />
-                                            <p className="text-sm text-neutral-900 dark:text-neutral-100">{label}</p>
+                                            ) : (
+                                                <p className="text-sm text-neutral-900 dark:text-neutral-100">{label}</p>
+                                            )}
+                                            <span className="shrink-0 text-xs text-neutral-400 opacity-50 dark:text-neutral-500 sm:text-sm">
+                                                {project.group}
+                                            </span>
                                         </li>
                                     )
                                 })}
@@ -214,7 +208,10 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Blogs</h3>
                             <ul className="relative ml-[6px] space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
                                 {blogs.map((blog) => (
-                                    <li key={blog.slug} className="relative">
+                                    <li
+                                        key={blog.slug}
+                                        className="relative flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4"
+                                    >
                                         <Branch />
                                         <Link
                                             href={`/blog/${blog.slug}`}
@@ -222,6 +219,9 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                         >
                                             {blog.title}
                                         </Link>
+                                        <span className="shrink-0 text-xs text-neutral-400 dark:text-neutral-500 opacity-50 sm:text-sm">
+                                            {blog.date}
+                                        </span>
                                     </li>
                                 ))}
                             </ul>
