@@ -7,8 +7,9 @@ import Link from 'next/link'
 import moment from 'moment'
 import path from 'path'
 import { projects, projectGroups } from '@/utils/data'
-import BlockResolvePhotos from '@/components/BlockResolvePhotos'
-import { useState, useCallback, useEffect } from 'react'
+import Image from 'next/image'
+import { useState, useRef } from 'react'
+import { Tooltip, type TooltipRefProps } from 'react-tooltip'
 
 type Blog = {
     title: string
@@ -30,47 +31,39 @@ const staggerItem = {
     },
 }
 
-const photos = ['/ram-1.png', '/ram-3.png', '/ram-4.png', '/ram-5.png']
-const communityPhotos = ['/talk-1.png', '/talk-2.png', '/talk-3.png', '/talk-4.png']
-
-const ease = [0.25, 0.4, 0.25, 1]
-
-function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
-    useEffect(() => {
-        const handleKey = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') onClose()
-        }
-        document.addEventListener('keydown', handleKey)
-        return () => document.removeEventListener('keydown', handleKey)
-    }, [onClose])
+function ProjectPreview({ src, title }: { src: string; title: string }) {
+    const [status, setStatus] = useState<'loading' | 'ready' | 'error'>('loading')
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
-            onClick={onClose}
-        >
-            <motion.img
-                src={src}
-                alt="Preview"
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ duration: 0.2, ease }}
-                className="object-contain rounded-lg"
-                style={{ maxWidth: 'calc(100vw - 200px)', maxHeight: 'calc(100vh - 200px)' }}
-                onClick={(e) => e.stopPropagation()}
-            />
-        </motion.div>
+        <div className="relative flex aspect-video items-center justify-center overflow-hidden rounded-md bg-neutral-100 dark:bg-neutral-900">
+            {status !== 'ready' && (
+                <p
+                    role="status"
+                    className="text-center text-xs text-neutral-500 dark:text-neutral-400"
+                >
+                    {status === 'error'
+                        ? 'Preview unavailable'
+                        : 'Loading preview…'}
+                </p>
+            )}
+            {status !== 'error' && (
+                <Image
+                    src={src}
+                    alt={`${title} preview`}
+                    fill
+                    sizes="320px"
+                    unoptimized
+                    className={`object-contain ${status === 'ready' ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setStatus('ready')}
+                    onError={() => setStatus('error')}
+                />
+            )}
+        </div>
     )
 }
 
 export default function Home({ blogs = [] }: { blogs: Blog[] }) {
-    const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
-    const closeLightbox = useCallback(() => setLightboxSrc(null), [])
+    const previewRef = useRef<TooltipRefProps>(null)
     const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
         sarvam: true,
         conch: false,
@@ -84,7 +77,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
     return (
         <>
             <PageMeta
-                title="Ram Goel — Frontend Engineer"
+                title="Ram's Space"
                 description="Frontend engineer at Sarvam AI. Design systems, SDKs, and voice agents."
                 path="/"
                 ogSlug="default"
@@ -98,58 +91,31 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                     className="w-full max-w-2xl px-5 py-6 lg:py-16 flex flex-col items-center"
                 >
                     {/* Left column */}
-                    <div className="space-y-10 w-full">
-                        {/* Now + photos */}
-                        <motion.div variants={staggerItem} className="space-y-3">
-                            <div
-                                role="status"
-                                className="flex w-fit items-center gap-2.5 rounded-md border border-emerald-200/80 bg-emerald-50 px-2.5 py-1.5 text-sm dark:border-emerald-500/30 dark:bg-emerald-500/10"
-                            >
-                                <span className="relative flex h-1.5 w-1.5 shrink-0">
-                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
-                                    <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500 dark:bg-emerald-400" />
-                                </span>
-                                <span className="shrink-0 font-mono text-[10px] uppercase tracking-wider text-emerald-700 dark:text-emerald-400">
-                                    currently
-                                </span>
-                                <p className="text-emerald-950 dark:text-emerald-50/90 leading-snug">
-                                    I&apos;m up to automating launch videos via AI &amp; code
-                                </p>
-                            </div>
-                            <div className="flex gap-3">
-                                <BlockResolvePhotos
-                                    photos={photos}
-                                    onSelect={setLightboxSrc}
-                                    alt="Ram Goel"
-                                />
-                                <BlockResolvePhotos
-                                    photos={communityPhotos}
-                                    onSelect={setLightboxSrc}
-                                    alt="Community"
-                                    objectPosition="object-center"
-                                    className="h-44 aspect-video"
-                                    width={313}
-                                    height={176}
-                                />
-                            </div>
-                        </motion.div>
+                    <div className="space-y-6 w-full">
+                        {/* Photo */}
+                        <figure className="relative h-44 w-44 overflow-hidden rounded-lg">
+                            <Image
+                                src="/ram.png"
+                                alt="Ram Goel"
+                                width={460}
+                                height={460}
+                                className="h-full w-full object-cover object-top"
+                                priority
+                            />
+                            <figcaption className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent px-2 pb-1 pt-6 font-display text-xs font-medium tracking-wide text-white/80">
+                                Munnar&apos;26
+                            </figcaption>
+                        </figure>
 
                         {/* About */}
                         <motion.div variants={staggerItem} className="space-y-5">
-                            <div className="flex items-center justify-between">
-                                <h1 className="text-xl font-normal text-neutral-900 dark:text-neutral-100">Hi, I&apos;m Ram Goel</h1>
-                                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-full bg-neutral-900 text-white hover:bg-neutral-700 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-300 transition-colors duration-200">
-                                    <FileText size={14} />
-                                    Resume
-                                </a>
-                            </div>
                             <div className="space-y-4 text-sm">
                                 <p className="text-neutral-600 dark:text-neutral-400 leading-loose">
                                     Currently at{' '}
                                     <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
-                                        Sarvam AI
+                                        Sarvam
                                     </a>
-                                    {' '}on frontend platform and voice agents. Previously sole engineer at{' '}
+                                    {' '}building interfaces for agents. Previously sole engineer at{' '}
                                     <a href="https://getconch.ai" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Conch AI
                                     </a>
@@ -157,7 +123,7 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                     <a href="https://animall.in" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         Animall
                                     </a>
-                                    {' '}for 100K+ daily users. Into frontend, AI × design, and on-device models — I speak at conferences and ship weekend projects. Coding since 2019.
+                                    {' '}for 100K+ daily users.
                                 </p>
                                 <p className="text-neutral-600 dark:text-neutral-400 leading-loose">
                                     <a href="https://github.com/RamGoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
@@ -170,10 +136,6 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                     {' '}&middot;{' '}
                                     <a href="https://linkedin.com/in/ramgoel" target="_blank" rel="noopener noreferrer" className="slide-underline text-neutral-900 dark:text-neutral-100">
                                         LinkedIn
-                                    </a>
-                                    {' '}&middot;{' '}
-                                    <a href="mailto:rgoel766@gmail.com" className="slide-underline text-neutral-900 dark:text-neutral-100">
-                                        Email
                                     </a>
                                 </p>
                             </div>
@@ -242,7 +204,13 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                                                                             {branch}
                                                                             <button
                                                                                 type="button"
-                                                                                onClick={() => setLightboxSrc(project.preview!)}
+                                                                                data-tooltip-id="project-preview"
+                                                                                data-tooltip-content={project.preview}
+                                                                                data-project-preview={project.id}
+                                                                                aria-describedby="project-preview"
+                                                                                onClick={() => previewRef.current?.open({
+                                                                                    anchorSelect: `[data-project-preview="${project.id}"]`,
+                                                                                })}
                                                                                 className="slide-underline text-left text-sm text-neutral-900 dark:text-neutral-100"
                                                                             >
                                                                                 {label}
@@ -306,9 +274,37 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
 
                 </motion.div>
             </div>
-            <AnimatePresence>
-                {lightboxSrc && <Lightbox src={lightboxSrc} onClose={closeLightbox} />}
-            </AnimatePresence>
+            <Tooltip
+                ref={previewRef}
+                id="project-preview"
+                place="right"
+                positionStrategy="fixed"
+                offset={12}
+                delayShow={120}
+                delayHide={180}
+                clickable
+                noArrow
+                opacity={1}
+                globalCloseEvents={{
+                    escape: true,
+                    scroll: true,
+                    resize: true,
+                    clickOutsideAnchor: true,
+                }}
+                className="!z-50 !rounded-md !border-0 !bg-transparent !p-0 shadow-md motion-reduce:!transition-none"
+                style={{
+                    width: 'min(320px, calc(100vw - 24px), calc((100vh - 24px) * 16 / 9))',
+                }}
+                render={({ content, activeAnchor }) =>
+                    content && (
+                        <ProjectPreview
+                            key={content}
+                            src={content}
+                            title={activeAnchor?.textContent?.trim() || 'Project'}
+                        />
+                    )
+                }
+            />
         </>
     )
 }

@@ -14,6 +14,12 @@ export default function Document() {
                 />
                 <meta name="author" content="Ram Goel" />
                 <meta name="theme-color" content="#fafafa" />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="64x64"
+                    href="/favicon.png"
+                />
                 <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
             </Head>
             <body className="bg-white text-neutral-900 antialiased dark:bg-zinc-950 dark:text-neutral-100">
