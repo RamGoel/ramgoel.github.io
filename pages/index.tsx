@@ -1,15 +1,17 @@
 import { PageMeta } from '@/components/PageMeta'
-import { motion, AnimatePresence } from 'framer-motion'
-import { FileText, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { FileText } from 'lucide-react'
 import fs from 'fs'
 import matter from 'gray-matter'
 import Link from 'next/link'
 import moment from 'moment'
 import path from 'path'
-import { projects, projectGroups } from '@/utils/data'
+import { projects } from '@/utils/data'
 import Image from 'next/image'
 import { useState, useRef } from 'react'
 import { Tooltip, type TooltipRefProps } from 'react-tooltip'
+
+const workProjects = projects.filter((project) => project.group !== 'conch')
 
 type Blog = {
     title: string
@@ -29,6 +31,25 @@ const staggerItem = {
         opacity: 1,
         transition: { duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }
     },
+}
+
+function Branch() {
+    return (
+        <svg
+            aria-hidden
+            viewBox="0 0 20 16"
+            className="pointer-events-none absolute -left-5 top-0 h-4 w-5 overflow-visible text-neutral-300 opacity-50 dark:text-neutral-600"
+        >
+            <path
+                d="M 0.5 0 C 0.5 11, 2 13, 18 13"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1"
+                strokeDasharray="1.5 2.5"
+                strokeLinecap="round"
+            />
+        </svg>
+    )
 }
 
 function ProjectPreview({ src, title }: { src: string; title: string }) {
@@ -64,15 +85,6 @@ function ProjectPreview({ src, title }: { src: string; title: string }) {
 
 export default function Home({ blogs = [] }: { blogs: Blog[] }) {
     const previewRef = useRef<TooltipRefProps>(null)
-    const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({
-        sarvam: true,
-        conch: false,
-        personal: false,
-    })
-
-    const toggleGroup = (id: string) => {
-        setOpenGroups((prev) => ({ ...prev, [id]: !prev[id] }))
-    }
 
     return (
         <>
@@ -144,128 +156,72 @@ export default function Home({ blogs = [] }: { blogs: Blog[] }) {
                         {/* Things I&apos;ve Built */}
                         <motion.div variants={staggerItem} className="space-y-3">
                             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Things I&apos;ve Built</h3>
-                            <div className="space-y-2">
-                                {projectGroups.map((group) => {
-                                    const items = projects.filter((p) => p.group === group.id)
-                                    const open = openGroups[group.id]
+                            <ul className="relative ml-[6px] space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
+                                {workProjects.map((project) => {
+                                    const label = project.title
+
+                                    if (project.preview) {
+                                        return (
+                                            <li key={project.id + project.title} className="relative">
+                                                <Branch />
+                                                <button
+                                                    type="button"
+                                                    data-tooltip-id="project-preview"
+                                                    data-tooltip-content={project.preview}
+                                                    data-project-preview={project.id}
+                                                    aria-describedby="project-preview"
+                                                    onClick={() => previewRef.current?.open({
+                                                        anchorSelect: `[data-project-preview="${project.id}"]`,
+                                                    })}
+                                                    className="slide-underline text-left text-sm text-neutral-900 dark:text-neutral-100"
+                                                >
+                                                    {label}
+                                                </button>
+                                            </li>
+                                        )
+                                    }
+
+                                    if (project.url) {
+                                        const external = project.url.startsWith('http')
+                                        return (
+                                            <li key={project.id + project.title} className="relative">
+                                                <Branch />
+                                                <a
+                                                    href={project.url}
+                                                    {...(external
+                                                        ? { target: '_blank', rel: 'noopener noreferrer' }
+                                                        : {})}
+                                                    className="slide-underline text-sm text-neutral-900 dark:text-neutral-100"
+                                                >
+                                                    {label}
+                                                </a>
+                                            </li>
+                                        )
+                                    }
 
                                     return (
-                                        <div key={group.id}>
-                                            <button
-                                                type="button"
-                                                onClick={() => toggleGroup(group.id)}
-                                                className="group flex items-center gap-1.5 text-sm text-neutral-900 dark:text-neutral-100"
-                                                aria-expanded={open}
-                                            >
-                                                <ChevronRight
-                                                    size={14}
-                                                    className={`text-neutral-400 dark:text-neutral-500 transition-transform duration-200 ease-out ${open ? 'rotate-90' : ''}`}
-                                                />
-                                                <span className="slide-underline">{group.label}</span>
-                                                <span className="text-xs text-neutral-400 dark:text-neutral-500 tabular-nums">
-                                                    {items.length}
-                                                </span>
-                                            </button>
-
-                                            <AnimatePresence initial={false}>
-                                                {open && (
-                                                    <motion.ul
-                                                        key={group.id}
-                                                        initial={{ height: 0, opacity: 0 }}
-                                                        animate={{ height: 'auto', opacity: 1 }}
-                                                        exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.22, ease: [0.25, 0.4, 0.25, 1] }}
-                                                        className="overflow-hidden"
-                                                    >
-                                                        <div className="relative ml-[6px] mt-2 space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
-                                                            {items.map((project) => {
-                                                                const label = project.title
-
-                                                                const branch = (
-                                                                    <svg
-                                                                        aria-hidden
-                                                                        viewBox="0 0 20 16"
-                                                                        className="pointer-events-none absolute -left-5 top-0 h-4 w-5 overflow-visible text-neutral-300 dark:text-neutral-600"
-                                                                    >
-                                                                        <path
-                                                                            d="M 0.5 0 C 0.5 11, 2 13, 18 13"
-                                                                            fill="none"
-                                                                            stroke="currentColor"
-                                                                            strokeWidth="1"
-                                                                            strokeDasharray="1.5 2.5"
-                                                                            strokeLinecap="round"
-                                                                        />
-                                                                    </svg>
-                                                                )
-
-                                                                if (project.preview) {
-                                                                    return (
-                                                                        <li key={project.id + project.title} className="relative">
-                                                                            {branch}
-                                                                            <button
-                                                                                type="button"
-                                                                                data-tooltip-id="project-preview"
-                                                                                data-tooltip-content={project.preview}
-                                                                                data-project-preview={project.id}
-                                                                                aria-describedby="project-preview"
-                                                                                onClick={() => previewRef.current?.open({
-                                                                                    anchorSelect: `[data-project-preview="${project.id}"]`,
-                                                                                })}
-                                                                                className="slide-underline text-left text-sm text-neutral-900 dark:text-neutral-100"
-                                                                            >
-                                                                                {label}
-                                                                            </button>
-                                                                        </li>
-                                                                    )
-                                                                }
-
-                                                                if (project.url) {
-                                                                    const external = project.url.startsWith('http')
-                                                                    return (
-                                                                        <li key={project.id + project.title} className="relative">
-                                                                            {branch}
-                                                                            <a
-                                                                                href={project.url}
-                                                                                {...(external
-                                                                                    ? { target: '_blank', rel: 'noopener noreferrer' }
-                                                                                    : {})}
-                                                                                className="slide-underline text-sm text-neutral-900 dark:text-neutral-100"
-                                                                            >
-                                                                                {label}
-                                                                            </a>
-                                                                        </li>
-                                                                    )
-                                                                }
-
-                                                                return (
-                                                                    <li key={project.id + project.title} className="relative">
-                                                                        {branch}
-                                                                        <p className="text-sm text-neutral-900 dark:text-neutral-100">{label}</p>
-                                                                    </li>
-                                                                )
-                                                            })}
-                                                        </div>
-                                                    </motion.ul>
-                                                )}
-                                            </AnimatePresence>
-                                        </div>
+                                        <li key={project.id + project.title} className="relative">
+                                            <Branch />
+                                            <p className="text-sm text-neutral-900 dark:text-neutral-100">{label}</p>
+                                        </li>
                                     )
                                 })}
-                            </div>
+                            </ul>
                         </motion.div>
 
                         {/* Blogs */}
                         <motion.div variants={staggerItem} className="space-y-3">
                             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 dark:text-neutral-500">Blogs</h3>
-                            <ul className="space-y-4 text-sm">
+                            <ul className="relative ml-[6px] space-y-3 border-l border-dotted border-neutral-300 dark:border-neutral-600 pl-5 py-1">
                                 {blogs.map((blog) => (
-                                    <li key={blog.slug} className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
-                                        <Link href={`/blog/${blog.slug}`} className="slide-underline text-neutral-900 dark:text-neutral-100">
+                                    <li key={blog.slug} className="relative">
+                                        <Branch />
+                                        <Link
+                                            href={`/blog/${blog.slug}`}
+                                            className="slide-underline text-sm text-neutral-900 dark:text-neutral-100"
+                                        >
                                             {blog.title}
                                         </Link>
-                                        <span className="text-neutral-400 dark:text-neutral-500 shrink-0 text-xs sm:text-sm">
-                                            {blog.date}
-                                        </span>
                                     </li>
                                 ))}
                             </ul>
